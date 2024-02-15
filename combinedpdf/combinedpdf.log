@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.10.20)  15 FEB 2024 10:54
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.10.20)  15 FEB 2024 11:07
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -180,7 +180,7 @@ Here is how much of TeX's memory you used:
  1141 hyphenation exceptions out of 8191
  70i,17n,76p,287b,426s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2022/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb>
-Output written on combinedpdf.pdf (1 page, 174852 bytes).
+Output written on combinedpdf.pdf (1 page, 175381 bytes).
 PDF statistics:
  55 PDF objects out of 1000 (max. 8388607)
  29 compressed objects within 1 object stream
