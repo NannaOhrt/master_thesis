@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.10.20)  15 FEB 2024 11:32
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.10.20)  15 FEB 2024 11:48
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -545,21 +545,21 @@ File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 AED: lastpage setting LastPage
 [2] (./structure.aux)
 Package rerunfilecheck Info: File `structure.out' has not changed.
-(rerunfilecheck)             Checksum: 53673A686D353A4BF172F209182D1D49;194.
+(rerunfilecheck)             Checksum: 989019213996B5E4C243F0957EDC2E75;878.
  ) 
 Here is how much of TeX's memory you used:
- 14820 strings out of 478268
- 238176 string characters out of 5846346
- 540159 words of memory out of 5000000
- 32804 multiletter control sequences out of 15000+600000
+ 14833 strings out of 478268
+ 238306 string characters out of 5846346
+ 543159 words of memory out of 5000000
+ 32809 multiletter control sequences out of 15000+600000
  479937 words of font info for 57 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 67i,11n,77p,361b,347s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 67i,11n,77p,361b,345s stack positions out of 10000i,1000n,20000p,200000b,200000s
 {/usr/local/texlive/2022/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}</usr/local/texlive/2022/texmf-dist/fonts/type1/public/cm-super/sfbx1000.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/cm-super/sfbx1440.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/cm-super/sfrm1728.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/cm-super/sfsl1000.pfb>
-Output written on structure.pdf (2 pages, 73606 bytes).
+Output written on structure.pdf (2 pages, 86300 bytes).
 PDF statistics:
- 60 PDF objects out of 1000 (max. 8388607)
- 43 compressed objects within 1 object stream
- 6 named destinations out of 1000 (max. 500000)
- 17 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 91 PDF objects out of 1000 (max. 8388607)
+ 74 compressed objects within 1 object stream
+ 14 named destinations out of 1000 (max. 500000)
+ 57 words of extra memory for PDF output out of 10000 (max. 10000000)
 
