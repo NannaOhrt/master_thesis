@@ -8,3 +8,4 @@
 \contentsline {section}{\numberline {7}Risk premium}{3}{section.7}%
 \contentsline {section}{\numberline {8}Two strategies}{3}{section.8}%
 \contentsline {section}{\numberline {9}Data}{3}{section.9}%
+\contentsline {section}{\numberline {10}}{4}{section.10}%
