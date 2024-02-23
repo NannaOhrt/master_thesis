@@ -1,10 +1,10 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.10.20)  23 FEB 2024 09:43
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.10.20)  23 FEB 2024 10:00
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**/Users/nannaingemannohrt/Desktop/master_thesis/combinedpdf/combinedpdf.tex
-(/Users/nannaingemannohrt/Desktop/master_thesis/combinedpdf/combinedpdf.tex
+**/Users/nannaingemannohrt/Desktop/master_thesis/document/document.tex
+(/Users/nannaingemannohrt/Desktop/master_thesis/document/document.tex
 LaTeX2e <2021-11-15> patch level 1
 L3 programming layer <2022-02-24> (/usr/local/texlive/2022/texmf-dist/tex/latex/base/article.cls
 Document Class: article 2021/10/04 v1.4n Standard LaTeX document class
@@ -415,35 +415,40 @@ File: pppdftex.def 2022/01/29 v0.5u Pdfpages driver for pdfTeX (AM)
 \AM@toc@title=\toks34
 \c@AM@survey=\count306
 \AM@templatesizebox=\box65
-) (/usr/local/texlive/2022/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
+) (/usr/local/texlive/2022/texmf-dist/tex/latex/bookmark/bookmark.sty
+Package: bookmark 2020-11-06 v1.29 PDF bookmarks (HO)
+ (/usr/local/texlive/2022/texmf-dist/tex/latex/bookmark/bkm-pdftex.def
+File: bkm-pdftex.def 2020-11-06 v1.29 bookmark driver for pdfTeX (HO)
+\BKM@id=\count307
+)) (/usr/local/texlive/2022/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
 File: l3backend-pdftex.def 2022-02-07 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count307
+\l__color_backend_stack_int=\count308
 \l__pdf_internal_box=\box66
-) (./combinedpdf.aux)
-\openout1 = `combinedpdf.aux'.
+) (./document.aux)
+\openout1 = `document.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 95.
-LaTeX Font Info:    ... okay on input line 95.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 95.
-LaTeX Font Info:    ... okay on input line 95.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 95.
-LaTeX Font Info:    ... okay on input line 95.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 95.
-LaTeX Font Info:    ... okay on input line 95.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 95.
-LaTeX Font Info:    ... okay on input line 95.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 95.
-LaTeX Font Info:    ... okay on input line 95.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 95.
-LaTeX Font Info:    ... okay on input line 95.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 95.
-LaTeX Font Info:    ... okay on input line 95.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 95.
-LaTeX Font Info:    ... okay on input line 95.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 96.
+LaTeX Font Info:    ... okay on input line 96.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 96.
+LaTeX Font Info:    ... okay on input line 96.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 96.
+LaTeX Font Info:    ... okay on input line 96.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 96.
+LaTeX Font Info:    ... okay on input line 96.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 96.
+LaTeX Font Info:    ... okay on input line 96.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 96.
+LaTeX Font Info:    ... okay on input line 96.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 96.
+LaTeX Font Info:    ... okay on input line 96.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 96.
+LaTeX Font Info:    ... okay on input line 96.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 96.
+LaTeX Font Info:    ... okay on input line 96.
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: hyperref package is loaded.
 Package caption Info: End \AtBeginDocument code.
-Package hyperref Info: Link coloring OFF on input line 95.
+Package hyperref Info: Link coloring OFF on input line 96.
  (/usr/local/texlive/2022/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2021-04-02 v2.47 Cross-referencing by name of section
  (/usr/local/texlive/2022/texmf-dist/tex/latex/refcount/refcount.sty
@@ -451,27 +456,23 @@ Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
 ) (/usr/local/texlive/2022/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty
 Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
-\c@section@level=\count308
+\c@section@level=\count309
 )
-LaTeX Info: Redefining \ref on input line 95.
-LaTeX Info: Redefining \pageref on input line 95.
-LaTeX Info: Redefining \nameref on input line 95.
- (./combinedpdf.out) (./combinedpdf.out)
-\@outlinefile=\write3
-\openout3 = `combinedpdf.out'.
-
+LaTeX Info: Redefining \ref on input line 96.
+LaTeX Info: Redefining \pageref on input line 96.
+LaTeX Info: Redefining \nameref on input line 96.
  (/usr/local/texlive/2022/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count309
+\scratchcounter=\count310
 \scratchdimen=\dimen262
 \scratchbox=\box67
-\nofMPsegments=\count310
-\nofMParguments=\count311
+\nofMPsegments=\count311
+\nofMParguments=\count312
 \everyMPshowfont=\toks35
-\MPscratchCnt=\count312
+\MPscratchCnt=\count313
 \MPscratchDim=\dimen263
-\MPnumerator=\count313
-\makeMPintoPDFobject=\count314
+\MPnumerator=\count314
+\makeMPintoPDFobject=\count315
 \everyMPtoPDFconversion=\toks36
 ) (/usr/local/texlive/2022/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
@@ -481,7 +482,7 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 ))
 Package lastpage Info: Please have a look at the pageslts package at
 (lastpage)             https://www.ctan.org/pkg/pageslts
-(lastpage)             ! on input line 95.
+(lastpage)             ! on input line 96.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -524,58 +525,55 @@ Package: lscape 2020/05/28 v3.02 Landscape Pages (DPC)
 )
 Package pdflscape Info: Auto-detected driver: pdftex on input line 81.
 )
-</Users/nannaingemannohrt/Desktop/master_thesis/frontpage/frontpage_setup.pdf, id=8, 597.50829pt x 845.0471pt>
+</Users/nannaingemannohrt/Desktop/master_thesis/frontpage/frontpage_setup.pdf, id=4, 597.50829pt x 845.0471pt>
 File: /Users/nannaingemannohrt/Desktop/master_thesis/frontpage/frontpage_setup.pdf Graphic file (type pdf)
 <use /Users/nannaingemannohrt/Desktop/master_thesis/frontpage/frontpage_setup.pdf>
-Package pdftex.def Info: /Users/nannaingemannohrt/Desktop/master_thesis/frontpage/frontpage_setup.pdf  used on input line 98.
+Package pdftex.def Info: /Users/nannaingemannohrt/Desktop/master_thesis/frontpage/frontpage_setup.pdf  used on input line 99.
 (pdftex.def)             Requested size: 597.50682pt x 845.04504pt.
 File: /Users/nannaingemannohrt/Desktop/master_thesis/frontpage/frontpage_setup.pdf Graphic file (type pdf)
 <use /Users/nannaingemannohrt/Desktop/master_thesis/frontpage/frontpage_setup.pdf>
-Package pdftex.def Info: /Users/nannaingemannohrt/Desktop/master_thesis/frontpage/frontpage_setup.pdf  used on input line 98.
+Package pdftex.def Info: /Users/nannaingemannohrt/Desktop/master_thesis/frontpage/frontpage_setup.pdf  used on input line 99.
 (pdftex.def)             Requested size: 597.50682pt x 845.04504pt.
-</Users/nannaingemannohrt/Desktop/master_thesis/frontpage/frontpage_setup.pdf, id=11, page=1, 597.50829pt x 845.0471pt>
+</Users/nannaingemannohrt/Desktop/master_thesis/frontpage/frontpage_setup.pdf, id=7, page=1, 597.50829pt x 845.0471pt>
 File: /Users/nannaingemannohrt/Desktop/master_thesis/frontpage/frontpage_setup.pdf Graphic file (type pdf)
 <use /Users/nannaingemannohrt/Desktop/master_thesis/frontpage/frontpage_setup.pdf, page 1>
-Package pdftex.def Info: /Users/nannaingemannohrt/Desktop/master_thesis/frontpage/frontpage_setup.pdf , page1 used on input line 98.
+Package pdftex.def Info: /Users/nannaingemannohrt/Desktop/master_thesis/frontpage/frontpage_setup.pdf , page1 used on input line 99.
 (pdftex.def)             Requested size: 597.50682pt x 845.04504pt.
 File: /Users/nannaingemannohrt/Desktop/master_thesis/frontpage/frontpage_setup.pdf Graphic file (type pdf)
 <use /Users/nannaingemannohrt/Desktop/master_thesis/frontpage/frontpage_setup.pdf, page 1>
-Package pdftex.def Info: /Users/nannaingemannohrt/Desktop/master_thesis/frontpage/frontpage_setup.pdf , page1 used on input line 98.
+Package pdftex.def Info: /Users/nannaingemannohrt/Desktop/master_thesis/frontpage/frontpage_setup.pdf , page1 used on input line 99.
 (pdftex.def)             Requested size: 562.12285pt x 795.00201pt.
 File: /Users/nannaingemannohrt/Desktop/master_thesis/frontpage/frontpage_setup.pdf Graphic file (type pdf)
 <use /Users/nannaingemannohrt/Desktop/master_thesis/frontpage/frontpage_setup.pdf, page 1>
-Package pdftex.def Info: /Users/nannaingemannohrt/Desktop/master_thesis/frontpage/frontpage_setup.pdf , page1 used on input line 98.
+Package pdftex.def Info: /Users/nannaingemannohrt/Desktop/master_thesis/frontpage/frontpage_setup.pdf , page1 used on input line 99.
 (pdftex.def)             Requested size: 562.12285pt x 795.00201pt.
 File: /Users/nannaingemannohrt/Desktop/master_thesis/frontpage/frontpage_setup.pdf Graphic file (type pdf)
 <use /Users/nannaingemannohrt/Desktop/master_thesis/frontpage/frontpage_setup.pdf, page 1>
-Package pdftex.def Info: /Users/nannaingemannohrt/Desktop/master_thesis/frontpage/frontpage_setup.pdf , page1 used on input line 98.
+Package pdftex.def Info: /Users/nannaingemannohrt/Desktop/master_thesis/frontpage/frontpage_setup.pdf , page1 used on input line 99.
 (pdftex.def)             Requested size: 562.12285pt x 795.00201pt.
 File: /Users/nannaingemannohrt/Desktop/master_thesis/frontpage/frontpage_setup.pdf Graphic file (type pdf)
 <use /Users/nannaingemannohrt/Desktop/master_thesis/frontpage/frontpage_setup.pdf, page 1>
-Package pdftex.def Info: /Users/nannaingemannohrt/Desktop/master_thesis/frontpage/frontpage_setup.pdf , page1 used on input line 98.
+Package pdftex.def Info: /Users/nannaingemannohrt/Desktop/master_thesis/frontpage/frontpage_setup.pdf , page1 used on input line 99.
 (pdftex.def)             Requested size: 562.12285pt x 795.00201pt.
  [1
 
- </Users/nannaingemannohrt/Desktop/master_thesis/frontpage/frontpage_setup.pdf{/usr/local/texlive/2022/texmf-var/fonts/map/pdftex/updmap/pdftex.map}>] (./combinedpdf.toc)
-\tf@toc=\write4
-\openout4 = `combinedpdf.toc'.
+ </Users/nannaingemannohrt/Desktop/master_thesis/frontpage/frontpage_setup.pdf{/usr/local/texlive/2022/texmf-var/fonts/map/pdftex/updmap/pdftex.map}>] (./document.toc)
+\tf@toc=\write3
+\openout3 = `document.toc'.
 
- [2] (/Users/nannaingemannohrt/Desktop/master_thesis/introduction/introduction.tex) 
+ [2] (/Users/nannaingemannohrt/Desktop/master_thesis/main/introduction.tex) 
 AED: lastpage setting LastPage
-[3] (./combinedpdf.aux)
-Package rerunfilecheck Info: File `combinedpdf.out' has not changed.
-(rerunfilecheck)             Checksum: 9814C2D956916ADB9290ECA4E25C967A;103.
- ) 
+[3] (./document.aux) ) 
 Here is how much of TeX's memory you used:
- 14774 strings out of 478268
- 238613 string characters out of 5846346
- 539156 words of memory out of 5000000
- 32778 multiletter control sequences out of 15000+600000
+ 15030 strings out of 478268
+ 242834 string characters out of 5846346
+ 542975 words of memory out of 5000000
+ 33033 multiletter control sequences out of 15000+600000
  473266 words of font info for 34 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 67i,17n,77p,365b,475s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 67i,17n,77p,359b,475s stack positions out of 10000i,1000n,20000p,200000b,200000s
 {/usr/local/texlive/2022/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}</usr/local/texlive/2022/texmf-dist/fonts/type1/public/cm-super/sfbx1000.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/cm-super/sfbx1440.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/cm-super/sfsl1000.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb>
-Output written on combinedpdf.pdf (3 pages, 224037 bytes).
+Output written on document.pdf (3 pages, 224038 bytes).
 PDF statistics:
  96 PDF objects out of 1000 (max. 8388607)
  60 compressed objects within 1 object stream
