@@ -21,9 +21,8 @@
 \usepackage{pdfpages}
 \usepackage{pdfpages}
 \usepackage{bookmark}
-\usepackage{import}
-\usepackage{example}
-\usepackage{makeidx}
+\usepackage{lipsum}
+
 
 % -------------------------------------------- newcommand  -------------------------------------------- %
 \pagestyle{fancy}
@@ -69,6 +68,17 @@
 \newcommand{\norm}[1]{\left\lvert#1\right\rvert}
 \newcommand{\Sum}[2]{\sum\limits_{#1}^{#2}}
 
+% ----------------------------------------- fancy page style  ----------------------------------------- %
+% Set up the fancy page style
+\fancypagestyle{main}{
+    \fancyhf{} % Clear header and footer
+    \renewcommand{\headrulewidth}{0.4pt} % Remove header rule
+    \fancyhead[R]{\leftmark} % Place section name in the center of the header
+    \fancyfoot[C]{\thepage} % Page number in the center of the footer
+}
+
+\pagestyle{main} % Activate the page style
+
 % -------------------------------------------- document  -------------------------------------------- %
 \title{}
 \author{}
@@ -93,6 +103,7 @@
 \includepdf[pages=-]{/Users/nannaingemannohrt/Desktop/master_thesis/main/frontpage/frontpage_setup.pdf} 
 
 % import the abstract
+\pagenumbering{gobble}
 \input{/Users/nannaingemannohrt/Desktop/master_thesis/latex/abstract.tex}
 \newpage
 
@@ -100,6 +111,7 @@
 \tableofcontents 
 
 \newpage
+\pagenumbering{arabic}
 \input{/Users/nannaingemannohrt/Desktop/master_thesis/latex/introduction.tex}
 \newpage  
 
