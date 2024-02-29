@@ -1,12 +1,25 @@
 \section{Mathematics of pricing swaptions}
 \textcolor{red}{Look at Swaption pricing and isolating volatility exposure.}
 \\\\
-To understand why swaption contracts are priced a certain way, 
-it's important to grasp the basics of what affects their value. 
+To determine swaptions prices, it is important to understand which things there affects the price of the swaption. 
 This chapter simplifies these concepts by explaining interest rates, bonds, swaps, and options, 
 and then shows how they come together to determine the price of a swaption.
 \subsection{Time value of money}
-
+Understanding the concept of interest rates begins with the fundamental idea that a dollar today holds 
+more value than the same dollar in the future. To understand these concept, a discount factor is introduce 
+\begin{align*}
+    B(t,T) = \text{value at time t of a dollar received at time T}
+\end{align*} 
+$B(t,T)$ refer to a contract that pays one dollar maturity, T, which can be illustrated as below
+\begin{align*}
+    t & < T \rightarrow B(t,T) < 1 \\
+    t & = T \rightarrow B(t,T) = 1
+ \end{align*}
+The yield is defined as the singular constant interest rate, denoted as $r_y$,
+which has an equivalent impact to the discount factor $B(t, T)$ when compounded continuously.
+\begin{align*}
+    B(t,T)= e^{r_y \cdot (T-t)}
+\end{align*}
 \subsection{The yield curve}
 
 \subsection{Forward rates}
