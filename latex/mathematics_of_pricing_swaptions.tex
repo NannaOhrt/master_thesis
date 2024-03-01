@@ -25,6 +25,14 @@ The discount factor represents the present value of future cash flows, taking in
 It reflects the idea that receiving a certain amount of money in the future is less valuable than receiving 
 the same amount today.
 \subsection{Zero coupon bonds}
+One of the most common applications of the concept "time value of money" is zero coupon bonds. 
+They by there construction the mechanism of "time value of money" is present. This instrument 
+have the common property that they provide the owner with a deterministic cash flow. 
+\begin{definition}\label{def:zcb}
+    A zero coupon bond with maturity data T, also called a T-bons, is a contract which 
+    guarantees the holder one dollar to be paid on the date T. The price at time t of 
+    a bond with maturity data T is denoted by p$(t,T)$ \cite{Bjork} 
+\end{definition} 
 \subsection{The yield curve}
 Where the concept "time value of money" and the discount factor are fundamental concepts used to assess the present value of future
 cash flows, while the yield curve provides insights into market expectations regarding future interest rates.
@@ -42,7 +50,7 @@ future. Where we have that the definition for determined spot is listed
 below
 \begin{definition}\label{def:spot}
     The simple spot rate for $[S,T]$, henceforth referred to as the 
-    LIBOR spot rate, is defined ad \cite{Bjork} 
+    LIBOR spot rate, is defined as \cite{Bjork} 
     \begin{align*}
         L(t;S,T) = - \frac{p(t,T)-p(t,S)}{(T-S)p(t,T)}
     \end{align*}
