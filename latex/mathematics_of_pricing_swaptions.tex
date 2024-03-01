@@ -40,8 +40,20 @@ by the yield curves illustrated below, where the same interest rate is displayed
 data is from different days. 
 \\\\
 \textcolor{red}{Make yield curve}
-\subsection{Spot rates}
-\subsection{Forward rates}
+\subsection{Interest rates}
+\subsubsection{Spot rates}
+The spot rate represents the yield-to-maturity of a zero coupon bond,
+while the forward rate refers to the anticipated interest rate in the 
+future. Where we have that the definition for determined spot is listed 
+below
+\begin{definition}\label{def:spot}
+    The simple spot rate for $[S,T]$, henceforth referred to as the 
+    LIBOR spot rate, is defined ad \cite{Bjork} 
+    \begin{align*}
+        L(t;S,T) = - \frac{p(t,T)-p(t,S)}{(T-s)p(t,T)}
+    \end{align*}
+\end{definition} 
+\subsubsection{Forward rates}
 Forward rates play a crucial role in financial markets, particularly in the realm of interest rate analysis and 
 derivative pricing. They represent the interest rate applicable to a future period, agreed upon today.
 Understanding forward rates requires grasping the concept of forward contracts and the expectations theory of interest rates.
@@ -64,13 +76,11 @@ one dollar in a two-year zero coupon bond $B(t_0,t_2)$ and holding it for two ye
 This strategy illustrated the idea of forward rates. Let us then look a the general
 formula for forward rates. 
 \begin{definition}\label{def:forward}
-
     The continuously compounded forward rate for $[S,T]$ contracted at t is defined
     as \cite{Bjork} 
     \begin{align*}
         F(t;S,T)= - \frac{\log r(t,T)- \log r(t,S)}{(T-S)} 
     \end{align*}
-
 \end{definition} 
 
 \subsection{Bonds}
