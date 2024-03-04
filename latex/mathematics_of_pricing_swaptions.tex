@@ -139,7 +139,7 @@ Where for stand coupon, the time intervals will be equally spaced, which means t
     T_i = T_0 + i \delta
 \end{align*}
 This also means the the coupon rates $r_1,...,r_n$ will be equal to a common coupon rate r. 
-Hence the price p(t,T) of a fixed coupon bond where $t \leq T_1$ will be determined as below
+Hence the price p(t,T) of a fixed coupon bond where $t \leq T_1$ will be determined as below \cite{Bjork}
 \begin{align*}
     p(t)= K \Big( p(t,T_n)+ r \delta \sum_{i=1}^{n}\cdot p(t,T_i) \Big)
 \end{align*}
@@ -150,9 +150,34 @@ floating coupon, what there is really said is that the rate is floating. So with
 bond, the coupon was at predetermined when the agreement was made. But there are also bond, where
 the coupon is reset for every coupon period. These types of bond is referred to as floating 
 rate bonds. The most simple floating rate bond, is where the coupon rate $r_i$ is set to 
-the spot LIBOR rate $L(T_{i-1}, T_i)$. Where the LIBOR rate stands for London InterBank
-Offered Rate, which is a rate the the British Bankers Association sets every business day.
-Like the LIBOR 
+the spot LIBOR rate $L(T_{i-1}, T_i)$. Thus we have that 
+\begin{align*}
+    c_i = (T_i-T_{i-1})L(T_{i-1},T_i)K
+\end{align*}
+Here we have that $L(T_{i-1},T_i)$ is determined at time $T_{i-1}$, but the coupon is first 
+delivered at time $T_i$. \cite{Bjork}  
+\\\\
+The LIBOR rate stands for London InterBank Offered Rate, which is a rate the the 
+British Bankers Association sets every business day. Like the LIBOR rate, there is many types
+of xIBOR rates, one that we we encounter later is EURIBOR rate. Which is a rate the 
+European Banking Federation sets every business day. 
+\\\\
+These different type of xIBOR rates are sets differently, but the use the money market convention. 
+So when taking about business day, the money market convention is important. This is a day-count 
+convention is a standardized methodology for calculating the number of days between two dates.
+This means that the coupon dates are equally spaced, where we have that 
+\begin{align*}
+    \delta = T_{i}-T_{i-1}
+\end{align*}
+To determined the value of a the simplest floating rate bond, the LIBOR spot rate we can without
+loss is generality assume that K=1 and insert the definition \ref{def:spot} of the LIBOR rate 
+to obtain
+\begin{align*}
+    c_i &= (T_i-T_{i-1})L(T_{i-1},T_i)K \\
+        &= \delta L(T_{i-1},T_i) \\
+        &= \delta \frac{1- p(T_{i-1},T_i)}{\delta p(T_{i-1},T_i)} = \frac{1}{p(T_{i-1},T_i)}-1
+\end{align*}
+
 \subsection{Interest rate swaps}
 
 
