@@ -127,6 +127,22 @@ the fixed coupon bonds becomes. \cite{Bjork}
 \begin{align*}
     p(t) = K \cdot p(t,T_n) + \sum_{i=1}^{n}c_i \cdot p(t,T_i)
 \end{align*}
+When taking about coupons, there are typically determined in terms of return than in monetary terms.
+So the return of the i'th coupon is denoted as a simple rate acting in the face value K, over the
+time period $[t_{i-1},T_i]$. So for the i'th coupon the return is equal tol $r_i$, and the face value 
+is K, hence we have that 
+\begin{align*}
+    c_i = r_i(T_i-T_{i-1})K
+\end{align*}
+Where for stand coupon, the time intervals will be equally spaced, which means that 
+\begin{align*}
+    T_i = T_0 + i \delta
+\end{align*}
+This also means the the coupon rates $r_1,...,r_n$ will be equal to a common coupon rate r. 
+Hence the price p(t,T) of a fixed coupon bond where $t \leq T_1$ will be determined as below
+\begin{align*}
+    p(t)= K \Big( p(t,T_n)+ r \delta \sum_{i=1}^{n}\cdot p(t,T_i) \Big)
+\end{align*}
 \subsubsection{Floating Rate Bonds}
 Now a short introduction to fixed coupon bonds has be given. As mentioned there are also many 
 type of bonds there have floating coupon. When it is listed that there are bonds there have
@@ -136,6 +152,7 @@ the coupon is reset for every coupon period. These types of bond is referred to 
 rate bonds. The most simple floating rate bond, is where the coupon rate $r_i$ is set to 
 the spot LIBOR rate $L(T_{i-1}, T_i)$. Where the LIBOR rate stands for London InterBank
 Offered Rate, which is a rate the the British Bankers Association sets every business day.
+Like the LIBOR 
 \subsection{Interest rate swaps}
 
 
