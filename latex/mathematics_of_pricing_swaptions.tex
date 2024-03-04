@@ -15,7 +15,7 @@ $B(t,T)$ refer to a contract that pays one dollar maturity, T, which can be illu
     t & < T \rightarrow B(t,T) < 1 \\
     t & = T \rightarrow B(t,T) = 1
 \end{align*}
-The concept of the "time value of money" it asserts that the value of money today is worth more than
+The concept "time value of money" it asserts that the value of money today is worth more than
 the same amount in the future due to its potential earning capacity, inflation, and risk.
 This principle underpins various financial decisions, including investing, borrowing,
 and pricing financial instruments. Essentially, it recognizes that a dollar received today can be invested 
@@ -26,7 +26,7 @@ It reflects the idea that receiving a certain amount of money in the future is l
 the same amount today.
 \subsection{Zero coupon bonds}
 One of the most common applications of the concept "time value of money" is zero coupon bonds. 
-They by there construction the mechanism of "time value of money" is present. This instrument 
+By there construction the mechanism of "time value of money" is present. This instrument 
 have the common property that they provide the owner with a deterministic cash flow. 
 \begin{definition}\label{def:zcb}
     A zero coupon bond with maturity data T, also called a T-bons, is a contract which 
@@ -46,7 +46,7 @@ positive slope.
 \subsubsection{Spot rates}
 The spot rate represents the yield-to-maturity of a zero coupon bond,
 while the forward rate refers to the anticipated interest rate in the 
-future. Where we have that the definition for determined spot is listed 
+future. The definition for determined spot rates is listed 
 below
 \begin{definition}\label{def:spot}
     The simple spot rate for $[S,T]$, henceforth referred to as the 
@@ -67,13 +67,13 @@ between year 1 and year 2, starting at year 1.
 Lets consider three time points on the yield curve $t=0,1,2$, where it is assumed
 that $t_0 < t_1 < t_2$. At time $t_0$ we have the spot rates $p(t_0,t_1)$ and $p(t_1,t_2)$,
 which represent the yields for bonds maturing at time $t_1$ and $t_2$ respectively.
-Hence the forward rate, $F(t_1,t_2)$, can med determined using the equation below
+Hence the forward rate, $R(t_1,t_2)$, can med determined using the equation below
 \begin{align*}
-    F(t_1,t_2)= \frac{(1+p(t_0,t_2))^2}{(1+p(t_0,t_1))}-1
+    R(t_1,t_2)= \frac{(1+p(t_0,t_2))^2}{(1+p(t_0,t_1))}-1
 \end{align*}
 Imagine investing one dollar in a one-year zero-coupon bond, $B(t_0,t_1)$,
 and instantly reinvesting the money received at time $t_1$ in a new one-year zero-coupon bond,
-$B(t_1,t_2)$, at rate $F(t_1,t_2)$. This strategy should yield the same return as investing 
+$B(t_1,t_2)$, at rate $R(t_1,t_2)$. This strategy should yield the same return as investing 
 one dollar in a two-year zero coupon bond $B(t_0,t_2)$ and holding it for two years. 
 This strategy illustrated the idea of forward rates. Let us then look a the general
 formula for forward rates. 
@@ -81,7 +81,7 @@ formula for forward rates.
     The continuously compounded forward rate for $[S,T]$ contracted at t is defined
     as \cite{Bjork} 
     \begin{align*}
-        F(t;S,T)= - \frac{\log p(t,T)- \log p(t,S)}{(T-S)} 
+        R(t;S,T)= - \frac{\log p(t,T)- \log p(t,S)}{(T-S)} 
     \end{align*}
 \end{definition} 
 
