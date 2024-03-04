@@ -119,7 +119,14 @@ of a fixed coupon bond is there ability to provide a steady stream of income,
 making them an attractive option for conservative investors seeking to minimize risk and 
 secure predictable returns.
 \\\\
-Continue we will compute the price of a fixed coupon bond. 
+Continue we will compute the price of a fixed coupon bond. First we note that the fixed coupon bond,
+can be replicated by holding a portfolio consisting of zero coupon bond with maturities $T_i$, for 
+$i=1,...,n$. So we will hold $c_i$ zero coupon bonds of maturities $T_i$ for $i=1,...,n-1$, and 
+$K+c_n$ bonds with maturity $T_n$. Hence we have that the price, p(t), at time t, where $t<T$, of 
+the fixed coupon bonds becomes. \cite{Bjork}
+\begin{align*}
+    p(t) = K \cdot p(t,T_n) + \sum_{i=1}^{n}c_i \cdot p(t,T_i)
+\end{align*}
 \subsubsection{Floating Rate Bonds}
 
 \subsection{Interest rate swaps}
