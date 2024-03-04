@@ -1,6 +1,4 @@
 \section{Mathematics of pricing swaptions}
-\textcolor{red}{Look at Swaption pricing and isolating volatility exposure.}
-\\\\
 To determine swaptions prices, it is important to understand which things there affects the price of the swaption. 
 This chapter simplifies these concepts by explaining interest rates, bonds, swaps, and options, 
 and then shows how they come together to determine the price of a swaption.
@@ -84,7 +82,8 @@ formula for forward rates.
         R(t;S,T)= - \frac{\log p(t,T)- \log p(t,S)}{(T-S)} 
     \end{align*}
 \end{definition} 
-\subsection{Bonds}
+\subsection{Financial derivatives}
+\subsubsection{Bonds}
 A bond is a debt security, like a loan. Borrowers issue bonds to raise money 
 from investors willing to lend them money for a certain amount of time.
 When you purchase a bond you are lending money to the issuer, which in 
@@ -96,12 +95,33 @@ Earlier a zero coupon bond has introduced and when talk about bond, a zero coupo
 bond is the simplest representation of a bond. The zero coupon bond contract is 
 only given by two cash flows. One for the buyer, there pays the issuer at time 
 t = $t_0$, and another where the buyer receives the principal at time t = T.
-So there is on coupons payed in this type of contract. 
-\subsection{Financial derivatives}
+Unlike other types of bonds, a zero coupon bond does not offer periodic 
+interest payments (coupons) throughout its term. \cite{Bjork} 
+\\\\
+The price of a zero coupon bond is represented as 
+p(t,T), where an individual lends an amount, K, with the intention of earning a
+return in the future. Therefore, the price of a zero coupon bond, with 
+its principal (also known as face value) K, at time t and with maturity 
+T, is denoted as.
+\begin{align*}
+    p(t,T)= B(t,T)\cdot K
+\end{align*}
+\subsubsection{Fixed Coupon Bonds}
+A describe a zero coupon bond does not involve coupons throughout the term of the bond. 
+But moving forward we will introduce various bond with coupon there are either fixed 
+or floating. First we will consider the simplest form of a coupon bond, which is a 
+fixed coupon bond. Fixed coupon bonds are a type of debt security that offers investors a predictable
+return in the form of regular interest payments, known as coupons, until the bond's maturity.
+These coupons are set at a fixed rate at the time of issuance, based on the bond's face value,
+and are typically paid annually or semi-annually. Upon reaching maturity, the issuer repays 
+the principal amount (face value) to the bondholder, concluding the bond contract. The purpose
+of a fixed coupon bond is there ability to provide a steady stream of income,
+making them an attractive option for conservative investors seeking to minimize risk and 
+secure predictable returns.
+\subsubsection{Floating Rate Bonds}
 
 \subsection{Interest rate swaps}
 
-\subsubsection{xIBOR rates}
 
 \subsection{Options}
 
