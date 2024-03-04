@@ -165,7 +165,7 @@ European Banking Federation sets every business day.
 These different type of xIBOR rates are sets differently, but the use the money market convention. 
 So when taking about business day, the money market convention is important. This is a day-count 
 convention is a standardized methodology for calculating the number of days between two dates.
-This means that the coupon dates are equally spaced, where we have that 
+This means that when $t <T_0$  the coupon dates are equally spaced with  
 \begin{align*}
     \delta = T_{i}-T_{i-1}
 \end{align*}
@@ -177,7 +177,22 @@ to obtain
         &= \delta L(T_{i-1},T_i) \\
         &= \delta \frac{1- p(T_{i-1},T_i)}{\delta p(T_{i-1},T_i)} = \frac{1}{p(T_{i-1},T_i)}-1
 \end{align*}
-
+This lead to a formula for the floating rate bond, which is listed below \cite{Bjork}
+\begin{align*}
+    p(t)= p(t,T_n) + \sum_{i=1}^{n}\Big[p(t,T_{i-1})-p(t,T_i)\Big] = p(t,T_0)
+\end{align*}
+where we note that if $t=T_0$ we get that $p(T_0)=1$
+\\\\
+This leads to some general assumption there guarantee the existence of a sufficiently 
+rich and regular bond market
+\begin{assumption}\label{def:market}
+    We assume the following
+    \begin{itemize}
+        \item There exists a (frictionless) market for T-bond for every T>0
+        \item The relation p(t,t)= 1 holds for all t
+        \item For each fixed, the bond price p(t,T) is differentiable w.r.t time of maturity T \cite{Bjork}
+    \end{itemize}
+\end{assumption}
 \subsection{Interest rate swaps}
 
 
