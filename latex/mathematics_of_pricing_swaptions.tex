@@ -87,11 +87,11 @@ formula for forward rates.
 A bond is a debt security, like a loan. Borrowers issue bonds to raise money 
 from investors willing to lend them money for a certain amount of time.
 When you purchase a bond you are lending money to the issuer, which in 
-some cases a government or company. In return, from the construction of the 
-bond, the issuer guarantees to pay a predetermined rate during the life of the bond
+some cases is a government or company. In return, from the construction of the 
+bond, the issuer guarantees to pay a predetermined rate during the term of the bond
 and repay the principal at maturity. 
 \\\\
-Earlier a zero coupon bond has introduced and when talk about bond, a zero coupon 
+Earlier a zero coupon bond has ben introduced and when talk about bonds, a zero coupon 
 bond is the simplest representation of a bond. The zero coupon bond contract is 
 only given by two cash flows. One for the buyer, there pays the issuer at time 
 t = $t_0$, and another where the buyer receives the principal at time t = T.
@@ -107,19 +107,19 @@ T, is denoted as.
     p(t,T)= B(t,T)\cdot K
 \end{align*}
 \subsubsection{Fixed Coupon Bonds}
-A describe a zero coupon bond does not involve coupons throughout the term of the bond. 
+As describe a zero coupon bond does not involve coupons throughout the term of the bond. 
 But moving forward we will introduce various bond with coupon there are either fixed 
 or floating. First we will consider the simplest form of a coupon bond, which is a 
 fixed coupon bond. Fixed coupon bonds are a type of debt security that offers investors a predictable
-return in the form of regular interest payments, known as coupons, until the bond's maturity.
+return in the form of regular interest payments, known as coupons, until the bond's maturies.
 These coupons are set at a fixed rate at the time of issuance, based on the bond's face value,
 and are typically paid annually or semi-annually. Upon reaching maturity, the issuer repays 
-the principal amount (face value) to the bondholder, concluding the bond contract. The purpose
+the principal amount (face value) to the issuer, concluding the bond contract. The purpose
 of a fixed coupon bond is there ability to provide a steady stream of income,
 making them an attractive option for conservative investors seeking to minimize risk and 
 secure predictable returns.
 \\\\
-Continue we will compute the price of a fixed coupon bond. First we note that the fixed coupon bond,
+Continuing we will compute the price of a fixed coupon bond. First we note that the fixed coupon bond,
 can be replicated by holding a portfolio consisting of zero coupon bond with maturities $T_i$, for 
 $i=1,...,n$. So we will hold $c_i$ zero coupon bonds of maturities $T_i$ for $i=1,...,n-1$, and 
 $K+c_n$ bonds with maturity $T_n$. Hence we have that the price, p(t), at time t, where $t<T$, of 
@@ -129,12 +129,12 @@ the fixed coupon bonds becomes. \cite{Bjork}
 \end{align*}
 When taking about coupons, there are typically determined in terms of return than in monetary terms.
 So the return of the i'th coupon is denoted as a simple rate acting in the face value K, over the
-time period $[t_{i-1},T_i]$. So for the i'th coupon the return is equal tol $r_i$, and the face value 
+time period $[t_{i-1},T_i]$. So for the i'th coupon the return is equal to $r_i$, and the face value 
 is K, hence we have that 
 \begin{align*}
     c_i = r_i(T_i-T_{i-1})K
 \end{align*}
-Where for stand coupon, the time intervals will be equally spaced, which means that 
+Where for standardized coupon, the time intervals will be equally spaced, which means that 
 \begin{align*}
     T_i = T_0 + i \delta
 \end{align*}
@@ -144,7 +144,7 @@ Hence the price p(t,T) of a fixed coupon bond where $t \leq T_1$ will be determi
     p(t)= K \Big( p(t,T_n)+ r \delta \sum_{i=1}^{n}\cdot p(t,T_i) \Big)
 \end{align*}
 \subsubsection{Floating Rate Bonds}
-Now a short introduction to fixed coupon bonds has be given. As mentioned there are also many 
+Now a short introduction to fixed coupon bonds has be given, as mentioned there are also many 
 type of bonds there have floating coupon. When it is listed that there are bonds there have
 floating coupon, what there is really said is that the rate is floating. So with the fixed coupon
 bond, the coupon was at predetermined when the agreement was made. But there are also bond, where
@@ -162,7 +162,7 @@ British Bankers Association sets every business day. Like the LIBOR rate, there 
 of xIBOR rates, one that we we encounter later is EURIBOR rate. Which is a rate the 
 European Banking Federation sets every business day. 
 \\\\
-These different type of xIBOR rates are sets differently, but the use the money market convention. 
+These different type of xIBOR rates are sets differently, but they all use the money market convention. 
 So when taking about business day, the money market convention is important. This is a day-count 
 convention is a standardized methodology for calculating the number of days between two dates.
 This means that when $t <T_0$  the coupon dates are equally spaced with  
@@ -170,7 +170,7 @@ This means that when $t <T_0$  the coupon dates are equally spaced with
     \delta = T_{i}-T_{i-1}
 \end{align*}
 To determined the value of a the simplest floating rate bond, the LIBOR spot rate we can without
-loss is generality assume that K=1 and insert the definition \ref{def:spot} of the LIBOR rate 
+loss is generality assume that K=1 and insert the definition \ref{def:spot} of the LIBOR spot rate 
 to obtain
 \begin{align*}
     c_i &= (T_i-T_{i-1})L(T_{i-1},T_i)K \\
@@ -190,7 +190,7 @@ rich and regular bond market
     \begin{itemize}
         \item There exists a (frictionless) market for T-bond for every T>0
         \item The relation p(t,t)= 1 holds for all t
-        \item For each fixed, the bond price p(t,T) is differentiable w.r.t time of maturity T \cite{Bjork}
+        \item For each fixed t, the bond price p(t,T) is differentiable w.r.t time of maturity T \cite{Bjork}
     \end{itemize}
 \end{assumption}
 \subsection{Interest rate swaps}
