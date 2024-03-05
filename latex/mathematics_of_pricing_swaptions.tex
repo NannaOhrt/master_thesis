@@ -170,7 +170,7 @@ This means that when $t <T_0$  the coupon dates are equally spaced with
     \delta = T_{i}-T_{i-1}
 \end{align*}
 To determined the value of a the simplest floating rate bond, the LIBOR spot rate we can without
-loss is generality assume that K=1 and insert the definition \ref{def:spot} of the LIBOR spot rate 
+loss is generality assume that K=1 and insert the Definition \ref{def:spot} of the LIBOR spot rate 
 to obtain
 \begin{align*}
     c_i &= (T_i-T_{i-1})L(T_{i-1},T_i)K \\
@@ -224,6 +224,29 @@ So at time $T_i$ the buyer will pay $K \delta R$, where the cash flow at time $T
 \end{align*}
 Then by applying the results from the section for floating rate bonds again, we are able to compute the value of the 
 cash flow at time $t<T_0$. The value of the cash flow is listed below
+\begin{align*}
+    K p(t,T_{i-1})-K(1+\delta R)p(t,T_i)
+\end{align*}
+Hence we have that the total value denote by $\Pi(t)$, so the total value at time t of the swap is given as below
+\begin{align}
+    \pi (t) = K \sum_{i=1}^{n} \Big[p(t,T_{i-1})-(1+ \delta R)p(t,T_i)\Big]
+    \label{valueirs}
+\end{align}
+Moving forward we simplify \autoref{valueirs} in the below Proposition \ref{simple}
+\begin{proposition}
+    The price, for $t<T_0$, of the swap in \autoref{valueirs} above
+    is given by 
+    \begin{align*}
+        \Pi(t) = K p(t,T_0)-K \sum_{i=1}^{n}d_i p(t,T_i)
+    \end{align*}
+    where
+    \begin{align*}
+        d_i &= R \delta, \quad i=1,...,n-1 \\
+        d_n &= 1+ R \delta
+    \end{align*}
+    \label{simple}
+\end{proposition}
+ 
 \subsection{Options}
 
 \subsection{Swaptions}
