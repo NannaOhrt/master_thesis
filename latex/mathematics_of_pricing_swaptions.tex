@@ -209,8 +209,13 @@ arises at the dates $T_1,...,T_n$, this means that at time $T_i$ buyer of the in
 \end{align}
 where we have that $L(T_{i-1},T_i)$ is the spot rate, which could be the LIBOR spot rate or the EURIBOR spot rate.  It is also assumed
 that the days $T_0,...,T_n$ is equally spaced this $\delta = T_i - T_{i-1}$ as mentioned above in the section for floating rate bonds. 
-The it is noticed the expression in \autoref{irs} is the same as $Kc_i$, where again $c_i$ is the i'th coupon for the floating rate.
-
+The it is noticed the expression in \autoref{irs} is the same as $Kc_i$, where again $c_i$ is the i'th coupon for the floating rate. 
+So at time $T_i$ the buyer will pay $K \delta R$, where the cash flow at time $T_i$ is given by below
+\begin{align*}
+    K \delta \Big[L(T_{i-1},T_i)-R \Big]
+\end{align*}
+Then by applying the results from the section for floating rate bonds again, we are able to compute the value of the 
+cash flow at time $t<T_0$. The value of the cash flow is listed below
 \subsection{Options}
 
 \subsection{Swaptions}
