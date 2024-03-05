@@ -247,7 +247,21 @@ Moving forward we simplify \autoref{valueirs} in the below Proposition \ref{simp
     \label{simple}
 \end{proposition}
 \noindent 
-Earlier
+Earlier we left behind a discussion of how the swap rate, R,  is determined. 
+It was noted that the swap is determined such that the present value of
+the swap is equal to zero. Now we will give a more accurate of how swap is determined.
+\begin{proposition}
+    If, by convention, we assume that the the contract is written at $t=0$, 
+    the swap rate is given by \cite{Bjork}
+    \begin{align*}
+        R = \frac{p(0,T_0)-p(0,T_n)}{\delta \sum_{i=1}^{n}p(t,T_i)}
+    \end{align*}
+\end{proposition}
+\noindent 
+If we have that $T_0=0$ the formula for the swap rate, R, becomes
+\begin{align*}
+    R= \frac{1-p(0,T_n)}{\delta \sum_{1}^{n}p(0,T_i)}
+\end{align*}
 \subsection{Options}
 
 \subsection{Swaptions}
