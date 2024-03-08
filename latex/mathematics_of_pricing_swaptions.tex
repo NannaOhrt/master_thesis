@@ -159,7 +159,7 @@ delivered at time $T_i$. \cite{Bjork}
 \\\\
 The LIBOR rate stands for London InterBank Offered Rate, which is a rate the the 
 British Bankers Association sets every business day. Like the LIBOR rate, there is many types
-of xIBOR rates, one that we we encounter later is EURIBOR rate. Which is a rate the 
+of xIBOR rates, one is EURIBOR rate Which is a rate the 
 European Banking Federation sets every business day. 
 \\\\
 These different type of xIBOR rates are sets differently, but they all use the money market convention. 
@@ -197,7 +197,7 @@ rich and regular bond market
 Now some simple cases of different type of bonds has be introduce. Then we will combined the knowledge we have gained to move on
 to take interest rate derivatives in consideration. Again we will consider the simplest type of a interest rate derivative, which is a
 interest rate swap. The construction of a interest rate swap is that there is exchange a payment stream of a fixed rate of interest,
-which is know as the swap rate. This fixed rate is exchange for some floating rate, such as the LIBOR rate or the EURIBOR rate. 
+which is know as the swap rate. This fixed rate is exchange for some floating rate, such as the LIBOR rate. 
 As mentioned the fixed rate is know as the swap rate, this swap rate is determined from forward rate extracted from the yield curve, 
 so it makes the present value of the swap equal to zero. This we will formulate this later. 
 \\\\
@@ -215,7 +215,8 @@ arises at the dates $T_1,...,T_n$, this means that at time $T_i$ buyer of the in
     K \delta L(T_{i-1},T_i)
     \label{irs}
 \end{align}
-where we have that $L(T_{i-1},T_i)$ is the spot rate, which could be the LIBOR spot rate or the EURIBOR spot rate.  It is also assumed
+where we have that $L(T_{i-1},T_i)$ is the spot rate, which could be the LIBOR spot rate.
+  It is also assumed
 that the days $T_0,...,T_n$ is equally spaced this $\delta = T_i - T_{i-1}$ as mentioned above in the section for floating rate bonds. 
 The it is noticed the expression in \autoref{irs} is the same as $Kc_i$, where again $c_i$ is the i'th coupon for the floating rate. 
 So at time $T_i$ the buyer will pay $K \delta R$, where the cash flow at time $T_i$ is given by below
