@@ -1,0 +1,136 @@
+\documentclass{article}
+
+% -------------------------------------------- usepackage  -------------------------------------------- %
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{ulem}
+\usepackage{subcaption}
+\usepackage{caption}
+\usepackage{gauss}
+\usepackage{mathtools}
+\usepackage{mathrsfs}
+\usepackage{hyperref}
+\usepackage{bbm}
+\usepackage{graphicx} 
+\usepackage{enumerate} 
+\usepackage{fancyhdr} 
+\usepackage{lastpage} 
+\usepackage[margin=1in,footskip=0.25in]{geometry}
+\usepackage{pdfpages}
+\usepackage{pdfpages}
+\usepackage{bookmark}
+\usepackage{lipsum}
+\usepackage{xcolor}
+\usepackage{amsthm}
+
+
+% -------------------------------------------- newcommand  -------------------------------------------- %
+\pagestyle{fancy}
+\setcounter{MaxMatrixCols}{20}
+\newcommand{\pic}[3]{\makebox[\textwidth]{\textbf{#1}}
+\\
+\begin{center}
+\includegraphics[scale=#2,center]{#3}
+\end{center}}
+
+\newcommand{\QQ}{\mathbb{Q}}
+\newcommand{\RR}{\mathbb{R}}
+\newcommand{\BB}{\mathbb{B}}
+\newcommand{\NN}{\mathbb{N}}
+\newcommand{\FF}{\mathbb{F}}
+\newcommand{\ZZ}{\mathbb{Z}}
+\newcommand{\CC}{\mathbb{C}}
+\newcommand{\EE}{\mathbb{E}}
+\newcommand{\indi}[1]{\mathbbm{1}_{#1}}
+\newcommand{\limi}[2]{\liminf\limits_{#1\rightarrow#2}}
+\newcommand{\bcup}[1]{\bigcup\limits_{#1}}
+\newcommand{\bcap}[1]{\bigcap\limits_{#1}}
+\newcommand{\m}{\cdot}
+\newcommand{\ver}[2]{#1\hspace{0.05cm}\vert\hspace{0.03cm}#2}
+\newcommand{\mgd}[2]{\left\{#1 \hspace{0.1cm}\left|\hspace{0.1cm}#2\right.\right\}}
+\newcommand{\ls}{\limsup\limits_{n\rightarrow\infty}}
+\newcommand{\li}{\liminf\limits_{n\rightarrow\infty}}
+\newcommand{\Part}[2]{\frac{\partial{#1}}{\partial{#2}}}
+\newcommand{\Int}[4][x]{\int_{#2}^{#3} #4 \hspace{0.05cm}\mathrm{d} #1}
+\newcommand{\myeq}[2][=]{\mathrel{\overset{\makebox[0pt]{\mbox{\normalfont\tiny\sffamily $#2$}}}{#1}}}
+\newcommand{\Myeq}[2][\leq]{\mathrel{\overset{\makebox[0pt]{\mbox{\normalfont\tiny\sffamily $#2$}}}{#1}}} 
+\newcommand{\mb}[1]{\mathbb{#1}}
+\newcommand{\mc}[1]{\mathcal{#1}}
+\newcommand{\ms}[1]{\mathscr{#1}}
+\newcommand{\as}{\myeq[\rightarrow]{as}}
+\newcommand{\As}{\myeq[\sim]{as}}
+\newcommand{\wk}{\myeq[\rightarrow]{wk}}
+\newcommand{\Pkonv}{\myeq[\rightarrow]{P}}
+\newcommand{\Dkonv}{\myeq[\rightarrow]{D}}
+\newcommand{\Lkonv}[1][1]{\myeq[\rightarrow]{\mc{L}^{#1}}}
+\newcommand{\inte}[3]{\int_{#1} #2 \hspace{0.05cm}\mathrm{d}{#3}}
+\newcommand{\Norm}[1]{\left\lVert#1\right\rVert}
+\newcommand{\norm}[1]{\left\lvert#1\right\rvert}
+\newcommand{\Sum}[2]{\sum\limits_{#1}^{#2}}
+\newtheorem{definition}{Definition}
+\newtheorem{assumption}{Assumption}
+\newtheorem{proposition}{Proposition}
+\renewcommand{\baselinestretch}{1.5}
+
+% ----------------------------------------- fancy page style  ----------------------------------------- %
+% Set up the fancy page style
+\fancypagestyle{main}{
+    \fancyhf{} % Clear header and footer
+    \renewcommand{\headrulewidth}{0.4pt} % Remove header rule
+    \fancyhead[R]{\leftmark} % Place section name in the center of the header
+    \fancyfoot[C]{\thepage} % Page number in the center of the footer
+}
+
+\pagestyle{main} % Activate the page style
+
+% -------------------------------------------- document  -------------------------------------------- %
+\title{}
+\author{}
+\makeatletter
+\providecommand*{\cupdot}{%
+  \mathbin{%
+    \mathpalette\@cupdot{}%
+  }%
+}
+\newcommand*{\@cupdot}[2]{%
+  \ooalign{%
+    $\m@th#1\bigcup$\cr
+    \hidewidth$\m@th#1\cdot$\hidewidth}%
+}
+\makeatother
+
+
+
+\begin{document}
+% -------------------------------------------- import files  -------------------------------------------- %
+% import the front page
+\includepdf[pages=-]{/Users/nannaingemannohrt/Desktop/master_thesis/frontpage/frontpage_setup.pdf} 
+
+% import the abstract
+\pagenumbering{gobble}
+\input{/Users/nannaingemannohrt/Desktop/master_thesis/latex/abstract.tex}
+\newpage
+
+% make table of contents
+\tableofcontents 
+
+\newpage
+\pagenumbering{arabic}
+\input{/Users/nannaingemannohrt/Desktop/master_thesis/latex/introduction.tex}
+\newpage  
+
+\input{/Users/nannaingemannohrt/Desktop/master_thesis/latex/swaptions_as_a_missing_link_in_asset_allocation.tex}
+\newpage
+\input{/Users/nannaingemannohrt/Desktop/master_thesis/latex/mathematics_of_pricing_swaptions.tex} 
+\newpage
+\input{/Users/nannaingemannohrt/Desktop/master_thesis/latex/sabr_implied_volatility_and_option_prices.tex}
+\newpage
+\input{/Users/nannaingemannohrt/Desktop/master_thesis/latex/data_and_the_volatility_risk_premium.tex}
+
+\newpage
+\input{/Users/nannaingemannohrt/Desktop/master_thesis/latex/bibliography.tex} 
+
+
+\end{document}
