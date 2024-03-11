@@ -320,7 +320,8 @@ The dynamics of the two assets is listed below
     dBt & = rB_t dt \\
     dS_t &= \mu S_tdt + \sigma S_t dW_t
 \end{align*}
-where the short rate, r, is  a deterministic constant,  $\mu$ and $\sigma$ is two constants. From \autoref{rnt}
+where the short rate, r, is  a deterministic constant,  $\mu$ and $\sigma$ is two constants. It is also assumed
+that the stock price process is lognormal distributed. From \autoref{rnt}
 (Risk Neutral Valuation) the formulas for determine the arbitrage free price is available. Finally the requirements
 for begin able to price a European option is satisfied, hence we have the Black-Scholes Formula below.
 \begin{proposition}
@@ -329,7 +330,7 @@ for begin able to price a European option is satisfied, hence we have the Black-
     \begin{align*}
         F(t,S_t) & =s N[d_1(t,s)] -e^{-r(T-t)}KN[d_2(t,s)]  
     \end{align*}
-    Here N is the cumulative distribution function for the N$[0,1]$ distribution and 
+    Here N is the cumulative distribution function for the N $[0,1]$ distribution and 
     \begin{align*}
         d_1(t,s) &= \frac{1}{\sigma \sqrt{T-t}} \Big[ \ln \Big(\frac{s}{K} \Big) +  \Big(r + \frac{1}{2} \sigma^2)(T-t)  \Big] \\
         d_2(t,s) &= d_1(t,s)-\sigma \sqrt{T-t}
