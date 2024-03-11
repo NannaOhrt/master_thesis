@@ -265,13 +265,12 @@ If we have that $T_0=0$ the formula for the swap rate, R, becomes
 \end{align*}
 \subsection{Options}
 In this section will introduce the framework of options in the over-the-counter-market. 
-The purpose of this section is to establish a pricing formula for European options, 
-but first options are introduced.
+The purpose of this section is to establish a pricing formula for European call options.
 The meaning of introducing pricing of options before introducing swaptions pricing, is that a swaption is  a 
-more complex contract. So the idea is to get the fundamental understanding of pricing derivatives in a more simple case.
+more complex derivative. So the idea is to get a fundamental understanding of pricing derivatives in a more simple case.
 \\\\
-First a comment on what the over-the-counter-market is, it is the market where many trades takes place. 
-In the over-the-counter-market private companies exchange trades, these companies are firms as banks, other 
+Firstly, let's clarify what the over-the-counter market (OTC) is. It is  a marketplace where numerous trades occur.
+In the OTC market private companies exchange trades, these companies are firms as banks, other 
 large financial institutions and funds managers \cite{Hull}. Then we have establish the market where 
 options is traded, so moving further we will look in to options contracts. 
 \\\\
@@ -279,10 +278,10 @@ A call options gives the holder the right to but the underlying asset at a fixed
 predetermined time to maturity, T. Where a put option gives the holder the right to sell the underlying asset at a fixed
 strike price, K, and a predetermined time to maturity, T. Options contracts come in various types, with the 
 most common being the European and American options, followed by Bermudan options. European options can only 
-be exercised at the maturity date, while American options can be exercised at any time up to the maturity date.
+be exercised at the maturity date, while American options can be exercised at any time point upon to the maturity date.
 Bermudan options allow exercise at specific predetermined time points.
 For the purpose of understanding the basics of options pricing, we will focus on the European option. 
-The contract functions, $\Phi$, for European call and put options are as follows:.
+The contract functions, $\Phi$, for European call and put options are as follows.
 \begin{align}
     \Phi(x)_{\text{call}} &=  \max[S-K,0] \label{call_function}\\ 
     \Phi(x)_{\text{put}} &= \max [K-S,0] \label{put_function}
@@ -291,7 +290,7 @@ where K is the strike price, S denotes the market price of the underlying asset 
 that the value of the contract function can not be negative, since in both cases the contract function is a 
 function there takes the maximum of the payoff and zero. So the holder maximum lost is the paid premium. 
 \subsubsection{Options pricing}
-The next question to be answered is what the "fair" price of these option, we will denote the price of
+The next question to be answered is what is the "fair" price of these option, we will denote the price of
 the option by $\Pi(t)$. Again to simplify we will consider
 the European call option moving forward. To determine the price of a European call potion, we wil use the 
 Black-Scholes formula. This requires a review of Risk Neutral Valuation and the Black-Scholes model.
@@ -321,11 +320,11 @@ The dynamics of the two assets is listed below
     dBt & = rB_t dt \\
     dS_t &= \mu S_tdt + \sigma S_t dW_t
 \end{align*}
-where the short rate, r, is  a deterministic constant,  $\mu$ and $\sigma$ is two constants. And from \autoref{rnt}
+where the short rate, r, is  a deterministic constant,  $\mu$ and $\sigma$ is two constants. From \autoref{rnt}
 (Risk Neutral Valuation) the formulas for determine the arbitrage free price is available. Finally the requirements
 for begin able to price a European option is satisfied, hence we have the Black-Scholes Formula below.
 \begin{proposition}
-    \textbf{(Black-Scholes Formula)} The price of a European call option with strike KK and time of maturity T 
+    \textbf{(Black-Scholes Formula)} The price of a European call option with strike K and time of maturity T 
     is given by the formula $\Pi$ = $F(t,S_t)$
     \begin{align*}
         F(t,S_t) & =s N[d_1(t,s)] -e^{-r(T-t)}KN[d_2(t,s)]  
