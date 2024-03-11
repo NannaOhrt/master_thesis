@@ -287,29 +287,24 @@ The contract functions, $\Phi$, for European call and put options are as follows
     \Phi(x)_{\text{call}} &=  \max[S-K,0] \label{call_function}\\ 
     \Phi(x)_{\text{put}} &= \max [K-S,0] \label{put_function}
 \end{align}
-where K is the strike price, which is a fixed price mentioned above. It is the price where the holder has the 
-right to buy or sell. S denotes the market price of the underlying asset \cite{Bjork}. From \autoref{call_function} and \autoref{put_function} we see
+where K is the strike price, S denotes the market price of the underlying asset \cite{Bjork}. From \autoref{call_function} and \autoref{put_function} we see
 that the value of the contract function can not be negative, since in both cases the contract function is a 
-function there takes the maximum of the payoff and zero. So when the holder buy's a type of an a European
-option, the maximum lost is the paid premium. 
+function there takes the maximum of the payoff and zero. So the holder maximum lost is the paid premium. 
 \\\\
-So now the contract function for the European call and put option has med introduced. The next question 
-to be answered is what the "fair" price of these option. To answer this, lets first set the framework for the 
-market. We will consider a market consisting of two assets, a risk free asset with price process, B, and a stock 
-with price process. S, where the two process is defined as below. 
-\begin{definition}
-    The price process B is the price of a risk free asset if it has the dynamics
+The next question to be answered is what the "fair" price of these option. Again to simplify we will consider
+the European call option moving forward. To determine the price of a European call potion, we wil use the 
+Black-Scholes formula. 
+\begin{proposition}
+    \textbf{Black-Scholes Formula} The price of a European call option with strike KK and time of maturity T 
+    is given by the formula 
     \begin{align*}
-        dB_t = r_tB_tdt
+        \Pi(t)_\text{call}  & =s N[d_1(t,s)] -e^{-r(T-t)}KN[d_2(t,s)]\\  
     \end{align*}
-    where r is any adapted process and is the short interest rate \cite{Bjork}
-\end{definition}
-\begin{definition}
-    We assume the the stock price S is given by 
+    Here N is the cumulative distribution function for the N$[0,1]$ distribution and 
     \begin{align*}
-        dS_t = S_t \mu(t,S_t)dt + S_t\sigma(t,S_t)dW_t
+        d_1(t,s) &= \frac{1}{\sigma \sqrt{T-t}} \Big[ \ln \Big(\frac{s}{K} \Big) +  \Big(r + \frac{1}{2} \sigma^2)(T-t)  \Big] \\
+        d_2(t,s) &= d_1(t,s)-\sigma \sqrt{T-t}
     \end{align*}
-    where W is a Wiener process and $\mu$ and $\sigma$ are given deterministic functions \cite{Bjork}
-\end{definition}
+\end{proposition}
 
 \subsection{Swaptions}
