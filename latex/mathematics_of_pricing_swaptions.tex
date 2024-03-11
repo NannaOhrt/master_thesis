@@ -267,37 +267,33 @@ If we have that $T_0=0$ the formula for the swap rate, R, becomes
 In this section will introduce the framework of options in the over-the-counter-market. 
 The purpose of this section is to establish a pricing formula for European options, 
 but first options are introduced.
-The meaning of introducing pricing of options before introducing swaptions pricing, is that a swaption a 
-more complex contract. So the idea is to get the fund understanding of pricing derivatives in a more simple case.
+The meaning of introducing pricing of options before introducing swaptions pricing, is that a swaption is  a 
+more complex contract. So the idea is to get the fundamental understanding of pricing derivatives in a more simple case.
 \\\\
 First a comment on what the over-the-counter-market is, it is the market where many trades takes place. 
 In the over-the-counter-market private companies exchange trades, these companies are firms as banks, other 
-large financial institutions and fund managers \cite{Hull}. Then we have establish the market where 
-options is traded.
-Moving further we will look in to options contracts. 
+large financial institutions and funds managers \cite{Hull}. Then we have establish the market where 
+options is traded, so moving further we will look in to options contracts. 
 \\\\
-The first thing there is important to noticed is that a options contract gives the holder the right to 
-buy or sell the option, but the holder is not obligated to exercise the option. 
-A call options gives the holder the right to but the underlying asses at a fixed strike price, K, and a 
-predetermined time to maturity, T. Where a put option gives the holder the right to sell the underlying assets at a fixed
-strike price, K, and a predetermined time to maturity, T. The contract of option vary widely, the most common
-type of options is European and American option, followed by the Bermudan options. A European option can only be
-exercised at maturity, where the American option can be exercised at an type until maturity. And the Bermudan 
-option can be exercise at a finite number predetermined time points. Moving further we will only consider The
-European option, since the purpose is understand the fundamental thing of options pricing. So first we will consider
-the contract function for the European call and put option. In this section $\Phi$ will denoted the contract function.
-Below the contract functions for the European call and put option is listed \cite{Bjork}.
+A call options gives the holder the right to but the underlying asset at a fixed strike price, K, and a 
+predetermined time to maturity, T. Where a put option gives the holder the right to sell the underlying asset at a fixed
+strike price, K, and a predetermined time to maturity, T. Options contracts come in various types, with the 
+most common being the European and American options, followed by Bermudan options. European options can only 
+be exercised at the maturity date, while American options can be exercised at any time up to the maturity date.
+Bermudan options allow exercise at specific predetermined time points.
+For the purpose of understanding the basics of options pricing, we will focus on the European option. 
+The contract functions, $\Phi$, for European call and put options are as follows:.
 \begin{align}
-    \Phi(x)_{\text{call}} &=  \max[S-K,0]\\ \label{call_function}
-    \Phi(x)_{\text{put}} &= \max [K-S,0]\\ \label{put_function}
+    \Phi(x)_{\text{call}} &=  \max[S-K,0] \label{call_function}\\ 
+    \Phi(x)_{\text{put}} &= \max [K-S,0] \label{put_function}
 \end{align}
 where K is the strike price, which is a fixed price mentioned above. It is the price where the holder has the 
-right to buy or sell. S denotes the market price of the underlying asset. From \autoref{call_function} and \autoref{put_function} we see
+right to buy or sell. S denotes the market price of the underlying asset \cite{Bjork}. From \autoref{call_function} and \autoref{put_function} we see
 that the value of the contract function can not be negative, since in both cases the contract function is a 
 function there takes the maximum of the payoff and zero. So when the holder buy's a type of an a European
 option, the maximum lost is the paid premium. 
 \\\\
-So now the contract function fot the European call and put option has med introduced. The next question 
+So now the contract function for the European call and put option has med introduced. The next question 
 to be answered is what the "fair" price of these option. To answer this, lets first set the framework for the 
 market. We will consider a market consisting of two assets, a risk free asset with price process, B, and a stock 
 with price process. S, where the two process is defined as below. 
