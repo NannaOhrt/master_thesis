@@ -290,15 +290,41 @@ The contract functions, $\Phi$, for European call and put options are as follows
 where K is the strike price, S denotes the market price of the underlying asset \cite{Bjork}. From \autoref{call_function} and \autoref{put_function} we see
 that the value of the contract function can not be negative, since in both cases the contract function is a 
 function there takes the maximum of the payoff and zero. So the holder maximum lost is the paid premium. 
-\\\\
-The next question to be answered is what the "fair" price of these option. Again to simplify we will consider
+\subsubsection{Options pricing}
+The next question to be answered is what the "fair" price of these option, we will denote the price of
+the option by $\Pi(t)$. Again to simplify we will consider
 the European call option moving forward. To determine the price of a European call potion, we wil use the 
-Black-Scholes formula. 
-\begin{proposition}
-    \textbf{Black-Scholes Formula} The price of a European call option with strike KK and time of maturity T 
-    is given by the formula 
+Black-Scholes formula. This requires a review of Risk Neutral Valuation and the Black-Scholes model.
+\\\\
+Risk Neutral Valuation determine the value of an asset by discounting the expected values of the assets future 
+pay-offs at the risk-free rate of return, this formalized in \autoref{rnt} below
+\begin{theorem}
+    \textbf{(Risk Neutral Valuation)} The arbitrage free price of the claim $\Phi(S_t)$ is given by \\
+    $\Pi(t)[\Phi]$=$F(t,S_t)$, where F is given by the formula 
     \begin{align*}
-        \Pi(t)_\text{call}  & =s N[d_1(t,s)] -e^{-r(T-t)}KN[d_2(t,s)]\\  
+        F(t,s) &= -e^{-r(T-t)} \EE_{t,s}^{\QQ} \Big[\Phi(S_T)\Big]
+    \end{align*}
+    where the Q-dynamics os S is
+    \begin{align*}
+        dS_t = r S_t dt + S_t \sigma(t,S_t) dW^{\QQ}
+    \end{align*}
+    and $W^{\QQ}$ is a $\QQ$-Wiener process \cite{Bjork}
+    \label{rnt}
+\end{theorem}
+\noindent 
+Then we have introduced Risk Neutral Valuation, hence there only thing left before we are able to price a 
+European call option, is to establish the model the price in found under. In this case it is the Black-Scholes model.
+It consists of two asses, a risk free asset with price process, B, and a stock price with price process, S.
+The dynamics of the two assets is listed below
+\begin{align*}
+    dBt & = rB_t dt \\
+    dS_t &= \mu S_tdt + \sigma S_t dW_t
+\end{align*}
+\begin{proposition}
+    \textbf{(Black-Scholes Formula)} The price of a European call option with strike KK and time of maturity T 
+    is given by the formula $\Pi$ = $F(t,S_t)$
+    \begin{align*}
+        F(t,S_t) & =s N[d_1(t,s)] -e^{-r(T-t)}KN[d_2(t,s)]\\  
     \end{align*}
     Here N is the cumulative distribution function for the N$[0,1]$ distribution and 
     \begin{align*}
