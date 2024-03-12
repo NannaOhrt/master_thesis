@@ -309,8 +309,7 @@ pay-offs at the risk-free rate of return, this formalized in \autoref{rnt} below
     \end{align*}
     where the Q-dynamics os S is
     \begin{align*}
-        dS_t & = r S_t dt + S_t \sigma(t,S_t) dW^{\QQ} \\
-        S_0 & = s 
+        dS_t & = r S_t dt + S_t \sigma(t,S_t) dW^{\QQ} 
     \end{align*}
     and $W^{\QQ}$ is a $\QQ$-Wiener process \cite{Bjork}
     \label{rnt}
@@ -345,3 +344,25 @@ for begin able to price a European option is satisfied, hence we have the Black-
 Now that we have establish a foundational understanding of interest rates, bonds, swaps and options, we can
 now go deeper into swaptions. First we will explain what constitutes a swaption and the we will continuing 
 to develop the framework of pricing a swaption, build on the knowledge we have established.  
+\\\\
+A swaption is a financial derivative that can be describes as an option to exchange a fixed-rate bond for the principal
+amount. 
+There are two types of swaptions: payer swaptions and receiver swaptions.
+A payer swaption gives the holder the right to pay a fixed interest rate and receive a floating rate, 
+similar to a call option in the stock market. On the other hand, a receiver swaption allows the holder
+to pay a floating interest rate and receive a fixed rate, resembling a put option \cite{Lindstrom} .
+
+
+\subsubsection{Swaption prcing}
+Swaptions pricing purpose is to calculating the present value of expected payments from the swap contract,
+should the option be exercised. The pricing model must take various factor into account, such as the
+volatility of interest rates, the term structure of interest rates, and the time value of money. 
+To price swaptions, the Black model will be used, which is an extension of the Black Scholes
+model for equity options. The choice of using for pricing swaption is commonly used, especially when
+is purpose is the price European swaption. Likewise for swap, there is also different type of swaption. 
+Again European options can only be exercised at the maturity date, while American options can be exercised
+at any time point upon to the maturity date. Moving forward we will only consider European swaptions. 
+The Black model assumes that the underlying swap rate follows a lognormal distribution and uses a 
+risk neutral valuation approach. These concept has ben reviewed earlier hence we can the move on to 
+the formula for pricing swaptions.
+
