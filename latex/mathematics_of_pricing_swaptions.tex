@@ -359,10 +359,29 @@ should the option be exercised. The pricing model must take various factor into 
 volatility of interest rates, the term structure of interest rates, and the time value of money. 
 To price swaptions, the Black model will be used, which is an extension of the Black Scholes
 model for equity options. The choice of using for pricing swaption is commonly used, especially when
-is purpose is the price European swaption. Likewise for swap, there is also different type of swaption. 
+is purpose is the price European swaption. Likewise for swaps, there is also different type of swaption. 
 Again European options can only be exercised at the maturity date, while American options can be exercised
 at any time point upon to the maturity date. Moving forward we will only consider European swaptions. 
 The Black model assumes that the underlying swap rate follows a lognormal distribution and uses a 
 risk neutral valuation approach. These concept has ben reviewed earlier hence we can the move on to 
 the formula for pricing swaptions.
-
+\\\\
+First we consider a swaption there is settled such that the holder has the right to pay a fixed rate, $S_K$
+and receive a floating rate on the swap that will expire in n year starting on T years.
+So case we are look at is a European payer swaption. Further we will assume that there are m payments 
+per year under the swaption and we will let  the national principal be denoted by L. These m payments we 
+be assumed that each fixed payment on the swap is the fixed rate time L/m. Next we suppose that 
+the given swap rate for an n-year swap staring a time T, is denoted by $S_t$. 
+From the from knowledge on swap we formulate the payoff of the swaption, which is listed in
+\autoref{swaptionspay}
+\begin{align}
+    \frac{L}{M} \max \Big( S_T - S_K, 0 \Big)
+    \label{swaptionspay}
+\end{align}
+Where we note that the cashflow generated from the payoff function of the swaption, is reviewed m times 
+a year. The most commonly frequency payments is semi-annually and annually. These payments at m times
+of a year, is paid a throughout the life of the swap. The payment of the swap, have the following 
+payments dates 
+\begin{align*}
+    T_1,T_2,...,T_{mn}
+\end{align*}
