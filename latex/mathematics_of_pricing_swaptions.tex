@@ -346,9 +346,9 @@ Now that we have establish a foundational understanding of interest rates, bonds
 now go deeper into swaptions. First we will explain what constitutes a swaption and the we will continuing 
 to develop the framework of pricing a swaption, build on the knowledge we have established.  
 \\\\
-A swaption is a financial derivative that can be describes as an option to exchange a fixed-rate bond for the principal
-amount. 
-There are two types of swaptions: payer swaptions and receiver swaptions.
+A swaption is a financial derivative that can be describes as an option to exchange a fixed rate bond for
+floating rate bonds for a predetermined principal. 
+There are two types of swaptions, payer swaptions and receiver swaptions.
 A payer swaption gives the holder the right to pay a fixed interest rate and receive a floating rate, 
 similar to a call option in the stock market. On the other hand, a receiver swaption allows the holder
 to pay a floating interest rate and receive a fixed rate, resembling a put option \cite{Lindstrom} .
@@ -359,57 +359,56 @@ Swaptions pricing purpose is to calculating the present value of expected paymen
 should the option be exercised. The pricing model must take various factor into account, such as the
 volatility of interest rates, the term structure of interest rates, and the time value of money. 
 To price swaptions, the Black model will be used, which is an extension of the Black Scholes
-model for equity options. The choice of using for pricing swaption is commonly used, especially when
-is purpose is the price European swaption. Likewise for swaps, there is also different type of swaption. 
+model for equity options. The choice of using the Black model for pricing swaption is commonly used, especially when
+is purpose is the price European swaption. Likewise for swaps, there is also different type of swaptions. 
 Again European options can only be exercised at the maturity date, while American options can be exercised
 at any time point upon to the maturity date. Moving forward we will only consider European swaptions. 
 The Black model assumes that the underlying swap rate follows a lognormal distribution and uses a 
-risk neutral valuation approach. These concept has ben reviewed earlier hence we can the move on to 
-the formula for pricing swaptions.
+risk neutral valuation approach. These concept has ben reviewed earlier, hence we can the move on to 
+formulating pricing swaptions.
 \\\\
-First we consider a swaption there is settled such that the holder has the right to pay a fixed rate, $S_K$
-and receive a floating rate on the swap that will expire in n year starting on T years.
+First we consider a swaption there is settled such that the holder has the right to pay a fixed rate, $S_K$, 
+and receive a floating rate on the swap that will expire in n year starting in T years.
 Further we will assume that there are m payments 
 per year under the swaption and we will let  the national principal be denoted by L. These m payments we 
-be assumed that each fixed payment on the swap is the fixed rate time L/m. Next we suppose that 
+be assumed that each fixed payment on the swap is the fixed rate times L/m. Next we suppose that 
 the given swap rate for an n-year swap staring a time T, is denoted by $S_T$. 
 From the from knowledge on swap we formulate the payoff of the swaption, which is listed in
-\autoref{swaptionspay}
+\autoref{swaptionspay} below
 \begin{align}
     \frac{L}{M} \max \Big( S_T - S_K, 0 \Big)
     \label{swaptionspay}
 \end{align}
 We note that the cashflow generated from the payoff function of the swaption, is reviewed m times 
 a year. The most commonly frequency payments is semi-annually and annually. These payments at m times
-of a year, is paid a throughout the life of the swap. The payment of the swap, have the following 
+of a year, is paid throughout the life of the swap. The payment of the swap, have the following 
 payments dates 
 \begin{align*}
     T_1,T_2,...,T_{mn}
 \end{align*}
-Let be reminded that a swaption is a option on the swap rate, which is the one there generated the payoffs.
-Then we formulated the price of the payer swaption, this is illustrated below
+Let us be reminded that a swaption is a option on the swap rate, which is the one there generated the payoffs.
+Then we formulated the price of the payer swaption as \cite{Hull}
 \begin{align*}
-    \sum_{i=1}^{mn} \frac{L}{m} B(0,T_i)\Big[ S_F N(d_1) - S_K N(d_2)\Big] \quad \text{for} \quad T_i= T+i/m  
+    \Pi(t)_{\text{Payer swaption}} = \sum_{i=1}^{mn} \frac{L}{m} B(0,T_i)\Big[ S_F N(d_1) - S_K N(d_2)\Big] \quad \text{for} \quad T_i= T+i/m  
 \end{align*}
 where
-\begin{align}
-    d_1 & = \frac{1}{\sigma \sqrt{T}} \Big[ \ln(\frac{S_F}{S_k})+\sigma^2(\frac{T}{2})\Big] \\
+\begin{align*}
+    d_1 & = \frac{1}{\sigma \sqrt{T}} \Big[ \ln \Big(\frac{S_F}{S_k}\Big)+\sigma^2\Big(\frac{T}{2}\Big)\Big] \\
     d_2 & = d_1-\sigma \sqrt{T}
-\end{align}
-Where N is the cumulative distribution for the $N [0,1]$ distribution, $S_F$ is the forward swap rate time
-zero, $\sigma$ is the volatility og the forward swap rate. The term $\sum_{i=1}^{mn} \frac{L}{m} B(0,T_i)$ 
+\end{align*}
+Where N is the cumulative distribution for the $N [0,1]$ distribution, $S_F$ is the forward swap rate a time
+zero, $\sigma$ is the volatility of the forward swap rate. The term $\sum_{i=1}^{mn} \frac{L}{m} B(0,T_i)$ 
 is the discount factor for the mn payoffs. To simplify we define A as the values of the contract that
 pays $1/m$ at times $T_i ( 1\leq i \leq mn)$ a in \autoref{a_simple}
 \begin{align}
     A= \frac{1}{m} \sum_{i=1}^{mn} B(0,T_i)
     \label{a_simple}
 \end{align}
-Hence we have that the value of the swaption can be expressed as in \autoref{value_swaption}
-\begin{align}
+Hence we have that the value of the swaption can be expressed as 
+\begin{align*}
     L N \Big[S_F N(d_1) - S_K N(d_2) \Big]
-    \label{value_swaption}
-\end{align}
-Which leads to that the case we looked at where the contract of the swaption was made such that the 
+\end{align*}
+Which leads to that the case we looked at, where the contract of the swaption was made such that the 
 holder has the right to receive a fixed rate of $S_K$ instead of paying it. It also lead to that
 the payoff of the swaption is listed in \autoref{payoff_swaption} below. We note that the payoff 
 is a payoff function of a put option on $S_T$. 
@@ -417,4 +416,12 @@ is a payoff function of a put option on $S_T$.
     \frac{L}{M} \max \Big( S_K - S_T, 0 \Big)
     \label{payoff_swaption}
 \end{align}
-Finally we can end this section 
+Finally we can end this section with the value of a swaption in a standard market model \cite{Hull}.
+\begin{align*}
+    L A \Big[S_K N(-d_2) - S_F N(-d_1)\Big]
+\end{align*}
+\\\\
+To summarize the mathematics of pricing a swaption, which include introducing interest rates, 
+bonds, swaps and option has reviewed. It is important to remember which choice was made along the way,
+because the price of the swaption depends on the choice of the model. But know the simple case has been 
+introduced, so we can move forward with the analysis. 
