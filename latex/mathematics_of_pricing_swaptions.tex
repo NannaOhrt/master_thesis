@@ -250,13 +250,14 @@ Moving forward we simplify \autoref{valueirs} in the below Proposition \ref{simp
 \noindent 
 Earlier we left behind a discussion of how the swap rate, R,  is determined. 
 It was noted that the swap is determined such that the present value of
-the swap is equal to zero. Now we will give a more accurate of how swap is determined.
+the swap is equal to zero. Now we will give a more accurate definition of how swap is determined in Proposition \ref{swaprate1}.
 \begin{proposition}
     If, by convention, we assume that the the contract is written at $t=0$, 
     the swap rate is given by \cite{Bjork}
     \begin{align*}
         R = \frac{p(0,T_0)-p(0,T_n)}{\delta \sum_{i=1}^{n}p(t,T_i)}
-    \end{align*}
+    \end{align*} 
+    \label{swaprate1}
 \end{proposition}
 \noindent 
 If we have that $T_0=0$ the formula for the swap rate, R, becomes
@@ -289,6 +290,9 @@ The contract functions, $\Phi$, for European call and put options are as follows
 where K is the strike price, S denotes the market price of the underlying asset \cite{Bjork}. From \autoref{call_function} and \autoref{put_function} we see
 that the value of the contract function can not be negative, since in both cases the contract function is a 
 function there takes the maximum of the payoff and zero. So the holder maximum lost is the paid premium. 
+We 
+\subsubsection{Risk-neutral measure}
+MISSING
 \subsubsection{Options pricing}
 The next question to be answered is what is the "fair" price of these option, we will denote the price of
 the option by $\Pi(t)$. Again to simplify we will consider
