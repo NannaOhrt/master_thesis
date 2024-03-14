@@ -290,9 +290,53 @@ The contract functions, $\Phi$, for European call and put options are as follows
 where K is the strike price, S denotes the market price of the underlying asset \cite{Bjork}. From \autoref{call_function} and \autoref{put_function} we see
 that the value of the contract function can not be negative, since in both cases the contract function is a 
 function there takes the maximum of the payoff and zero. So the holder maximum lost is the paid premium. 
-We 
-\subsubsection{Risk-neutral measure}
-MISSING
+\subsubsection{Risk neutral measure}
+Before options pricing will de covered, a brief introduction to the risk neutral measure will be covered.
+When options is priced the value of the options is calculated by discounting 
+the options expected payoff at time T under the risk neutral measure $\QQ$. 
+The value of the options is calculated under the risk neutral measure $\QQ$ also know as the pricing measure, 
+since if price was calculated under the $\PP$-measure it could lead to inconsistent prices. 
+Under the risk neutral measure, the probabilities are shifted, such that arbitrage opportunities. This lead to 
+the First Fundamental Theorem of Asset Pricing, to develop this theorem we consider the concept of martingales. 
+A stochastic process $X_t$ is a $\QQ$-martingale, if the process has no drift term (dt-term). Which is satisfied if it holds that
+$\EE_{t}^{\QQ}\Big[X_T\Big] = X_t$ for all $t<T$. Next we will consider a price process $X_t$ with the following dynamic.
+\begin{align}
+    d X_t = r_t X_t dt + \sigma X_t d W_{t}^{\QQ}
+    \label{price_process}
+\end{align}
+where $W_{t}^{\QQ}$ is $\QQ$-Wiener process and  $r_t$ is the process for the risk free interest rate. $r_t$ can be looked at the locally risk-free rate return 
+from a continuously compounded bank account $B(t)= \text{exp} \Big[\int_{0}^{t}r(s)ds \Big]$.
+Where the bank account has the following dynamic
+\begin{align*}
+    dB(t) &= r(t)B(t) dt \\
+    B(0) & = 1
+\end{align*}
+If we look at \autoref{price_process} we see there is a dt-term present, so it is not a martingale.
+But if we discount the price process, this will be a martingale do to the martingale property below
+\begin{proposition}
+    (\textbf{The Martingale Property}) In the Black-Scholes model, the price process $\Pi_t$
+    for every traded asset, be it the underlying or derivative asset, has the property that the normalized price process
+    \begin{align*}
+        Z_t = \frac{\Pi_t}{B_T}
+    \end{align*}
+    is a martingale under the measure $\QQ$ \cite{Bjork}
+\end{proposition}
+\noindent 
+This lead os to the First Fundamental Theorem of Asset Pricing in \autoref{frist_theorem_of_asset_pricing}.
+\begin{theorem}
+    (\textbf{First Fundamental Theorem of Asset Pricing})
+    Given a time horizon, a risky asset with price process $X_t$ and a
+    risk-free asses with price process $B_t$, the market is arbitrage free 
+    (under the probability measure $\PP$) if and only if there exists an 
+    equivalent probability measure $\QQ$ such that the discounted price process
+    \begin{align*}
+        \frac{X_t}{B_t}
+    \end{align*}
+    is a $\QQ$- martingale \cite{Bjork}
+    \label{frist_theorem_of_asset_pricing}
+\end{theorem}
+\noindent 
+Have establish the First Fundamental Theorem of Asset Pricing we are then ready to look in to pricing options.
 \subsubsection{Options pricing}
 The next question to be answered is what is the "fair" price of these option, we will denote the price of
 the option by $\Pi(t)$. Again to simplify we will consider
@@ -389,7 +433,7 @@ payments dates
 Let us be reminded that a swaption is a option on the swap rate, which is the one there generated the payoffs.
 Then we formulated the price of the payer swaption as \cite{Hull}
 \begin{align*}
-    \Pi(t)_{\text{Payer swaption}} = \sum_{i=1}^{mn} \frac{L}{m} B(0,T_i)\Big[ S_F N(d_1) - S_K N(d_2)\Big] \quad \text{for} \quad T_i= T+i/m  
+    \Pi(t)_{\text{Payer swaption}} = \sum_{i=1}^{mn} \frac{L}{m} p(0,T_i)\Big[ S_F N(d_1) - S_K N(d_2)\Big] \quad \text{for} \quad T_i= T+i/m  
 \end{align*}
 where
 \begin{align*}
@@ -397,11 +441,11 @@ where
     d_2 & = d_1-\sigma \sqrt{T}
 \end{align*}
 Where N is the cumulative distribution for the $N [0,1]$ distribution, $S_F$ is the forward swap rate a time
-zero, $\sigma$ is the volatility of the forward swap rate. The term $\sum_{i=1}^{mn} \frac{L}{m} B(0,T_i)$ 
+zero, $\sigma$ is the volatility of the forward swap rate. The term $\sum_{i=1}^{mn} \frac{L}{m} p(0,T_i)$ 
 is the discount factor for the mn payoffs. To simplify we define A as the values of the contract that
 pays $1/m$ at times $T_i ( 1\leq i \leq mn)$ a in \autoref{a_simple}
 \begin{align}
-    A= \frac{1}{m} \sum_{i=1}^{mn} B(0,T_i)
+    A= \frac{1}{m} \sum_{i=1}^{mn} p(0,T_i)
     \label{a_simple}
 \end{align}
 Hence we have that the value of the swaption can be expressed as 
