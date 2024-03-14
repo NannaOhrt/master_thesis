@@ -291,12 +291,12 @@ where K is the strike price, S denotes the market price of the underlying asset 
 that the value of the contract function can not be negative, since in both cases the contract function is a 
 function there takes the maximum of the payoff and zero. So the holder maximum lost is the paid premium. 
 \subsubsection{Risk neutral measure}
-Before options pricing will de covered, a brief introduction to the risk neutral measure will be covered.
+Before options pricing a brief introduction to the risk neutral measure will be covered.
 When options is priced the value of the options is calculated by discounting 
 the options expected payoff at time T under the risk neutral measure $\QQ$. 
 The value of the options is calculated under the risk neutral measure $\QQ$ also know as the pricing measure, 
-since if price was calculated under the $\PP$-measure it could lead to inconsistent prices. 
-Under the risk neutral measure, the probabilities are shifted, such that arbitrage opportunities. This lead to 
+since if price was calculated under the $\PP$-measure it could lead to inconsistent prices, hence arbitrage opportunities. 
+Under the risk neutral measure, the probabilities are shifted, such that arbitrage opportunities is not present. This lead to 
 the First Fundamental Theorem of Asset Pricing, to develop this theorem we consider the concept of martingales. 
 A stochastic process $X_t$ is a $\QQ$-martingale, if the process has no drift term (dt-term). Which is satisfied if it holds that
 $\EE_{t}^{\QQ}\Big[X_T\Big] = X_t$ for all $t<T$. Next we will consider a price process $X_t$ with the following dynamic.
