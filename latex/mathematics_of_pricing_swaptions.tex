@@ -182,17 +182,6 @@ This lead to a formula for the floating rate bond, which is listed below \cite{B
     p(t)= p(t,T_n) + \sum_{i=1}^{n}\Big[p(t,T_{i-1})-p(t,T_i)\Big] = p(t,T_0)
 \end{align*}
 where we note that if $t=T_0$ we get that $p(T_0)=1$
-\\\\
-This leads to some general assumption there guarantee the existence of a sufficiently 
-rich and regular bond market
-\begin{assumption}\label{def:market}
-    We assume the following
-    \begin{itemize}
-        \item There exists a (frictionless) market for T-bond for every T>0
-        \item The relation p(t,t)= 1 holds for all t
-        \item For each fixed t, the bond price p(t,T) is differentiable w.r.t time of maturity T \cite{Bjork}
-    \end{itemize}
-\end{assumption}
 \subsection{Interest rate swaps}
 Now some simple cases of different type of bonds has be introduce. Then we will combined the knowledge we have gained to move on
 to take interest rate derivatives in consideration. Again we will consider the simplest type of a interest rate derivative, which is a
@@ -329,14 +318,13 @@ This lead os to the First Fundamental Theorem of Asset Pricing in \autoref{frist
     risk-free asses with price process $B_t$, the market is arbitrage free 
     (under the probability measure $\PP$) if and only if there exists an 
     equivalent probability measure $\QQ$ such that the discounted price process
-    \begin{align*}
-        \frac{X_t}{B_t}
-    \end{align*}
-    is a $\QQ$- martingale \cite{Bjork}
+    $\Big[\frac{X_t}{B_t}\Big]$  is a $\QQ$- martingale \cite{Bjork}
     \label{frist_theorem_of_asset_pricing}
 \end{theorem}
 \noindent 
-Have establish the First Fundamental Theorem of Asset Pricing we are then ready to look in to pricing options.
+Hence we have establish the First Fundamental Theorem of Asset Pricing. So to sum op in the order to be able to calculate
+option prices, the "fair" or arbitrage-free price, there must exist a risk neutral measure $\QQ$, such the the discount prices
+is a $\QQ$-martingale. 
 \subsubsection{Options pricing}
 The next question to be answered is what is the "fair" price of these option, we will denote the price of
 the option by $\Pi(t)$. Again to simplify we will consider
