@@ -47,12 +47,18 @@ while the forward rate refers to the anticipated interest rate in the
 future. The definition for determined spot rates as follows 
 below
 \begin{definition}\label{def:spot}
-    The simple spot rate for $[S,T]$, henceforth referred to as the 
+    The simple spot rate for $t<S<T$, henceforth referred to as the 
     LIBOR spot rate, is defined as \cite{Bjork} 
     \begin{align*}
         L(t;S,T) = - \frac{p(t,T)-p(t,S)}{(T-S)p(t,T)}
     \end{align*}
 \end{definition} 
+\noindent
+\\\\
+where $p(t,T)$ and $p(t,S)$ represent the price at time t of zero coupon bonds, that pay
+1 dollar at time T and S, respectively. Intuitively, the spot rate $L(t;S,T)$ is the 
+average rate of interest for borrowing or lending money over the time period from S to T, 
+where such borrowing or lending is made at time t. 
 \subsubsection{Forward rates}
 Forward rates play a crucial role in financial markets, particularly in the realm of interest rate analysis and 
 derivative pricing. They represent the interest rate applicable to a future period, agreed upon today.
@@ -284,10 +290,15 @@ function there takes the maximum of the payoff and zero. So the holder maximum l
 Before options pricing a brief introduction to the risk neutral measure will be covered.
 When options are priced the value of the options is calculated by discounting 
 the options expected payoff at time T under the risk neutral measure $\QQ$. 
-The value of the options is calculated under the risk neutral measure $\QQ$ also know as the pricing measure, 
-since if price was calculated under the $\PP$-measure it could lead to inconsistent prices, hence arbitrage opportunities. 
-Under the risk neutral measure, the probabilities are shifted, such that arbitrage opportunities is not present. This lead to 
-the First Fundamental Theorem of Asset Pricing, to develop this theorem we consider the concept of martingales. 
+\\\\
+The value of the options is calculated under the risk neutral measure $\QQ$ also know as the pricing measure, and 
+not under the actual measure $\PP$. The $\PP$- measure reflects th real world probabilities. If prices was determined 
+under $\PP$ is could lead to arbitrage opportunities, because it would reflect the actual risk preferences of
+investors, who demand different rates of return for different risks. Under the risk neutral measure $\QQ$  
+probabilities are shifted or adjusted in such way that the expected rate of return on assets becomes the risk-free rate. 
+This adjustment removes the risk premiums that are present in the actual probability measure $\PP$.
+This lead to the First Fundamental Theorem of Asset Pricing, to develop this theorem we consider 
+the concept of martingales. 
 A stochastic process $X_t$ is a $\QQ$-martingale, if the process has no drift term (dt-term). Which is satisfied if it holds that
 $\EE_{t}^{\QQ}\Big[X_T\Big] = X_t$ for all $t<T$. Next we will consider a price process $X_t$ with the following dynamic.
 \begin{align}
