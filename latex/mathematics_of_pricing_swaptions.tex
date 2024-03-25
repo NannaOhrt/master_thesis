@@ -32,26 +32,31 @@ have the common property of providing the owner with a deterministic (future) ca
     a bond with maturity date T is denoted by p$(t,T)$ \cite{Bjork} 
 \end{definition} 
 \noindent
-\begin{center}
+Before moving forward we will look at the cashflow for a zero coupon bond. The illustration in \autoref{zcb_fig} show that a time t,
+the principal payment is made a the price $P(t,T)$ and at maturity T the principal repaid. So the cash illustrated 
+what the price $P(t,T)$ of one dollar repaid at time T.  
+\begin{figure} 
+\centering
 \begin{tikzpicture}[font=\small]
     % Draw the horizontal line
     \draw[-latex] (5,0) -- (13,0) node[anchor=north] {Time};
 
     % Add the vertical lines 
     \draw (6,0.2) -- (6,-0.5) node[above] at (6.,0.3)  {t};
-    \draw (11.5,-0.2) -- (11.5,0.5) node[below] at (11.5,-0.3) {T (maturity)};
+    \draw (11.5,-0.2) -- (11.5,0.5) node[below] at (11.5,-0.3) {T (Maturity)};
 
     % Add the box 
-    \draw (11.75,1.5) rectangle (11.25,0.5) node[pos=.5, right=3mm] {Principal Part};
-    \draw (11.75,2.) rectangle (11.25,1.5) node[pos=.5, right=3mm] {Interest Part};
+    \draw (11.75,1.5) rectangle (11.25,0.5);
 
-    \draw (5.75,-1.5) rectangle (6.25,-0.5) node[below, pos=.01] {Principal Payment (K)};
+    \draw (5.75,-1.5) rectangle (6.25,-0.5) node[below, pos=.01] {Principal Payment};
     
 
     % Label the entire figure
-    \node at (8,3) {Cash Flow Structure of a Zero Coupon Bond};
+    \node at (11.5, 2.0) {Principal Repayment};
 \end{tikzpicture}
-\end{center}
+\caption{Cash Flow Structure of a Zero Coupon Bond}
+\label{zcb_fig}
+\end{figure}
 \subsection{The yield curve}
 Where the concept "time value of money" and the discount factor are fundamental concepts used to assess the present value of future
 cash flows, the yield curve provides insights into market expectations regarding future interest rates.
@@ -60,7 +65,34 @@ financial instruments. The yield curve is a graphical representation illustratin
 Yield curves provides information about future interest rates and gives insight in the bond market today. 
 The general intuition is that longer-term rates is higher than short-term rates, which in other words means that a
 larger premium is expected for lending money over a longer period of time. This case sketches a yield curve with a 
-positive slope.
+positive slope, this case is illustrated below.¢
+\begin{center}
+\begin{tikzpicture}
+    \begin{axis}[
+        xlabel=Maturity,
+        ylabel=Yield,
+        no marks,
+        axis lines=left, % Only show the left and bottom axis lines
+        enlargelimits=false,
+        clip=false,
+        ymin=0,
+        xmin=0,
+        every axis y label/.style={
+            at={(ticklabel* cs:1.05)},
+            anchor=south,
+        },
+        every axis x label/.style={
+            at={(ticklabel* cs:1.05)},
+            anchor=west,
+        },
+    ]
+    
+    % Plotting the yield curve
+    \addplot[domain=0:10, samples=100, thick] {x^(0.5)};
+    
+    \end{axis}
+\end{tikzpicture}
+\end{center}
 \subsection{Interest rates}
 \subsubsection{Spot rates}
 The spot rate represents the yield-to-maturity of a zero coupon bond,
