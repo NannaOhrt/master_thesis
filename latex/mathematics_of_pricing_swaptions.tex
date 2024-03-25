@@ -102,41 +102,6 @@ where $p(t,T)$ and $p(t,S)$ represent the price at time t of zero coupon bonds, 
 1 dollar at time T and S, respectively. Intuitively, the spot rate $L(t;S,T)$ is the 
 average rate of interest for borrowing or lending money over the time period from S to T, 
 where such borrowing or lending is made at time t. 
-\\\\
-\begin{center}
-    \begin{tikzpicture}
-        \begin{axis}[
-            xlabel={Time},
-            ylabel={Spot rate},
-            ymin=0, ymax=5,
-            xmin=0.5, xmax=4.5,
-            ytick={1,1.7,2.8,3.9},
-            yticklabels={$r_1$,$r_2$,$r_3$,$r_4$},
-            xtick={1,2,3,4},
-            xticklabels={1,2,3,4},
-            grid=both,
-            grid style={line width=.1pt, draw=gray!10},
-            major grid style={line width=.2pt,draw=gray!50},
-            axis lines=left,
-            minor tick num=1,
-            enlargelimits={abs=0.5},
-            axis line style={-latex},
-            ticklabel style={font=\small,fill=white},
-            every axis plot/.append style={thick},
-            xlabel style={at={(axis description cs:1,-0.02)},anchor=north},
-            ylabel style={at={(axis description cs:-0.13,0.3)},anchor=west},
-        ]
-        \addplot[smooth, tension=0.5] plot coordinates {
-            (0,0)
-            (1,1)
-            (2,1.7)
-            (3,2.8)
-            (4,3.9)
-            (5,4.1)
-        };
-        \end{axis}
-    \end{tikzpicture}
-    \end{center}
 \subsubsection{Forward rates}
 Forward rates play a crucial role in financial markets, particularly in the realm of interest rate analysis and 
 derivative pricing. They represent the interest rate applicable to a future period, agreed upon today.
@@ -166,6 +131,7 @@ formula for forward rates.
         R(t;S,T)= - \frac{\log p(t,T)- \log p(t,S)}{(T-S)} 
     \end{align*}
 \end{definition} 
+
 \subsection{Financial derivatives}
 \subsubsection{Bonds}
 A bond is a debt security, like a loan. Borrowers issue bonds to raise money 
