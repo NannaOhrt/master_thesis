@@ -31,6 +31,27 @@ have the common property of providing the owner with a deterministic (future) ca
     guarantees the holder one dollar to be paid at date T. The price at date t of 
     a bond with maturity date T is denoted by p$(t,T)$ \cite{Bjork} 
 \end{definition} 
+\noindent
+\begin{center}
+\begin{tikzpicture}[font=\small]
+    % Draw the horizontal line
+    \draw[-latex] (5,0) -- (13,0) node[anchor=north] {Time};
+
+    % Add the vertical lines 
+    \draw (6,0.2) -- (6,-0.5) node[above] at (6.,0.3)  {t};
+    \draw (11.5,-0.2) -- (11.5,0.5) node[below] at (11.5,-0.3) {T (maturity)};
+
+    % Add the box 
+    \draw (11.75,1.5) rectangle (11.25,0.5) node[pos=.5, right=3mm] {Principal Part};
+    \draw (11.75,2.) rectangle (11.25,1.5) node[pos=.5, right=3mm] {Interest Part};
+
+    \draw (5.75,-1.5) rectangle (6.25,-0.5) node[below, pos=.01] {Principal Payment (K)};
+    
+
+    % Label the entire figure
+    \node at (8,3) {Cash Flow Structure of a Zero Coupon Bond};
+\end{tikzpicture}
+\end{center}
 \subsection{The yield curve}
 Where the concept "time value of money" and the discount factor are fundamental concepts used to assess the present value of future
 cash flows, the yield curve provides insights into market expectations regarding future interest rates.
@@ -158,7 +179,7 @@ the coupon is reset for every coupon period. These types of bonds is referred to
 rate bonds. The most simple floating rate bond, is where the coupon rate $r_i$ is set to 
 the spot LIBOR rate $L(T_{i-1}, T_i)$. Thus we have that 
 \begin{align*}
-    c_i = (T_i-T_{i-1})L(T_{i-1},T_i)K
+    c_i = (T_i-T_{i-1})L(T_{i-1},T_i)K \quad \text{for} \quad i=1,...,n
 \end{align*}
 Here we have that $L(T_{i-1},T_i)$ is determined at time $T_{i-1}$, but the coupon is first 
 delivered at time $T_i$. \cite{Bjork}  
@@ -183,11 +204,17 @@ to obtain
         &= \delta L(T_{i-1},T_i) \\
         &= \frac{1- p(T_{i-1},T_i)}{\delta p(T_{i-1},T_i)} = \frac{1}{p(T_{i-1},T_i)}-1
 \end{align*}
-This lead to a formula for the floating rate bond, which is listed below \cite{Bjork}
+Then we have found the price of the LIBOR spot rate, where $\frac{1}{p(T_{i-1},T_i)}$ is zero coupon bonds prices. 
+So the next step is to determine the price for the floating rate bond. If we look at the $T_i$-payment of the floating rate bond, 
+it has the value of
 \begin{align*}
-    p(t)= p(t,T_n) + \sum_{i=1}^{n}\Big[p(t,T_{i-1})-p(t,T_i)\Big] = p(t,T_0)
+    P(t,T_{i-1})-P(t,T_i)
 \end{align*}
-where we note that if $t=T_0$ we get that $p(T_0)=1$
+If we then sum over all the i payments of the floating rate we obtain that the floating rate bond value is
+\begin{align*}
+    p(t)= p(t,T_n) + \sum_{i=1}^{n}\Big[p(t,T_{i-1})-p(t,T_i)\Big] = p(t,T_0) 
+\end{align*}
+where we note that if $t=T_0$ we get that $p(T_0)=1$ \cite{Bjork}.
 \subsection{Interest rate swaps}
 Now some simple cases of different types of bonds has be introduce. Then we will combine the knowledge we have gained to move on
 to take interest rate derivatives into consideration. Again we will consider the simplest type of a interest rate derivative, which is a
