@@ -35,20 +35,20 @@ have the common property of providing the owner with a deterministic (future) ca
 Before moving forward we will look at the cashflow for a zero coupon bond. The illustration below shows that a time t,
 the principal payment is made a the price $P(t,T)$ and at maturity T the principal is repaid.
 \begin{center}
-\begin{tikzpicture}[font=\small] 
-    % Draw the horizontal line
-    \draw[-latex] (5,0) -- (13,0) node[anchor=north] {Time};
-    % Add the vertical lines 
-    \draw (6,0.2) -- (6,-0.5) node[above] at (6.,0.3)  {t};
-    \draw (11.5,-0.2) -- (11.5,0.5) node[below] at (11.5,-0.3) {T};
-    % Add the box 
-    \draw (11.75,1.5) rectangle (11.25,0.5);
-    \draw (5.75,-1.5) rectangle (6.25,-0.5) node[below, pos=.01] {Principal Payment};
-    % Label the entire figure
-    \node at (8,3.2) {Cash Flow Structure of a Zero Coupon Bond};
-    \node at (11.5, 2.0) {Principal Repayment };
-\end{tikzpicture}
-\end{center}
+    \begin{tikzpicture}[font=\small] 
+        % Draw the horizontal line
+        \draw[-latex] (5,0) -- (13,0) node[anchor=north] {Time};
+        % Add the vertical lines 
+        \draw (6,0.2) -- (6,-0.5) node[above] at (6.,0.3)  {t};
+        \draw (11.5,-0.2) -- (11.5,0.5) node[below] at (11.5,-0.3) {T};
+        % Add the box 
+        \draw (11.75,1.5) rectangle (11.25,0.5);
+        \draw (5.75,-1.5) rectangle (6.25,-0.5) node[below, pos=.01] {Principal Payment};
+        % Label the entire figure
+        \node at (8,3.2) {Cash Flow Structure of a Zero Coupon Bond};
+        \node at (11.5, 2.0) {Principal Repayment };
+    \end{tikzpicture}
+    \end{center}
 \subsection{The yield curve}
 Where the concept "time value of money" and the discount factor are fundamental concepts used to assess the present value of future
 cash flows, the yield curve provides insights into market expectations regarding future interest rates.
@@ -79,7 +79,7 @@ positive slope, this case is illustrated below.
         },
     ]
     % Plotting the yield curve
-    \addplot[domain=0:10, samples=100, thick] {x^(0.41)};
+    \addplot[domain=0:10, samples=100, thick] {x^(0.5)};
     \end{axis}
 \end{tikzpicture}
 \end{center}
