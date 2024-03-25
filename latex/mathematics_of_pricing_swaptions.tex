@@ -131,6 +131,35 @@ formula for forward rates.
         R(t;S,T)= - \frac{\log p(t,T)- \log p(t,S)}{(T-S)} 
     \end{align*}
 \end{definition} 
+\noindent
+\\\\
+So now formulas for spot rate and forward rates has been determined. To illustrate the differences between 
+the two types of rate, a simple drawing below shows at which times the rates are determine. From the drawing
+we see that all the spot rates are determine a time $t=0$, where the forward rate are determine at each time point.
+\begin{center}
+\begin{tikzpicture}
+    % Draw the horizontal line with Time arrow
+    \draw[-Latex] (2,0) -- (10.5,0) node[anchor=north] {Time};
+    
+    % Draw the curves for r1, r2, r3
+    \draw[thick, -Latex] (3,0) to [out=60,in=120] node[above] {$r_1$} (5,0);
+    \draw[thick, -Latex] (5,0) to [out=60,in=120] node[above] {$r_2$} (7,0);
+    \draw[thick, -Latex] (7,0) to [out=60,in=120] node[above] {$r_3$} (9,0);
+    
+    % Draw the curves for l1, l2, l3
+    \draw[thick, -Latex] (3,0) to [out=-120,in=-60] node[below] {$l_1$} (5,0);
+    \draw[thick, -Latex] (3,0) to [out=-120,in=-60] node[below] {$l_2$} (7,0);
+    \draw[thick, -Latex] (3,0) to [out=-120,in=-60] node[below] {$l_3$} (9,0);
+    
+    % Draw the numbers
+    \node at (2.7, -0.2) {0};
+    \node at (4.7, -0.2) {1};
+    \node at (6.7, -0.2) {2};
+    \node at (8.7, -0.2) {3};
+    \node at (0.1,0.5) {Forward rates:};
+    \node at (0.1,-0.5) {Spot rates:};
+\end{tikzpicture}
+\end{center}
 \subsection{Financial derivatives}
 \subsubsection{Bonds}
 A bond is a debt security, like a loan. Borrowers issue bonds to raise money 
