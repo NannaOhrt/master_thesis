@@ -236,13 +236,11 @@ To end this section a drawing of the cashflow for a fixed coupon bond is illustr
         \draw (8.5,0) rectangle (8.25,1);
         \draw (9.5,0) rectangle (9.25,1);
         \draw (7.5,0) rectangle (7.25,1);
-
         % Label the entire figure
         \node at (11.5, 2.5) {Principal Repayment};
         \node at (13.,1) {Principal Part};
         \node at (13.,1.75) {Interest Part};
-        \node at (8.75, 1.5) {Periodic Interest payments};
-
+        \node at (8.5, 1.5) {Periodic Fixed Interest Payments};
 \end{tikzpicture}
 \end{center}
 
@@ -291,6 +289,28 @@ If we then sum over all the i payments of the floating rate we obtain that the f
     p(t)= p(t,T_n) + \sum_{i=1}^{n}\Big[p(t,T_{i-1})-p(t,T_i)\Big] = p(t,T_0) 
 \end{align*}
 where we note that if $t=T_0$ we get that $p(T_0)=1$ \cite{Bjork}.
+\begin{center}
+    \begin{tikzpicture}[font=\small] 
+        % Draw the horizontal line
+        \draw[-latex] (5,0) -- (13,0) node[anchor=north] {Time};
+        % Add the vertical lines 
+        \draw (6,0.2) -- (6,-0.5) node[above] at (6.,0.3)  {t};
+        \draw (11.5,-0.2) -- (11.5,0.5) node[below] at (11.5,-0.3) {T};
+        % Add the box 
+        \draw (11.75,1.5) rectangle (11.25,0.5) ;
+        \draw (11.75,2) rectangle (11.25,1.5);
+        \draw (5.75,-1.5) rectangle (6.25,-0.5) node[below, pos=.01] {Principal Payment};
+        \draw (10.5,0) rectangle (10.25,1);
+        \draw (8.5,0) rectangle (8.25,1.5);
+        \draw (9.5,0) rectangle (9.25,1.2);
+        \draw (7.5,0) rectangle (7.25,0.9);
+        % Label the entire figure
+        \node at (11.5, 2.5) {Principal Repayment};
+        \node at (13.,1) {Principal Part};
+        \node at (13.,1.75) {Interest Part};
+        \node at (8.5, 1.8) {Periodic Floating Interest Payments};
+\end{tikzpicture}
+\end{center}
 \subsection{Interest rate swaps}
 Now some simple cases of different types of bonds has be introduce. Then we will combine the knowledge we have gained to move on
 to take interest rate derivatives into consideration. Again we will consider the simplest type of a interest rate derivative, which is a
