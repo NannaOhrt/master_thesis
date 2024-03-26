@@ -8,7 +8,7 @@ more value than the same dollar in the future. To understand this concept, a dis
 \begin{align*}
     B(t,T) = \text{value at time t of a dollar received at time T}
 \end{align*} 
-$B(t,T)$ refer to a contract that pays one dollar maturity, T, which can be illustrated as below
+$B(t,T)$ refer to a contract that pays one dollar at maturity, T, which can be illustrated as below
 \begin{align*}
     t & < T \rightarrow B(t,T) < 1 \\
     t & = T \rightarrow B(t,T) = 1
@@ -29,22 +29,18 @@ have the common property of providing the owner with a deterministic (future) ca
 \begin{definition}\label{def:zcb}
     A zero coupon bond with maturity date T, also called a T-bond, is a contract which 
     guarantees the holder one dollar to be paid at date T. The price at date t of 
-    a bond with maturity date T is denoted by p$(t,T)$ \cite{Bjork} 
+    a bond with maturity date T is denoted by p$(t,T)$. \cite{Bjork} 
 \end{definition} 
 \noindent
 Before moving forward we will look at the cashflow for a zero coupon bond. The illustration below shows that a time t,
-the principal payment is made a the price $P(t,T)$ and at maturity T the principal is repaid.
+the principal payment is made at the price $P(t,T)$ and at maturity T the principal is repaid.
 \begin{center}
     \begin{tikzpicture}[font=\small] 
-        % Draw the horizontal line
         \draw[-latex] (5,0) -- (13,0) node[anchor=north] {Time};
-        % Add the vertical lines 
         \draw (6,0.2) -- (6,-0.5) node[above] at (6.,0.3)  {t};
         \draw (11.5,-0.2) -- (11.5,0.5) node[below] at (11.5,-0.3) {T};
-        % Add the box 
         \draw (11.75,1.5) rectangle (11.25,0.5);
         \draw (5.75,-1.5) rectangle (6.25,-0.5) node[below, pos=.01] {Principal Payment};
-        % Label the entire figure
         \node at (11.5, 2.0) {Principal Repayment };
     \end{tikzpicture}
 \end{center}
@@ -56,31 +52,30 @@ financial instruments. The yield curve is a graphical representation illustratin
 Yield curves provides information about future interest rates and gives insight in the bond market today. 
 The general intuition is that longer-term rates is higher than short-term rates, which in other words means that a
 larger premium is expected for lending money over a longer period of time. This case sketches a yield curve with a 
-positive slope, this case is illustrated below.
+positive slope, which is illustrated below.
 \begin{center}
-\begin{tikzpicture}
-    \begin{axis}[
-        xlabel=Maturity,
-        ylabel=Yield,
-        no marks,
-        axis lines=left, % Only show the left and bottom axis lines
-        enlargelimits=false,
-        clip=false,
-        ymin=0,
-        xmin=0,
-        every axis y label/.style={
-            at={(ticklabel* cs:1.05)},
-            anchor=south,
-        },
-        every axis x label/.style={
-            at={(ticklabel* cs:1.05)},
-            anchor=west,
-        },
-    ]
-    % Plotting the yield curve
-    \addplot[domain=0:10, samples=100, thick] {x^(0.5)};
-    \end{axis}
-\end{tikzpicture}
+    \begin{tikzpicture} [scale=0.8]
+        \begin{axis}[
+            xlabel=Maturity,
+            ylabel=Yield,
+            no marks,
+            axis lines=left,
+            enlargelimits=false,
+            clip=false,
+            ymin=0,
+            xmin=0,
+            every axis y label/.style={
+                at={(ticklabel* cs:1.05)},
+                anchor=south,
+             },
+            every axis x label/.style={
+                at={(ticklabel* cs:1.05)},
+                anchor=west,
+             },
+            ]
+            \addplot[domain=0:10, samples=100, thick] {x^(0.5)};
+        \end{axis}
+    \end{tikzpicture}
 \end{center}
 \subsection{Interest rates}
 \subsubsection{Spot rates}
@@ -133,31 +128,25 @@ formula for forward rates.
 \noindent
 \\\\
 So now formulas for spot rate and forward rates has been determined. To illustrate the differences between 
-the two types of rate, a simple drawing below shows at which times the rates are determine. From the drawing
-we see that all the spot rates are determine a time $t=0$, where the forward rate are determine at each time point.
+the two types of rates, a simple illustration below shows at which times the rates are determined. From the illustration
+we see that all the spot rates are determine a time $t=0$, to each time point to maturity. Where the forward rates starts
+a different time points. 
 \begin{center}
-\begin{tikzpicture}
-    % Draw the horizontal line with Time arrow
-    \draw[-Latex] (2,0) -- (10.5,0) node[anchor=north] {Time};
-    
-    % Draw the curves for r1, r2, r3
-    \draw[thick, -Latex] (3,0) to [out=60,in=120] node[above] {$r_1$} (5,0);
-    \draw[thick, -Latex] (5,0) to [out=60,in=120] node[above] {$r_2$} (7,0);
-    \draw[thick, -Latex] (7,0) to [out=60,in=120] node[above] {$r_3$} (9,0);
-    
-    % Draw the curves for l1, l2, l3
-    \draw[thick, -Latex] (3,0) to [out=-120,in=-60] node[below] {$l_1$} (5,0);
-    \draw[thick, -Latex] (3,0) to [out=-120,in=-60] node[below] {$l_2$} (7,0);
-    \draw[thick, -Latex] (3,0) to [out=-120,in=-60] node[below] {$l_3$} (9,0);
-    
-    % Draw the numbers
-    \node at (2.7, -0.2) {0};
-    \node at (4.7, -0.2) {1};
-    \node at (6.7, -0.2) {2};
-    \node at (8.7, -0.2) {3};
-    \node at (0.1,0.5) {Forward rates:};
-    \node at (0.1,-0.5) {Spot rates:};
-\end{tikzpicture}
+    \begin{tikzpicture}
+        \draw[-Latex] (2,0) -- (10.5,0) node[anchor=north] {Time};
+        \draw[thick, -Latex] (3,0) to [out=60,in=120] node[above] {$r_1$} (5,0);
+        \draw[thick, -Latex] (5,0) to [out=60,in=120] node[above] {$r_2$} (7,0);
+        \draw[thick, -Latex] (7,0) to [out=60,in=120] node[above] {$r_3$} (9,0);
+        \draw[thick, -Latex] (3,0) to [out=-120,in=-60] node[below] {$l_1$} (5,0);
+        \draw[thick, -Latex] (3,0) to [out=-120,in=-60] node[below] {$l_2$} (7,0);
+        \draw[thick, -Latex] (3,0) to [out=-120,in=-60] node[below] {$l_3$} (9,0);
+        \node at (2.7, -0.2) {0};
+        \node at (4.7, -0.2) {1};
+        \node at (6.7, -0.2) {2};
+        \node at (8.7, -0.2) {3};
+        \node at (0.1,0.5) {Forward rates:};
+        \node at (0.1,-0.5) {Spot rates:};
+    \end{tikzpicture}
 \end{center}
 \subsection{Financial derivatives}
 \subsubsection{Bonds}
@@ -220,30 +209,26 @@ Hence the price p(t,T) of a fixed coupon bond where $t \leq T_1$ will be determi
 \begin{align*}
     p(t)= K \Big( p(t,T_n)+ r \delta \sum_{i=1}^{n}\cdot p(t,T_i) \Big)
 \end{align*}
-To end this section a drawing of the cashflow for a fixed coupon bond is illustrated below. 
+To end this section a illustration of the cashflow for a fixed coupon bond is illustrated below. 
+\\\\
 \begin{center}
     \begin{tikzpicture}[font=\small] 
-        % Draw the horizontal line
         \draw[-latex] (5,0) -- (13,0) node[anchor=north] {Time};
-        % Add the vertical lines 
         \draw (6,0.2) -- (6,-0.5) node[above] at (6.,0.3)  {t};
         \draw (11.5,-0.2) -- (11.5,0.5) node[below] at (11.5,-0.3) {T};
-        % Add the box 
         \draw (11.75,1.5) rectangle (11.25,0.5) ;
         \draw (11.75,2) rectangle (11.25,1.5);
         \draw (5.75,-1.5) rectangle (6.25,-0.5) node[below, pos=.01] {Principal Payment};
-        \draw (10.5,0) rectangle (10.25,1);
-        \draw (8.5,0) rectangle (8.25,1);
-        \draw (9.5,0) rectangle (9.25,1);
-        \draw (7.5,0) rectangle (7.25,1);
-        % Label the entire figure
+        \draw[fill=black!15]  (10.5,0) rectangle (10.25,1);
+        \draw[fill=black!15]  (8.5,0) rectangle (8.25,1);
+        \draw[fill=black!15]  (9.5,0) rectangle (9.25,1);
+        \draw[fill=black!15]  (7.5,0) rectangle (7.25,1);
         \node at (11.5, 2.5) {Principal Repayment};
         \node at (13.,1) {Principal Part};
         \node at (13.,1.75) {Interest Part};
         \node at (8.5, 1.5) {Periodic Fixed Interest Payments};
-\end{tikzpicture}
+    \end{tikzpicture}
 \end{center}
-
 \subsubsection{Floating Rate Bonds}
 Now a short introduction to fixed coupon bonds has been given, as mentioned there are also many 
 other types of bonds that have floating coupons. When it is listed that there are bonds that have
@@ -260,7 +245,7 @@ delivered at time $T_i$. \cite{Bjork}
 \\\\
 The LIBOR rate stands for London InterBank Offered Rate, which is a rate the the 
 British Bankers Association sets every business day. Like the LIBOR rate, there is many types
-of xIBOR rates, one is EURIBOR rate Which is a rate the 
+of xIBOR rates, one is EURIBOR rate which is a rate the 
 European Banking Federation sets every business day. 
 \\\\
 These different type of xIBOR rates are sets differently, but they all use the money market convention. 
@@ -288,28 +273,26 @@ If we then sum over all the i payments of the floating rate we obtain that the f
 \begin{align*}
     p(t)= p(t,T_n) + \sum_{i=1}^{n}\Big[p(t,T_{i-1})-p(t,T_i)\Big] = p(t,T_0) 
 \end{align*}
-where we note that if $t=T_0$ we get that $p(T_0)=1$ \cite{Bjork}.
+where we note that if $t=T_0$ we get that $p(T_0)=1$ \cite{Bjork}. \\\\
+Like for the section for the fixed coupon bond, a illustration of the cashflow for a floating rate bond is illustrated below.
+To the to illustrations we clearly see the different id the periodic interest payments. 
 \begin{center}
     \begin{tikzpicture}[font=\small] 
-        % Draw the horizontal line
         \draw[-latex] (5,0) -- (13,0) node[anchor=north] {Time};
-        % Add the vertical lines 
         \draw (6,0.2) -- (6,-0.5) node[above] at (6.,0.3)  {t};
         \draw (11.5,-0.2) -- (11.5,0.5) node[below] at (11.5,-0.3) {T};
-        % Add the box 
         \draw (11.75,1.5) rectangle (11.25,0.5) ;
         \draw (11.75,2) rectangle (11.25,1.5);
         \draw (5.75,-1.5) rectangle (6.25,-0.5) node[below, pos=.01] {Principal Payment};
-        \draw (10.5,0) rectangle (10.25,1);
-        \draw (8.5,0) rectangle (8.25,1.5);
-        \draw (9.5,0) rectangle (9.25,1.2);
-        \draw (7.5,0) rectangle (7.25,0.9);
-        % Label the entire figure
-        \node at (11.5, 2.5) {Principal Repayment};
+        \draw[fill=black!15] (10.5,0) rectangle (10.25,1);
+        \draw[fill=black!15]  (8.5,0) rectangle (8.25,1.5);
+        \draw[fill=black!15]  (9.5,0) rectangle (9.25,1.2);
+        \draw[fill=black!15] (7.5,0) rectangle (7.25,0.9);
+        \node at (11.5, 2.6) {Principal Repayment};
         \node at (13.,1) {Principal Part};
         \node at (13.,1.75) {Interest Part};
         \node at (8.5, 1.8) {Periodic Floating Interest Payments};
-\end{tikzpicture}
+    \end{tikzpicture}
 \end{center}
 \subsection{Interest rate swaps}
 Now some simple cases of different types of bonds has be introduce. Then we will combine the knowledge we have gained to move on
@@ -325,22 +308,17 @@ the interest rate swap are known ad the "fixed leg" and the "floating leg".
 The role of each participant in the swap is determined in relation to the 
 fixed leg: the party making fixed payments is engaged in a "payer swap," 
 while the party making floating payments (and receiving fixed payments) is
-involved in a "receiver swap."
+involved in a "receiver swap.". The two involved cashflow there are exchanged form the "receiver" to the "payer" is illustrated below.
 \\
 \begin{center}
-\begin{tikzpicture}
-    % Define the styles for receivers and payers
-    \tikzstyle{receiver} = [rectangle, fill=black!15, text centered, minimum height=3em]
-    \tikzstyle{payer} = [rectangle,  fill=black!15, text centered, minimum height=3em]
-  
-    % Add nodes
-    \node[receiver] (receiver) {Receiver};
-    \node[payer, right of=receiver, node distance=8cm] (payer) {Payer};
-  
-    % Draw arrows
-    \draw[thick, <-] ([yshift=5pt]receiver.north) -- node[above] {Fixed rate} ([yshift=5pt]payer.north);
-    \draw[thick, dashed, ->] ([yshift=-5pt]receiver.south) -- node[below] {Floating rate} ([yshift=-5pt]payer.south);
-\end{tikzpicture} 
+    \begin{tikzpicture}
+        \tikzstyle{receiver} = [rectangle, fill=black!15, text centered, minimum height=3em]
+        \tikzstyle{payer} = [rectangle,  fill=black!15, text centered, minimum height=3em]
+        \node[receiver] (receiver) {Receiver};
+        \node[payer, right of=receiver, node distance=8cm] (payer) {Payer};
+        \draw[thick, <-] ([yshift=5pt]receiver.north) -- node[above] {Fixed rate} ([yshift=5pt]payer.north);
+        \draw[thick, dashed, ->] ([yshift=-5pt]receiver.south) -- node[below] {Floating rate} ([yshift=-5pt]payer.south);
+    \end{tikzpicture} 
 \end{center} 
 \noindent
 Again we have that K is the principal also know as the face value and we will denote the swap rate, R.
@@ -424,7 +402,20 @@ The contract functions, $\Phi$, for European call and put options are as follows
 \end{align}
 where K is the strike price, S denotes the market price of the underlying asset \cite{Bjork}. From \autoref{call_function} and \autoref{put_function} we see
 that the value of the contract function can not be negative, since in both cases the contract function is a 
-function there takes the maximum of the payoff and zero. So the holder maximum lost is the paid premium. 
+function there takes the maximum of the payoff and zero. So the holder maximum lost is the paid premium. Below the described contract
+function for a European call option.
+\begin{center}
+    \begin{tikzpicture}[scale=0.7]
+        \draw[thick] (-1,0) -- (4.5,0) ;
+        \draw[thick] (0,-3) -- (0,3.5) node[anchor=south east] {Profit};
+        \coordinate (K) at (1.5,-1.5);
+        \draw[dashed] (K) node[below] {K} -- ++(0,1.6);
+        \draw[thick, blue] (0,-1.5) -- (K) -- (4,2.2) node[anchor=south west] {Pay Off};
+        \draw[dashed] (1.5,-1.5) -- (4.5,-1.5) node[below] {Maximum Loss};
+        \draw (-1.5,-3.4) node[anchor=west] {Loss};
+        \node[rotate=90] at (-1.5,0) {Return On Investment};
+    \end{tikzpicture}
+\end{center}
 \subsubsection{Risk neutral measure}
 Before options pricing a brief introduction to the risk neutral measure will be covered.
 When options are priced the value of the options is calculated by discounting 
@@ -536,7 +527,7 @@ A payer swaption gives the holder the right to pay a fixed interest rate and rec
 similar to a call option in the stock market. On the other hand, a receiver swaption allows the holder
 to pay a floating interest rate and receive a fixed rate, resembling a put option \cite{Lindstrom} .
 
-\subsubsection{Swaption prcing}
+\subsubsection{Swaption pricing}
 Swaptions pricing purpose is to calculating the present value of expected payments from the swap contract,
 should the option be exercised. The pricing model must take various factor into account, such as the
 volatility of interest rates, the term structure of interest rates, and the time value of money. 
