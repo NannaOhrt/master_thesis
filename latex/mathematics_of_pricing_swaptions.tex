@@ -346,7 +346,7 @@ Hence we have that the total value denote by $\Pi(t)$, so the total value at tim
     \pi (t) = K \sum_{i=1}^{n} \Big[p(t,T_{i-1})-(1+ \delta R)p(t,T_i)\Big]
     \label{valueirs}
 \end{align}
-Moving forward we simplify \autoref{valueirs} in the below Proposition \ref{simple} \cite{Bjork}
+Moving forward we simplify \autoref{valueirs} in the below Proposition \ref{simple} \cite{Bjork}.
 \begin{proposition}
     The price, for $t<T_0$, of the swap in \autoref{valueirs} above
     is given by 
@@ -361,6 +361,12 @@ Moving forward we simplify \autoref{valueirs} in the below Proposition \ref{simp
     \label{simple}
 \end{proposition}
 \noindent 
+To sum up on interest rate swaps, let consider a timeline for a payer swap contract. Where the issuer is paying the fixed leg 
+and receiving the floating leg. The timeline of the contract is illustrated below, where a time t the contract is made. 
+Then the swap start a time $T_S$ and maturities at time $T_E$.
+The squiggly lines denote the floating interest payments that the payer will make based on the interest rate observed 
+at the beginning of the period and the end of the period. The vertical lines at the beginning of each period represent
+the fixed payment dates, and the horizontal dotted line indicates the continuation of the swap contract over time.
 \begin{center}
     \begin{tikzpicture}
         \draw[thick] (0,0) -- (3.7,0);
