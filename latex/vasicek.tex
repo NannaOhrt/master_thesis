@@ -1,4 +1,23 @@
 \section{One-Factor Short-Rate Model}
-As discussed in the section  
+The risk-free short rate, r, is sometimes referred to as the instantaneous short rate. 
+The concept is used in finance modeling to represent the continuously compounded interest rate for 
+short time intervals. The short rate, r, is often modeled using stochastic deferential equations in 
+mathematical finance. Some typically models for modeling the short rate is the Vacisek model and the CIR model, 
+later the Vacisek model will be covered. When pricing derivatives as bonds and options, the price depends on 
+the process followed by r in the risk-neutral world. \cite{Hull}
+\\\\
+As discussed in the section risk Neutral Measure, $r_t$ can be looked at the locally risk-free 
+rate from a continuously compounded bank account $B(t)= \exp \Big[\int_{0}^{t} r(s) ds \Big]$. 
+Where the bank account has the dynamic listed in \autoref{bank1} and \autoref{bank2}.
+Postulation the the considered market is arbitrage-free, with due to the First Fundamental Theorem of Asset Pricing, 
+if stating that there exist a probability measure $\QQ$, equivalent to $\PP$, all asset prices discounted by $B(t)$
+are $\QQ$-martingales. In other words under the considered market for ant T we have that 
+\begin{align}
+    \frac{P(0,T)}{B(0)} = P(0,T) = \EE^{\QQ} \Big( \frac{P(T,T)}{B(T)}\Big) = \EE^{\QQ} \Big( \frac{1}{B(T)}\Big) 
+    = \EE^{\QQ} \Big( \exp \Big[ - \int_{0}^{t}r(s)ds \Big] \Big)
+    \label{dist}
+\end{align}
+where $P(0,T)$ the price at time zero of the asset and know that $P(T,T)=1$. So \autoref{dist} says that 
+the time-zero price of the asset are $\QQ$-expectations the payoff. \cite{Bermudan}
 
 \subsection{Vacisek}

@@ -464,10 +464,10 @@ $\EE_{t}^{\QQ}\Big[X_T\Big] = X_t$ for all $t<T$. Next we will consider a price 
 where $W_{t}^{\QQ}$ is $\QQ$-Wiener process and  $r_t$ is the process for the risk free interest rate. $r_t$ can be looked at the locally risk-free rate return 
 from a continuously compounded bank account $B(t)= \text{exp} \Big[\int_{0}^{t}r(s)ds \Big]$.
 Where the bank account has the following dynamic
-\begin{align*}
-    dB(t) &= r(t)B(t) dt \\
-    B(0) & = 1
-\end{align*}
+\begin{align}
+    dB(t) &= r(t)B(t) dt \label{bank1}\\
+    B(0) & = 1 \label{bank2}
+\end{align}
 If we look at \autoref{price_process} we see there is a dt-term present, so it is not a martingale.
 But if we discount the price process, this will be a martingale do to the martingale property below
 \begin{proposition}
