@@ -2,7 +2,7 @@
 To determine a swaption price it is important to understand what affects the price of the swaption. 
 This chapter simplifies this concepts by explaining interest rates, bonds, swaps-and options, 
 and then shows how they come together to determine the price of a swaption.
-\subsection{Time value of money}
+\subsection{Time Value Of Money}
 Understanding the concept of interest rates begins with the fundamental idea that a dollar today holds 
 more value than the same dollar in the future. To understand this concept, a discount factor is introduced as 
 \begin{align*}
@@ -13,18 +13,18 @@ $B(t,T)$ refer to a contract that pays one dollar at maturity, T, which can be i
     t & < T \rightarrow B(t,T) < 1 \\
     t & = T \rightarrow B(t,T) = 1
 \end{align*}
-The concept "time value of money" asserts that the value of a dollar today is worth more than
+The concept "Time Value of Money" asserts that the value of a dollar today is worth more than
 the same amount in the future due to its potential earning capacity and inflation.
-The "time value of money" concept underpins various financial decisions, such as investing, borrowing,
+The "Time Value Of Money" concept underpins various financial decisions, such as investing, borrowing,
 and pricing financial instruments. Essentially, it recognizes that a dollar received today can be invested 
 and earn interest over time, thereby increasing its value. Conversely, a dollar received in the future
 is subject to uncertainty and may not retain its purchasing power due to inflation or other factors.
 The discount factor represents the present value of future cash flows, taking into account the time value of money.
 It reflects the idea that receiving a certain amount of money in the future is less valuable than receiving 
 the same amount today.
-\subsection{Zero coupon bonds}
-One of the most common applications of the concept "time value of money" is zero coupon bonds. 
-By construction, the mechanism of "time value of money" is present. This instrument 
+\subsection{Zero Coupon Bonds}
+One of the most common applications of the concept "Time Value Of Money" is zero coupon bonds. 
+By construction, the mechanism of "Time Value Of Money" is present. This instrument 
 have the common property of providing the owner with a deterministic (future) cash flow. 
 \begin{definition}\label{def:zcb}
     A zero coupon bond with maturity date T, also called a T-bond, is a contract which 
@@ -44,8 +44,8 @@ the principal payment is made at the price $P(t,T)$ and at maturity T the princi
         \node at (11.5, 2.0) {Principal Repayment };
     \end{tikzpicture}
 \end{center}
-\subsection{The yield curve}
-Where the concept "time value of money" and the discount factor are fundamental concepts used to assess the present value of future
+\subsection{The Yield Curve}
+Where the concept "Time Value Of Money" and the discount factor are fundamental concepts used to assess the present value of future
 cash flows, the yield curve provides insights into market expectations regarding future interest rates.
 Understanding the interplay between these concepts is crucial for making informed investment decisions and pricing
 financial instruments. The yield curve is a graphical representation illustrating the interest rates (bond yields) for various maturities.
@@ -77,8 +77,8 @@ positive slope, which is illustrated below.
         \end{axis}
     \end{tikzpicture}
 \end{center}
-\subsection{Interest rates}
-\subsubsection{Spot rates}
+\subsection{Interest Rates}
+\subsubsection{Spot Rates}
 The spot rate represents the yield-to-maturity of a zero coupon bond,
 while the forward rate refers to the anticipated interest rate in the 
 future. The definition for determined spot rates as follows 
@@ -148,7 +148,7 @@ a different time points.
         \node at (0.1,-0.5) {Spot rates:};
     \end{tikzpicture}
 \end{center}
-\subsection{Financial derivatives}
+\subsection{Financial Derivatives}
 \subsubsection{Bonds}
 A bond is a debt security, like a loan. Borrowers issue bonds to raise money 
 from investors willing to lend them money for a certain amount of time.
@@ -294,7 +294,7 @@ To the to illustrations we clearly see the different in the periodic interest pa
         \node at (8.5, 1.8) {Periodic Floating Interest Payments};
     \end{tikzpicture}
 \end{center}
-\subsection{Interest rate swaps}
+\subsection{Interest Rate Swaps}
 Now some simple cases of different types of bonds has be introduce. Then we will combine the knowledge we have gained to move on
 to take interest rate derivatives into consideration. Again we will consider the simplest type of a interest rate derivative, which is a
 interest rate swap. The construction of a interest rate swap is that there is an  exchange of a payment stream of a fixed rate of interest,
@@ -442,7 +442,7 @@ function for a European call option is illustrated.
         \node[rotate=90] at (-1.5,0) {Return On Investment};
     \end{tikzpicture}
 \end{center}
-\subsubsection{Risk neutral measure}
+\subsubsection{Risk Neutral Measure}
 Before options pricing a brief introduction to the risk neutral measure will be covered.
 When options are priced the value of the options is calculated by discounting 
 the options expected payoff at time T under the risk neutral measure $\QQ$. 
@@ -493,7 +493,7 @@ This lead os to the First Fundamental Theorem of Asset Pricing in \autoref{frist
 Hence we have establish the First Fundamental Theorem of Asset Pricing. So to sum up in order to be able to calculate
 option prices, the "fair" or arbitrage-free price, there must exist a risk neutral measure $\QQ$, such the the discount prices
 is a $\QQ$-martingale. 
-\subsubsection{Options pricing}
+\subsubsection{Options Pricing}
 The next question to be answered is what is the "fair" price of these options, we will denote the price of
 the option by $\Pi(t)$. Again to simplify we will consider
 the European call option moving forward. To determine the price of a European call potion, we wil use the 
@@ -553,7 +553,7 @@ A payer swaption gives the holder the right to pay a fixed interest rate and rec
 similar to a call option in the stock market. On the other hand, a receiver swaption allows the holder
 to pay a floating interest rate and receive a fixed rate, resembling a put option \cite{Lindstrom} .
 
-\subsubsection{Swaption pricing}
+\subsubsection{Swaption Pricing}
 Swaptions pricing purpose is to calculating the present value of expected payments from the swap contract,
 should the option be exercised. The pricing model must take various factor into account, such as the
 volatility of interest rates, the term structure of interest rates, and the time value of money. 
