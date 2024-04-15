@@ -48,16 +48,24 @@ The dynamic for the short rate in the Vasicek model is present below in \autoref
 The dynamic for the short rate in \autoref{vas_dyn} is a Ornstein-Uhlenbeck process, which is a type of stochastic 
 differential equation that describes the evolution of a mean-reverting behavior. So the process is consisting of a 
 tendency to revert towards the mean of the process. This tendency is illustrated in \autoref{fig:vasicek} below, where 
-interest rates is simulated using the Vasicek Model for some chosen parameters. The parameters in the short rate dynamic
+interest rates is simulated using the Vasicek Model for some chosen parameters and one simulated path is illustrated. The parameters in the short rate dynamic
 $\kappa$, $\theta$ and $\sigma$ are positive constants. Where $\kappa$ represent the mean reversion speed, $\theta$ 
 is the long-term average rate, $\sigma$ is the volatility  and $dW(t)$ is a Wiener process \cite{Bermudan}. 
+
 \begin{figure}[h]
     \centering
-    \includegraphics[width=0.8\textwidth]{/Users/nannaingemannohrt/Desktop/master_thesis/main/plots/VasicekModelPlot.png}
-    \caption{Plot of the simulated interest rates using the Vasicek model.}
-    \label{fig:vasicek}
+    \begin{minipage}{0.5\textwidth}
+        \includegraphics[width=\linewidth]{/Users/nannaingemannohrt/Desktop/master_thesis/main/plots/VasicekModelPlot.png}
+        \caption{Plot of one simulated interest rates path \\ using the Vasicek model.}
+        \label{fig:vasicek}
+    \end{minipage}\hfill 
+    \begin{minipage}{0.5\textwidth}
+        \includegraphics[width=\linewidth]{/Users/nannaingemannohrt/Desktop/master_thesis/main/plots/VasicekModelPlotSIM.png}
+        \caption{Another plot of simulated interest rates \\using the Vasicek model.}
+        \label{fig:vasicek-sim}
+    \end{minipage}
 \end{figure}
-\\\\
+
 \noindent
 Then we look closer at the dynamic of the short rate in \autoref{vas_dyn}. Which can be rearranged and integrated
 to express the short rate, $r(t)$, as a function of its value at any prior time point s,
@@ -78,7 +86,7 @@ rearranged the terms i the stochastic differential equation. Then both sides of 
 integrating factor $e^{\kappa t}$ to facilitate integration. Next both sides is integrated from s to t. The result of the
 integration showing the change in the interest rate, r, over time, adjusted by the integrating factor. The final 
 expression in \autoref{line_22} for the interest rate, $r(t)$, at time t, showing how it depends on the initial rate, $r(s)$,
-the mean-reverting term and te stochastic term \cite{Bermudan}. 
+the mean-reverting term and the stochastic term \cite{Bermudan}. 
 
 \begin{figure}[h]
     \centering
