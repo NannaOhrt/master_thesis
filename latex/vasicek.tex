@@ -91,7 +91,11 @@ integrating factor $e^{\kappa t}$ to facilitate integration. Next both sides is 
 integration showing the change in the interest rate, r, over time, adjusted by the integrating factor. The final 
 expression in \autoref{line_22} for the interest rate, $r(t)$, at time t, showing how it depends on the initial rate, $r(s)$,
 the mean-reverting term and the stochastic term \cite{Bermudan}. 
-
+\\\\
+Further we find that $r(t)$ is normally distributed we mean and variance determined as follows. 
+\begin{align*}
+    \EE \Big[r(t)\Big] & = \EE \Big[ r(s) e^{-k(t-s)} \Big] + \EE \Big[\theta \left( 1 - e^{-k(t-s)} \right)\Big]
+    + \EE \Big[\sigma \int_s^t e^{-k(t-u)} d W(u)\Big]
 \begin{figure}[h]
     \centering
     \includegraphics[width=0.7\textwidth]{/Users/nannaingemannohrt/Desktop/master_thesis/main/plots/NormalDistributionPlot.png}
