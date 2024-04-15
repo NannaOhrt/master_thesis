@@ -64,7 +64,7 @@ to express the short rate, $r(t)$, as a function of its value at any prior time 
 so we have to have that $s < t$ \cite{Bermudan}. 
 \begin{align}
     d r_t &= \kappa \left[\theta - r(t)\right] dt + \sigma d W(t) \label{line_14} \\
-    d r(t) &= k \theta dt - k r(t) dt + \sigma d W(t), \\
+    d r(t) &= k \theta dt - k r(t) dt + \sigma d W(t),  \\
     d r(t) + k r(t) dt &= k \theta dt + \sigma d W(t), \\
     e^{kt} d r(t) + k e^{kt} r(t) dt &= e^{kt} k \theta dt + e^{kt} \sigma d W(t), \\
     \frac{d}{dt} \left( e^{k t} r(t) \right) &= e^{k t} \frac{d}{dt} r(t) + k e^{k t} r_t dt, \\
@@ -73,9 +73,9 @@ so we have to have that $s < t$ \cite{Bermudan}.
     e^{kt} r(t) - e^{k s} r(s) &= \frac{k \theta}{k} \left( e^{kt} - e^{ks} \right) + \sigma \int_s^t e^{ku} d W(u), \\
     r(t) &= r(s) e^{-k(t-s)} + \theta \left( 1 - e^{-k(t-s)} \right) + \sigma \int_s^t e^{-k(t-u)} d W(u). \label{line_22}
 \end{align}
-From \autoref{line_14} to \autoref{line_22} the expression for the short rate in the Vasicek model is integrated by first
+From \autoref{line_14} to \autoref{line_22} the expression for the short rate in the Vasicek model is integrated, but first
 rearranged the terms i the stochastic differential equation. Then both sides of the equation are multiplied by the 
 integrating factor $e^{\kappa t}$ to facilitate integration. Next both sides is integrated from s to t. The result of the
 integration showing the change in the interest rate, r, over time, adjusted by the integrating factor. The final 
-expression in \autoref{line_22} for the interest rate, $r(t)$ at time t, showing how it depends on the initial rate, $r(s)$,
+expression in \autoref{line_22} for the interest rate, $r(t)$, at time t, showing how it depends on the initial rate, $r(s)$,
 the mean-reverting term and te stochastic term \cite{Bermudan}. 
