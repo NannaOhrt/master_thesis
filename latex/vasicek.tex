@@ -2,22 +2,48 @@
 The risk-free short rate, r, is sometimes referred to as the instantaneous short rate. 
 The concept is used in finance modeling to represent the continuously compounded interest rate for 
 short time intervals. The short rate, r, is often modeled using stochastic deferential equations in 
-mathematical finance. Some typically models for modeling the short rate is the Vacisek model and the CIR model, 
+mathematical finance. Some typically models for modeling the short rate is the Vacisek model and the Cox–Ingersoll–Ross model, 
 later the Vacisek model will be covered. When pricing derivatives as bonds and options, the price depends on 
 the process followed by r in the risk-neutral world. \cite{Hull}
 \\\\
-As discussed in the section risk Neutral Measure, $r_t$ can be looked at the locally risk-free 
+As discussed in the section Risk Neutral Measure, $r_t$ can be looked at the locally risk-free 
 rate from a continuously compounded bank account $B(t)= \exp \Big[\int_{0}^{t} r(s) ds \Big]$. 
 Where the bank account has the dynamic listed in \autoref{bank1} and \autoref{bank2}.
-Postulation the the considered market is arbitrage-free, with due to the First Fundamental Theorem of Asset Pricing, 
+Postulation the considered market is arbitrage-free, with due to the First Fundamental Theorem of Asset Pricing, 
 if stating that there exist a probability measure $\QQ$, equivalent to $\PP$, all asset prices discounted by $B(t)$
-are $\QQ$-martingales. In other words under the considered market for ant T we have that 
+are $\QQ$-martingales. In other words under the considered market for any T we have that 
 \begin{align}
     \frac{P(0,T)}{B(0)} = P(0,T) = \EE^{\QQ} \Big( \frac{P(T,T)}{B(T)}\Big) = \EE^{\QQ} \Big( \frac{1}{B(T)}\Big) 
     = \EE^{\QQ} \Big( \exp \Big[ - \int_{0}^{t}r(s)ds \Big] \Big)
     \label{dist}
 \end{align}
-where $P(0,T)$ the price at time zero of the asset and know that $P(T,T)=1$. So \autoref{dist} says that 
-the time-zero price of the asset are $\QQ$-expectations the payoff. \cite{Bermudan}
+where $P(0,T)$ is the price at time zero of the asset and note that $P(T,T)=1$. So \autoref{dist} says that 
+the time zero price of the asset are $\QQ$-expectations  of the payoff. \cite{Bermudan}
+In other words in a market free of arbitrage, bond prices are determined by the risk-neutral expectations 
+of how the short-term interest rate will behave. Because all types of interest rate instruments are based
+on bond prices, the entire term structure or zero-coupon curve can be described by the distributional properties
+of just one state variable - the short rate. \cite{Bermudan}
 
-\subsection{Vacisek}
+\subsection{The Vasicek model}
+So all interest rate instruments are fundamentally dependent on bond prices. Understanding the movements of 
+these prices is essential for accurately describing the term structure or zero coupon curve. The behavior 
+of the short rate, a key variable, underlies this understanding due to its distributional properties.
+\\\\
+The Vasicek model, introduced by Oldrich Vasicek in 1977, serves as a robust framework to analyze these dynamics.
+The Vasicek model is renown for its simplicity and the ease with which it facilitates bond price calculations, 
+the model assumes that the short-term interest rate adheres to a mean-reverting stochastic process. This process is characterized 
+by parameters that dictate the rate's mean reversion speed, its long-term average level, and its volatility.
+The model is used for forecasting how interest rates in the market will develop in the future. The model is a
+mathematical result of interest rates and it is a one-factor short rate model and the model is constructed in the 
+term of that the evolution of interest rates only depends on stochastic variable.
+\\\\
+So now a short introducing to the Vasicek model has been reviewed and the next step is to look closer at the 
+mathematical framework of the Vasicek model. The Vasicek model consists of the dynamic of the short rate under the $\PP$-measure
+(the real world measure). Where the dynamic of the short rate is governed by a stochastic differential equation. 
+The dynamic for the short rate in the Vasicek model is present below
+\begin{align}
+    d r_t &= \kappa \Big[\theta -r(t)\Big] dt i \sigma d W(t) \\
+    r(0) &= r_0
+\end{align}
+
+
