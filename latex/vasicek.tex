@@ -37,15 +37,17 @@ The model is used for forecasting how interest rates in the market will develop 
 mathematical result of interest rates and it is a one-factor short rate model and the model is constructed in the 
 term of that the evolution of interest rates only depends on stochastic variable.
 \\\\
-So now a short introducing to the Vasicek model has been reviewed and the next step is to look closer at the 
+So now a short introducing to the Vasicek model has been covered and the next step is to look closer at the 
 mathematical framework of the Vasicek model. The Vasicek model consists of the dynamic of the short rate under the $\PP$-measure
 (the real world measure). Where the dynamic of the short rate is governed by a stochastic differential equation. 
-The dynamic for the short rate in the Vasicek model is present below
+The dynamic for the short rate in the Vasicek model is present below in \autoref{vas_dyn} and \autoref{vas_dyn_r0}
 \begin{align}
-    d r_t &= \kappa \Big[\theta -r(t)\Big] dt i \sigma d W(t) \\
-    r(0) &= r_0
+    d r_t &= \kappa \Big[\theta -r(t)\Big] dt + \sigma d W(t) \label{vas_dyn}\\
+    r(0) &= r_0 \label{vas_dyn_r0}
 \end{align}
-
+The dynamic for the short rate in \autoref{vas_dyn} is a Ornstein-Uhlenbeck process, which is a type of stochastic 
+differential equation that describes the evolution of a mean-reverting behavior. So the process is consisting of a 
+tendency to revert towards the mean of the process.
 \begin{figure}[h]
     \centering
     \includegraphics[width=0.8\textwidth]{/Users/nannaingemannohrt/Desktop/master_thesis/main/plots/VasicekModelPlot.png}
