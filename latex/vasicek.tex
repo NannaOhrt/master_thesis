@@ -4,7 +4,7 @@ The concept is used in finance modeling to represent the continuously compounded
 short time intervals. The short rate, r, is often modeled using stochastic deferential equations in 
 mathematical finance. Some typically models for modeling the short rate is the Vacisek model and the Cox–Ingersoll–Ross model, 
 later the Vacisek model will be covered. When pricing derivatives as bonds and options, the price depends on 
-the process followed by r in the risk-neutral world. \cite{Hull}
+the process followed by r in the risk-neutral world \cite{Hull}.
 \\\\
 As discussed in the section Risk Neutral Measure, $r_t$ can be looked at the locally risk-free 
 rate from a continuously compounded bank account $B(t)= \exp \Big[\int_{0}^{t} r(s) ds \Big]$. 
@@ -18,11 +18,11 @@ are $\QQ$-martingales. In other words under the considered market for any T we h
     \label{dist}
 \end{align}
 where $P(0,T)$ is the price at time zero of the asset and note that $P(T,T)=1$. So \autoref{dist} says that 
-the time zero price of the asset are $\QQ$-expectations  of the payoff. \cite{Bermudan}
+the time zero price of the asset are $\QQ$-expectations  of the payoff \cite{Bermudan}.
 In other words in a market free of arbitrage, bond prices are determined by the risk-neutral expectations 
 of how the short-term interest rate will behave. Because all types of interest rate instruments are based
 on bond prices, the entire term structure or zero-coupon curve can be described by the distributional properties
-of just one state variable - the short rate. \cite{Bermudan}
+of just one state variable - the short rate \cite{Bermudan}.
 
 \subsection{The Vasicek model}
 So all interest rate instruments are fundamentally dependent on bond prices. Understanding the movements of 
@@ -40,14 +40,17 @@ term of that the evolution of interest rates only depends on stochastic variable
 So now a short introducing to the Vasicek model has been covered and the next step is to look closer at the 
 mathematical framework of the Vasicek model. The Vasicek model consists of the dynamic of the short rate under the $\PP$-measure
 (the real world measure). Where the dynamic of the short rate is governed by a stochastic differential equation. 
-The dynamic for the short rate in the Vasicek model is present below in \autoref{vas_dyn} and \autoref{vas_dyn_r0}
+The dynamic for the short rate in the Vasicek model is present below in \autoref{vas_dyn} and \autoref{vas_dyn_r0} \cite{Bjork}.
 \begin{align}
     d r_t &= \kappa \Big[\theta -r(t)\Big] dt + \sigma d W(t) \label{vas_dyn}\\
     r(0) &= r_0 \label{vas_dyn_r0}
 \end{align}
 The dynamic for the short rate in \autoref{vas_dyn} is a Ornstein-Uhlenbeck process, which is a type of stochastic 
 differential equation that describes the evolution of a mean-reverting behavior. So the process is consisting of a 
-tendency to revert towards the mean of the process.
+tendency to revert towards the mean of the process. This tendency is illustrated in \autoref{fig:vasicek} below, where 
+interest rates is simulated using the Vasicek Model for some chosen parameters. The parameters in the short rate dynamic
+$\kappa$, $\theta$ and $\sigma$ are positive constants. Where $\kappa$ represent the mean reversion speed, $\theta$ 
+is the long-term average rate and $\sigma$ is the volatility \cite{Bermudan}.
 \begin{figure}[h]
     \centering
     \includegraphics[width=0.8\textwidth]{/Users/nannaingemannohrt/Desktop/master_thesis/main/plots/VasicekModelPlot.png}
