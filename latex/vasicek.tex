@@ -48,7 +48,7 @@ The dynamic for the short rate in the Vasicek model is present below in \autoref
 The dynamic for the short rate in \autoref{vas_dyn} is a Ornstein-Uhlenbeck process, which is a type of stochastic 
 differential equation that describes the evolution of a mean-reverting behavior. So the process is consisting of a 
 tendency to revert towards the mean of the process. This tendency is illustrated in \autoref{fig:vasicek} below, where 
-interest rates is simulated using the Vasicek Model for some chosen parameters. Note in \autoref{fig:vasicek}
+ rates is simulated using the Vasicek Model for some chosen parameters. Note in \autoref{fig:vasicek}
 one simulated path of the short rate is illustrated. Where in \autoref{fig:vasicek-sim} ten simulated paths are illustrated,
 but the same tendency appears. The parameters in the short rate dynamic
 $\kappa$, $\theta$ and $\sigma$ are positive constants. Where $\kappa$ represent the mean reversion speed, $\theta$ 
@@ -58,12 +58,12 @@ is the long-term average rate, $\sigma$ is the volatility  and $dW(t)$ is a Wien
     \centering
     \begin{minipage}{0.5\textwidth}
         \includegraphics[width=\linewidth]{/Users/nannaingemannohrt/Desktop/master_thesis/main/plots/VasicekModelPlot.png}
-        \caption{Plot of one simulated interest rates path \\ using the Vasicek model.}
+        \caption{Plot of one simulated rate path \\ using the Vasicek model.}
         \label{fig:vasicek}
     \end{minipage}\hfill 
     \begin{minipage}{0.5\textwidth}
         \includegraphics[width=\linewidth]{/Users/nannaingemannohrt/Desktop/master_thesis/main/plots/VasicekModelPlotSIM.png}
-        \caption{Plot of 10 simulated interest rates \\ paths using the Vasicek model.}
+        \caption{Plot of 10 simulated  rates \\ paths using the Vasicek model.}
         \label{fig:vasicek-sim}
     \end{minipage}
 \end{figure}
@@ -88,10 +88,10 @@ so we have to have that $s < t$ \cite{Bermudan}.
 From \autoref{line_14} to \autoref{line_22} the expression for the short rate in the Vasicek model is integrated, but first
 rearranged the terms i the stochastic differential equation. Then both sides of the equation are multiplied by the 
 integrating factor $e^{\kappa t}$ to facilitate integration. Next both sides is integrated from s to t. The result of the
-integration showing the change in the interest rate, r, over time, adjusted by the integrating factor. The final 
-expression in \autoref{line_22} for the interest rate, $r(t)$, at time t, showing how it depends on the initial rate, $r(s)$,
-the mean-reverting term and the stochastic term \cite{Bermudan}. The final expression in \autoref{line_22} for the interest rate
-is Gaussian 
+integration showing the change in the  rate, r, over time, adjusted by the integrating factor. The final 
+expression in \autoref{line_22} for the  rate, $r(t)$, at time t, showing how it depends on the initial rate, $r(s)$,
+the mean-reverting term and the stochastic term \cite{Bermudan}. We note that  final expression in \autoref{line_22} for the iterest rate
+is Gaussian.
 \\\\
 Further we find that $r(t)$ is normally distributed with mean and variance determined as follows \cite{Bjork}. 
 \begin{align*}
@@ -109,9 +109,15 @@ $r(t)$ \cite{Bjork}.
     &= \sigma^2 \int_{s}^{t}e^{-2k(t-u)} d W(u) \\
     &= \frac{\sigma^2}{2\kappa} \Big(e^{-2k(t-s)}\Big)
     \end{align*}
+This lead to the theoretical distributed of the the short rate in the Vasicek Model, which is represent below
+\begin{align*}
+    R(t) \sim \mathcal{N} \Big[ r(s) e^{-k(t-s)} + \theta \left( 1 - e^{-k(t-s)} \right) ,
+    \frac{\sigma^2}{2\kappa} \Big(e^{-2k(t-s)}\Big) \Big]
+\end{align*}
+
 \begin{figure}[h]
     \centering
     \includegraphics[width=0.7\textwidth]{/Users/nannaingemannohrt/Desktop/master_thesis/main/plots/NormalDistributionPlot.png}
-    \caption{Histogram of one simulated interest rates path using the Vasicek model.}
+    \caption{Histogram of one simulated rates path using the Vasicek model.}
     \label{fig:rates:hist}
 \end{figure}
