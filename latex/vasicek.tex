@@ -184,3 +184,22 @@ Since this holds for all values of $r$, which does not feature in the left hand 
 Considering that the price of zero coupon bond at maturity $P(T,T)=1$, the function $P=A e^{-rB}$ suggests $B(T,T)=0$
 and $A(T,T)=0$. By then applying the integrating factor to the \autoref{equal_zero}, reorganizing and integrating
 form t to T, we obtain
+\begin{align}
+   0 &= 1 + \frac{\partial B}{\partial t} - \kappa B \nonumber  \\
+   0 &= e^{-\kappa t} + e^{-\kappa t} \frac{\partial B}{\partial t} - e^{-\kappa t} \kappa B \nonumber \\
+   -e^{-\kappa t} &= e^{-\kappa t} \frac{\partial B}{\partial t} - e^{-\kappa t} \kappa B  \nonumber \\
+   -e^{-\kappa t} dt &= d \left( e^{-\kappa t} B(t, T) \right) \nonumber \\
+   - \int_{t}^{T} e^{-\kappa u} du &= \int_{t}^{T} d \left( e^{-\kappa t} B(t, T) \right) \nonumber  \\
+   \frac{1}{\kappa} \left( e^{-\kappa T} - e^{-\kappa t} \right) &= e^{-\kappa T} B(T, T) - e^{-\kappa t} B(t, T)\nonumber  \\
+   B(t,T) & =\frac{1}{\kappa} \left( 1 - e^{-\kappa (T-t)} \right)  
+\end{align}
+
+
+
+
+
+
+
+
+
+
