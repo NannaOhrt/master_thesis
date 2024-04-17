@@ -114,10 +114,62 @@ This lead to the theoretical distributed of the the short rate in the Vasicek Mo
     R(t) \sim \mathcal{N} \Big[ r(s) e^{-k(t-s)} + \theta \left( 1 - e^{-k(t-s)} \right) ,
     \frac{\sigma^2}{2\kappa} \Big(e^{-2k(t-s)}\Big) \Big]
 \end{align*}
-
+Mowing toward simulating the distribution, we can you the above attributes of the short rate being Gaussian.
+Given that the stochastic integral of a deterministic function with respect to a Wiener process is Gaussian distributed
+with a mean of zero, we can simulate the short-rate distribution by generating a large number of possible paths
+for the Wiener process. Each path would then correspond to a realization of the short rate over time. In \autoref{fig:rates:hist}
+below the described method is used and the simulated path for the short rate in the Vasicek model and the distributed of the
+simulated paths is plotted in a Histogram. In \autoref{fig:rates:hist} the probability density function (PDF) of the 
+fitted normal distribution is also plotted. This verify that the short rate process in the Vasicek model is Gaussian distributed.
 \begin{figure}[h]
     \centering
     \includegraphics[width=0.7\textwidth]{/Users/nannaingemannohrt/Desktop/master_thesis/main/plots/NormalDistributionPlot.png}
     \caption{Histogram of one simulated rates path using the Vasicek model.}
     \label{fig:rates:hist}
 \end{figure}
+Now some common properties of the Vasicek model has been reviewed and supported by simulations. Mowing forward we will 
+focus on bond prices using the Vasicek model. Earlier we discussed bond prices, the Black Scholes model was introduced. 
+But now we look at another property of the Vasicek model, namely that the model expectations can be calculated explicit 
+formulas for bond pricing. First some word on how this in done and the a more the approach. 
+When using the Vasicek model, it is possible to derive closed-form solutions for zero coupon bond prices. 
+These prices are determined by an equation that factors in the current short rate, the speed of mean reversion,
+the long-term mean rate, the volatility of the short rate, and the bond’s time to maturity.
+Teh bond prices formula we will determine soon will from the Vasicek model considers the expected path of future short 
+rates under the risk neutral measure, discounted back to the present value. 
+\\\\
+As mentioned we will now look a the formula for pricing bond using the Vasicek model. We consider a zero coupon bond
+with maturity T and ar time t the price is given as in \autoref{price_zcb_vas} below \cite{Bjork}.
+\begin{align}
+    P(t,T) &= A(t,T) e^{-rB(t,T)} 
+    \label{price_zcb_vas} \\
+    dP(t,T) &= \frac{\partial P}{\partial t} dt + \frac{\partial P}{\partial r} dr 
+    + \frac{1}{2} \frac{\partial^2 P}{\partial r^2} dr^2 \nonumber
+\end{align}
+Then we find the partial derivatives with respect to $r$ and $t$ of the zero coupon bond listed in \autoref{price_zcb_vas}.
+\begin{align*}
+    \frac{\partial P}{\partial t} &= \frac{\partial}{\partial t} (Ae^{-rB}) 
+    = e^{-rB} \frac{\partial A}{\partial t} + Ae^{-rB} \frac{\partial}{\partial t} (-rB) \\
+    &= e^{-rB} \frac{\partial A}{\partial t} - rAe^{-rB} \frac{\partial B}{\partial t} = 
+    - \frac{P}{A} \frac{\partial A}{\partial t} - rP \frac{\partial B}{\partial t}
+\end{align*}
+
+\begin{align*}
+    \frac{\partial P}{\partial r} &= \frac{\partial}{\partial r} (Ae^{-rB}) 
+    = Ae^{-rB} \frac{\partial}{\partial r} (-rB) = -PB \\
+    &\frac{\partial^2 P}{\partial r^2} = \frac{\partial}{\partial r} (-PB) = -B \frac{\partial}{\partial r} (P) = PB^2
+\end{align*}
+Then by applying Ito's lemma \cite{Bjork} and insetting the formula for the short rate in the Vasicek model present in 
+\autoref{vas_dyn} we obtain that 
+
+\begin{align*}
+    dP(t,T) &= \frac{\partial P}{\partial t} dt + \frac{\partial P}{\partial r} dr 
+    + \frac{1}{2} \frac{\partial^2 P}{\partial r^2} dr^2 \\
+    dP(t,T) &= \left( \frac{P}{A} \frac{\partial A}{\partial t} - rP \frac{\partial B}{\partial t} \right) dt 
+    + (-PB) dr + \frac{1}{2} (PB^2) dr^2 \\
+    \frac{dP}{P} &= \left( \frac{1}{A} \frac{\partial A}{\partial t} - r \frac{\partial B}{\partial t} \right) dt 
+    - B dr + \frac{1}{2} B^2 dr^2 \\
+    \frac{dP}{P} &= \left( \frac{1}{A} \frac{\partial A}{\partial t} - r \frac{\partial B}{\partial t} \right) dt
+     - B(\kappa \theta dt - \kappa r dt + \sigma dW_t) + \frac{1}{2} B^2 \sigma^2 dt\\
+    \frac{dP}{P} &= \left( \frac{1}{A} \frac{\partial A}{\partial t} - r \frac{\partial B}{\partial t} 
+    - \kappa \theta B + \kappa r B + \frac{1}{2} B^2 \sigma^2 \right) dt - \sigma B dW_t \\
+\end{align*}
