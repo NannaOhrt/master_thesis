@@ -178,7 +178,7 @@ Under the risk neutral measure, the expected return of the bond must be equal to
 \end{align*}
 Since this holds for all values of $r$, which does not feature in the left hand side, we deduce that
 \begin{align}
-    0 &= \frac{1}{A} \frac{\partial A}{\partial t} - \kappa \theta B + \frac{1}{2} B^2 \sigma^2 \nonumber\\
+    0 &= \frac{1}{A} \frac{\partial A}{\partial t} - \kappa \theta B + \frac{1}{2} B^2 \sigma^2 \label{equal_zero2}\\
     0 &=1 + \frac{\partial B}{\partial t} - \kappa B \label{equal_zero}
 \end{align}
 Considering that the price of zero coupon bond at maturity $P(T,T)=1$, the function $P=A e^{-rB}$ suggests $B(T,T)=0$
@@ -193,13 +193,46 @@ form t to T, we obtain
    \frac{1}{\kappa} \left( e^{-\kappa T} - e^{-\kappa t} \right) &= e^{-\kappa T} B(T, T) - e^{-\kappa t} B(t, T)\nonumber  \\
    B(t,T) & =\frac{1}{\kappa} \left( 1 - e^{-\kappa (T-t)} \right)  
 \end{align}
-
-
-
-
-
-
-
+Finally  by substituting into \autoref{equal_zero2} and integrating we get that
+\begin{align}
+    0 &=\frac{1}{A} \frac{\partial A}{\partial t} - \kappa \theta B + \frac{1}{2} B^2 \sigma^2 \nonumber \\
+    0 &= \frac{1}{A} \frac{\partial A}{\partial t} - \kappa \theta \left( \frac{1 - e^{-\kappa(T-t)}}{\kappa}
+    \right) + \frac{\sigma^2}{2\kappa^2} \left( 1 - e^{-\kappa(T-t)} \right)^2 \nonumber \\
+    0 &=  \frac{1}{A} \frac{\partial A}{\partial t} - \theta \left( 1 - e^{-\kappa(T-t)} \right) 
+    + \frac{\sigma^2}{2\kappa^2} \left( 1 + e^{-2\kappa(T-t)} - 2e^{-\kappa(T-t)} \right)\nonumber \\
+    \frac{1}{A} \frac{\partial A}{\partial t} &€= \theta \left( 1 - e^{-\kappa(T-t)} \right) 
+    - \frac{\sigma^2}{2\kappa^2} \left( 1 + e^{-2\kappa(T-t)} - 2e^{-\kappa(T-t)} \right) \nonumber\\
+    \int_{t}^{T} \frac{dA(u, T)}{A(u, T)} &= \theta \int_{t}^{T} \left(1 - e^{-\kappa(T-u)}\right) du 
+    - \frac{\sigma^2}{2\kappa^2} \int_{t}^{T} \left(1 + e^{-2\kappa(T-u)} - 2e^{-\kappa(T-u)}\right) du \nonumber\\
+    \ln A(T, T) - \ln A(t, T) &= \theta (T - t) - \theta \left(\frac{1 - e^{-\kappa(T-t)}}{\kappa} \right)
+    - \frac{\sigma^2}{2\kappa^2} \left( (T - t) + \left(\frac{1 - e^{-2\kappa(T-t)}}{2\kappa}\right) 
+    - 2\frac{1 - e^{-\kappa(T-t)}}{\kappa}\right) \nonumber\\
+    -\ln A(t, T) &= \theta (T - t) - \theta \left(\frac{1 - e^{-\kappa(T-u)}}{\kappa} \right)
+    - \frac{\sigma^2}{4\kappa^3} \left(2\kappa (T - t) + 1 - e^{-2\kappa(T-t)} - 4 + 4e^{-\kappa(T-t)}\right) \nonumber\\
+    -\ln A(t, T) &= \theta (T - t) - \theta \left(\frac{1 - e^{-\kappa(T-u)}}{\kappa} \right)
+    - \frac{\sigma^2}{4\kappa^3} \left(2\kappa (T - t) - \left(1 + e^{-2\kappa(T-t)} 
+    - 2e^{-\kappa(T-t)}\right) - 2 + 2e^{-\kappa(T-t)}\right) \nonumber\\
+    -\ln A(t, T) &= \theta (T - t) - \theta \left(\frac{1 - e^{-\kappa(T-u)}}{\kappa}\right) - \frac{\sigma^2}{2 \kappa^2}
+    \left((T-t)- \frac{1-e^{-\kappa(T-t)}}{\kappa}\right) + \frac{\sigma^2}{4 {\kappa}^3}\left(1-e^{-\kappa(T-t)}\right)^2 \nonumber\\
+    \ln A(t, T) &= \left(\theta -\frac{\sigma^2}{2\kappa^2}\right) \left(\frac{1-e^{-\kappa(T-u)}}{\kappa}-(T-t)\right)
+    -\frac{\sigma^2}{4 \kappa}\left(\frac{1-e^{-\kappa(T-t)}}{\kappa}\right)^2 \nonumber\\
+    A(t,T)&= \exp \Biggl\{\left(\theta-\frac{\sigma^2}{2 \kappa^2}\right)\left(\frac{1-e^{-\kappa(T-u)}}{\kappa}-(T-t)\right)
+    -\frac{\sigma^2}{4 \kappa}\left(\frac{1-e^{-\kappa(T-t)}}{\kappa}\right)^2 \Biggr\} 
+\end{align}
+ Combining this we get the formula for pricing bonds using the Vasicek model, which present the 
+\begin{proposition}
+    \textbf{(The Vasicek term structure)} In the Vasicek model, bond prices are given by
+ \begin{align}
+    P(t,T) &= A(t,T) e^{-rB(t,T)} 
+\end{align}
+where
+\begin{align*}
+    A(t,T)&= \exp \Biggl\{\left(\theta-\frac{\sigma^2}{2 \kappa^2}\right)\left(\frac{1-e^{-\kappa(T-u)}}{\kappa}-(T-t)\right)
+    -\frac{\sigma^2}{4 \kappa}\left(\frac{1-e^{-\kappa(T-t)}}{\kappa}\right)^2 \Biggr\} \\
+    B(t,T) & =\frac{1}{\kappa} \left( 1 - e^{-\kappa (T-t)} \right)  
+\end{align*}
+\cite{Bjork}
+\end{proposition}
 
 
 
