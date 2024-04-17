@@ -141,9 +141,7 @@ As mentioned we will now look a the formula for pricing bond using the Vasicek m
 with maturity T and ar time t the price is given as in \autoref{price_zcb_vas} below \cite{Bjork}.
 \begin{align}
     P(t,T) &= A(t,T) e^{-rB(t,T)} 
-    \label{price_zcb_vas} \\
-    dP(t,T) &= \frac{\partial P}{\partial t} dt + \frac{\partial P}{\partial r} dr 
-    + \frac{1}{2} \frac{\partial^2 P}{\partial r^2} dr^2 \nonumber
+    \label{price_zcb_vas} 
 \end{align}
 Then we find the partial derivatives with respect to $r$ and $t$ of the zero coupon bond listed in \autoref{price_zcb_vas}.
 \begin{align*}
@@ -151,16 +149,14 @@ Then we find the partial derivatives with respect to $r$ and $t$ of the zero cou
     = e^{-rB} \frac{\partial A}{\partial t} + Ae^{-rB} \frac{\partial}{\partial t} (-rB) \\
     &= e^{-rB} \frac{\partial A}{\partial t} - rAe^{-rB} \frac{\partial B}{\partial t} = 
     - \frac{P}{A} \frac{\partial A}{\partial t} - rP \frac{\partial B}{\partial t}
-\end{align*}
-
-\begin{align*}
+    \\\\
     \frac{\partial P}{\partial r} &= \frac{\partial}{\partial r} (Ae^{-rB}) 
-    = Ae^{-rB} \frac{\partial}{\partial r} (-rB) = -PB \\
-    &\frac{\partial^2 P}{\partial r^2} = \frac{\partial}{\partial r} (-PB) = -B \frac{\partial}{\partial r} (P) = PB^2
+    = Ae^{-rB} \frac{\partial}{\partial r} (-rB) = -PB 
+    \\\\
+    \frac{\partial^2 P}{\partial r^2} &= \frac{\partial}{\partial r} (-PB) = -B \frac{\partial}{\partial r} (P) = PB^2
 \end{align*}
-Then by applying Ito's lemma \cite{Bjork} and insetting the formula for the short rate in the Vasicek model present in 
-\autoref{vas_dyn} we obtain that 
-
+Then by applying Ito's lemma \cite{Bjork} insetting the derivatives with respect to $r$ and $t$ we found above and
+insetting the formula for the short rate in the Vasicek model present in \autoref{vas_dyn} we obtain the following
 \begin{align*}
     dP(t,T) &= \frac{\partial P}{\partial t} dt + \frac{\partial P}{\partial r} dr 
     + \frac{1}{2} \frac{\partial^2 P}{\partial r^2} dr^2 \\
@@ -173,3 +169,18 @@ Then by applying Ito's lemma \cite{Bjork} and insetting the formula for the shor
     \frac{dP}{P} &= \left( \frac{1}{A} \frac{\partial A}{\partial t} - r \frac{\partial B}{\partial t} 
     - \kappa \theta B + \kappa r B + \frac{1}{2} B^2 \sigma^2 \right) dt - \sigma B dW_t \\
 \end{align*}
+Under the risk neutral measure, the expected return of the bond must be equal to the risk free rate. Thus we have that
+\begin{align*}
+    r  &= \frac{1}{A} \frac{\partial A}{\partial t} - r \frac{\partial B}{\partial t} - \kappa \theta B 
+    + \kappa r B + \frac{1}{2} B^2 \sigma^2  \\
+    r \left( 1 + \frac{\partial B}{\partial t} - \kappa B \right) & =\frac{1}{A} \frac{\partial A}{\partial t} 
+    - \kappa \theta B + \frac{1}{2} B^2 \sigma^2 
+\end{align*}
+Since this holds for all values of $r$, which does not feature in the left hand side, we deduce that
+\begin{align}
+    0 &= \frac{1}{A} \frac{\partial A}{\partial t} - \kappa \theta B + \frac{1}{2} B^2 \sigma^2 \nonumber\\
+    0 &=1 + \frac{\partial B}{\partial t} - \kappa B \label{equal_zero}
+\end{align}
+Considering that the price of zero coupon bond at maturity $P(T,T)=1$, the function $P=A e^{-rB}$ suggests $B(T,T)=0$
+and $A(T,T)=0$. By then applying the integrating factor to the \autoref{equal_zero}, reorganizing and integrating
+form t to T, we obtain
