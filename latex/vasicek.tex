@@ -219,8 +219,10 @@ Finally  by substituting into \autoref{equal_zero2} and integrating we get that
     A(t,T)&= \exp \Biggl\{\left(\theta-\frac{\sigma^2}{2 \kappa^2}\right)\left(\frac{1-e^{-\kappa(T-u)}}{\kappa}-(T-t)\right)
     -\frac{\sigma^2}{4 \kappa}\left(\frac{1-e^{-\kappa(T-t)}}{\kappa}\right)^2 \Biggr\} 
 \end{align}
- Combining this we get the formula for pricing bonds using the Vasicek model, which present the 
+ Combining this we get the formula for pricing bonds using the Vasicek model, which present 
+ in Proposition \autoref{prop 5} below. 
 \begin{proposition}
+    \label{prop 5}
     \textbf{(The Vasicek term structure)} In the Vasicek model, bond prices are given by
  \begin{align}
     P(t,T) &= A(t,T) e^{-rB(t,T)} 
@@ -232,6 +234,7 @@ where
     B(t,T) & =\frac{1}{\kappa} \left( 1 - e^{-\kappa (T-t)} \right)  
 \end{align*}
 \cite{Bjork}
+
 \end{proposition}
 \noindent
 The Vasicek model has now been introduced, and we have taken a closer look at the distribution in the short rate model. 
