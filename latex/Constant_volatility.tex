@@ -8,18 +8,19 @@ a closed-form solution for implied volatility, it can be determined numerically,
 in this analysis. Instead, we introduce the SABR model to estimate volatility, which can then be 
 applied to the Black-Scholes model for option pricing.
 \\\\
-We will briefly demonstrate why the assumption of constant volatility does not align with market data. 
-Our analysis includes examining the S$\&$P 500 index and the 10Y10Y EUR swaption, which are commonly used financial indices.
-Below in \autoref{10Y10Y dev} and \autoref{sp500 dev}, respectively the develop of the 10Y10 EUR swaption and S$\&$500 index
-levels is illustrated. From the two plots we see the patterns that the levels fluctuate over time. This is emphasized
-if we look at \autoref{10Y10Y return} and \autoref{sp500 return}, where the return for respectively the 10Y10Y EUR 
-swaption and the S$\&$P 500 index is plotted. We see that the daily return fluctuate over time, hence it doesn't look 
-like the volatility in the market data is constant. So this small data analysis emphasize the point that volatility is 
-not a constant figure but rather varies significantly from day to day, reflecting the market's 
-response to new information and events. From the small data analysis we can deduce that the Black Scholes model 
-serves as foundation tool in option pricing, but i cannot describe and capture volatility in the market. This highlights 
-the necessity of models like the SABR model, which is construct to fit the market volatility better. Since The SABR model
-allow for a more nuanced estimation of volatility.
+We will briefly demonstrate why the assumption of constant volatility is inconsistent with market data. 
+Our analysis includes an examination of the S$\&$P 500 index and the 10Y10Y EUR swaption, which are frequently used 
+financial indicators. As depicted in \autoref{10Y10Y dev} and \autoref{sp500 dev}, the development of the 10Y10Y EUR swaption 
+and S$\&$P 500 index levels illustrates fluctuations over time. This variability is further emphasized by the return patterns 
+shown in \autoref{10Y10Y return} and \autoref{sp500 return}, where the returns of the 10Y10Y EUR swaption and S$\&$P 500 index are plotted. 
+These fluctuations suggest that market volatility is not constant. Our analysis underscores that volatility varies 
+significantly from day to day, reflecting the market's response to new information and events. This observation challenges 
+the applicability of the Black-Scholes model, which assumes constant volatility and highlights the need for models like the 
+SABR model that more accurately capture market dynamics and provide nuanced volatility estimates.
+
+
+
+
 \newpage
 \begin{figure}[h]
     \centering
