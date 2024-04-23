@@ -62,22 +62,30 @@ below
 \end{align}
 with
 \begin{equation}
-d_{1,2} = \frac{\log \frac{f}{K} \pm \frac{1}{2}\sigma_B^2 t_{\text{ex}}}{\sigma_B \sqrt{t_{\text{ex}}}}, \label{sabr3}
+    d_{1,2} = \frac{\log \frac{f}{K} \pm \frac{1}{2}\sigma_B^2 t_{\text{ex}}}{\sigma_B \sqrt{t_{\text{ex}}}}, \label{sabr3}
 \end{equation}
 where the implied volatility $\sigma_B(f, K)$ is given by
 \begin{equation}
-\sigma_B(K, f) = \frac{\alpha}{(fK)^{(1-\beta)/2}} \left\{ 1 + \frac{(1-\beta)^2}{24} \log^2 \frac{f}{K} + \frac{(1-\beta)^4}{1920} \log^4 \frac{f}{K} + \ldots \right\} \left( \frac{z}{x(z)} \right).
+    \sigma_B(K, f) = \frac{\alpha}{(fK)^{(1-\beta)/2}} \left\{ 1 + \frac{(1-\beta)^2}{24} \log^2 \frac{f}{K} + \frac{(1-\beta)^4}{1920} \log^4 \frac{f}{K} + \ldots \right\} \left( \frac{z}{x(z)} \right).
 \end{equation}
 Here
 \begin{align}
-z &= \frac{\nu}{\alpha}(fK)^{(1-\beta)/2} \log \frac{f}{K}, \\
-x(z) &\text{ is defined by} \\
-x(z) &= \log \left\{ \frac{\sqrt{1-2\rho z + z^2} + z - \rho}{1 - \rho} \right\}.
+    z &= \frac{\nu}{\alpha}(fK)^{(1-\beta)/2} \log \frac{f}{K}, \\
+\end{align}
+where x(z) is defined by
+\begin{align}
+    x(z) &= \log \left\{ \frac{\sqrt{1-2\rho z + z^2} + z - \rho}{1 - \rho} \right\}.
 \end{align}
 For the special case of at-the-money options, options struck at $K = f$, this formula reduces to
 \begin{equation}
-\sigma_{ATM} = \sigma_B(f, f) = \frac{\alpha}{f^{1-\beta}} \left\{ 1 + \left( \frac{(1-\beta)^2}{24} \frac{\alpha^2}{f^{2-2\beta}} + \frac{\rho \beta \nu}{4} \frac{\alpha}{f^{1-\beta}} + \frac{2-3\rho^2}{24} \nu^2 \right) t_{\text{ex}} + \ldots \right\}.
+    \sigma_{ATM} = \sigma_B(f, f) = \frac{\alpha}{f^{1-\beta}} \left\{ 1 + \left( \frac{(1-\beta)^2}{24} \frac{\alpha^2}{f^{2-2\beta}} + \frac{\rho \beta \nu}{4} \frac{\alpha}{f^{1-\beta}} + \frac{2-3\rho^2}{24} \nu^2 \right) t_{\text{ex}} + \ldots \right\}.
 \end{equation}
+\\
+Now that we have a simplified formula for the implied 
+volatility from the SABR model, we can start analyzing 
+how the model works. We will do this with continuing your
+analysis but investigating how the different parameters 
+affects the SABR model. 
 
 
 \subsection{Estimating Parameters}
