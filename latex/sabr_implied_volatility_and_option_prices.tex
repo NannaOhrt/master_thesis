@@ -1,10 +1,42 @@
-\section{SABR Implied Volatility and Option Prices}
-
-
+\section{ The SABR model}
+The SABR (Stochastic Alpha, Beta, Rho) model marks a pivotal advancement 
+in financial modeling, effectively addressing the significant limitations 
+found in traditional methods like the Black Scholes model, which presupposes 
+constant volatility. Created in 2002 by Patrick Hagan, Deep Kumar, 
+Andrew Lesniewski, and Diana Woodward, the SABR model is highly esteemed for 
+its adeptness at managing the dynamic and unpredictable nature of market 
+volatility.
+\\\\
+As a two-factor model, the SABR framework models both the forward rate 
+(or asset price) and its volatility as stochastic processes. This approach 
+is vital as it incorporates a stochastic behavior in volatility, significantly 
+improving the model's ability to capture the true, skewed, and heavy-tailed 
+nature of financial market data. By allowing for volatility fluctuations, 
+the SABR model provides a flexible and realistic framework for pricing 
+derivatives, proving especially useful for options with long maturities where 
+the assumption of constant volatility falls short \cite{Smile}.
 
 \subsection{Process for the forward rate}
+The main different between the SABR model and the 
+Black Scholes model is the assumptions regrading the 
+volatility, as mentioned earlier. In the Black Scholes 
+model the volatility is a assumed to be constant and 
+in the SABR model the volatility evolve as a function
+of time, t, the strike price, K, and the current
+forward price, $f_t$. Futhermore the volatility itself
+is random. So we chose the unknown coefficient $C(t,*)$
+to be $\hat{\alpha} \hat{F}^{\beta}$, where the 
+"volatility" $\hat{\alpha}$ is a stochastic process itself. 
+The extra randomness is scaled thought the inclusion 
+of a "volatility of volatility" parameter $\nu$.
+\\\\
+Now we will formulate the SABR model mathematically. 
+The SABR model consist of a dynamic for the forward price
+and one for the volatility, since the SABR model is a 
+two-factor model. The SABR model also formulate the 
+how the to process is correlated \cite{Smile}. 
 
 
-\subsection{The SABR model}
+\subsection{SABR Implied Volatility and Option Prices}
 
 \subsection{Estimating Parameters}
