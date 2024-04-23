@@ -16,7 +16,7 @@ the SABR model provides a flexible and realistic framework for pricing
 derivatives, proving especially useful for options with long maturities where 
 the assumption of constant volatility falls short \cite{Smile}.
 
-\subsection{Process for the forward rate}
+\subsection{Specification for the SABR model}
 The main different between the SABR model and the 
 Black Scholes model is the assumptions regrading the 
 volatility, as mentioned earlier. In the Black Scholes 
@@ -34,9 +34,50 @@ Now we will formulate the SABR model mathematically.
 The SABR model consist of a dynamic for the forward price
 and one for the volatility, since the SABR model is a 
 two-factor model. The SABR model also formulate the 
-how the to process is correlated \cite{Smile}. 
-
+how the to process is correlated. 
+\begin{align}
+    df_t &= \alpha_t f_t^\beta dW_t^1, \quad \quad \hat{F}(0)=f  \\
+    d\alpha_t &= \nu \alpha_t dW_t^2, \quad \quad \hat{\alpha}(0)=\alpha
+\end{align}
+where $W_t^{1}$ and $W_t^{2}$ are two correlated Wiener 
+process \cite{Smile}. So we have that 
+parameters in the SABR model is as follows. $\alpha$ is
+the initial variance, $\nu$ is the volatility of
+variance, $\beta$ is the exponent for the forward rate 
+and as mentioned $\rho$ is the correlations between the 
+two Wiener process. 
 
 \subsection{SABR Implied Volatility and Option Prices}
+Before we are able to move forward with the analysis,
+we need to formulate how to determine implied volatility. 
+But these calculations are out of the scope for this analysis,
+so we will used the formula in the paper Managing Smile Risk 
+of Hagen (2002) \cite{Smile}. The paper states that
+under the SABR model, the prices of European options 
+is given by Black formula in \autoref{sabr1} to \autoref{sabr3}
+below
+\begin{align}
+    V_{\text{call}} &= D(t_{\text{set}})fN(d_1) - KN(d_2),  \label{sabr1}\\
+    V_{\text{put}} &= V_{\text{call}} + D(t_{\text{set}})[K - f], \label{sabr2}
+\end{align}
+with
+\begin{equation}
+d_{1,2} = \frac{\log \frac{f}{K} \pm \frac{1}{2}\sigma_B^2 t_{\text{ex}}}{\sigma_B \sqrt{t_{\text{ex}}}}, \label{sabr3}
+\end{equation}
+where the implied volatility $\sigma_B(f, K)$ is given by
+\begin{equation}
+\sigma_B(K, f) = \frac{\alpha}{(fK)^{(1-\beta)/2}} \left\{ 1 + \frac{(1-\beta)^2}{24} \log^2 \frac{f}{K} + \frac{(1-\beta)^4}{1920} \log^4 \frac{f}{K} + \ldots \right\} \left( \frac{z}{x(z)} \right).
+\end{equation}
+Here
+\begin{align}
+z &= \frac{\nu}{\alpha}(fK)^{(1-\beta)/2} \log \frac{f}{K}, \\
+x(z) &\text{ is defined by} \\
+x(z) &= \log \left\{ \frac{\sqrt{1-2\rho z + z^2} + z - \rho}{1 - \rho} \right\}.
+\end{align}
+For the special case of at-the-money options, options struck at $K = f$, this formula reduces to
+\begin{equation}
+\sigma_{ATM} = \sigma_B(f, f) = \frac{\alpha}{f^{1-\beta}} \left\{ 1 + \left( \frac{(1-\beta)^2}{24} \frac{\alpha^2}{f^{2-2\beta}} + \frac{\rho \beta \nu}{4} \frac{\alpha}{f^{1-\beta}} + \frac{2-3\rho^2}{24} \nu^2 \right) t_{\text{ex}} + \ldots \right\}.
+\end{equation}
+
 
 \subsection{Estimating Parameters}
