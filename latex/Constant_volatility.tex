@@ -1,4 +1,13 @@
 \section{Constant Volatility}
+This chapter will delve into the limitations 
+of the Black-Scholes model, particularly its 
+assumption of constant volatility, and introduce 
+the SABR model as a more dynamic alternative for estimating volatility. 
+The chapter will illustrate the inconsistency of 
+this assumption with real-world market data, 
+using the S$\&$P 500 index and the 10Y10Y EUR swaption 
+as examples.
+\\\\
 The Black-Scholes model, introduced earlier, outlines the pricing formula for a European call option in 
 Proposition \autoref{Black-Scholes Formula}. It is  essential to recall that in the Black-Scholes formula, 
 volatility is considered constant. This implies that the volatility of the asset's returns does not vary over time,
@@ -18,7 +27,6 @@ These fluctuations suggest that market volatility is not constant. Our analysis 
 significantly from day to day, reflecting the market's response to new information and events. This observation challenges 
 the applicability of the Black-Scholes model, which assumes constant volatility and highlights the need for models like the 
 SABR model that more accurately capture market dynamics and provide nuanced volatility estimates.
-
 \begin{figure}[h]
     \centering
     \begin{minipage}{0.5\textwidth}
@@ -32,7 +40,7 @@ SABR model that more accurately capture market dynamics and provide nuanced vola
         \label{sp500 dev}
     \end{minipage}
 \end{figure}
-
+\newpage
 \begin{figure}[h]
     \centering
     \begin{minipage}{0.5\textwidth}
@@ -47,7 +55,6 @@ SABR model that more accurately capture market dynamics and provide nuanced vola
     \end{minipage}
 \end{figure}
 \noindent
-\\\\
 \\\\
 A brief review of the market data reveals a trend in 
 volatility, indicating that it is not constant. 
