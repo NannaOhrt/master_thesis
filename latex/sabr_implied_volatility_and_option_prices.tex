@@ -54,7 +54,21 @@ parameters in the SABR model is as follows. $\alpha$ represents the initial vola
 , $\beta$ represents the elasticity of the volatility; a common practice is to fix beta based on the underlying asset 
 and as mentioned $\rho$ is the correlations between the 
 two Wiener process, the asset price and its volatility. 
-
+\\\\
+So the SABR model is characterized by the stochastic process $\alpha_t$,
+the parameter $\beta$, and the correlation coefficient $\rho$,
+which is also reflected in its name: Stochastic Alpha Bete Rho.
+In a specific variant of the SABR model, 
+by setting $\beta = 1 $and $\nu = 0$, the model reverts 
+to the classic Black Scholes framework. 
+This configuration leads to a constant volatility, 
+denoted $\alpha_0 $, 
+and a forward process where returns follow a 
+normal distribution with a mean of zero and a standard 
+deviation of $\alpha_0 \sqrt{t}$. So now the SABR model
+has been introduced and the analysis will continuing forward 
+how to price a swaption using the SABR model to determine
+volatility.
 \subsection{SABR Implied Volatility and Option Prices}
 Before we are able to move forward with the analysis,
 we need to formulate how to determine implied volatility. 
