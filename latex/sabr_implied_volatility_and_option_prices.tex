@@ -154,11 +154,36 @@ represents "the initial volatility" as it is the starting point for the stochast
 Below in \autoref{fig:alpha} the volatility smile is illustrated for three different value of $\alpha_0$. 
 From \autoref{fig:alpha} we see that the up and down movements don't change the shape of the volatility smile, 
 it only shifts the volatility smile respectively up and down given the movement in $\alpha_0$.
+\\\\
 \begin{figure}[htbp]
     \centering
-    \includegraphics[width=1.\textwidth]{/Users/nannaingemannohrt/Desktop/master_thesis/main/plots/SABR1_alpha.png}
+    \includegraphics[width=1.0\textwidth]{/Users/nannaingemannohrt/Desktop/master_thesis/main/plots/SABR1_alpha.png}
     \caption{SABR model volatility smiles at various $\alpha_0$ levels}
     \label{fig:alpha}
+\end{figure}
+\\\\
+\noindent
+Then we will continue the study of the parameters affects by looking into shift in the beta value in the SABR model.
+Aging we shift the value of $\beta$ up and down from the fixed beta in \autoref{tab:parameters}. So we will look at $\beta$ equal to $0.3$,
+$0.5$ (the fix beta) and $0.7$. 
+Although not explicitly constrained in the original article by Hagan et al. (2002), we restrict $\beta$ to the range $[0, 1]$. 
+Choosing a $\beta$ less than 0 would lead to an illogical scenario where higher forward prices F result in a smaller 
+relative change in the process ft, thus we set the lower limit at $\beta \leq 0$ Similarly, a $\beta$ greater than 1 would 
+suggest that the expected deviation from the current state of $F_t$ exceeds the product of volatility and the current 
+forward level (times $\sqrt{t}$), which is also impractical. Therefore, we set the upper limit at $\beta \geq 0$.
+\\\\
+Below in \autoref{fig:beta} the volatility smile in the SABR model for the different beta values are illustrated.
+From \autoref{fig:beta} we see a small affect of the curvature of the volatility smile. We also not that for higher 
+beta shift is larger, than for lower beta. We also note that the change in the beta parameter is more present in 
+the left side from of strike value at-the-money (ATM). Other than that we wee the same patterns from the change in 
+the alpha parameter, namely the up and down shifts in the volatility smile, respectively to the movement in the 
+beta parameter.
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=1.0\textwidth]{/Users/nannaingemannohrt/Desktop/master_thesis/main/plots/SABR_beta.png}
+    \caption{SABR model volatility smiles at various $\beta$ levels}
+    \label{fig:beta}
 \end{figure}
 
 \newpage
