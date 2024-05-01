@@ -197,7 +197,16 @@ the curvature. But after this part of the analysis, we clearly see that the curv
 of $\nu$. Which makes good sense, when we think of the interpretation of the parameter describe before.
 We also note that when $\nu$  increasing the level of the implied volatility for the 
 out-of-the-money (OTM) strikes also increase and vise vera.
-
+\\\\
+Then we look at the parameter for the correlation between the asset price and its volatility, namely $\rho$.
+So we have that $\rho$ is the correlation between to two Wiener process in the SABR model, hence we have
+that $\rho$ is bounded and takes values between $-1$ and $1$. In \autoref{fig:rho} the shifted valus of $\rho$
+from the fixed value is illustrated. 
+We see that higher positive correlations generally show a decreasing trend in implied volatility with an increase in strike price, 
+while strong negative correlations can cause the implied volatility to increase with strikes there are in-the-money (ITM).
+We alo note that when the correlation is close to zero the smile is more symmetric around the ATM strike. 
+So in total we see that the correlation parameter $\rho$ has a significantly affects on the shape and slope of
+the volatility smile in the SABr model, and hence on the implied volatilities values.
 \begin{figure}[htbp]
     \centering
     \includegraphics[width=1.0\textwidth]{/Users/nannaingemannohrt/Desktop/master_thesis/main/plots/SABR_nu.png}
