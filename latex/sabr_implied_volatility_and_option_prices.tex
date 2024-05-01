@@ -126,7 +126,7 @@ Below in \autoref{tab:parameters} the chosen value of the parameters are listed,
 explain of the parameters. Then the study is performed by changing the parameters one by one, to illustrate the 
 isolated effect of the parameters. 
 
-\begin{table}[h!]
+\begin{table}[htbp]
     \centering
     \begin{tabular}{ccc}
       \toprule
@@ -135,7 +135,7 @@ isolated effect of the parameters.
       $F$ & Forward price & 100 \\
       $T$ & Time to maturity & 1 \\
       $K$ & Strike & $K \in (80,120)$ \\
-      $\alpha$ & Initial level & 0.1 \\
+      $\alpha_0$ & Initial level of volatility & 0.1 \\
       $\beta$ & Elasticity of the volatility & 0.5 \\
       $\rho$ & Correlation between the asset price and its volatility & -0.4 \\
       $\nu$ & Volatility of the volatility parameter & 0.25 \\
@@ -144,7 +144,23 @@ isolated effect of the parameters.
     \caption{Summary of Parameters}
     \label{tab:parameters}
 \end{table}
+\noindent
+We will start the study with investigating how $\alpha_0$ affects the volatility smile in the SABR model. 
+First we note that the fix value of $\alpha_0$ is $0.1$ Hence we adjust the value of $\alpha_0$ to $0.05$ and $0.15$,
+where the other parameters are kept fixed as listed in \autoref{tab:parameters} above. So have change the parameter
+up and down from the initial value of $\alpha_0$.
+We note that the parameter $\alpha_0$
+represents "the initial volatility" as it is the starting point for the stochastic volatility process. 
+Below in \autoref{fig:alpha} the volatility smile is illustrated for three different value of $\alpha_0$. 
+From \autoref{fig:alpha} we see that the up and down movements don't change the shape of the volatility smile, 
+it only shifts the volatility smile respectively up and down given the movement in $\alpha_0$.
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=1.\textwidth]{/Users/nannaingemannohrt/Desktop/master_thesis/main/plots/SABR1_alpha.png}
+    \caption{SABR model volatility smiles at various $\alpha_0$ levels}
+    \label{fig:alpha}
+\end{figure}
 
-
+\newpage
 \subsection{Estimating Parameters in the SABR model}
 \subsection{Fitting a volatility smile using the SABR model}
