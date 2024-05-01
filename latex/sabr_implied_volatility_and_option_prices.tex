@@ -186,37 +186,38 @@ beta parameter.
     \label{fig:beta}
 \end{figure}
 \\\\
-\noindent
-text nu
 \\\\
+\noindent
+Moving forward we will shift the $\nu$ parameter, which can be describe as the volatility of the volatility parameter.
+Again we shift the $\nu$ parameter up and down from the fixed $\nu$ parameter listed in \autoref{tab:parameters}.
+The volatility smile calculated from the SABR for the different $\nu$ parameters are illustrated in \autoref{fig:nu} below.
+A very clear pattern emerges, namely that the parameter $\nu$ controls the curvature of the volatility smile in
+the SABR model. When we look at the shift in the beta parameter we make a comment that it made small changes in 
+the curvature. But after this part of the analysis, we clearly see that the curvature is determine from the value
+of $\nu$. Which makes good sense, when we think of the interpretation of the parameter describe before.
+We also note that when $\nu$  increasing the level of the implied volatility for the 
+out-of-the-money (OTM) strikes also increase and vise vera.
+
 \begin{figure}[htbp]
     \centering
     \includegraphics[width=1.0\textwidth]{/Users/nannaingemannohrt/Desktop/master_thesis/main/plots/SABR_nu.png}
     \caption{SABR model volatility smiles at various $\nu$ levels}
     \label{fig:nu}
 \end{figure}
-\\\\
-\noindent
-text rho
-\\\\
+
 \begin{figure}[htbp]
     \centering
     \includegraphics[width=1.0\textwidth]{/Users/nannaingemannohrt/Desktop/master_thesis/main/plots/SABR_rho.png}
     \caption{SABR model volatility smiles at various $\rho$ levels}
     \label{fig:rho}
 \end{figure}
-\\\\
-\noindent
-text f
-\\\\
+
 \begin{figure}[htbp]
     \centering
     \includegraphics[width=1.0\textwidth]{/Users/nannaingemannohrt/Desktop/master_thesis/main/plots/SABR_f.png}
     \caption{SABR model volatility smiles at various F levels}
     \label{fig:f}
 \end{figure}
-\\\\
-\noindent
 
 \newpage
 \subsection{Estimating Parameters in the SABR model}
