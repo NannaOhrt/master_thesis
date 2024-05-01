@@ -132,7 +132,7 @@ isolated effect of the parameters.
       \toprule
       \textbf{Parameter} & \textbf{Parameter explanation} & \textbf{Value} \\
       \midrule
-      $F$ & Forward price & 100 \\
+      $f$ & Forward price & 100 \\
       $T$ & Time to maturity & 1 \\
       $K$ & Strike & $K \in (80,120)$ \\
       $\alpha_0$ & Initial level of volatility & 0.1 \\
@@ -206,7 +206,7 @@ We see that higher positive correlations generally show a decreasing trend in im
 while strong negative correlations can cause the implied volatility to increase with strikes there are in-the-money (ITM).
 We alo note that when the correlation is close to zero the smile is more symmetric around the ATM strike. 
 So in total we see that the correlation parameter $\rho$ has a significantly affects on the shape and slope of
-the volatility smile in the SABr model, and hence on the implied volatilities values.
+the volatility smile in the SABR model, and hence on the implied volatilities values.
 \begin{figure}[htbp]
     \centering
     \includegraphics[width=1.0\textwidth]{/Users/nannaingemannohrt/Desktop/master_thesis/main/plots/SABR_nu.png}
@@ -224,10 +224,19 @@ the volatility smile in the SABr model, and hence on the implied volatilities va
 \begin{figure}[htbp]
     \centering
     \includegraphics[width=1.0\textwidth]{/Users/nannaingemannohrt/Desktop/master_thesis/main/plots/SABR_f.png}
-    \caption{SABR model volatility smiles at various F levels}
+    \caption{SABR model volatility smiles at various f levels}
     \label{fig:f}
 \end{figure}
-
+\newpage
+\noindent
+Finally we will investigate how the forward price, F, affect the volatility smile in the SABR model. 
+The same procedure ad for the other parameters will be used. So in \autoref{fig:f} the volatility smile
+for the forward prices are illustrated. We see that the slope, shape and curvature is retained, when there
+is only change in the forward price. Which is as we expected given how the forward price, f, enters in the closed
+solution for the implied volatility in \autoref{sigma_B} and \autoref{sigma_ff}.
+\\\\
+To summarize this section provides knowledge of the impact of the various parameters in the closed-form solution
+for the implied volatility in the SABR model. 
 \newpage
 \subsection{Estimating Parameters in the SABR model}
 \subsection{Fitting a volatility smile using the SABR model}
