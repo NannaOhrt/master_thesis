@@ -43,8 +43,8 @@ and one for the volatility, since the SABR model is a
 two-factor model. The SABR model also formulate the 
 how the to process is correlated. 
 \begin{align}
-    df_t &= \alpha_t f_t^\beta dW_t^1, \quad \quad \hat{F}(0)=f  \\
-    d\alpha_t &= \nu \alpha_t dW_t^2, \quad \quad \hat{\alpha}(0)=\alpha
+    df_t &= \alpha_t f_t^\beta dW_t^1, \quad \quad \hat{F}(0)=f   \label{f_dyn}\\
+    d\alpha_t &= \nu \alpha_t dW_t^2, \quad \quad \hat{\alpha}(0)=\alpha \label{sigma_dyn}
 \end{align}
 where $W_t^{1}$ and $W_t^{2}$ are two correlated Wiener 
 process and it is assmued that \cite{Smile}.
@@ -73,7 +73,16 @@ has been introduced and the analysis will continuing forward
 how to price a swaption using the SABR model to determine
 volatility.
 \subsection{Simulation the SABR model}
-MISSING
+In this section a short view on how the process for the forward rate and the volatility develops over times. 
+To provide the intuition on how the dynamic listed in \autoref{f_dyn} and \autoref{sigma_dyn} is simulated ten times 
+for some chosen parameters.
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=1.0\textwidth]{/Users/nannaingemannohrt/Desktop/master_thesis/main/plots/sim_f_and_sigma.png}
+    \caption{Ten simulated paths for the forward rate and the volatility in the SABR model.}
+    \label{fig:sim_f_and_sigma}
+\end{figure}
+\newpage
 \subsection{SABR Implied Volatility and Option Prices}
 Before we are able to move forward with the analysis,
 we need to formulate how to determine implied volatility in the SABR model. 
