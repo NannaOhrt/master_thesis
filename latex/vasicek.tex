@@ -63,7 +63,7 @@ but the same tendency appears. The parameters in the short rate dynamic
 $\kappa$, $\theta$ and $\sigma$ are positive constants. Where $\kappa$ represent the mean reversion speed, $\theta$ 
 is the long-term average rate, $\sigma$ is the volatility  and $dW(t)$ is a Wiener process \cite{Bermudan}. 
 
-\begin{figure}[h]
+\begin{figure}[H]
     \centering
     \begin{minipage}{0.5\textwidth}
         \includegraphics[width=\linewidth]{/Users/nannaingemannohrt/Desktop/master_thesis/main/plots/VasicekModelPlot.png}
@@ -76,9 +76,6 @@ is the long-term average rate, $\sigma$ is the volatility  and $dW(t)$ is a Wien
         \label{fig:vasicek-sim}
     \end{minipage}
 \end{figure}
-
-\noindent
-\newpage
 \noindent
 Then we look closer at the dynamic of the short rate in \autoref{vas_dyn}. Which can be rearranged and integrated
 to express the short rate, $r(t)$, as a function of its value at any prior time point s, 
@@ -130,13 +127,12 @@ for the Wiener process. Each path would then correspond to a realization of the 
 below the described method is used and the simulated path for the short rate in the Vasicek model and the distributed of one  the
 simulated paths is plotted in a histogram. In \autoref{fig:rates:hist} the probability density function (PDF) of the 
 fitted normal distribution is also plotted. This verify that the short rate process in the Vasicek model is Gaussian distributed.
-\begin{figure}[h]
+\begin{figure}[H]
     \centering
     \includegraphics[width=0.7\textwidth]{/Users/nannaingemannohrt/Desktop/master_thesis/main/plots/NormalDistributionPlot.png}
     \caption{Histogram of one simulated rates path using the Vasicek model.}
     \label{fig:rates:hist}
 \end{figure}
-\\\\
 \noindent
 Now some common properties of the Vasicek model has been reviewed and supported by simulations. Mowing forward we will 
 focus on bond prices using the Vasicek model. Earlier when we discussed bond prices, the Black Scholes model was introduced. 

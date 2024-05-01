@@ -78,13 +78,13 @@ To provide the intuition on how the dynamic listed in \autoref{f_dyn} and \autor
 for some chosen parameters. The simulated paths is illustrated in \autoref{fig:sim_f_and_sigma} below. 
 From the \autoref{fig:sim_f_and_sigma} we that the dynamic are driven by the randomness in the Wiener process and 
 it develops from the initial value of the forward rate and volatility.
-\begin{figure}[htbp]
+\begin{figure}[H]
     \centering
     \includegraphics[width=0.8\textwidth]{/Users/nannaingemannohrt/Desktop/master_thesis/main/plots/sim_f_and_sigma.png}
     \caption{Ten simulated paths for the forward rate and the volatility in the SABR model.}
     \label{fig:sim_f_and_sigma}
 \end{figure}
-\newpage
+\noindent
 \subsection{SABR Implied Volatility and Option Prices}
 Before we are able to move forward with the analysis,
 we need to formulate how to determine implied volatility in the SABR model. 
@@ -138,7 +138,7 @@ Below in \autoref{tab:parameters} the chosen value of the parameters are listed,
 explain of the parameters. Then the study is performed by changing the parameters one by one, to illustrate the 
 isolated effect of the parameters. 
 
-\begin{table}[htbp]
+\begin{table}[H]
     \centering
     \begin{tabular}{ccc}
       \toprule
@@ -166,14 +166,12 @@ represents "the initial volatility" as it is the starting point for the stochast
 Below in \autoref{fig:alpha} the volatility smile is illustrated for three different value of $\alpha_0$. 
 From \autoref{fig:alpha} we see that the up and down movements don't change the shape of the volatility smile, 
 it only shifts the volatility smile respectively up and down given the movement in $\alpha_0$.
-\\\\
-\begin{figure}[htbp]
+\begin{figure}[H]
     \centering
-    \includegraphics[width=1.0\textwidth]{/Users/nannaingemannohrt/Desktop/master_thesis/main/plots/SABR1_alpha.png}
+    \includegraphics[width=0.7\textwidth]{/Users/nannaingemannohrt/Desktop/master_thesis/main/plots/SABR1_alpha.png}
     \caption{SABR model volatility smiles at various $\alpha_0$ levels}
     \label{fig:alpha}
 \end{figure}
-\\\\
 \noindent
 Then we will continue the study of the parameters affects by looking into shift in the beta value in the SABR model.
 Aging we shift the value of $\beta$ up and down from the fixed beta in \autoref{tab:parameters}. So we will look at $\beta$ equal to $0.3$,
@@ -190,15 +188,12 @@ beta shift is larger, than for lower beta. We also note that the change in the b
 the left side from of strike value at-the-money (ATM). Other than that we wee the same patterns from the change in 
 the alpha parameter, namely the up and down shifts in the volatility smile, respectively to the movement in the 
 beta parameter.
-\\\\
-\begin{figure}[htbp]
+\begin{figure}[H]
     \centering
-    \includegraphics[width=1.0\textwidth]{/Users/nannaingemannohrt/Desktop/master_thesis/main/plots/SABR_beta.png}
+    \includegraphics[width=0.7\textwidth]{/Users/nannaingemannohrt/Desktop/master_thesis/main/plots/SABR_beta.png}
     \caption{SABR model volatility smiles at various $\beta$ levels}
     \label{fig:beta}
 \end{figure}
-\\\\
-\\\\
 \noindent
 Moving forward we will shift the $\nu$ parameter, which can be describe as the volatility of the volatility parameter.
 Again we shift the $\nu$ parameter up and down from the fixed $\nu$ parameter listed in \autoref{tab:parameters}.
@@ -219,27 +214,26 @@ while strong negative correlations can cause the implied volatility to increase 
 We alo note that when the correlation is close to zero the smile is more symmetric around the ATM strike. 
 So in total we see that the correlation parameter $\rho$ has a significantly affects on the shape and slope of
 the volatility smile in the SABR model, and hence on the implied volatilities values.
-\begin{figure}[htbp]
+\begin{figure}[H]
     \centering
-    \includegraphics[width=1.0\textwidth]{/Users/nannaingemannohrt/Desktop/master_thesis/main/plots/SABR_nu.png}
+    \includegraphics[width=0.7\textwidth]{/Users/nannaingemannohrt/Desktop/master_thesis/main/plots/SABR_nu.png}
     \caption{SABR model volatility smiles at various $\nu$ levels}
     \label{fig:nu}
 \end{figure}
 
-\begin{figure}[htbp]
+\begin{figure}[H]
     \centering
-    \includegraphics[width=1.0\textwidth]{/Users/nannaingemannohrt/Desktop/master_thesis/main/plots/SABR_rho.png}
+    \includegraphics[width=0.7\textwidth]{/Users/nannaingemannohrt/Desktop/master_thesis/main/plots/SABR_rho.png}
     \caption{SABR model volatility smiles at various $\rho$ levels}
     \label{fig:rho}
 \end{figure}
 
-\begin{figure}[htbp]
+\begin{figure}[H]
     \centering
-    \includegraphics[width=1.0\textwidth]{/Users/nannaingemannohrt/Desktop/master_thesis/main/plots/SABR_f.png}
+    \includegraphics[width=0.7\textwidth]{/Users/nannaingemannohrt/Desktop/master_thesis/main/plots/SABR_f.png}
     \caption{SABR model volatility smiles at various f levels}
     \label{fig:f}
 \end{figure}
-\newpage
 \noindent
 Finally we will investigate how the forward price, F, affect the volatility smile in the SABR model. 
 The same procedure ad for the other parameters will be used. So in \autoref{fig:f} the volatility smile
