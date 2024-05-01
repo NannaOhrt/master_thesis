@@ -73,12 +73,14 @@ has been introduced and the analysis will continuing forward
 how to price a swaption using the SABR model to determine
 volatility.
 \subsection{Simulation the SABR model}
-In this section a short view on how the process for the forward rate and the volatility develops over times. 
+In this section a short view on how the process for the forward rate and the volatility develops over times will be covered. 
 To provide the intuition on how the dynamic listed in \autoref{f_dyn} and \autoref{sigma_dyn} is simulated ten times 
-for some chosen parameters.
+for some chosen parameters. The simulated paths is illustrated in \autoref{fig:sim_f_and_sigma} below. 
+From the \autoref{fig:sim_f_and_sigma} we that the dynamic are driven by the randomness in the Wiener process and 
+it develops from the initial value of the forward rate and volatility.
 \begin{figure}[htbp]
     \centering
-    \includegraphics[width=1.0\textwidth]{/Users/nannaingemannohrt/Desktop/master_thesis/main/plots/sim_f_and_sigma.png}
+    \includegraphics[width=0.8\textwidth]{/Users/nannaingemannohrt/Desktop/master_thesis/main/plots/sim_f_and_sigma.png}
     \caption{Ten simulated paths for the forward rate and the volatility in the SABR model.}
     \label{fig:sim_f_and_sigma}
 \end{figure}
