@@ -75,7 +75,7 @@ how to price a swaption using the SABR model to determine
 volatility.
 \subsection{SABR Implied Volatility and Option Prices}
 Before we are able to move forward with the analysis,
-we need to formulate how to determine implied volatility. 
+we need to formulate how to determine implied volatility in the SABR model. 
 But these calculations are out of the scope for this analysis,
 so we will used the formula in the paper Managing Smile Risk 
 of Hagen (2002) \cite{Smile}. The paper states that
@@ -93,6 +93,7 @@ with
 where the implied volatility $\sigma_B(f, K)$ is given by
 \begin{equation}
     \sigma_B(K, f) = \frac{\alpha}{(fK)^{(1-\beta)/2}} \left\{ 1 + \frac{(1-\beta)^2}{24} \log^2 \frac{f}{K} + \frac{(1-\beta)^4}{1920} \log^4 \frac{f}{K} + \ldots \right\} \left( \frac{z}{x(z)} \right).
+    \label{sigma_B}
 \end{equation}
 Here
 \begin{align}
@@ -105,6 +106,7 @@ where x(z) is defined by
 For the special case of at-the-money options, options struck at $K = f$, this formula reduces to
 \begin{equation}
     \sigma_{ATM} = \sigma_B(f, f) = \frac{\alpha}{f^{1-\beta}} \left\{ 1 + \left( \frac{(1-\beta)^2}{24} \frac{\alpha^2}{f^{2-2\beta}} + \frac{\rho \beta \nu}{4} \frac{\alpha}{f^{1-\beta}} + \frac{2-3\rho^2}{24} \nu^2 \right) t_{\text{ex}} + \ldots \right\}.
+    \label{sigma_ff}
 \end{equation}
 \\
 So we have that the parameters $\alpha, \beta, \nu$ and $\rho$  in the SABR model estimated and the implied volatility $\sigma_B$
@@ -114,6 +116,35 @@ how the model works. We will do this by continuing your
 analysis with investigating how the different parameters 
 affects the SABR model. 
 
-\subsection{Investigating the elements of the SABR model}
+\subsection{Investigating the parameters of the SABR model}
+In this section, we will explore the parameters of the SABR model. This analysis will offer insights into 
+how different parameters influence the behavior of implied volatility. We will conduct this investigation using 
+the closed-form solution established in the previous section. Our study will reference \autoref{sigma_B} and 
+\autoref{sigma_ff}, where we will test various parameter values. To make changes in the different parameters
+affects on the implied volatility smile so realistic as possible we fix the values of the parameters.
+Below in \autoref{tab:parameters} the chosen value of the parameters are listed, together with a short
+explain of the parameters. Then the study is performed by changing the parameters one by one, to illustrate the 
+isolated effect of the parameters. 
+
+\begin{table}[h!]
+    \centering
+    \begin{tabular}{ccc}
+      \toprule
+      \textbf{Parameter} & \textbf{Parameter explanation} & \textbf{Value} \\
+      \midrule
+      $F$ & Forward price & 100 \\
+      $T$ & Time to maturity & 1 \\
+      $K$ & Strike & $K \in (80,120)$ \\
+      $\alpha$ & Initial level & 0.1 \\
+      $\beta$ & Elasticity of the volatility & 0.5 \\
+      $\rho$ & Correlation between the asset price and its volatility & -0.4 \\
+      $\nu$ & Volatility of the volatility parameter & 0.25 \\
+      \bottomrule
+    \end{tabular}
+    \caption{Summary of Parameters}
+    \label{tab:parameters}
+\end{table}
+
+
 \subsection{Estimating Parameters in the SABR model}
 \subsection{Fitting a volatility smile using the SABR model}
