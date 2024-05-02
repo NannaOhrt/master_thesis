@@ -57,12 +57,29 @@ The dynamic for the short rate in the Vasicek model is present below in \autoref
 The dynamic for the short rate in \autoref{vas_dyn} is a Ornstein-Uhlenbeck process, which is a type of stochastic 
 differential equation that describes the evolution of a mean-reverting behavior. So the process is consisting of a 
 tendency to revert towards the mean of the process. This tendency is illustrated in \autoref{fig:vasicek} below, where 
- rates is simulated using the Vasicek model for some chosen parameters. Note in \autoref{fig:vasicek}
+ rates is simulated using the Vasicek model for some chosen parameters listed in \autoref{tab:parameters_short_rate} below. 
+ Note in \autoref{fig:vasicek}
 one simulated path of the short rate is illustrated. Where in \autoref{fig:vasicek-sim} ten simulated paths are illustrated,
 but the same tendency appears. The parameters in the short rate dynamic
 $\kappa$, $\theta$ and $\sigma$ are positive constants. Where $\kappa$ represent the mean reversion speed, $\theta$ 
 is the long-term average rate, $\sigma$ is the volatility  and $W(t)$ is a Wiener process \cite{Bermudan}. 
-
+\begin{table}[H]
+    \centering
+    \begin{tabular}{ccc}
+      \toprule
+      \textbf{Parameter} & \textbf{Parameter explanation} & \textbf{Value} \\
+      \midrule
+      $T$ & Time to maturity & 10 \\
+      $r_0$ & Initial short rate & 0.05 \\
+      $\kappa$ & Mean reversion speed & 0.2\\
+      $\theta$ & Long-term average rate  & 0.03 \\
+      $\sigma$ & Volatility& 0.02 \\
+      \bottomrule
+    \end{tabular}
+    \caption{Summary of Parameters used for simulation short rate in the Vacisek model}
+    \label{tab:parameters_short_rate}
+\end{table}
+\noindent
 \begin{figure}[H]
     \centering
     \begin{minipage}{0.5\textwidth}
@@ -246,6 +263,40 @@ where
 \cite{Bjork}
 
 \end{proposition}
+\noindent
+To illustrate the behavior of bond price in the Vacisek model, a small simulation study is perform. For the study 
+some parameters are chosen, these are listed in \autoref{tab:parameters_zcb}
+\begin{table}[H]
+    \centering
+    \begin{tabular}{ccc}
+      \toprule
+      \textbf{Parameter} & \textbf{Parameter explanation} & \textbf{Value} \\
+      \midrule
+      $T$ & Time to maturity & 10 \\
+      $r_0$ & Initial short rate & Simulated \\
+      $\kappa$ & Mean reversion speed & 0.2\\
+      $\theta$ & Long-term average rate  & 0.03 \\
+      $\sigma$ & Volatility& 0.02 \\
+      \bottomrule
+    \end{tabular}
+    \caption{Summary of Parameters used simulation ZCB prices in the Vacisek model}
+    \label{tab:parameters_zcb}
+\end{table}
+\noindent
+\begin{figure}[H]
+    \centering
+    \begin{minipage}{0.5\textwidth}
+        \includegraphics[width=\linewidth]{/Users/nannaingemannohrt/Desktop/master_thesis/main/plots/zcb_1_sim.png}
+        \caption{Plot of one simulated ZCB price path \\ using the Vasicek model.}
+        \label{fig:zcb_sim_1_plot}
+    \end{minipage}\hfill 
+    \begin{minipage}{0.5\textwidth}
+        \includegraphics[width=\linewidth]{/Users/nannaingemannohrt/Desktop/master_thesis/main/plots/zcb_10_sim.png}
+        \caption{Plot of 10 simulated  ZCB prices \\ paths using the Vasicek model.}
+        \label{fig:zcb_sim_10_plot}
+    \end{minipage}
+\end{figure}
+\noindent
 \noindent
 The Vasicek model has now been introduced and we have taken a closer look at the distribution in the short rate model. 
 This examination leads us to the Vasicek term structure model, which outlines the method for pricing bonds using the 
