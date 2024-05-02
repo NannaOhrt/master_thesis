@@ -75,9 +75,28 @@ volatility.
 \subsection{Simulation the SABR model}
 In this section a short view on how the process for the forward price and the volatility develops over times will be covered. 
 To provide the intuition on how the dynamic listed in \autoref{f_dyn} and \autoref{sigma_dyn} behave, the dynamics is simulated ten times
-for some chosen parameters. The simulated paths is illustrated in \autoref{fig:sim_f_and_sigma} below. 
+for some chosen parameters is listed in \autoref{tab:parameters_sim_sabr}. 
+The simulated paths is illustrated in \autoref{fig:sim_f_and_sigma} below. 
 From \autoref{fig:sim_f_and_sigma} we see that the dynamics are driven by the randomness in the Wiener process and 
 it develops from the initial value of the forward price and volatility.
+\begin{table}[H]
+    \centering
+    \begin{tabular}{ccc}
+      \toprule
+      \textbf{Parameter} & \textbf{Parameter explanation} & \textbf{Value} \\
+      \midrule
+      $F_0$ & Initial forward rate or asset price & 100 \\
+      $\alpha_0$ & Initial volatility  & 0.2 \\
+      $\beta$ & Elasticity parameter & 0.5 \\
+      $\nu$ & Volatility of the volatility parameter & 0.25 \\
+      $\rho$ & Correlation between the asset price and its volatility & -0.4 \\
+      \bottomrule
+    \end{tabular}
+    \caption{Summary of Parameters used for simulating the SABR model}
+    \label{tab:parameters_sim_sbar}
+\end{table}
+\noindent
+
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.8\textwidth]{/Users/nannaingemannohrt/Desktop/master_thesis/main/plots/sim_f_and_sigma.png}
@@ -144,7 +163,7 @@ isolated effect of the parameters.
       \toprule
       \textbf{Parameter} & \textbf{Parameter explanation} & \textbf{Value} \\
       \midrule
-      $f$ & Forward price & 100 \\
+      $f$ & Initial forward rate or asset price & 100 \\
       $T$ & Time to maturity & 1 \\
       $K$ & Strike & $K \in (80,120)$ \\
       $\alpha_0$ & Initial level of volatility & 0.1 \\
