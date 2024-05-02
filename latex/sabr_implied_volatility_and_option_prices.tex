@@ -131,8 +131,8 @@ affects implied volatility in the SABR model.
 \subsection{Investigating the parameters of the SABR model}
 In this section, we will explore the parameters of the SABR model. This analysis will offer insights into 
 how different parameters influence the behavior of implied volatility. We will conduct this investigation using 
-the closed-form solution established in the previous section. Our study will reference \autoref{sigma_B} and 
-\autoref{sigma_ff}, where we will test various parameter values. To make changes in the different parameters
+the closed-form solution established in the previous section. Our study will be build on  \autoref{sigma_B} and 
+\autoref{sigma_ff}, where we will test various parameter values. To see how changes in the different parameters
 affects on the implied volatility smile so realistic as possible we fix the values of the parameters.
 Below in \autoref{tab:parameters} the chosen value of the parameters are listed, together with a short
 explain of the parameters. Then the study is performed by changing the parameters one by one, to illustrate the 
@@ -158,11 +158,11 @@ isolated effect of the parameters.
 \end{table}
 \noindent
 We will start the study with investigating how $\alpha_0$ affects the volatility smile in the SABR model. 
-First we note that the fix value of $\alpha_0$ is $0.1$ Hence we adjust the value of $\alpha_0$ to $0.05$ and $0.15$,
+First we note that the fix value of $\alpha_0$ is $0.1$ Hereafter we adjust the value of $\alpha_0$ to $0.05$ and $0.15$,
 where the other parameters are kept fixed as listed in \autoref{tab:parameters} above. So have change the parameter
 up and down from the initial value of $\alpha_0$.
 We note that the parameter $\alpha_0$
-represents "the initial volatility" as it is the starting point for the stochastic volatility process. 
+represents "the initial level of volatility" as it is the starting point for the stochastic volatility process. 
 Below in \autoref{fig:alpha} the volatility smile is illustrated for three different value of $\alpha_0$. 
 From \autoref{fig:alpha} we see that the up and down movements don't change the shape of the volatility smile, 
 it only shifts the volatility smile respectively up and down given the movement in $\alpha_0$.
@@ -178,13 +178,13 @@ Aging we shift the value of $\beta$ up and down from the fixed beta in \autoref{
 $0.5$ (the fix beta) and $0.7$. 
 Although not explicitly constrained in the original article by Hagan et al. (2002), we restrict $\beta$ to the range $[0, 1]$. 
 Choosing a $\beta$ less than 0 would lead to an illogical scenario where higher forward prices F result in a smaller 
-relative change in the process ft, thus we set the lower limit at $\beta \leq 0$ Similarly, a $\beta$ greater than 1 would 
+relative change in the process $f_t$, thus we set the lower limit at $\beta \leq 0$. Similarly, a $\beta$ greater than 1 would 
 suggest that the expected deviation from the current state of $F_t$ exceeds the product of volatility and the current 
-forward level (times $\sqrt{t}$), which is also impractical. Therefore, we set the upper limit at $\beta \geq 0$.
+forward level (times $\alpha_0 \sqrt{t}$), which is also impractical. Therefore, we set the upper limit at $\beta \geq 0$.
 \\\\
 Below in \autoref{fig:beta} the volatility smile in the SABR model for the different beta values are illustrated.
-From \autoref{fig:beta} we see a small affect of the curvature of the volatility smile. We also not that for higher 
-beta shift is larger, than for lower beta. We also note that the change in the beta parameter is more present in 
+From \autoref{fig:beta} we see a small effect of the curvature of the volatility smile. We also not that for higher 
+beta the shift is larger, than for lower beta. We also note that the change in the beta parameter is more present in 
 the left side from of strike value at-the-money (ATM). Other than that we wee the same patterns from the change in 
 the alpha parameter, namely the up and down shifts in the volatility smile, respectively to the movement in the 
 beta parameter.
@@ -199,7 +199,7 @@ Moving forward we will shift the $\nu$ parameter, which can be describe as the v
 Again we shift the $\nu$ parameter up and down from the fixed $\nu$ parameter listed in \autoref{tab:parameters}.
 The volatility smile calculated from the SABR for the different $\nu$ parameters are illustrated in \autoref{fig:nu} below.
 A very clear pattern emerges, namely that the parameter $\nu$ controls the curvature of the volatility smile in
-the SABR model. When we look at the shift in the beta parameter we make a comment that it made small changes in 
+the SABR model. When we look at the shifts in the beta parameter we make a comment that it made small changes in 
 the curvature. But after this part of the analysis, we clearly see that the curvature is determine from the value
 of $\nu$. Which makes good sense, when we think of the interpretation of the parameter describe before.
 We also note that when $\nu$  increasing the level of the implied volatility for the 
@@ -236,7 +236,7 @@ the volatility smile in the SABR model, and hence on the implied volatilities va
 \end{figure}
 \noindent
 Finally we will investigate how the forward price, F, affect the volatility smile in the SABR model. 
-The same procedure ad for the other parameters will be used. So in \autoref{fig:f} the volatility smile
+The same procedure as for the other parameters will be used. So in \autoref{fig:f} the volatility smile
 for the forward prices are illustrated. We see that the slope, shape and curvature is retained, when there
 is only change in the forward price. Which is as we expected given how the forward price, f, enters in the closed
 solution for the implied volatility in \autoref{sigma_B} and \autoref{sigma_ff}.
@@ -244,7 +244,7 @@ solution for the implied volatility in \autoref{sigma_B} and \autoref{sigma_ff}.
 To summarize this section provides knowledge of the impact of the various parameters in the closed-form solution
 for the implied volatility in the SABR model. This knowledge gives a good idea of how that model works, and 
 positions us better to understand estimation of the model. So now we have look the closed-form solution and 
-now the bew step of our analysis is to move forward to estimating the parameters in the SABR model.
+now the next step of our analysis is to move forward to estimating the parameters in the SABR model.
 \newpage
 \subsection{Estimating Parameters in the SABR model}
 \subsection{Fitting a volatility smile using the SABR model}
