@@ -10,13 +10,13 @@ In this chapter, we will first introduce the SABR model
 The SABR (Stochastic Alpha, Beta, Rho) model marks a pivotal advancement 
 in financial modeling, effectively addressing the significant limitations 
 found in traditional methods like the Black Scholes model, which presupposes 
-constant volatility. Created in 2002 by Patrick Hagan, Deep Kumar, 
-Andrew Lesniewski, and Diana Woodward, the SABR model is highly esteemed for 
+constant volatility. Developed in 2002 by Patrick Hagan, Deep Kumar, 
+Andrew Lesniewski, and Diana Woodward, the SABR model is highly respected for 
 its adeptness at managing the dynamic and unpredictable nature of market 
 volatility.
 \\\\
 As a two-factor model, the SABR framework models both the forward rate 
-(or asset price) and its volatility as stochastic processes. This approach 
+(or asset price) and its volatility as a stochastic processes. This approach 
 is vital as it incorporates a stochastic behavior in volatility, significantly 
 improving the model's ability to capture the true, skewed, and heavy-tailed 
 nature of financial market data. By allowing for volatility fluctuations, 
@@ -41,7 +41,7 @@ Now we will formulate the SABR model mathematically.
 The SABR model consist of a dynamic for the forward price
 and one for the volatility, since the SABR model is a 
 two-factor model. The SABR model also formulate the 
-how the to process is correlated. 
+how the two process is correlated. 
 \begin{align}
     df_t &= \alpha_t f_t^\beta dW_t^1, \quad \quad \hat{F}(0)=f   \label{f_dyn}\\
     d\alpha_t &= \nu \alpha_t dW_t^2, \quad \quad \hat{\alpha}(0)=\alpha \label{sigma_dyn}
@@ -52,7 +52,7 @@ process and it is assmued that \cite{Smile}.
     dW_t^{1}dW_t^{2}=\rho dt
 \end{align}
 So we have that 
-parameters in the SABR model is as follows. $\alpha$ represents the initial volatility level
+parameters in the SABR model is as follows, $\alpha$ represents the initial volatility level
 , $\nu$ represents the volatility of volatility, or the rate at which volatility itself changes
 , $\beta$ represents the elasticity of the volatility; a common practice is to fix beta based on the underlying asset 
 and as mentioned $\rho$ is the correlations between the 
@@ -60,9 +60,9 @@ two Wiener process, the asset price and its volatility.
 \\\\
 So the SABR model is characterized by the stochastic process $\alpha_t$,
 the parameter $\beta$, and the correlation coefficient $\rho$,
-which is also reflected in its name: Stochastic Alpha Bete Rho.
+which is also reflected in its name - Stochastic Alpha Bete Rho.
 In a specific variant of the SABR model, 
-by setting $\beta = 1 $and $\nu = 0$, the model reverts 
+by setting $\beta = 1 $ and $\nu = 0$, the model reverts 
 to the classic Black Scholes framework. 
 This configuration leads to a constant volatility, 
 denoted $\alpha_0 $, 
@@ -70,14 +70,14 @@ and a forward process where returns follow a
 normal distribution with a mean of zero and a standard 
 deviation of $\alpha_0 \sqrt{t}$. So now the SABR model
 has been introduced and the analysis will continuing forward 
-how to price a swaption using the SABR model to determine
+to how to price a swaption using the SABR model to determine the implied
 volatility.
 \subsection{Simulation the SABR model}
-In this section a short view on how the process for the forward rate and the volatility develops over times will be covered. 
-To provide the intuition on how the dynamic listed in \autoref{f_dyn} and \autoref{sigma_dyn} is simulated ten times 
+In this section a short view on how the process for the forward price and the volatility develops over times will be covered. 
+To provide the intuition on how the dynamic listed in \autoref{f_dyn} and \autoref{sigma_dyn} behave, the dynamics is simulated ten times
 for some chosen parameters. The simulated paths is illustrated in \autoref{fig:sim_f_and_sigma} below. 
-From the \autoref{fig:sim_f_and_sigma} we that the dynamic are driven by the randomness in the Wiener process and 
-it develops from the initial value of the forward rate and volatility.
+From \autoref{fig:sim_f_and_sigma} we see that the dynamics are driven by the randomness in the Wiener process and 
+it develops from the initial value of the forward price and volatility.
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.8\textwidth]{/Users/nannaingemannohrt/Desktop/master_thesis/main/plots/sim_f_and_sigma.png}
@@ -107,26 +107,26 @@ where the implied volatility $\sigma_B(f, K)$ is given by
     \sigma_B(K, f) = \frac{\alpha}{(fK)^{(1-\beta)/2}} \left\{ 1 + \frac{(1-\beta)^2}{24} \log^2 \frac{f}{K} + \frac{(1-\beta)^4}{1920} \log^4 \frac{f}{K} + \ldots \right\} \left( \frac{z}{x(z)} \right).
     \label{sigma_B}
 \end{equation}
-Here
+where
 \begin{align}
     z &= \frac{\nu}{\alpha}(fK)^{(1-\beta)/2} \log \frac{f}{K}, \\
 \end{align}
-where x(z) is defined by
+and x(z) is defined by
 \begin{align}
     x(z) &= \log \left\{ \frac{\sqrt{1-2\rho z + z^2} + z - \rho}{1 - \rho} \right\}.
 \end{align}
-For the special case of at-the-money options, options struck at $K = f$, this formula reduces to
+For the special case of at-the-money (ATM) options, options strike at $K = f$, this formula reduces to
 \begin{equation}
     \sigma_{ATM} = \sigma_B(f, f) = \frac{\alpha}{f^{1-\beta}} \left\{ 1 + \left( \frac{(1-\beta)^2}{24} \frac{\alpha^2}{f^{2-2\beta}} + \frac{\rho \beta \nu}{4} \frac{\alpha}{f^{1-\beta}} + \frac{2-3\rho^2}{24} \nu^2 \right) t_{\text{ex}} + \ldots \right\}.
     \label{sigma_ff}
 \end{equation}
 \\
-So we have that the parameters $\alpha, \beta, \nu$ and $\rho$  in the SABR model estimated and the implied volatility $\sigma_B$
+So we have that the parameters $\alpha, \beta, \nu$ and $\rho$  in the SABR model is estimated and the implied volatility $\sigma_B$
 is a function of the forward price and the strike. Now that we have a simplified formula for the implied 
 volatility from the SABR model, we can start analyzing 
 how the model works. We will do this by continuing your
 analysis with investigating how the different parameters 
-affects the SABR model. 
+affects implied volatility in the SABR model. 
 
 \subsection{Investigating the parameters of the SABR model}
 In this section, we will explore the parameters of the SABR model. This analysis will offer insights into 
