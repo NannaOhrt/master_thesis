@@ -11,8 +11,8 @@ performed.
 The risk-free short rate, r, is sometimes referred to as the instantaneous short rate. 
 The concept is used in finance modeling to represent the continuously compounded interest rate for 
 short time intervals. The short rate, r, is often modeled using stochastic deferential equations in 
-mathematical finance. Some typically models for modeling the short rate is the Vacisek model and the Cox–Ingersoll–Ross model, 
-later the Vacisek model will be covered. When pricing derivatives as bonds and options, the price depends on 
+mathematical finance. Some typically models for modeling the short rate is the Vasicek model and the Cox–Ingersoll–Ross model, 
+later the Vasicek model will be covered. When pricing derivatives as bonds and options, the price depends on 
 the process followed by r in the risk-neutral world \cite{Hull}.
 \\\\
 As discussed in the Section \ref{risk_neutral_section} - Risk Neutral Measure, $r_t$, can be looked at the locally risk-free 
@@ -76,7 +76,7 @@ is the long-term average rate, $\sigma$ is the volatility  and $W(t)$ is a Wiene
       $\sigma$ & Volatility& 0.02 \\
       \bottomrule
     \end{tabular}
-    \caption{Summary of Parameters used for simulation short rate in the Vacisek model}
+    \caption{Summary of parameters used for simulation the short rate in the Vasicek model}
     \label{tab:parameters_short_rate}
 \end{table}
 \noindent
@@ -148,7 +148,7 @@ fitted normal distribution is also plotted. This verify that the short rate proc
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.7\textwidth]{/Users/nannaingemannohrt/Desktop/master_thesis/main/plots/NormalDistributionPlot.png}
-    \caption{Histogram of one simulated rates path using the Vasicek model.}
+    \caption{Histogram of one simulated rate path using the Vasicek model.}
     \label{fig:rates:hist}
 \end{figure}
 \noindent
@@ -264,7 +264,7 @@ where
 
 \end{proposition}
 \noindent
-To illustrate the behavior of bond price in the Vacisek model, a small simulation study is perform. For the study 
+To illustrate the behavior of bond price in the Vasicek model, a small simulation study is perform. For the study 
 some parameters are chosen, these are listed in \autoref{tab:parameters_zcb}. In \autoref{fig:zcb_sim_1_plot} one simulate
 path for the development of the ZCB price is illustrated and in \autoref{fig:zcb_sim_10_plot} ten simulated paths are illustrated.
 We see that the price fluctuate over the price period, as expected.
@@ -281,7 +281,7 @@ We see that the price fluctuate over the price period, as expected.
       $\sigma$ & Volatility& 0.02 \\
       \bottomrule
     \end{tabular}
-    \caption{Summary of Parameters used simulation ZCB prices in the Vacisek model}
+    \caption{Summary of parameters used simulation ZCB prices in the Vasicek model}
     \label{tab:parameters_zcb}
 \end{table}
 \noindent
