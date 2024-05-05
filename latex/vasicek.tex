@@ -10,15 +10,15 @@ performed.
 \\\\
 The risk-free short rate, r, is sometimes referred to as the instantaneous short rate. 
 The concept is used in finance modeling to represent the continuously compounded interest rate for 
-short time intervals. The short rate, r, is often modeled using stochastic deferential equations in 
-mathematical finance. Some typically models for modeling the short rate is the Vasicek model and the Cox–Ingersoll–Ross model, 
+short time intervals. The short rate, r, is often modeled using stochastic differential equations in 
+mathematical finance. The typical models for modeling the short rate is the Vasicek model and the Cox–Ingersoll–Ross model, 
 later the Vasicek model will be covered. When pricing derivatives as bonds and options, the price depends on 
 the process followed by r in the risk-neutral world \cite{Hull}.
 \\\\
 As discussed in the Section \ref{risk_neutral_section} - Risk Neutral Measure, $r_t$, can be looked at the locally risk-free 
 rate from a continuously compounded bank account $B(t)= \exp \Big[\int_{0}^{t} r(s) ds \Big]$. 
 Where the bank account has the dynamic listed in \autoref{bank1} and \autoref{bank2}.
-Postulation the considered market is arbitrage-free, with due to the First Fundamental Theorem of Asset Pricing, 
+Postulation: the considered market is arbitrage-free, wich due to the First Fundamental Theorem of Asset Pricing, 
 if stating that there exist a probability measure $\QQ$, equivalent to $\PP$, all asset prices discounted by $B(t)$
 are $\QQ$-martingales. In other words under the considered market for any T we have that 
 \begin{align}
@@ -39,7 +39,7 @@ these prices is essential for accurately describing the term structure or zero c
 of the short rate, a key variable, underlies this understanding due to its distributional properties.
 \\\\
 The Vasicek model, introduced by Oldrich Vasicek in 1977, serves as a robust framework to analyze these dynamics.
-The Vasicek model is renown for its simplicity and the ease with which it facilitates bond price calculations, 
+The Vasicek model is renowned for its simplicity and the ease with which it facilitates bond price calculations, 
 the model assumes that the short-term interest rate adheres to a mean-reverting stochastic process. This process is characterized 
 by parameters that dictate the rate's mean reversion speed, its long-term average level, and its volatility.
 The model is used for forecasting how interest rates in the market will develop in the future. The model is a
@@ -49,7 +49,7 @@ term of that the evolution of interest rates only depends on one stochastic vari
 So now a short introducing to the Vasicek model has been covered and the next step is to look closer at the 
 mathematical framework of the Vasicek model. The Vasicek model consists of the dynamic of the short rate under the $\PP$-measure
 (the real world measure). Where the dynamic of the short rate is governed by a stochastic differential equation. 
-The dynamic for the short rate in the Vasicek model is present below in \autoref{vas_dyn} and \autoref{vas_dyn_r0} \cite{Bjork}.
+The dynamic for the short rate in the Vasicek model is presented below in \autoref{vas_dyn} and \autoref{vas_dyn_r0} \cite{Bjork}.
 \begin{align}
     d r_t &= \kappa \Big[\theta -r(t)\Big] dt + \sigma d W(t) \label{vas_dyn}\\
     r(0) &= r_0 \label{vas_dyn_r0}
@@ -94,7 +94,7 @@ is the long-term average rate, $\sigma$ is the volatility  and $W(t)$ is a Wiene
     \end{minipage}
 \end{figure}
 \noindent
-Then we look closer at the dynamic of the short rate in \autoref{vas_dyn}. Which can be rearranged and integrated
+Then we look closer at the dynamic of the short rate in \autoref{vas_dyn}. This equation can be rearranged and integrated
 to express the short rate, $r(t)$, as a function of its value at any prior time point s, 
 so we have to have that for $s < t$ \cite{Bermudan}. 
 \begin{align}
@@ -111,8 +111,8 @@ so we have to have that for $s < t$ \cite{Bermudan}.
 From \autoref{line_14} to \autoref{line_22} the expression for the short rate in the Vasicek model is integrated, 
 but first the terms in the stochastic differential equation is rearranged.
 Then both sides of the equation are multiplied by the 
-integrating factor $e^{\kappa t}$ to facilitate integration. Next both sides is integrated from s to t. The result of the
-integration showing the change in the short  rate, r, over time, adjusted by the integrating factor. The final 
+integrating factor $e^{\kappa t}$ to facilitate the integration. Next, both sides is integrated from s to t. The result of the
+integration shows the change in the short  rate, r, over time, adjusted by the integrating factor. The final 
 expression in \autoref{line_22} for the short rate, $r(t)$, at time t, showing how it depends on the initial rate, $r(s)$,
 the mean-reverting term and the stochastic term \cite{Bermudan}. We note that  final expression in \autoref{line_22} for the short rate
 is Gaussian.
@@ -133,18 +133,18 @@ $r(t)$ \cite{Bjork}.
     &= \sigma^2 \int_{s}^{t}e^{-2k(t-u)} d W(u) \\
     &= \frac{\sigma^2}{2\kappa} \Big(e^{-2k(t-s)}\Big)
     \end{align*}
-This lead to the theoretical distributed of the the short rate in the Vasicek model, which is represent below
+This lead to the theoretical distribution of the the short rate in the Vasicek model, which is represented below
 \begin{align}
     R(t) \sim \mathcal{N} \Big[ r(s) e^{-k(t-s)} + \theta \left( 1 - e^{-k(t-s)} \right) ,
     \frac{\sigma^2}{2\kappa} \Big(e^{-2k(t-s)}\Big) \Big]
 \end{align}
-Mowing toward simulating the distribution, we can use the above attributes of the short rate being Gaussian.
+Moving towards simulating the distribution, we can use the above attributes of the short rate being Gaussian.
 Given that the stochastic integral of a deterministic function with respect to a Wiener process is Gaussian distributed
 with a mean of zero, we can simulate the short rate distribution by generating a large number of possible paths
 for the Wiener process. Each path would then correspond to a realization of the short rate over time. In \autoref{fig:rates:hist}
-below the described method is used and the simulated path for the short rate in the Vasicek model and the distributed of one  the
+below the described method is used and the simulated paths for the short rate in the Vasicek model and the distribution of one  the
 simulated paths is plotted in a histogram. In \autoref{fig:rates:hist} the probability density function (PDF) of the 
-fitted normal distribution is also plotted. This verify that the short rate process in the Vasicek model is Gaussian distributed.
+fitted normal distribution is also plotted. This verifies that the short rate process in the Vasicek model is Gaussian distributed.
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.7\textwidth]{/Users/nannaingemannohrt/Desktop/master_thesis/main/plots/NormalDistributionPlot.png}
@@ -152,19 +152,19 @@ fitted normal distribution is also plotted. This verify that the short rate proc
     \label{fig:rates:hist}
 \end{figure}
 \noindent
-Now some common properties of the Vasicek model has been reviewed and supported by simulations. Mowing forward we will 
+Now some common properties of the Vasicek model has been reviewed and supported by simulations. Moving forward we will 
 focus on bond prices using the Vasicek model. Earlier when we discussed bond prices, the Black Scholes model was introduced. 
 \\\\
 Now we will examine another aspect of the Vasicek model, namely the ability to derive explicit formulas
-for bons pricing based on model expectations.
-But first some words on how these bond prices is determine in the Vasicek model. 
+for bond pricing based on model expectations.
+But first some words on how these bond prices are determined in the Vasicek model. 
 When using the Vasicek model, it is possible to derive closed-form solutions for zero coupon bond prices. 
 These prices are determined by an equation that factors in the current short rate, the speed of mean reversion,
-the long-term mean rate, the volatility of the short rate, and the bond’s time to maturity.
+the long-term mean level, the volatility of the short rate, and the bond’s time to maturity.
 The bond prices formula from the Vasicek model considers the expected path of future short 
 rates under the risk neutral measure, discounted back to the present value. 
 \\\\
-As mentioned we will now look a the formula for pricing bond using the Vasicek model. We consider a zero coupon bond
+As mentioned we will now look a the formula for pricing bonds using the Vasicek model. We consider a zero coupon bond
 with maturity T and at time t the price is given as in \autoref{price_zcb_vas} below \cite{Bjork}.
 \begin{align}
     P(t,T) &= A(t,T) e^{-rB(t,T)} 
@@ -182,8 +182,8 @@ Then we find the partial derivatives with respect to $r$ and $t$ of the zero cou
     \\\\
     \frac{\partial^2 P}{\partial r^2} &= \frac{\partial}{\partial r} (-PB) = -B \frac{\partial}{\partial r} (P) = PB^2
 \end{align*}
-Then by applying Ito's lemma \cite{Bjork} and insetting the derivatives with respect to $r$ and $t$ we found above and
-insetting the formula for the short rate in the Vasicek model present in \autoref{vas_dyn} we obtain the following
+Then by applying Ito's lemma \cite{Bjork} and inserting the derivatives with respect to $r$ and $t$ we found above as well as
+ the formula for the short rate in the Vasicek model present in \autoref{vas_dyn} we obtain the following
 \begin{align*}
     dP(t,T) &= \frac{\partial P}{\partial t} dt + \frac{\partial P}{\partial r} dr 
     + \frac{1}{2} \frac{\partial^2 P}{\partial r^2} dr^2 \\
@@ -264,7 +264,7 @@ where
 
 \end{proposition}
 \noindent
-To illustrate the behavior of bond price in the Vasicek model, a small simulation study is perform. For the study 
+To illustrate the behavior of bond price in the Vasicek model, a small simulation study is performed. For the study 
 some parameters are chosen, these are listed in \autoref{tab:parameters_zcb}. In \autoref{fig:zcb_sim_1_plot} one simulate
 path for the development of the ZCB price is illustrated and in \autoref{fig:zcb_sim_10_plot} ten simulated paths are illustrated.
 We see that the price fluctuate over the price period, as expected.
@@ -307,10 +307,10 @@ the Vasicek model. A critical decision is the assumption that the volatility,
 $\sigma$, is a positive constant. However, we should consider whether volatility remains constant over a given period.
 \\\\
 Subsequently, we will introduce another model, the SABR (Stochastic Alpha, Beta, Rho) model. The SABR model is a stochastic volatility model 
-utilized to estimate the implied volatility curve. Although it does not provide a direct formula for option pricing, 
+utilized to estimate the implied volatility smile. Although it does not provide a direct formula for option pricing, 
 the estimated implied volatility curve can be employed in the Black Scholes model, discussed earlier, to price swaptions. 
-Before we delve into the SABR model, we will examine the assumption of constant volatility inherent in the Black Scholes model.
-The purpose of this small analysis, it to make a attachment to the
+Before we dig into the SABR model, we will examine the assumption of constant volatility inherent in the Black Scholes model.
+The purpose of this small analysis, it to make an attachment to the
 market and see some examples of not constant volatility. This can 
 be seen as a motivation for looking into two-factor models, 
 instead of a one-factor model, like the Vasicek model. 

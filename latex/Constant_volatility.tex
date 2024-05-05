@@ -1,5 +1,5 @@
 \section{Constant Volatility}
-This chapter will delve into the limitations 
+This chapter will look into the limitations 
 of the Black Scholes model, particularly its 
 assumption of constant volatility, and introduce 
 the SABR model as a more dynamic alternative for estimating volatility. 
@@ -8,7 +8,7 @@ this assumption with real-world market data,
 using the S$\&$P 500 index and the 10Y10Y EUR swaption 
 as examples.
 \\\\
-The Black Scholes model, introduced earlier, outlines the pricing formula for a European call option in 
+The Black Scholes model, introduced earlier, outlines the pricing formula for an European call option in 
 Proposition \autoref{Black-Scholes Formula}. It is  essential to recall that in the Black Scholes formula, 
 volatility is considered constant. This implies that the volatility of the asset's returns does not vary over time,
 establishing a direct correlation between the option's price and its volatility. Consequently, 
@@ -25,7 +25,7 @@ financial indicators.
 As depicted in \autoref{10Y10Y dev} and \autoref{sp500 dev}, the development of the 10Y10Y EUR swaption 
 and S$\&$P 500 index levels illustrates fluctuations over time. This variability is further emphasized by the return patterns 
 shown in \autoref{10Y10Y return} and \autoref{sp500 return}, where the returns of the 10Y10Y EUR swaption and S$\&$P 500 index are plotted. 
-These fluctuations suggest that market volatility is not constant. Our analysis under lines that volatility varies 
+These fluctuations suggest that market volatility is not constant. Our analysis underlines that volatility varies 
 significantly from day to day, reflecting the market's response to new information and events. This observation challenges 
 the applicability of the Black Scholes model, which assumes constant volatility and highlights the need for models like the 
 SABR model that more accurately capture market dynamics and provide nuanced volatility estimates.
@@ -56,8 +56,7 @@ SABR model that more accurately capture market dynamics and provide nuanced vola
         \label{sp500 return}
     \end{minipage}
 \end{figure}
-\noindent
-So to summarize a brief review of the market data reveals a tendency in 
+The market data reveals a tendency in 
 volatility, indicating that it is not constant. 
 Given this fluctuation, how should we proceed when 
 considering to be able to price a swaption? We will continue our 

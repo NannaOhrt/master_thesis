@@ -9,10 +9,10 @@ In this chapter, we will first introduce the SABR model
 \\\\
 The SABR (Stochastic Alpha, Beta, Rho) model marks a pivotal advancement 
 in financial modeling, effectively addressing the significant limitations 
-found in traditional methods like the Black Scholes model, which presupposes 
+found in traditional methods like the Black Scholes model, which assumes 
 constant volatility. Developed in 2002 by Patrick Hagan, Deep Kumar, 
 Andrew Lesniewski, and Diana Woodward, the SABR model is highly respected for 
-its adeptness at managing the dynamic and unpredictable nature of market 
+its ability to manage the dynamic and unpredictable nature of market 
 volatility.
 \\\\
 As a two-factor model, the SABR framework models both the forward rate 
@@ -28,7 +28,7 @@ The main different between the SABR model and the
 Black Scholes model is the assumptions regrading the 
 volatility, as mentioned earlier. In the Black Scholes 
 model the volatility is a assumed to be constant and 
-in the SABR model the volatility evolve as a function
+in the SABR model the volatility evolves as a function
 of time, t, the strike price, K, and the current
 forward price, $f_t$. Futhermore the volatility itself
 is random. So we chose the unknown coefficient $C(t,*)$
@@ -38,7 +38,7 @@ The extra randomness is scaled thought the inclusion
 of a "volatility of volatility" parameter $\nu$.
 \\\\
 Now we will formulate the SABR model mathematically. 
-The SABR model consist of a dynamic for the forward price
+The SABR model consists of a dynamic for the forward price
 and one for the volatility, since the SABR model is a 
 two-factor model. The SABR model also formulate the 
 how the two process is correlated. 
@@ -60,7 +60,7 @@ two Wiener process, the asset price and its volatility.
 \\\\
 So the SABR model is characterized by the stochastic process $\alpha_t$,
 the parameter $\beta$, and the correlation coefficient $\rho$,
-which is also reflected in its name - Stochastic Alpha Bete Rho.
+which is also reflected in its name - Stochastic Alpha Beta Rho.
 In a specific variant of the SABR model, 
 by setting $\beta = 1 $ and $\nu = 0$, the model reverts 
 to the classic Black Scholes framework. 
@@ -70,10 +70,10 @@ and a forward process where returns follow a
 normal distribution with a mean of zero and a standard 
 deviation of $\alpha_0 \sqrt{t}$. So now the SABR model
 has been introduced and the analysis will continuing forward 
-to how to price a swaption using the SABR model to determine the implied
+on how to price a swaption using the SABR model to determine the implied
 volatility.
 \subsection{Simulation the SABR model}
-In this section a short view on how the process for the forward price and the volatility develops over times will be covered. 
+In this section a short view on how the process for the forward price and the volatility develops over time will be covered. 
 To provide the intuition on how the dynamic listed in \autoref{f_dyn} and \autoref{sigma_dyn} behave, the dynamics is simulated ten times
 for some chosen parameters is listed in \autoref{tab:parameters_sim_sabr}. 
 The simulated paths is illustrated in \autoref{fig:sim_f_and_sigma} below. 
@@ -108,7 +108,7 @@ it develops from the initial value of the forward price and volatility.
 Before we are able to move forward with the analysis,
 we need to formulate how to determine implied volatility in the SABR model. 
 But these calculations are out of the scope for this analysis,
-so we will used the formula in the paper Managing Smile Risk 
+so we will use the formula in the paper Managing Smile Risk 
 of Hagen (2002) \cite{Smile}. The paper states that
 under the SABR model, the prices of European options 
 is given by Black formula in \autoref{sabr1} to \autoref{sabr3}
@@ -143,7 +143,7 @@ For the special case of at-the-money (ATM) options, options strike at $K = f$, t
 So we have that the parameters $\alpha, \beta, \nu$ and $\rho$  in the SABR model is estimated and the implied volatility $\sigma_B$
 is a function of the forward price and the strike. Now that we have a simplified formula for the implied 
 volatility from the SABR model, we can start analyzing 
-how the model works. We will do this by continuing your
+how the model works. We will do this by continuing our
 analysis with investigating how the different parameters 
 affects implied volatility in the SABR model. 
 
@@ -153,7 +153,7 @@ how different parameters influence the behavior of implied volatility. We will c
 the closed-form solution established in the previous section. Our study will be build on  \autoref{sigma_B} and 
 \autoref{sigma_ff}, where we will test various parameter values. To see how changes in the different parameters
 affects on the implied volatility smile so realistic as possible we fix the values of the parameters.
-Below in \autoref{tab:parameters} the chosen value of the parameters are listed, together with a short
+Below in \autoref{tab:parameters} the chosen values of the parameters are listed, together with a short
 explain of the parameters. Then the study is performed by changing the parameters one by one, to illustrate the 
 isolated effect of the parameters. 
 
@@ -177,8 +177,8 @@ isolated effect of the parameters.
 \end{table}
 \noindent
 We will start the study with investigating how $\alpha_0$ affects the volatility smile in the SABR model. 
-First we note that the fix value of $\alpha_0$ is $0.1$ Hereafter we adjust the value of $\alpha_0$ to $0.05$ and $0.15$,
-where the other parameters are kept fixed as listed in \autoref{tab:parameters} above. So have change the parameter
+First we note that the fixed value of $\alpha_0$ is $0.1$ Hereafter we adjust the value of $\alpha_0$ to $0.05$ and $0.15$,
+where the other parameters are kept fixed as listed in \autoref{tab:parameters} above. So having changed the parameter
 up and down from the initial value of $\alpha_0$.
 We note that the parameter $\alpha_0$
 represents "the initial level of volatility" as it is the starting point for the stochastic volatility process. 
@@ -193,18 +193,18 @@ it only shifts the volatility smile respectively up and down given the movement 
 \end{figure}
 \noindent
 Then we will continue the study of the parameters affects by looking into shift in the beta value in the SABR model.
-Aging we shift the value of $\beta$ up and down from the fixed beta in \autoref{tab:parameters}. So we will look at $\beta$ equal to $0.3$,
+Again we shift the value of $\beta$ up and down from the fixed beta in \autoref{tab:parameters}. So we will look at $\beta$ equal to $0.3$,
 $0.5$ (the fix beta) and $0.7$. 
 Although not explicitly constrained in the original article by Hagan et al. (2002), we restrict $\beta$ to the range $[0, 1]$. 
 Choosing a $\beta$ less than 0 would lead to an illogical scenario where higher forward prices F result in a smaller 
 relative change in the process $f_t$, thus we set the lower limit at $\beta \leq 0$. Similarly, a $\beta$ greater than 1 would 
 suggest that the expected deviation from the current state of $F_t$ exceeds the product of volatility and the current 
-forward level (times $\alpha_0 \sqrt{t}$), which is also impractical. Therefore, we set the upper limit at $\beta \geq 0$.
+forward level (times $\alpha_0 \sqrt{t}$), which is also impractical. Therefore, we set the upper limit at $\beta \geq 1$.
 \\\\
 Below in \autoref{fig:beta} the volatility smile in the SABR model for the different beta values are illustrated.
-From \autoref{fig:beta} we see a small effect of the curvature of the volatility smile. We also not that for higher 
+From \autoref{fig:beta} we see a small effect of the curvature of the volatility smile. We also note that for higher 
 beta the shift is larger, than for lower beta. We also note that the change in the beta parameter is more present in 
-the left side from of strike value at-the-money (ATM). Other than that we wee the same patterns from the change in 
+the left side from of strike value at-the-money (ATM). Other than that we see the same patterns from the change in 
 the alpha parameter, namely the up and down shifts in the volatility smile, respectively to the movement in the 
 beta parameter.
 \begin{figure}[H]
@@ -218,18 +218,18 @@ Moving forward we will shift the $\nu$ parameter, which can be describe as the v
 Again we shift the $\nu$ parameter up and down from the fixed $\nu$ parameter listed in \autoref{tab:parameters}.
 The volatility smile calculated from the SABR for the different $\nu$ parameters are illustrated in \autoref{fig:nu} below.
 A very clear pattern emerges, namely that the parameter $\nu$ controls the curvature of the volatility smile in
-the SABR model. When we look at the shifts in the beta parameter we make a comment that it made small changes in 
+the SABR model. When we looked at the shifts in the beta parameter we made a comment that it made small changes in 
 the curvature. But after this part of the analysis, we clearly see that the curvature is determine from the value
-of $\nu$. Which makes good sense, when we think of the interpretation of the parameter describe before.
-We also note that when $\nu$  increasing the level of the implied volatility for the 
+of $\nu$. Which makes sense, when we think of the interpretation of the parameter describe before.
+We also note that increasing $\nu$  increased the level of the implied volatility for the 
 out-of-the-money (OTM) strikes also increase and vise vera.
 \\\\
 Then we look at the parameter for the correlation between the asset price and its volatility, namely $\rho$.
-So we have that $\rho$ is the correlation between to two Wiener process in the SABR model, hence we have
+So we have that $\rho$ is the correlation between to two Wiener process in the SABR model, note
 that $\rho$ is bounded and takes values between $-1$ and $1$. In \autoref{fig:rho} the shifted valus of $\rho$
 from the fixed value is illustrated. 
 We see that higher positive correlations generally show a decreasing trend in implied volatility with an increase in strike price, 
-while strong negative correlations can cause the implied volatility to increase with strikes there are in-the-money (ITM).
+while strong negative correlations can cause the implied volatility to increase with strikes that are in-the-money (ITM).
 We alo note that when the correlation is close to zero the smile is more symmetric around the ATM strike. 
 So in total we see that the correlation parameter $\rho$ has a significantly affects on the shape and slope of
 the volatility smile in the SABR model, and hence on the implied volatilities values.
@@ -263,8 +263,8 @@ solution for the implied volatility in \autoref{sigma_B} and \autoref{sigma_ff}.
 \\\\
 To summarize this section provides knowledge of the impact of the various parameters in the closed-form solution
 for the implied volatility in the SABR model. This knowledge gives a good idea of how that model works, and 
-positions us better to understand estimation of the model. So now we have look the closed-form solution and 
-now the next step of our analysis is to move forward to estimating the parameters in the SABR model.
+positions us better to understand estimations of the model. So now we have looked at the closed-form solution and 
+are ready for the next step of our analysis which is to look at  estimating the parameters in the SABR model.
 \newpage
 \subsection{Estimating Parameters in the SABR model}
 \subsection{Fitting a volatility smile using the SABR model}
