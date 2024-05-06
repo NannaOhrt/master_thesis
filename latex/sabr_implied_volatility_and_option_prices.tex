@@ -267,4 +267,34 @@ positions us better to understand estimations of the model. So now we have looke
 are ready for the next step of our analysis which is to look at  estimating the parameters in the SABR model.
 \newpage
 \subsection{Estimating Parameters in the SABR model}
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{cc}
+      \toprule
+      \textbf{Tenor x Expiry } & \textbf{Forward rates} \\
+      \midrule
+      $10Y1Y$ &0.293838 \\
+      $10Y2Y$ & 0.297602\\
+      $10Y3Y$ & 0.299622\\
+      $10Y5Y$ & 0.299258\\
+      $10Y7Y$ & 0.294395\\
+      $10Y10Y$ & 0.284018\\
+      $10Y12Y$ & 0.276305\\
+      $10Y15Y$ & 0.265454\\
+      $10Y20Y$ & 0.251744\\
+      $10Y30Y$ & 0.23401\\
+      \bottomrule
+    \end{tabular}
+    \caption{Forward rates from Citi d.21.02.2024}
+    \label{tab:parameters_sim_sabr}
+\end{table}
+\noindent
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\textwidth]{/Users/nannaingemannohrt/Desktop/master_thesis/main/plots/forward_rates.png}
+    \caption{Forward rates}
+    \label{fig:forward_plot}
+\end{figure}
 \subsection{Fitting a volatility smile using the SABR model}
