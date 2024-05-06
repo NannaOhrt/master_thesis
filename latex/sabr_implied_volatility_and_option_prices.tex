@@ -287,7 +287,7 @@ are ready for the next step of our analysis which is to look at  estimating the 
       \bottomrule
     \end{tabular}
     \caption{Forward rates from Citi d.21.02.2024}
-    \label{tab:parameters_sim_sabr}
+    \label{tab:farward_parm}
 \end{table}
 \noindent
 
@@ -297,8 +297,31 @@ are ready for the next step of our analysis which is to look at  estimating the 
     \caption{Forward rates}
     \label{fig:forward_plot}
 \end{figure}
-\subsection{Fitting a volatility smile using the SABR model}
 
+\begin{table}[H]
+    \centering
+    \begin{tabular}{ccccc}
+      \toprule
+      \textbf{Tenor x Expiry } & \textbf{$\alpha$} & \textbf{$\rho$}  & \textbf{$\nu$} & \textbf{$\beta$}\\
+      \midrule
+      $10Y1Y$ &0.104213 & 0.369971 & 1.57081 & 0.5\\
+      $10Y2Y$ &0.103893 & 0.353521 & 1.56745 & 0.5 \\
+      $10Y3Y$ &0.101618 & 0.335700 & 1.55828 &0.5 \\
+      $10Y5Y$ &0.098856 & 0.302105 & 1.53410& 0.5 \\
+      $10Y7Y$ & 0.094310 & 0.275427 &1.54121&0.5\\
+      $10Y10Y$ & 0.088442 & 0.236242 & 1.54918 &0.5\\
+      $10Y12Y$ &0.086733 & 0.245001 & 1.40264 & 0.5 \\
+      $10Y15Y$ & 0.082918 & 0.219553 & 1.50130 & 0.5\\
+      $10Y20Y$ &0.078033 & 0.204170 & 1.46493 &0.5 \\
+      $10Y30Y$ &0.076904 & 0.183612 & 1.40980 & 0.5 \\
+      \bottomrule
+    \end{tabular}
+    \caption{Fixed beta = 0.5}
+    \label{tab:beta_0.5}
+\end{table}
+\noindent
+
+\subsection{Fitting a volatility smile using the SABR model}
 \begin{figure}[H]
     \centering
     \begin{minipage}{0.5\textwidth}
