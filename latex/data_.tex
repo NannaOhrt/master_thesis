@@ -37,7 +37,13 @@ as shown in \autoref{tab:swaption_skew_OTMF}, adopts a different layout. The hor
 Now a short introduction to swaption data has been covered, then the next step is to illustrated some 
 volatility surface. The purpose of during is first of all, to underline that the volatility surface for a 
 given swaption change over time. For the second it is to se that the volatility smile for swaption with a fixed
-expiry and various tenor can also be slightly different.  
+expiry and various tenor can also be slightly different.  From \autoref{fig:rates:smile_5} we see the volatility surface
+for a 10Y10Y EUR swaption a five days over the time period from 20.02.2020 to 20.02.2024. From the plot 
+we clearly see that the volatility surface is change over the period. We see a pattern of the volatility surface moving 
+up and down, with out large change in the curvature of the volatility surface. This implies changes in the alpha parameter
+i the SABR, which will we covered later in Section \ref{invest_sabr}. Other than the we also look at the OTM volatility surface
+where the swaption expiry is fixed at ten years, but for various tenors. We look at this case over to days, where the first 
+is 20.02.2023 and 20.02.2024. This leads to at plot for each combination of the fixed expiry (10Y) and the various tenor. 
 \begin{table}[H]
     \centering
     \begin{tabular}{|c|c|c|c|c|c|c|c|c|c|}
@@ -92,6 +98,13 @@ expiry and various tenor can also be slightly different.
     \caption{Out-of-the-money-forward (OTMF) swaption volatility surface. Normal absolute values.  Data source Citi Velocity  21.02.2024. }
     \label{tab:swaption_skew_OTMF}
 \end{table}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\textwidth]{/Users/nannaingemannohrt/Desktop/master_thesis/main/plots/10Y10Y_4_smiles.png}
+    \caption{EUR swaption 10Y10Y skew over time.}
+    \label{fig:rates:smile_5}
+\end{figure}
 
 \begin{figure}[H]
     \centering
@@ -158,4 +171,58 @@ expiry and various tenor can also be slightly different.
 \end{figure}
 
 
-    
+\begin{figure}[htbp]
+    \centering
+    \begin{subfigure}{0.44\textwidth}
+        \includegraphics[width=\linewidth]{/Users/nannaingemannohrt/Desktop/master_thesis/main/plots/10Y1Y.png}
+        \caption{EUR swaption 10Y1Y}
+        \label{fig:10Y1Y}
+    \end{subfigure}\hfill
+    \begin{subfigure}{0.44
+        \textwidth}
+        \includegraphics[width=\linewidth]{/Users/nannaingemannohrt/Desktop/master_thesis/main/plots/10Y2Y.png}
+        \caption{EUR swaption 10Y2Y}
+        \label{fig:10Y2Y}
+    \end{subfigure}
+    \begin{subfigure}{0.44\textwidth}
+        \includegraphics[width=\linewidth]{/Users/nannaingemannohrt/Desktop/master_thesis/main/plots/10Y3Y.png}
+        \caption{EUR swaption 10Y3Y}
+        \label{fig:10Y3Y}
+    \end{subfigure}\hfill
+    \begin{subfigure}{0.44\textwidth}
+        \includegraphics[width=\linewidth]{/Users/nannaingemannohrt/Desktop/master_thesis/main/plots/10Y5Y.png}
+        \caption{EUR swaption 10Y5Y}
+        \label{fig:10Y5Y}
+    \end{subfigure}
+    \begin{subfigure}{0.44\textwidth}
+        \includegraphics[width=\linewidth]{/Users/nannaingemannohrt/Desktop/master_thesis/main/plots/10Y7Y.png}
+        \caption{EUR swaption 10Y7Y}
+        \label{fig:10Y7Y}
+    \end{subfigure}\hfill
+    \begin{subfigure}{0.44\textwidth}
+        \includegraphics[width=\linewidth]{/Users/nannaingemannohrt/Desktop/master_thesis/main/plots/10Y10Y.png}
+        \caption{EUR swaption 10Y10Y}
+        \label{fig:10Y10Y}
+    \end{subfigure}
+
+    \begin{subfigure}{0.44\textwidth}
+        \includegraphics[width=\linewidth]{/Users/nannaingemannohrt/Desktop/master_thesis/main/plots/10Y12Y.png}
+        \caption{EUR swaption 10Y12Y}
+        \label{fig:10Y12Y}
+    \end{subfigure}\hfill
+    \begin{subfigure}{0.44\textwidth}
+        \includegraphics[width=\linewidth]{/Users/nannaingemannohrt/Desktop/master_thesis/main/plots/10Y15Y.png}
+        \caption{EUR swaption 10Y15Y}
+        \label{fig:10Y15Y}
+    \end{subfigure}
+    \begin{subfigure}{0.44\textwidth}
+        \includegraphics[width=\linewidth]{/Users/nannaingemannohrt/Desktop/master_thesis/main/plots/10Y20Y.png}
+        \caption{EUR swaption 10Y20Y}
+        \label{fig:10Y20Y}
+    \end{subfigure}\hfill
+    \begin{subfigure}{0.44\textwidth}
+        \includegraphics[width=\linewidth]{/Users/nannaingemannohrt/Desktop/master_thesis/main/plots/10Y30Y.png}
+        \caption{EUR swaption 10Y30Y}
+        \label{fig:10Y30Y}
+    \end{subfigure}
+\end{figure}   
