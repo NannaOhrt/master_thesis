@@ -26,7 +26,7 @@ Then before we will look at some the displayed data, lets first cover some lingo
 A swaption with a strike set at the current market rate for the underlying forward swap is referred 
 to as at-the-money-forward (ATMF). If the strike differs from the ATMF rate, the swaption is categorized as out-of-the-money (OTM).
 
-\begin{table}[h]
+\begin{table}[H]
     \centering
     \begin{tabular}{|c|c|c|c|c|c|c|c|c|c|}
      \hline  
@@ -53,32 +53,30 @@ to as at-the-money-forward (ATMF). If the strike differs from the ATMF rate, the
     30Y & 4.1109 & 4.1065 & 3.9893 & 3.6882 & 3.5119 & 3.2952 & 3.0168 & 2.9317 & 2.7602 \\
     \hline
     \end{tabular}
-    \caption{}
+    \caption{At-the-money-forward (ATMF) swaption volatility surface. Normal absolute values. Data source Citi Velocity 20.02.2024. }
+    \label{tab:swaption_skew_ATMF}
 \end{table}
-    
-
-    
 
 \begin{table}[H]
     \centering
-    \begin{tabular}{|l|*{11}{c|}}
-    \hline
-        Expiry x Tenor & -200 & -100 & -75 & -50 & -25 & ATM & 25 & 50 & 75 & 100 & 200 \\
-    \hline
-    10Y x 1Y & 0.514 & 0.518 & 0.521 & 0.524 & 0.528 & 0.533 & 0.539 & 0.545 & 0.552 & 0.560 & 0.594 \\
-    10Y x 2Y & 0.515 & 0.518 & 0.521 & 0.524 & 0.528 & 0.533 & 0.538 & 0.544 & 0.551 & 0.558 & 0.591 \\
-    10Y x 3Y & 0.506 & 0.508 & 0.510 & 0.513 & 0.516 & 0.521 & 0.525 & 0.531 & 0.537 & 0.544 & 0.577 \\
-    10Y x 5Y & 0.497 & 0.495 & 0.497 & 0.499 & 0.502 & 0.506 & 0.510 & 0.515 & 0.521 & 0.527 & 0.557 \\
-    10Y x 7Y & 0.492 & 0.486 & 0.487 & 0.489 & 0.491 & 0.495 & 0.498 & 0.503 & 0.509 & 0.515 & 0.547 \\
-    10Y x 10Y & 0.488 & 0.477 & 0.477 & 0.478 & 0.479 & 0.483 & 0.485 & 0.490 & 0.496 & 0.502 & 0.536 \\
-    10Y x 12Y & 0.474 & 0.463 & 0.463 & 0.463 & 0.464 & 0.467 & 0.470 & 0.475 & 0.480 & 0.487 & 0.520 \\
-    10Y x 15Y & 0.462 & 0.449 & 0.448 & 0.448 & 0.449 & 0.452 & 0.455 & 0.459 & 0.465 & 0.471 & 0.504 \\
-    10Y x 20Y & 0.449 & 0.434 & 0.433 & 0.432 & 0.433 & 0.435 & 0.438 & 0.442 & 0.447 & 0.453 & 0.486 \\
-    10Y x 30Y & 0.436 & 0.419 & 0.417 & 0.416 & 0.416 & 0.417 & 0.420 & 0.423 & 0.428 & 0.434 & 0.466 \\
-    \hline
-    \end{tabular}
-    \caption{Out-of-the-money-forward (OTMF) swaption volatility surface. Data source Citi Velocity  from  21.02.2024. }
-    \label{tab:swaption_skew_data_2024}
+    \begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|c|}
+        \hline
+        Expiry x Tenor& -200   & -100   & -75    & -50    & -25    & \textbf{ATM}    & 25     & 50     & 75     & 100    & 200    \\ 
+        \hline
+        10Y x 1Y  & 5.1416 & 5.1819 & 5.2105 & 5.2465 & 5.2898 & \textbf{5.3399} & 5.3966 & 5.4596 & 5.5283 & 5.6025 & 5.9448 \\
+        10Y x 2Y  & 5.1588 & 5.1864 & 5.2116 & 5.2442 & 5.2841 & \textbf{5.3311} & 5.3845 & 5.4444 & 5.5102 & 5.5815 & 5.9138 \\
+        10Y x 3Y  & 5.0699 & 5.0806 & 5.1017 & 5.1304 & 5.1665 & \textbf{5.2101} & 5.2599 & 5.3166 & 5.3795 & 5.4480 & 5.7709 \\
+        10Y x 5Y  & 4.9781 & 4.9597 & 4.9735 & 4.9950 & 5.0241 & \textbf{5.0614} & 5.1043 & 5.1549 & 5.2119 & 5.2750 & 5.5792 \\
+        10Y x 7Y  & 4.9234 & 4.8694 & 4.8762 & 4.8916 & 4.9157 & \textbf{4.9531} & 4.9896 & 5.0388 & 5.0955 & 5.1594 & 5.4749 \\
+        10Y x 10Y & 4.8882 & 4.7796 & 4.7750 & 4.7806 & 4.7966 & \textbf{4.8315} & 4.8598 & 4.9065 & 4.9626 & 5.0275 & 5.3610 \\
+        10Y x 12Y & 4.7487 & 4.6379 & 4.6305 & 4.6334 & 4.6170 & \textbf{4.6781} & 7.7064 & 4.7517 & 4.8068 & 4.8709 & 5.2033 \\
+        10Y x 15Y & 4.6292 & 4.4963 & 4.4859 & 4.4862 & 4.4974 & \textbf{4.5247} & 4.5530 & 4.5970 & 4.6509 & 4.7143 & 5.0457 \\
+        10Y x 20Y & 4.4983 & 4.3478 & 4.3329 & 4.3288 & 4.3360 & \textbf{4.3559} & 4.3846 & 4.4256 & 4.4772 & 4.5385 & 4.8650 \\
+        10Y x 30Y & 4.3647 & 4.1915 & 4.1706 & 4.1605 & 4.1619 & \textbf{4.1757} & 4.2003 & 4.2370 & 4.2847 & 4.3428 & 4.6603 \\ 
+        \hline
+ \end{tabular}
+    \caption{Out-of-the-money-forward (OTMF) swaption volatility surface. Normal absolute values.  Data source Citi Velocity  21.02.2024. }
+    \label{tab:swaption_skew_OTMF}
 \end{table}
 
 \begin{figure}[H]
