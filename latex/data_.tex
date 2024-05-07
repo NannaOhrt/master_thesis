@@ -25,12 +25,24 @@ It's important to note that the underlying interest rate swap in the swaption is
 Then before we will look at some displayed data, lets first cover some lingo of swaption. 
 A swaption with a strike set at the current market rate for the underlying forward swap is referred 
 to as at-the-money-forward (ATMF). If the strike differs from the ATMF rate, the swaption is categorized as out-of-the-money (OTM).
-
+\\\\
+When discussing swaptions, it's essential to recognize how the volatility surface varies across different expiries and swap 
+forward tenors. Displayed below in \autoref{tab:swaption_skew_ATMF} is the ATMF swaption volatility surface. 
+The presentation of the volatility surface in swaptions differs notably from that in other asset classes like equities. 
+In the case of equities, different tenors are not a consideration, allowing both at-the-money (ATM) and out-of-the-money (OTM) 
+levels to be represented on a single chart. Conversely, the out-of-the-money-forward (OTMF) swaption volatility surface, 
+as shown in \autoref{tab:swaption_skew_OTMF}, adopts a different layout. The horizontal axis of 
+\autoref{tab:swaption_skew_OTMF} spans a range of strikes, from -200 basis points below to +200 basis points above the ATM strike.
+\\\\
+Now a short introduction to swaption data has been covered, then the next step is to illustrated some 
+volatility surface. The purpose of during is first of all, to underline that the volatility surface for a 
+given swaption change over time. For the second it is to se that the volatility smile for swaption with a fixed
+expiry and various tenor can also be slightly different.  
 \begin{table}[H]
     \centering
     \begin{tabular}{|c|c|c|c|c|c|c|c|c|c|}
-     \hline  
-     \multicolumn{10}{|c|}{Tenor} \\ 
+    \hline  
+        \multicolumn{10}{|c|}{Tenor} \\ 
     \hline
      Expiry& 1Y & 2Y & 3Y & 5Y & 7Y & 10Y & 15Y & 20Y & 30Y \\
     \hline
@@ -60,6 +72,8 @@ to as at-the-money-forward (ATMF). If the strike differs from the ATMF rate, the
 \begin{table}[H]
     \centering
     \begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|c|}
+        \hline  
+            \multicolumn{12}{|c|}{Strike} \\ 
         \hline
         Expiry x Tenor& -200   & -100   & -75    & -50    & -25    & \textbf{ATM}    & 25     & 50     & 75     & 100    & 200    \\ 
         \hline
