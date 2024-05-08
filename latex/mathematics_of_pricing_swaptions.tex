@@ -42,8 +42,10 @@ the principal payment is made at the price $P(t,T)$ and at maturity T the princi
         \draw (11.75,1.5) rectangle (11.25,0.5);
         \draw (5.75,-1.5) rectangle (6.25,-0.5) node[below, pos=.01] {Principal Payment};
         \node at (11.5, 2.0) {Principal Repayment };
-    \end{tikzpicture}
+    \end{tikzpicture}\\[10pt] 
+    Illustration 1: Cashflow for a zero coupon bond
 \end{center}
+
 \subsection{The Yield Curve}
 Where the concept "Time Value Of Money" and the discount factor are fundamental concepts used to assess the present value of future
 cash flows, the yield curve provides insights into market expectations regarding future interest rates.
@@ -75,7 +77,8 @@ positive slope, which is illustrated below.
             ]
             \addplot[domain=0:10, samples=100, thick] {x^(0.5)};
         \end{axis}
-    \end{tikzpicture}
+    \end{tikzpicture}\\[10pt] 
+    Illustration 2: Yield curve with a positive slope
 \end{center}
 \subsection{Interest Rates}
 \subsubsection{Spot Rates}
@@ -146,7 +149,8 @@ a different time points.
         \node at (8.7, -0.2) {3};
         \node at (0.1,0.5) {Forward rates:};
         \node at (0.1,-0.5) {Spot rates:};
-    \end{tikzpicture}
+    \end{tikzpicture}\\[10pt] 
+    Illustration 3: Forward and spot rates
 \end{center}
 \subsection{Financial Derivatives}
 \subsubsection{Bonds}
@@ -227,7 +231,8 @@ To end this section a illustration of the cashflow for a fixed coupon bond is il
         \node at (13.,1) {Principal Part};
         \node at (13.,1.75) {Interest Part};
         \node at (8.5, 1.5) {Periodic Fixed Interest Payments};
-    \end{tikzpicture}
+    \end{tikzpicture}\\[10pt] 
+    Illustration 4: Cashflow for a fixed coupon bond
 \end{center}
 \subsubsection{Floating Rate Bonds}
 Now a short introduction to fixed coupon bonds has been given, as mentioned there are also many 
@@ -292,7 +297,8 @@ To the to illustrations we clearly see the different in the periodic interest pa
         \node at (13.,1) {Principal Part};
         \node at (13.,1.75) {Interest Part};
         \node at (8.5, 1.8) {Periodic Floating Interest Payments};
-    \end{tikzpicture}
+    \end{tikzpicture}\\[10pt] 
+    Illustration 5: Cashflow for a floating rate bond
 \end{center}
 \subsection{Interest Rate Swaps}
 Now some simple cases of different types of bonds has be introduce. Then we will combine the knowledge we have gained to move on
@@ -309,7 +315,8 @@ The role of each participant in the swap is determined in relation to the
 fixed leg: the party making fixed payments is engaged in a "payer swap," 
 while the party making floating payments (and receiving fixed payments) is
 involved in a "receiver swap.". The two involved cashflow there are exchanged form the "receiver" to the "payer" is illustrated below.
-\\
+\\\\
+\newpage
 \begin{center}
     \begin{tikzpicture}
         \tikzstyle{receiver} = [rectangle, fill=black!15, text centered, minimum height=3em]
@@ -318,7 +325,8 @@ involved in a "receiver swap.". The two involved cashflow there are exchanged fo
         \node[payer, right of=receiver, node distance=8cm] (payer) {Payer};
         \draw[thick, <-] ([yshift=5pt]receiver.north) -- node[above] {Fixed rate} ([yshift=5pt]payer.north);
         \draw[thick, dashed, ->] ([yshift=-5pt]receiver.south) -- node[below] {Floating rate} ([yshift=-5pt]payer.south);
-    \end{tikzpicture} 
+    \end{tikzpicture}\\[10pt] 
+    Illustration 6: Cashflow for fixed and floating rate exchanges
 \end{center} 
 \noindent
 Again we have that K is the principal also know as the face value and we will denote the swap rate, R.
@@ -385,7 +393,8 @@ the fixed payment dates, and the horizontal dotted line indicates the continuati
         \node at (3.5,-1.) {$\delta$ K};
         \node at (6,-1.) {$\delta$ K};
         \node at (8.5,-1.) {$\delta$ K};
-    \end{tikzpicture} 
+    \end{tikzpicture}\\[10pt] 
+    Illustration 7: Cashflow for a payer swap 
 \end{center}
 Earlier we left behind a discussion of how the swap rate, R,  is determined. 
 It was noted that the swap is determined such that the present value of
@@ -440,7 +449,8 @@ function for a European call option is illustrated.
         \draw[dashed] (1.5,-1.5) -- (4.5,-1.5) node[below] {Maximum Loss};
         \draw (-1.5,-3.4) node[anchor=west] {Loss};
         \node[rotate=90] at (-1.5,0) {Return On Investment};
-    \end{tikzpicture}
+    \end{tikzpicture}\\[10pt] 
+    Illustration 8: Contract function for a European call option
 \end{center}
 \subsubsection{Risk Neutral Measure} \label{risk_neutral_section}
 Before options pricing a brief introduction to the risk neutral measure will be covered.

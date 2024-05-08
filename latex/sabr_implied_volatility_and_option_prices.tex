@@ -79,17 +79,18 @@ for some chosen parameters is listed in \autoref{tab:parameters_sim_sabr}.
 The simulated paths is illustrated in \autoref{fig:sim_f_and_sigma} below. 
 From \autoref{fig:sim_f_and_sigma} we see that the dynamics are driven by the randomness in the Wiener process and 
 it develops from the initial value of the forward price and volatility.
+\\
 \begin{table}[H]
     \centering
     \begin{tabular}{ccc}
       \toprule
       \textbf{Parameter} & \textbf{Parameter explanation} & \textbf{Value} \\
       \midrule
-      $F_0$ & Initial forward rate or asset price & 100 \\
+      \rowcolor{lightgray!40}  $F_0$ & Initial forward rate or asset price & 100 \\
       $\alpha_0$ & Initial volatility  & 0.2 \\
-      $\beta$ & Elasticity parameter & 0.5 \\
+      \rowcolor{lightgray!40}  $\beta$ & Elasticity parameter & 0.5 \\
       $\nu$ & Volatility of the volatility parameter & 0.25 \\
-      $\rho$ & Correlation between the asset price and its volatility & -0.4 \\
+      \rowcolor{lightgray!40} $\rho$ & Correlation between the asset price and its volatility & -0.4 \\
       \bottomrule
     \end{tabular}
     \caption{Summary of parameters used for simulating the SABR model}
@@ -156,26 +157,28 @@ affects on the implied volatility smile so realistic as possible we fix the valu
 Below in \autoref{tab:parameters} the chosen values of the parameters are listed, together with a short
 explain of the parameters. Then the study is performed by changing the parameters one by one, to illustrate the 
 isolated effect of the parameters. 
-
+\\
 \begin{table}[H]
     \centering
     \begin{tabular}{ccc}
       \toprule
       \textbf{Parameter} & \textbf{Parameter explanation} & \textbf{Value} \\
       \midrule
-      $f$ & Initial forward rate or asset price & 100 \\
+      \rowcolor{lightgray!40} $f$ & Initial forward rate or asset price & 100 \\
       $T$ & Time to maturity & 1 \\
-      $K$ & Strike & $K \in (80,120)$ \\
+      \rowcolor{lightgray!40} $K$ & Strike & $K \in (80,120)$ \\
       $\alpha_0$ & Initial level of volatility & 0.1 \\
-      $\beta$ & Elasticity of the volatility & 0.5 \\
+      \rowcolor{lightgray!40} $\beta$ & Elasticity of the volatility & 0.5 \\
       $\rho$ & Correlation between the asset price and its volatility & -0.4 \\
-      $\nu$ & Volatility of the volatility parameter & 0.25 \\
+      \rowcolor{lightgray!40} $\nu$ & Volatility of the volatility parameter & 0.25 \\
       \bottomrule
     \end{tabular}
     \caption{Summary of parameters used for investigating the SABR model}
     \label{tab:parameters}
 \end{table}
 \noindent
+
+
 We will start the study with investigating how $\alpha_0$ affects the volatility smile in the SABR model. 
 First we note that the fixed value of $\alpha_0$ is $0.1$ Hereafter we adjust the value of $\alpha_0$ to $0.05$ and $0.15$,
 where the other parameters are kept fixed as listed in \autoref{tab:parameters} above. So having changed the parameter
