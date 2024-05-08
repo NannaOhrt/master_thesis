@@ -180,7 +180,7 @@ isolated effect of the parameters.
 
 
 We will start the study with investigating how $\alpha_0$ affects the volatility smile in the SABR model. 
-First we note that the fixed value of $\alpha_0$ is $0.1$ Hereafter we adjust the value of $\alpha_0$ to $0.05$ and $0.15$,
+First we note that the fixed value of $\alpha_0$ is $0.1$ Hereafter we adjust the value of $\alpha_0$ to $0.08$ and $0.12$,
 where the other parameters are kept fixed as listed in \autoref{tab:parameters} above. So having changed the parameter
 up and down from the initial value of $\alpha_0$.
 We note that the parameter $\alpha_0$
@@ -196,8 +196,8 @@ it only shifts the volatility smile respectively up and down given the movement 
 \end{figure}
 \noindent
 Then we will continue the study of the parameters affects by looking into shift in the beta value in the SABR model.
-Again we shift the value of $\beta$ up and down from the fixed beta in \autoref{tab:parameters}. So we will look at $\beta$ equal to $0.3$,
-$0.5$ (the fix beta) and $0.7$. 
+Again we shift the value of $\beta$ up and down from the fixed beta in \autoref{tab:parameters}. So we will look at $\beta$ equal to $0.45$,
+$0.5$ (the fix beta) and $0.55$. 
 Although not explicitly constrained in the original article by Hagan et al. (2002), we restrict $\beta$ to the range $[0, 1]$. 
 Choosing a $\beta$ less than 0 would lead to an illogical scenario where higher forward prices F result in a smaller 
 relative change in the process $f_t$, thus we set the lower limit at $\beta \leq 0$. Similarly, a $\beta$ greater than 1 would 
@@ -277,16 +277,16 @@ are ready for the next step of our analysis which is to look at  estimating the 
       \toprule
       \textbf{Expiry x Tenor} & \textbf{Forward rates} \\
       \midrule
-      $10Y1Y$ &0.293838 \\
-      $10Y2Y$ & 0.297602\\
-      $10Y3Y$ & 0.299622\\
-      $10Y5Y$ & 0.299258\\
-      $10Y7Y$ & 0.294395\\
-      $10Y10Y$ & 0.284018\\
-      $10Y12Y$ & 0.276305\\
-      $10Y15Y$ & 0.265454\\
-      $10Y20Y$ & 0.251744\\
-      $10Y30Y$ & 0.23401\\
+      \rowcolor{lightgray!40} 10Y x 1Y &0.293838 \\
+      10Y x 2Y & 0.297602\\
+      \rowcolor{lightgray!40} 10Y x 3Y & 0.299622\\
+      10Y x 5Y & 0.299258\\
+      \rowcolor{lightgray!40} 10Y x 7Y & 0.294395\\
+      10Y x 10Y & 0.284018\\
+      \rowcolor{lightgray!40} 10Y x 12Y & 0.276305\\
+      10Y x 15Y & 0.265454\\
+      \rowcolor{lightgray!40} 10Y x 20Y & 0.251744\\
+      10Y x 30Y & 0.23401\\
       \bottomrule
     \end{tabular}
     \caption{Forward rates from Citi d.21.02.2024}
@@ -303,20 +303,20 @@ are ready for the next step of our analysis which is to look at  estimating the 
 
 \begin{table}[H]
     \centering
-    \begin{tabular}{ccccc}
+    \begin{tabular}{cccc}
       \toprule
-      \textbf{Expiry x Tenor } & \textbf{$\alpha$} & \textbf{$\rho$}  & \textbf{$\nu$} & \textbf{$\beta$}\\
+      \textbf{Expiry x Tenor } & \textbf{$\alpha$} & \textbf{$\rho$}  & \textbf{$\nu$} \\
       \midrule
-      $10Y1Y$ &0.104213 & 0.369971 & 1.57081 & 0.5\\
-      $10Y2Y$ &0.103893 & 0.353521 & 1.56745 & 0.5 \\
-      $10Y3Y$ &0.101618 & 0.335700 & 1.55828 &0.5 \\
-      $10Y5Y$ &0.098856 & 0.302105 & 1.53410 & 0.5 \\
-      $10Y7Y$ &0.094310 & 0.275427 & 1.54121 &0.5\\
-      $10Y10Y$&0.088442 & 0.236242 & 1.54918 &0.5\\
-      $10Y12Y$&0.086733 & 0.245001 & 1.40264 & 0.5 \\
-      $10Y15Y$&0.082918 & 0.219553 & 1.50130 & 0.5\\
-      $10Y20Y$&0.078033 & 0.204170 & 1.46493 &0.5 \\
-      $10Y30Y$&0.076904 & 0.183612 & 1.40980 & 0.5 \\
+      \rowcolor{lightgray!40}  10Y x 1Y &0.104213 & 0.369971 & 1.57081 \\
+      10Y x 2Y &0.103893 & 0.353521 & 1.56745 \\
+      \rowcolor{lightgray!40}  10Y x 3Y &0.101618 & 0.335700 & 1.55828 \\
+      10Y x 5Y &0.098856 & 0.302105 & 1.53410 \\
+      \rowcolor{lightgray!40} 10Y x 7Y &0.094310 & 0.275427 & 1.54121 \\
+      10Y x 10Y &0.088442 & 0.236242 & 1.54918 \\
+      \rowcolor{lightgray!40}  10Y x 12Y &0.086733 & 0.245001 & 1.40264 \\
+      10Y x 15Y &0.082918 & 0.219553 & 1.50130 \\
+      \rowcolor{lightgray!40} 10Y x 20Y &0.078033 & 0.204170 & 1.46493 \\
+      10Y x 30Y &0.076904 & 0.183612 & 1.40980 \\
       \bottomrule
     \end{tabular}
     \caption{Fixed beta = 0.5}
@@ -326,20 +326,20 @@ are ready for the next step of our analysis which is to look at  estimating the 
 
 \begin{table}[H]
     \centering
-    \begin{tabular}{ccccc}
+    \begin{tabular}{cccc}
       \toprule
-      \textbf{Expiry x Tenor} & \textbf{$\alpha$} & \textbf{$\rho$}  & \textbf{$\nu$} & \textbf{$\beta$}\\
+      \textbf{Expiry x Tenor} & \textbf{$\alpha$} & \textbf{$\rho$}  & \textbf{$\nu$} \\
       \midrule
-      $10Y1Y$ &0.189190 & 0.311485 & 1.499733 & 1\\
-      $10Y2Y$ &0.187648 & 0.294726 & 1.501256 & 1 \\
-      $10Y3Y$ &0.183161 & 0.277259 & 1.497992 &1 \\
-      $10Y5Y$ &0.178693 & 0.242966 & 1.483433 & 1 \\
-      $10Y7Y$ &0.172151 & 0.217692 & 1.497899 &1\\
-      $10Y10Y$&0.164710 & 0.179948 & 1.515517 &1\\
-      $10Y12Y$&0.180309 & 0.176231 & 1.367529 & 1 \\
-      $10Y15Y$& 0.15985 & 0.162386 & 1.472280 & 1\\
-      $10Y20Y$&0.158105 & 0.145647 & 1.439637 &1 \\
-      $10Y30Y$&0.158203 & 0.122134 & 1.389240 & 1 \\
+      \rowcolor{lightgray!40} 10Y x 1Y &0.189190 & 0.311485 & 1.499733 \\
+      10Y x 2Y  &0.187648 & 0.294726 & 1.501256 \\
+      \rowcolor{lightgray!40} 10Y x 3Y  &0.183161 & 0.277259 & 1.497992 \\
+      10Y x 5Y  &0.178693 & 0.242966 & 1.483433 \\
+      \rowcolor{lightgray!40} 10Y x 7Y  &0.172151 & 0.217692 & 1.497899 \\
+      10Y x 10Y &0.164710 & 0.179948 & 1.515517 \\
+      \rowcolor{lightgray!40} 10Y x 12Y &0.180309 & 0.176231 & 1.367529 \\
+      10Y x 15Y & 0.15985 & 0.162386 & 1.472280 \\
+      \rowcolor{lightgray!40} 10Y x 20Y &0.158105 & 0.145647 & 1.439637 \\
+      10Y x 30Y &0.158203 & 0.122134 & 1.389240 \\
       \bottomrule
     \end{tabular}
     \caption{Fixed beta = 1.0}
@@ -348,66 +348,59 @@ are ready for the next step of our analysis which is to look at  estimating the 
 \noindent
 
 \subsection{Fitting a volatility smile using the SABR model}
-\begin{figure}[H]
+\begin{figure}[htbp]
     \centering
-    \begin{minipage}{0.5\textwidth}
+    \begin{subfigure}{0.43\textwidth}
         \includegraphics[width=\linewidth]{/Users/nannaingemannohrt/Desktop/master_thesis/main/plots/10Y1Y_est.png}
         \caption{EUR swaption 10Y1Y}
-        \label{fig:10Y1Y}
-    \end{minipage}\hfill 
-    \begin{minipage}{0.5\textwidth}
+        \label{fig:10Y1Y_}
+    \end{subfigure}\hfill
+    \begin{subfigure}{0.43
+        \textwidth}
         \includegraphics[width=\linewidth]{/Users/nannaingemannohrt/Desktop/master_thesis/main/plots/10Y2Y_est.png}
         \caption{EUR swaption 10Y2Y}
-        \label{fig:10Y2Y}
-    \end{minipage}
-
-    \centering
-    \begin{minipage}{0.5\textwidth}
+        \label{fig:10Y2Y_}
+    \end{subfigure}
+    \begin{subfigure}{0.43\textwidth}
         \includegraphics[width=\linewidth]{/Users/nannaingemannohrt/Desktop/master_thesis/main/plots/10Y3Y_est.png}
         \caption{EUR swaption 10Y3Y}
-        \label{fig:10Y3Y}
-    \end{minipage}\hfill 
-    \begin{minipage}{0.5\textwidth}
+        \label{fig:10Y3Y_}
+    \end{subfigure}\hfill
+    \begin{subfigure}{0.43\textwidth}
         \includegraphics[width=\linewidth]{/Users/nannaingemannohrt/Desktop/master_thesis/main/plots/10Y5Y_est.png}
         \caption{EUR swaption 10Y5Y}
-        \label{fig:10Y5Y}
-    \end{minipage}
-
-    \centering
-    \begin{minipage}{0.5\textwidth}
+        \label{fig:10Y5Y_}
+    \end{subfigure}
+    \begin{subfigure}{0.43\textwidth}
         \includegraphics[width=\linewidth]{/Users/nannaingemannohrt/Desktop/master_thesis/main/plots/10Y7Y_est.png}
         \caption{EUR swaption 10Y7Y}
-        \label{fig:10Y7Y}
-    \end{minipage}\hfill 
-    \begin{minipage}{0.5\textwidth}
+        \label{fig:10Y7Y_}
+    \end{subfigure}\hfill
+    \begin{subfigure}{0.43\textwidth}
         \includegraphics[width=\linewidth]{/Users/nannaingemannohrt/Desktop/master_thesis/main/plots/10Y10Y_est.png}
         \caption{EUR swaption 10Y10Y}
-        \label{fig:10Y10Y}
-    \end{minipage}    
-\end{figure}
+        \label{fig:10Y10Y_}
+    \end{subfigure}
 
-\begin{figure}[H]
-    \centering
-    \begin{minipage}{0.5\textwidth}
+    \begin{subfigure}{0.43\textwidth}
         \includegraphics[width=\linewidth]{/Users/nannaingemannohrt/Desktop/master_thesis/main/plots/10Y12Y_est.png}
         \caption{EUR swaption 10Y12Y}
-        \label{fig:10Y12Y}
-    \end{minipage}\hfill 
-    \begin{minipage}{0.5\textwidth}
+        \label{fig:10Y12Y_}
+    \end{subfigure}\hfill
+    \begin{subfigure}{0.43\textwidth}
         \includegraphics[width=\linewidth]{/Users/nannaingemannohrt/Desktop/master_thesis/main/plots/10Y15Y_est.png}
         \caption{EUR swaption 10Y15Y}
-        \label{fig:10Y15Y}
-    \end{minipage}
-
-    \centering
-    \begin{minipage}{0.5\textwidth}
+        \label{fig:10Y15Y_}
+    \end{subfigure}
+    \begin{subfigure}{0.43\textwidth}
         \includegraphics[width=\linewidth]{/Users/nannaingemannohrt/Desktop/master_thesis/main/plots/10Y20Y_est.png}
         \caption{EUR swaption 10Y20Y}
-        \label{fig:10Y20Y}
-    \end{minipage}\hfill 
-    \begin{minipage}{0.5\textwidth}
+        \label{fig:10Y20Y_}
+    \end{subfigure}\hfill
+    \begin{subfigure}{0.43\textwidth}
         \includegraphics[width=\linewidth]{/Users/nannaingemannohrt/Desktop/master_thesis/main/plots/10Y30Y_est.png}
         \caption{EUR swaption 10Y30Y}
-        \label{fig:10Y30Y}
-    \end{minipage}
-\end{figure}
+        \label{fig:10Y30Y_}
+    \end{subfigure}
+
+\end{figure}   
