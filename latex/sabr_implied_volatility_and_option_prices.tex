@@ -100,7 +100,7 @@ it develops from the initial value of the forward price and volatility.
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.8\textwidth]{/Users/nannaingemannohrt/Desktop/master_thesis/main/plots/sim_f_and_sigma.png}
+    \includegraphics[width=1.\textwidth]{/Users/nannaingemannohrt/Desktop/master_thesis/main/plots/sim_f_and_sigma.png}
     \caption{Ten simulated paths for the forward rate and the volatility in the SABR model.}
     \label{fig:sim_f_and_sigma}
 \end{figure}
@@ -190,7 +190,7 @@ From \autoref{fig:alpha} we see that the up and down movements don't change the 
 it only shifts the volatility smile respectively up and down given the movement in $\alpha_0$.
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.7\textwidth]{/Users/nannaingemannohrt/Desktop/master_thesis/main/plots/SABR1_alpha.png}
+    \includegraphics[width=0.9\textwidth]{/Users/nannaingemannohrt/Desktop/master_thesis/main/plots/SABR1_alpha.png}
     \caption{SABR model volatility smiles at various $\alpha_0$ levels}
     \label{fig:alpha}
 \end{figure}
@@ -212,7 +212,7 @@ the alpha parameter, namely the up and down shifts in the volatility smile, resp
 beta parameter.
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.7\textwidth]{/Users/nannaingemannohrt/Desktop/master_thesis/main/plots/SABR_beta.png}
+    \includegraphics[width=0.9\textwidth]{/Users/nannaingemannohrt/Desktop/master_thesis/main/plots/SABR_beta.png}
     \caption{SABR model volatility smiles at various $\beta$ levels}
     \label{fig:beta}
 \end{figure}
@@ -238,21 +238,21 @@ So in total we see that the correlation parameter $\rho$ has a significantly aff
 the volatility smile in the SABR model, and hence on the implied volatilities values.
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.7\textwidth]{/Users/nannaingemannohrt/Desktop/master_thesis/main/plots/SABR_nu.png}
+    \includegraphics[width=0.9\textwidth]{/Users/nannaingemannohrt/Desktop/master_thesis/main/plots/SABR_nu.png}
     \caption{SABR model volatility smiles at various $\nu$ levels}
     \label{fig:nu}
 \end{figure}
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.7\textwidth]{/Users/nannaingemannohrt/Desktop/master_thesis/main/plots/SABR_rho.png}
+    \includegraphics[width=0.9\textwidth]{/Users/nannaingemannohrt/Desktop/master_thesis/main/plots/SABR_rho.png}
     \caption{SABR model volatility smiles at various $\rho$ levels}
     \label{fig:rho}
 \end{figure}
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.7\textwidth]{/Users/nannaingemannohrt/Desktop/master_thesis/main/plots/SABR_f.png}
+    \includegraphics[width=0.9\textwidth]{/Users/nannaingemannohrt/Desktop/master_thesis/main/plots/SABR_f.png}
     \caption{SABR model volatility smiles at various f levels}
     \label{fig:f}
 \end{figure}
@@ -339,7 +339,7 @@ shorter tenors than longer dated tenors.
 \end{table}
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.7\textwidth]{/Users/nannaingemannohrt/Desktop/master_thesis/main/plots/forward_rates.png}
+    \includegraphics[width=0.8\textwidth]{/Users/nannaingemannohrt/Desktop/master_thesis/main/plots/forward_rates.png}
     \caption{Forward rates for ten years to expiry and various tenors. Data source Citi Velocity 21.02.2024}
     \label{fig:forward_plot}
 \end{figure}
@@ -413,8 +413,31 @@ The notable distinctions at $\beta$ = 1 are the higher alpha and nu values, sugg
 skewness in volatility. These characteristics are particularly significant for pricing and risk management in scenarios 
 anticipating substantial rate dynamics. The insights garnered from this analysis are crucial for financial institutions and 
 investors involved in hedging, pricing, or trading derivatives influenced by these model dynamics.
+\\\\
+To end this section we will look at estimated parameters despited by the volatility smile. 
+We chose to look a the volatility smile, for estimated values where $\beta$ was fixed to be 0.5. 
+Since this is the most common choice for $\beta$. We despited the combination where the tenor is 10 years, i large format in 
+\autoref{fig:10y_plot_smile} below and all combined of the swaption volatility smile with expiry in 10 years, and the 
+various tenors are despited in \autoref{fig:10Y1Y_} to \autoref{fig:10Y10Y_} below. 
+From \autoref{fig:10y_plot_smile}  we se that estimated volatility smile fits the market data good, which make sense from 
+how we estimated the parameters to find the volatility smile. We note that estimated values for $\nu$ in both 
+\autoref{tab:beta_0.5} and \autoref{tab:beta_1}, are relative high. But this align with the steepness or level we see the in the 
+volatility smile in the market data. The volatility smile tends to be more convex we $\nu$ is large and the is clearly 
+the case here. This tendency appearers also i most of the volatility smile despited in \autoref{fig:10Y1Y_} to \autoref{fig:10Y10Y_}.
+\\\\
+Then we should ask yourself how does the  steepness or level we see the in the 
+volatility smile in the market data affects the price of a swaption. When we are determine swaption we should also consider 
+with sensitivities there are related to the price of the swaption. The above analysis pointing at there could 
+be a sensitive related to $\nu$. Therefor the next step is to look closer at the models sensitivities. 
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=.8\textwidth]{/Users/nannaingemannohrt/Desktop/master_thesis/main/plots/10Y10Y_est.png}
+    \caption{}
+    \label{fig:10y_plot_smile}
+\end{figure}
+\noindent
 
-\subsection{Fitting a volatility smile using the SABR model}
+
 \begin{figure}[htbp]
     \centering
     \begin{subfigure}{0.43\textwidth}
