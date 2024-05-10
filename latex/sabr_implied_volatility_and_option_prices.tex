@@ -319,8 +319,11 @@ where
 Before we are ready to estimate the parameters numerically, lets first take a short look at the required 
 data to performed the estimation study. As mentioned we need the current forward rates for any combination 
 of expiry and tenor. In this analysis we will consider data where the expiry is 10 years and has various tenors 
-namely [1Y,2Y,3Y,5Y,7Y,10Y,12Y,15Y,20Y,30Y]
-
+namely [1Y,2Y,3Y,5Y,7Y,10Y,12Y,15Y,20Y,30Y]. Below in \autoref{tab:farward_parm} the describe forward rates is 
+present. To illustrated the development of the forward rates over the different tenors, these are illustrated
+in \autoref{fig:forward_plot} below. From the plot we see that the level of the forward rate is higher for
+shorter tenors than longer dated tenors.
+\\
 \begin{table}[H]
     \centering
     \begin{tabular}{ccccccccccc}
@@ -334,21 +337,35 @@ namely [1Y,2Y,3Y,5Y,7Y,10Y,12Y,15Y,20Y,30Y]
     \caption{Forward rates for ten years to expiry and various tenors. Data source Citi Velocity 21.02.2024}
     \label{tab:farward_parm}
 \end{table}
-\noindent
-
-
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.7\textwidth]{/Users/nannaingemannohrt/Desktop/master_thesis/main/plots/forward_rates.png}
-    \caption{Forward rates}
+    \caption{Forward rates for ten years to expiry and various tenors. Data source Citi Velocity 21.02.2024}
     \label{fig:forward_plot}
 \end{figure}
-
+\noindent
+So we have chosen the method where we chose a fixed $\beta$, so we chose the fixed $\beta$'a to be 0.5 and 1.
+And then we performed the described estimation for the parameters $\alpha$, $\rho$ and $\nu$. 
+This estimation was performed across various combinations of expiry and tenors, 
+resulting in two separate tables that display the estimated parameters when $\beta$ is fixed at either 0.5 or 1. 
+The estimated values for $\alpha$, $\rho$, and $\nu$, with $\beta$ fixed at 0.5, are presented in \autoref{tab:beta_0.5}. 
+Similarly, the values for when $\beta$ is fixed at 1 are shown in \autoref{tab:beta_1}.
+\\\\
+Lets first comment on the estimated values in  \autoref{tab:beta_0.5}, where $\beta=0.5$.
+The estimated parameters show generally moderate values for $\alpha$ across different tenor-expiry combinations, 
+with a slight tendency to increase for longer expiries. The $\rho$ estimated values are predominantly positive, 
+suggesting that higher rates correlate with higher volatility. Finally $\nu$  estimated values are high, 
+indicating substantial volatility skew, which might suggest expectations of greater changes in 
+rate movements over these periods. Then lets comment on the estimated values in \autoref{tab:beta_1}, where $\beta=1$.
+In this case, the estimated $\alpha$ values are relatively higher compared to $\beta$ = 0.5, suggesting increased erratic behavior in volatility 
+for these scenarios. The $\rho$ estimated  values are also positive but exhibit a wider range across different tenors and expiries. 
+The estimated $\nu$ values remain high, reinforcing the presence of a significant volatility skew.
+\\
 \begin{table}[H]
     \centering
     \begin{tabular}{cccc}
       \toprule
-      \textbf{Expiry x Tenor } & \textbf{$\alpha$} & \textbf{$\rho$}  & \textbf{$\nu$} \\
+      \textbf{Expiry x Tenor } & \textbf{$\hat{\alpha}$} & \textbf{$\hat{\rho}$}  & \textbf{$\hat{\nu}$} \\
       \midrule
       \rowcolor{lightgray!40}  10Y x 1Y &0.104213 & 0.369971 & 1.57081 \\
       10Y x 2Y &0.103893 & 0.353521 & 1.56745 \\
@@ -362,7 +379,7 @@ namely [1Y,2Y,3Y,5Y,7Y,10Y,12Y,15Y,20Y,30Y]
       10Y x 30Y &0.076904 & 0.183612 & 1.40980 \\
       \bottomrule
     \end{tabular}
-    \caption{Fixed beta = 0.5}
+    \caption{$\hat{\alpha}$,$\hat{\rho}$ and $\hat{\nu}$ for fixed $\beta$ = 0.5, using the SABR model.}
     \label{tab:beta_0.5}
 \end{table}
 \noindent
@@ -371,7 +388,7 @@ namely [1Y,2Y,3Y,5Y,7Y,10Y,12Y,15Y,20Y,30Y]
     \centering
     \begin{tabular}{cccc}
       \toprule
-      \textbf{Expiry x Tenor} & \textbf{$\alpha$} & \textbf{$\rho$}  & \textbf{$\nu$} \\
+      \textbf{Expiry x Tenor} & \textbf{$\hat{\alpha}$} & \textbf{$\hat{\rho}$}  & \textbf{$\hat{\nu}$}\\
       \midrule
       \rowcolor{lightgray!40} 10Y x 1Y &0.189190 & 0.311485 & 1.499733 \\
       10Y x 2Y  &0.187648 & 0.294726 & 1.501256 \\
@@ -385,10 +402,17 @@ namely [1Y,2Y,3Y,5Y,7Y,10Y,12Y,15Y,20Y,30Y]
       10Y x 30Y &0.158203 & 0.122134 & 1.389240 \\
       \bottomrule
     \end{tabular}
-    \caption{Fixed beta = 1.0}
-    \label{tab:beta_0.5}
+    \caption{$\hat{\alpha}$,$\hat{\rho}$ and $\hat{\nu}$ for fixed $\beta$ = 1s, using the SABR model.}
+    \label{tab:beta_1}
 \end{table}
 \noindent
+The analysis of the SABR model parameters, specifically at fixed $\beta$ values of 0.5 and 1, 
+reveals distinctive volatility dynamics and correlation structures across various tenor-expiry combinations. 
+At both $\beta$ values, the presence of a positive rho indicates that rate increases are likely correlated with heightened volatility.
+The notable distinctions at $\beta$ = 1 are the higher alpha and nu values, suggesting a more erratic behavior and pronounced 
+skewness in volatility. These characteristics are particularly significant for pricing and risk management in scenarios 
+anticipating substantial rate dynamics. The insights garnered from this analysis are crucial for financial institutions and 
+investors involved in hedging, pricing, or trading derivatives influenced by these model dynamics.
 
 \subsection{Fitting a volatility smile using the SABR model}
 \begin{figure}[htbp]
