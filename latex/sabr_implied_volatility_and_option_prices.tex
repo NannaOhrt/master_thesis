@@ -270,55 +270,72 @@ positions us better to understand estimations of the model. So now we have looke
 are ready for the next step of our analysis which is to look at  estimating the parameters in the SABR model.
 \newpage
 \subsection{Estimating Parameters in the SABR model}
-In this section we will look into how we can estimate the parameters in the SABR model. 
+In this section we will look into how we can estimate the parameters in the SABR model.
+So we want to estimate $\alpha$, $\beta$, $\rho$ and $\nu$.       
 There are different methods for estimating the parameters in the SABR model. 
 The various approaches distinguish themselves based on their methods for estimating or selecting $\beta$ and $\alpha$.
 $\beta$ may be either set to a predetermined best guess or fitted together with other parameters.
-Similarly, $\alpha$ may be estimated using equation (4.8) or fitted concurrently with the other parameters.
+Similarly, $\alpha$ may be estimated using \autoref{sigma_atm} or fitted concurrently with the other parameters.
 \\\\
-We will proceed with the approach, where we chose some fixed $\beta$'s and the estimate $\alpha$ using equation (4.8) and the
+We will proceed with the approach, where we chose some fixed $\beta$'s and the estimate $\alpha$ using \autoref{sigma_atm}  and the
 setup a minimization problem there minimize $\rho$ and $\nu$. We chose this approach since earlier in Section \ref{invest_sabr}
-so noticed that change $\beta$ and $\rho$ gave some of the same effect on the volatility smile. Therefor we chose to fixe  $\beta$, for different
+we noticed that changes in $\beta$ and $\rho$ gave some of the same effect on the volatility smile. Therefor we chose to fixe  $\beta$, for different
 values of $\beta$. Lets then remind yourself of what the change in $\beta$ did to the volatility smile.
-We saw that when moving the $\beta$ value op and the, the corresponding change in the volatility smile. 
-If we then remind yourself of the dynamic of the forward rate in the SABR model, listed in \autoref{f_dyn}. 
+We saw that when moving the $\beta$ value op and down, the corresponding change in the volatility smile appeared. 
+Then remind yourself of the dynamic of the forward rate in the SABR model, listed in \autoref{f_dyn}. 
 Where we consider the term  $\alpha_t F_t^\beta$ as the total volatility of the forward rate process,
-it becomes apparent that decreasing $\beta$ generally amplifies the volatility.    
+it becomes apparent that decreasing $\beta$ generally amplifies the volatility and vise vera. 
 \\\\
 Then we consider the minimization problem to estimate the SABR model, where the objective is to align
-the market implied volatilities with the SABr model's volatility, which is computed for a 
-set of strike and the current forwards rate for combination of maturity and tenor \cite{Lindstrom}.
+the market implied volatilities with the SABR model's volatility, which is computed for a 
+set of strikes and the current forwards rate for combination of expiry and tenor \cite{Lindstrom}. 
+Below the minimization problem is present with the parameters condition we argued for in Section \ref{invest_sabr}.
  
 \begin{align}
    \min_{\rho, \nu} \sum_{i=0}^{N_k} \Big(\sigma_{\text{BS}} - 
     \sigma_{\text{SABR}}(f, \sigma_{\text{ATM}}, k_i, T, \rho, \nu)\Big)^2 \\
     0 \leq \beta \leq 1, \quad -1 \leq \rho \leq 1, \quad 0 \leq \nu, \quad 0 \leq \alpha
 \end{align}
+There are also different approaches to estimating the $\alpha$ parameter.
+To estimate $\alpha$ we will use the method proposed in  (Hagan et al., 2002), 
+where the ATM SABR-formula is inverted numerically, where the ATM SABR-formula is listed in \autoref{sigma_atm} \cite{Smile}.
+This is performed in \autoref{sigma_atm} to \autoref{ABC} below.
+Another way to estimate $\alpha$ is to solve the 
+minimization problem, but this will not be covered in the thesis.
 
+\begin{align}
+    \sigma_{\text{ATM}}  & = \frac{\alpha}{f^{1-\beta}} \left\{ 1 +
+     \left[ \frac{(1-\beta)^2 \alpha^2}{24 f^{2-2\beta}} + \frac{\rho \beta \nu \alpha}{4 f^{1-\beta}}
+      + \frac{(2-3\rho^2) \nu^2}{24} \right] t_{\text{ex}} \right\} \label{sigma_atm} \\
+      0 &= A \cdot \alpha^3 + B \cdot \alpha^2 + C \cdot \alpha - \sigma_{\text{ATM}} f^{1-\beta}
+\end{align}
+where
 
+\begin{align}
+    A = \frac{(1-\beta)^2 T}{24 f^{2-2\beta}},
+    \quad B = \frac{\rho \beta \nu T}{4 f^{1-\beta}},
+    \quad C = \left[ 1 + \frac{2-3\rho^2}{24} \nu^2 \right] t_{\text{ex}} \label{ABC}
+\end{align}
+Before we are ready to estimate the parameters numerically, lets first take a short look at the required 
+data to performed the estimation study. As mentioned we need the current forward rates for any combination 
+of expiry and tenor. In this analysis we will consider data where the expiry is 10 years and has various tenors 
+namely [1Y,2Y,3Y,5Y,7Y,10Y,12Y,15Y,20Y,30Y]
 
 \begin{table}[H]
     \centering
-    \begin{tabular}{cc}
+    \begin{tabular}{ccccccccccc}
       \toprule
-      \textbf{Expiry x Tenor} & \textbf{Forward rates} \\
+      \textbf{ Tenor} & 1Y & 2Y & 3Y & 5Y & 7Y & 10Y & 12Y & 15Y & 20Y & 30Y \\
       \midrule
-      \rowcolor{lightgray!40} 10Y x 1Y &0.293838 \\
-      10Y x 2Y & 0.297602\\
-      \rowcolor{lightgray!40} 10Y x 3Y & 0.299622\\
-      10Y x 5Y & 0.299258\\
-      \rowcolor{lightgray!40} 10Y x 7Y & 0.294395\\
-      10Y x 10Y & 0.284018\\
-      \rowcolor{lightgray!40} 10Y x 12Y & 0.276305\\
-      10Y x 15Y & 0.265454\\
-      \rowcolor{lightgray!40} 10Y x 20Y & 0.251744\\
-      10Y x 30Y & 0.23401\\
+      \textbf{ Forward rate}&0.2938 & 0.2976 & 0.2996 &0.2992 &0.2943 &0.2840 
+      &0.2763 & 0.2654& 0.2517 & 0.2340\\
       \bottomrule
     \end{tabular}
-    \caption{Forward rates from Citi d.21.02.2024}
+    \caption{Forward rates for ten years to expiry and various tenors. Data source Citi Velocity 21.02.2024}
     \label{tab:farward_parm}
 \end{table}
 \noindent
+
 
 \begin{figure}[H]
     \centering
