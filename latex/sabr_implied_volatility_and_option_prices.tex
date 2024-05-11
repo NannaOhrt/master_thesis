@@ -30,7 +30,7 @@ volatility, as mentioned earlier. In the Black Scholes
 model the volatility is a assumed to be constant and 
 in the SABR model the volatility evolves as a function
 of time, t, the strike price, K, and the current
-forward price, $f_t$. Futhermore the volatility itself
+forward price, $F_t$. Futhermore the volatility itself
 is random. So we chose the unknown coefficient $C(t,*)$
 to be $\hat{\alpha} \hat{F}^{\beta}$, where the 
 "volatility" $\hat{\alpha}$ is a stochastic process itself. 
@@ -43,8 +43,9 @@ and one for the volatility, since the SABR model is a
 two-factor model. The SABR model also formulate the 
 how the two process is correlated. 
 \begin{align}
-    d F_t &= \alpha_t f_t^\beta dW_t^1, \quad \quad F(0)=f   \label{f_dyn}\\
-    d\alpha_t &= \nu \alpha_t dW_t^2, \quad \quad \alpha(0)=\alpha \label{sigma_dyn}
+    d \hat{F_t} &= 
+    \hat{\alpha}_t \hat{F}_t^\beta dW_t^1, \quad \quad \hat{F}(0)=f   \label{f_dyn}\\
+    d\hat{\alpha}_t &= \nu \hat{\alpha}_t dW_t^2, \quad \quad \hat{\alpha}(0)=\alpha \label{sigma_dyn}
 \end{align}
 where $W_t^{1}$ and $W_t^{2}$ are two correlated Wiener 
 process and it is assumed that \cite{Smile}.
@@ -153,7 +154,8 @@ In this section, we will explore the parameters of the SABR model. This analysis
 how different parameters influence the behavior of implied volatility. We will conduct this investigation using 
 the closed-form solution established in the previous section. Our study will be build on  \autoref{sigma_B} and 
 \autoref{sigma_ff}, where we will test various parameter values. To see how changes in the different parameters
-affects on the implied volatility smile so realistic as possible we fix the values of the parameters.
+affects the implied volatility smile, we fix the values of the parameters during the study. 
+The purpose of fixing the values of the parameters, is to isolate the change in the investigate parameter. 
 Below in \autoref{tab:parameters} the chosen values of the parameters are listed, together with a short
 explain of the parameters. Then the study is performed by changing the parameters one by one, to illustrate the 
 isolated effect of the parameters. 
@@ -164,7 +166,7 @@ isolated effect of the parameters.
       \toprule
       \textbf{Parameter} & \textbf{Parameter explanation} & \textbf{Value} \\
       \midrule
-      \rowcolor{lightgray!40} $f$ & Initial forward rate or asset price & 100 \\
+      \rowcolor{lightgray!40} $F$ & Initial forward rate or asset price & 100 \\
       $T$ & Time to maturity & 1 \\
       \rowcolor{lightgray!40} $K$ & Strike & $K \in (80,120)$ \\
       $\alpha_0$ & Initial level of volatility & 0.1 \\
@@ -177,8 +179,6 @@ isolated effect of the parameters.
     \label{tab:parameters}
 \end{table}
 \noindent
-
-
 We will start the study with investigating how $\alpha_0$ affects the volatility smile in the SABR model. 
 First we note that the fixed value of $\alpha_0$ is $0.1$ Hereafter we adjust the value of $\alpha_0$ to $0.08$ and $0.12$,
 where the other parameters are kept fixed as listed in \autoref{tab:parameters} above. So having changed the parameter
@@ -195,10 +195,11 @@ it only shifts the volatility smile respectively up and down given the movement 
     \label{fig:alpha}
 \end{figure}
 \noindent
-Then we will continue the study of the parameters affects by looking into shift in the beta value in the SABR model.
-Again we shift the value of $\beta$ up and down from the fixed beta in \autoref{tab:parameters}. So we will look at $\beta$ equal to $0.45$,
+Then we will continue the study of the parameters affects by looking into shift in the $\beta$ value in the SABR model.
+Again we shift the value of $\beta$ up and down from the fixed $\beta$ in \autoref{tab:parameters}. So we will look at $\beta$ equal to $0.45$,
 $0.5$ (the fix beta) and $0.55$. 
-Although not explicitly constrained in the original article by Hagan et al. (2002), we restrict $\beta$ to the range $[0, 1]$. 
+Although not explicitly constrained in the paper Managing Smile Risk 
+of Hagen (2002) \cite{Smile} we restrict $\beta$ to the range $[0, 1]$. 
 Choosing a $\beta$ less than 0 would lead to an illogical scenario where higher forward prices F result in a smaller 
 relative change in the process $f_t$, thus we set the lower limit at $\beta \leq 0$. Similarly, a $\beta$ greater than 1 would 
 suggest that the expected deviation from the current state of $F_t$ exceeds the product of volatility and the current 
@@ -253,15 +254,15 @@ the volatility smile in the SABR model, and hence on the implied volatilities va
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.9\textwidth]{/Users/nannaingemannohrt/Desktop/master_thesis/main/plots/SABR_f.png}
-    \caption{SABR model volatility smiles at various f levels}
+    \caption{SABR model volatility smiles at various F levels}
     \label{fig:f}
 \end{figure}
 \noindent
 \\\\
-Finally we will investigate how the forward price, f, affect the volatility smile in the SABR model. 
+Finally we will investigate how the forward price, F, affect the volatility smile in the SABR model. 
 The same procedure as for the other parameters will be used. So in \autoref{fig:f} the volatility smile
 for the forward prices are illustrated. We see that the slope, shape and curvature is retained, when there
-is only change in the forward price. Which is as we expected given how the forward price, f, enters in the closed
+is only change in the forward price. Which is as we expected given how the forward price, F, enters in the closed
 solution for the implied volatility in \autoref{sigma_B} and \autoref{sigma_ff}.
 \\\\
 To summarize this section provides knowledge of the impact of the various parameters in the closed-form solution
@@ -277,12 +278,12 @@ The various approaches distinguish themselves based on their methods for estimat
 $\beta$ may be either set to a predetermined best guess or fitted together with other parameters.
 Similarly, $\alpha$ may be estimated using \autoref{sigma_atm} or fitted concurrently with the other parameters.
 \\\\
-We will proceed with the approach, where we chose some fixed $\beta$'s and the estimate $\alpha$ using \autoref{sigma_atm}  and the
+We will apply the approach, where we chose some fixed $\beta$'s and the estimate $\alpha$ using \autoref{sigma_atm}  and the
 setup a minimization problem there minimize $\rho$ and $\nu$. We chose this approach since earlier in Section \ref{invest_sabr}
 we noticed that changes in $\beta$ and $\rho$ gave some of the same effect on the volatility smile. Therefor we chose to fixe  $\beta$, for different
-values of $\beta$. Lets then remind yourself of what the change in $\beta$ did to the volatility smile.
+values of $\beta$. Let's then remind yourself of what the change in $\beta$ did to the volatility smile.
 We saw that when moving the $\beta$ value op and down, the corresponding change in the volatility smile appeared. 
-Then remind yourself of the dynamic of the forward rate in the SABR model, listed in \autoref{f_dyn}. 
+Then we remind yourself of the dynamic of the forward rate in the SABR model, listed in \autoref{f_dyn}. 
 Where we consider the term  $\alpha_t F_t^\beta$ as the total volatility of the forward rate process,
 it becomes apparent that decreasing $\beta$ generally amplifies the volatility and vise vera. 
 \\\\
@@ -292,13 +293,14 @@ set of strikes and the current forwards rate for combination of expiry and tenor
 Below the minimization problem is present with the parameters condition we argued for in Section \ref{invest_sabr}.
  
 \begin{align}
-   \min_{\rho, \nu} \sum_{i=0}^{N_k} \Big(\sigma_{\text{BS}} - 
+   \min_{\rho, \nu} \sum_{i=0}^{N_k} \Big(\sigma_{\text{B}} - 
     \sigma_{\text{SABR}}(f, \sigma_{\text{ATM}}, k_i, T, \rho, \nu)\Big)^2 \\
     0 \leq \beta \leq 1, \quad -1 \leq \rho \leq 1, \quad 0 \leq \nu, \quad 0 \leq \alpha
 \end{align}
 There are also different approaches to estimating the $\alpha$ parameter.
-To estimate $\alpha$ we will use the method proposed in  (Hagan et al., 2002), 
-where the ATM SABR-formula is inverted numerically, where the ATM SABR-formula is listed in \autoref{sigma_atm} \cite{Smile}.
+To estimate $\alpha$ we will use the method proposed in the paper Managing Smile Risk 
+of Hagen (2002) \cite{Smile},
+where the ATM SABR-formula is inverted numerically. The ATM SABR-formula is listed in \autoref{sigma_atm} \cite{Smile}.
 This is performed in \autoref{sigma_atm} to \autoref{ABC} below.
 Another way to estimate $\alpha$ is to solve the 
 minimization problem, but this will not be covered in the thesis.
@@ -316,9 +318,9 @@ where
     \quad B = \frac{\rho \beta \nu T}{4 f^{1-\beta}},
     \quad C = \left[ 1 + \frac{2-3\rho^2}{24} \nu^2 \right] t_{\text{ex}} \label{ABC}
 \end{align}
-Before we are ready to estimate the parameters numerically, lets first take a short look at the required 
+Before we are ready to estimate the parameters numerically, let's first take a short look at the required 
 data to performed the estimation study. As mentioned we need the current forward rates for any combination 
-of expiry and tenor. In this analysis we will consider data where the expiry is 10 years and has various tenors 
+of expiry and tenor. In this analysis we will consider data where the expiry is ten years and has various tenors 
 namely [1Y,2Y,3Y,5Y,7Y,10Y,12Y,15Y,20Y,30Y]. Below in \autoref{tab:farward_parm} the describe forward rates is 
 present. To illustrated the development of the forward rates over the different tenors, these are illustrated
 in \autoref{fig:forward_plot} below. From the plot we see that the level of the forward rate is higher for
@@ -344,7 +346,7 @@ shorter tenors than longer dated tenors.
     \label{fig:forward_plot}
 \end{figure}
 \noindent
-So we have chosen the method where we chose a fixed $\beta$, so we chose the fixed $\beta$'a to be 0.5 and 1.
+So we have chosen the method where we chose a fixed $\beta$, so we chose the fixed $\beta$'s to be 0.5 and 1.
 And then we performed the described estimation for the parameters $\alpha$, $\rho$ and $\nu$. 
 This estimation was performed across various combinations of expiry and tenors, 
 resulting in two separate tables that display the estimated parameters when $\beta$ is fixed at either 0.5 or 1. 
@@ -422,8 +424,11 @@ various tenors are despited in \autoref{fig:10Y1Y_} to \autoref{fig:10Y10Y_} bel
 From \autoref{fig:10y_plot_smile}  we se that estimated volatility smile fits the market data good, which make sense from 
 how we estimated the parameters to find the volatility smile. We note that estimated values for $\nu$ in both 
 \autoref{tab:beta_0.5} and \autoref{tab:beta_1}, are relative high. But this align with the steepness or level we see the in the 
-volatility smile in the market data. The volatility smile tends to be more convex we $\nu$ is large and the is clearly 
-the case here. This tendency appearers also i most of the volatility smile despited in \autoref{fig:10Y1Y_} to \autoref{fig:10Y10Y_}.
+volatility smile in the market data. The volatility smile tends to be more convex when $\nu$ is large and this is clearly 
+the case here. This tendency appearers in  most of the volatility smile despited in \autoref{fig:10Y1Y_} to \autoref{fig:10Y10Y_}.
+But again we also see for the tenor-expiry combination for longer tenor, has not the same steepness in the level in 
+the volatility smile. For the longer dated tenor combination we see a more symmetric volatility smile around the
+ATM strike. We also note the the changes in the volatility smile i larger for the OTM strike, than for the ITM strikes. 
 \\\\
 Then we should ask yourself how does the  steepness or level we see the in the 
 volatility smile in the market data affects the price of a swaption. When we are determine swaption we should also consider 
