@@ -49,12 +49,12 @@ term of that the evolution of interest rates only depends on one stochastic vari
 So now a short introducing to the Vasicek model has been covered and the next step is to look closer at the 
 mathematical framework of the Vasicek model. The Vasicek model consists of the dynamic of the short rate under the $\PP$-measure
 (the real world measure). Where the dynamic of the short rate is governed by a stochastic differential equation. 
-The dynamic for the short rate in the Vasicek model is presented below in \autoref{vas_dyn} and \autoref{vas_dyn_r0} \cite{Bjork}.
+The dynamic for the short rate in the Vasicek model is presented below in \autoref{vas_dyn1} and \autoref{vas_dyn_r0} \cite{Bjork}.
 \begin{align}
-    d r_t &= \kappa \Big[\theta -r(t)\Big] dt + \sigma d W(t) \label{vas_dyn}\\
+    d r_t &= \kappa \Big[\theta -r(t)\Big] dt + \sigma d W(t) \label{vas_dyn1}\\
     r(0) &= r_0 \label{vas_dyn_r0}
 \end{align}
-The dynamic for the short rate in \autoref{vas_dyn} is a Ornstein-Uhlenbeck process, which is a type of stochastic 
+The dynamic for the short rate in \autoref{vas_dyn1} is a Ornstein-Uhlenbeck process, which is a type of stochastic 
 differential equation that describes the evolution of a mean-reverting behavior. So the process is consisting of a 
 tendency to revert towards the mean of the process. This tendency is illustrated in \autoref{fig:vasicek} below, where 
  rates is simulated using the Vasicek model for some chosen parameters listed in \autoref{tab:parameters_short_rate} below. 
@@ -95,7 +95,7 @@ is the long-term average rate, $\sigma$ is the volatility  and $W(t)$ is a Wiene
     \label{fig:vasicek-sim}
 \end{figure}
 \noindent
-Then we look closer at the dynamic of the short rate in \autoref{vas_dyn}. This equation can be rearranged and integrated
+Then we look closer at the dynamic of the short rate in \autoref{vas_dyn1}. This equation can be rearranged and integrated
 to express the short rate, $r(t)$, as a function of its value at any prior time point s, 
 so we have to have that for $s < t$ \cite{Bermudan}. 
 \begin{align}
