@@ -1,0 +1,207 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb,amsfonts,amsthm}
+\usepackage{ulem}
+\usepackage{subcaption}
+\usepackage{caption}
+\usepackage{gauss}
+\usepackage{mathtools}
+\usepackage{mathrsfs}
+\usepackage{hyperref}
+\usepackage{bbm}
+\usepackage{graphicx} %Inkl. billeder osv.
+\usepackage{enumerate} %Lister
+\usepackage{fancyhdr} %Enables sidehoved og -fod.
+\usepackage{lastpage} %Bruges til at angive antal sider
+\usepackage[margin=1in,footskip=0.25in]{geometry}
+\usepackage{pdfpages}
+\pagestyle{fancy}
+%\fancyfoot[C] { } %Sletter sidetal i C
+\setcounter{MaxMatrixCols}{20}
+\linespread{1,2}
+\newcommand{\pic}[3]{\makebox[\textwidth]{\textbf{#1}}
+\\
+\begin{center}
+\includegraphics[scale=#2,center]{#3}
+\end{center}}
+\newcommand{\QQ}{\mathbb{Q}}
+\newcommand{\RR}{\mathbb{R}}
+\newcommand{\BB}{\mathbb{B}}
+\newcommand{\NN}{\mathbb{N}}
+\newcommand{\FF}{\mathbb{F}}
+\newcommand{\ZZ}{\mathbb{Z}}
+\newcommand{\CC}{\mathbb{C}}
+\newcommand{\EE}{\mathbb{E}}
+\newcommand{\indi}[1]{\mathbbm{1}_{#1}}
+\newcommand{\limi}[2]{\liminf\limits_{#1\rightarrow#2}}
+\newcommand{\bcup}[1]{\bigcup\limits_{#1}}
+\newcommand{\bcap}[1]{\bigcap\limits_{#1}}
+\newcommand{\m}{\cdot}
+\newcommand{\TF}[2]{\{#1_{#2}\}_{#2\in\mathbb{N}}}
+\newcommand{\Ma}[2]{\left( \begin{array}{{#1}}
+#2
+\end{array} \right)}
+\newcommand{\Mp}[1]{\begin{pmatrix}
+    #1
+    \end{pmatrix}}
+\newcommand{\M}[1]{\begin{matrix}
+    #1
+    \end{matrix}}
+\newcommand{\ver}[2]{#1\hspace{0.05cm}\vert\hspace{0.03cm}#2}
+\newcommand{\mgd}[2]{\left\{#1 \hspace{0.1cm}\left|\hspace{0.1cm}#2\right.\right\}}
+\newcommand{\llim}[2]{\lim\limits_{#1\rightarrow #2}}
+\newcommand{\ls}{\limsup\limits_{n\rightarrow\infty}}
+\newcommand{\li}{\liminf\limits_{n\rightarrow\infty}}
+\newcommand{\Part}[2]{\frac{\partial{#1}}{\partial{#2}}}
+\newcommand{\Int}[4][x]{\int_{#2}^{#3} #4 \hspace{0.05cm}\mathrm{d} #1}
+\newcommand{\myeq}[2][=]{\mathrel{\overset{\makebox[0pt]{\mbox{\normalfont\tiny\sffamily $#2$}}}{#1}}}
+\newcommand{\Myeq}[2][\leq]{\mathrel{\overset{\makebox[0pt]{\mbox{\normalfont\tiny\sffamily $#2$}}}{#1}}} 
+\newcommand{\mb}[1]{\mathbb{#1}}
+\newcommand{\mc}[1]{\mathcal{#1}}
+\newcommand{\ms}[1]{\mathscr{#1}}
+\newcommand{\as}{\myeq[\rightarrow]{as}}
+\newcommand{\As}{\myeq[\sim]{as}}
+\newcommand{\wk}{\myeq[\rightarrow]{wk}}
+\newcommand{\Pkonv}{\myeq[\rightarrow]{P}}
+\newcommand{\Dkonv}{\myeq[\rightarrow]{D}}
+\newcommand{\Lkonv}[1][1]{\myeq[\rightarrow]{\mc{L}^{#1}}}
+\newcommand{\borel}{\ms{B}(\mb{R})}
+\newcommand{\inte}[3]{\int_{#1} #2 \hspace{0.05cm}\mathrm{d}{#3}}
+\newcommand{\Norm}[1]{\left\lVert#1\right\rVert}
+\newcommand{\norm}[1]{\left\lvert#1\right\rvert}
+\newcommand{\Sum}[2]{\sum\limits_{#1}^{#2}}
+\title{Master Thesis}
+\author{}
+\makeatletter
+\providecommand*{\cupdot}{%
+  \mathbin{%
+    \mathpalette\@cupdot{}%
+  }%
+}
+\newcommand*{\@cupdot}[2]{%
+  \ooalign{%
+    $\m@th#1\bigcup$\cr
+    \hidewidth$\m@th#1\cdot$\hidewidth
+  }%
+}
+\makeatother
+\begin{document}
+\maketitle
+\tableofcontents
+\newpage
+
+\section*{Title}
+Swaptions pricing 
+
+\section*{Thesis statement}
+In this thesis, I will investigate asset allocation with respect to swaptions and the affect different swaptions strategies has.
+This analysis receivers a model selection to price swaptions and the different strategies will be back tasted on data.
+
+\section*{Structure}
+
+\section{Asset allocation}
+\begin{itemize}
+  \item Write about different assets.
+  \item drawdown plot on some equites, bonds and implied volatility
+  \item inflation plot on the same equites, bonds and implied volatility
+\end{itemize}  
+The idea is to give a motivation for swaptions as derivative in asset allocation. 
+ 
+
+\section{Swaptions}
+Introduction to swaptions
+
+\section{Pricing swaptions}
+Setup the framework for what is need to price swaptions.
+Theory on pricig a swaption 
+
+\section{risk neutral pricing}
+Introduce risk neutral pricing, so in the end it is possible to price swaptions
+
+\section{Black model}
+Theory of the Black model. 
+In the Black model the sigma is constant. 
+Comment on there is a sigma - volatility, and what should this sigma be. Transition to introducing the SABR model.
+
+\section{SABR model - implied volatility}
+Theory of the SABR model 
+
+Given market data on ATM volatility such as 10Y10Y ATM NORMAL EUR, we will calibrate the parameters in the SABR model. 
+Then the calibrated parameters can be used to find the "sigma" the implied volatility, 
+This "sigma" can be used in the Black model to price swaptions. 
+
+\section{Risk premium}
+Introduce how risk premium are calculated, we can perform two different swaptions strategies 
+\\\\
+Risk premium = expected return - risk-free rate 
+
+\section{Two strategies}
+
+10Y 10Y ATM EUR swaption - 20 years data and 3M 3M ATM EUR swaption - 20 years data 
+\medskip
+Maybe also for USD swaptions
+\medskip
+The goals is to find that swaption make good sense when you have a strategy when the swaptions has a long duration. 
+
+\section{Data}
+volatility  - given in BPS/DAY
+\begin{itemize}
+  \item 10Y 10Y EUR normal vol 
+  \item 20Y 10Y EUR normal vol 
+  \item 3M 3M EUR normal vol
+  \item 1Y 1Y EUR normal vol 
+  \item 10Y 10Y USD normal vol 
+  \item 20Y 10Y USD normal vol 
+  \item 3M 3M USD normal vol
+  \item 1Y 1Y USD normal vol 
+\end{itemize}
+risk-free rates - given i BPS/ANNUM
+\begin{itemize}
+  \item 10Y 10Y EUR normal annual RFR vol 
+  \item 20Y 10Y EUR normal annual RFR vol  
+  \item 3M 3M EUR normal annual RFR vol 
+  \item 1Y 1Y EUR normal annual RFR vol  
+  \item 10Y 10Y USD normal annual RFR vol  
+  \item 20Y 10Y USD normal annual RFR vol  
+  \item 3M 3M USD normal annual RFR vol 
+  \item 1Y 1Y USD normal annual RFR vol  
+\end{itemize}
+
+
+\section{}
+
+Swaption as now asset
+
+Trading as a active stategies, short vs long term. 
+
+SSA, is there a risk premium
+
+onlu exspure is the vol, same exspure in the hold time
+
+look at the distribution on the of the time series. 
+
+positive middel value. 
+
+Can the parameters in the data be contruct as the same as the estimate. 
+
+
+IDE! 
+Write about different model, black model and SABR model. 
+The goal is to find out is there is a risk premium in general!
+estimate the parameters in the model. 
+- over time, in the vol OTM and the ATM. 
+how to construct strategies
+-how to get the risk premium.
+
+
+\section{Plan}
+
+Write down the idea of this thesis \\
+Make a outline for this thesis \\
+Make a list of the data we need \\
+Get all the data \\
+Start writing theory 
+
+\end{document}
