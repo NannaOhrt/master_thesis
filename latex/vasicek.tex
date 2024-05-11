@@ -83,16 +83,16 @@ is the long-term average rate, $\sigma$ is the volatility  and $W(t)$ is a Wiene
 \noindent
 \begin{figure}[H]
     \centering
-    \begin{minipage}{0.5\textwidth}
-        \includegraphics[width=\linewidth]{/Users/nannaingemannohrt/Desktop/master_thesis/main/plots/VasicekModelPlot.png}
-        \caption{Plot of one simulated rate path \\ using the Vasicek model.}
-        \label{fig:vasicek}
-    \end{minipage}\hfill 
-    \begin{minipage}{0.5\textwidth}
-        \includegraphics[width=\linewidth]{/Users/nannaingemannohrt/Desktop/master_thesis/main/plots/VasicekModelPlotSIM.png}
-        \caption{Plot of 10 simulated  rates \\ paths using the Vasicek model.}
-        \label{fig:vasicek-sim}
-    \end{minipage}
+    \includegraphics[width=0.75\linewidth]{/Users/nannaingemannohrt/Desktop/master_thesis/main/plots/VasicekModelPlot.png}
+    \caption{Plot of one simulated rate path  using the Vasicek model.}
+    \label{fig:vasicek}
+\end{figure}
+\noindent
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.75\linewidth]{/Users/nannaingemannohrt/Desktop/master_thesis/main/plots/VasicekModelPlotSIM.png}
+    \caption{Plot of 10 simulated  rates  paths using the Vasicek model.}
+    \label{fig:vasicek-sim}
 \end{figure}
 \noindent
 Then we look closer at the dynamic of the short rate in \autoref{vas_dyn}. This equation can be rearranged and integrated
@@ -148,7 +148,7 @@ simulated paths is plotted in a histogram. In \autoref{fig:rates:hist} the proba
 fitted normal distribution is also plotted. This verifies that the short rate process in the Vasicek model is Gaussian distributed.
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.9\textwidth]{/Users/nannaingemannohrt/Desktop/master_thesis/main/plots/NormalDistributionPlot.png}
+    \includegraphics[width=0.75\textwidth]{/Users/nannaingemannohrt/Desktop/master_thesis/main/plots/NormalDistributionPlot.png}
     \caption{Histogram of one simulated rate path using the Vasicek model.}
     \label{fig:rates:hist}
 \end{figure}
@@ -247,8 +247,10 @@ Finally  by substituting into \autoref{equal_zero2} and integrating we get that
     A(t,T)&= \exp \Biggl\{\left(\theta-\frac{\sigma^2}{2 \kappa^2}\right)\left(\frac{1-e^{-\kappa(T-u)}}{\kappa}-(T-t)\right)
     -\frac{\sigma^2}{4 \kappa}\left(\frac{1-e^{-\kappa(T-t)}}{\kappa}\right)^2 \Biggr\} 
 \end{align}
+\\\\
  Combining this we get the formula for pricing bonds using the Vasicek model, which present 
  in Proposition \autoref{prop 5} below. 
+\newpage
 \begin{proposition}
     \label{prop 5}
     \textbf{(The Vasicek term structure)} In the Vasicek model, bond prices are given by
@@ -289,18 +291,17 @@ We see that the price fluctuate over the price period, as expected.
 \noindent
 \begin{figure}[H]
     \centering
-    \begin{minipage}{0.5\textwidth}
-        \includegraphics[width=\linewidth]{/Users/nannaingemannohrt/Desktop/master_thesis/main/plots/zcb_1_sim.png}
-        \caption{Plot of one simulated ZCB price path \\ using the Vasicek model.}
-        \label{fig:zcb_sim_1_plot}
-    \end{minipage}\hfill 
-    \begin{minipage}{0.5\textwidth}
-        \includegraphics[width=\linewidth]{/Users/nannaingemannohrt/Desktop/master_thesis/main/plots/zcb_10_sim.png}
-        \caption{Plot of 10 simulated  ZCB prices \\ paths using the Vasicek model.}
-        \label{fig:zcb_sim_10_plot}
-    \end{minipage}
+    \includegraphics[width=0.75\linewidth]{/Users/nannaingemannohrt/Desktop/master_thesis/main/plots/zcb_1_sim.png}
+    \caption{Plot of one simulated ZCB price path using the Vasicek model.}
+    \label{fig:zcb_sim_1_plot}
 \end{figure}
 \noindent
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.75\linewidth]{/Users/nannaingemannohrt/Desktop/master_thesis/main/plots/zcb_10_sim.png}
+    \caption{Plot of 10 simulated  ZCB prices  paths using the Vasicek model.}
+    \label{fig:zcb_sim_10_plot}
+\end{figure}
 \noindent
 The Vasicek model has now been introduced and we have taken a closer look at the distribution in the short rate model. 
 This examination leads us to the Vasicek term structure model, which outlines the method for pricing bonds using the 
