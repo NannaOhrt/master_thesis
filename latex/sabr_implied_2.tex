@@ -119,7 +119,7 @@ for the implied volatility in the SABR model. This knowledge gives a good idea o
 positions us better to understand estimations of the model. So now we have looked at the closed-form solution and 
 are ready for the next step of our analysis which is to look at  estimating the parameters in the SABR model.
 \newpage
-\subsection{Estimating Parameters in the SABR model}
+\subsection{Estimating Parameters in the SABR model} \label{est_parm_sabr}
 In this section we will look into how we can estimate the parameters in the SABR model.
 So we want to estimate $\alpha$, $\beta$, $\rho$ and $\nu$.       
 There are different methods for estimating the parameters in the SABR model. 
@@ -231,7 +231,7 @@ The estimated $\nu$ values remain high, reinforcing the presence of a significan
       10Y x 30Y &0.1881 & 0.1942 & 3.4496 \\
       \bottomrule
     \end{tabular}
-    \caption{$\hat{\alpha}$,$\hat{\rho}$ and $\hat{\nu}$ for fixed $\beta$ = 0.5, using the SABR model.}
+    \caption{$\hat{\alpha}$, $\hat{\rho}$ and $\hat{\nu}$ for fixed $\beta$ = 0.5, using the SABR model.}
     \label{tab:beta_0.5}
 \end{table}
 \noindent
@@ -254,7 +254,7 @@ The estimated $\nu$ values remain high, reinforcing the presence of a significan
       10Y x 30Y &0.3867 & 0.1221 & 3.3960 \\
       \bottomrule
     \end{tabular}
-    \caption{$\hat{\alpha}$,$\hat{\rho}$ and $\hat{\nu}$ for fixed $\beta$ = 1, using the SABR model.}
+    \caption{$\hat{\alpha}$, $\hat{\rho}$ and $\hat{\nu}$ for fixed $\beta$ = 1, using the SABR model.}
     \label{tab:beta_1}
 \end{table}
 \noindent
@@ -284,10 +284,13 @@ Then we should ask yourself how does the  steepness or level we see the in the
 volatility smile in the market data affects the price of a swaption. When we are determine swaption we should also consider 
 with sensitivities there are related to the price of the swaption. The above analysis pointing at there could 
 be a sensitive related to $\nu$. Therefor the next step in the analysis is to look closer at the models sensitivities. 
+But first a look at how swaption prices change over various tenors in Section \ref{swaption_price_sec}.
+
 \begin{figure}[H]
     \centering
     \includegraphics[width=1.\textwidth]{/Users/nannaingemannohrt/Desktop/master_thesis/main/plots/10Y10Y_est.png}
-    \caption{}
+    \caption{Estimated implied volatility smile for a 10Y10Y EUR swaption using the SABR model. 
+    \\ Data source Citi Velocity 21.02.2024}
     \label{fig:10y_plot_smile}
 \end{figure}
 \noindent
