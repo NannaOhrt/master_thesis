@@ -116,14 +116,16 @@ under the SABR model, the prices of European options
 is given by Black formula in \autoref{sabr1} to \autoref{sabr3}
 below
 \begin{align}
-    V_{\text{call}} &= D(t_{\text{set}})fN(d_1) - KN(d_2),  \label{sabr1}\\
-    V_{\text{put}} &= V_{\text{call}} + D(t_{\text{set}})[K - f], \label{sabr2}
+    V_{\text{call}} &= D(t_{\text{set}})fN(d_1) - KN(d_2)  \label{sabr1}\\
+    V_{\text{put}} &= V_{\text{call}} + D(t_{\text{set}})[K - f] \label{sabr2}
 \end{align}
 with
 \begin{equation}
-    d_{1,2} = \frac{\log \frac{f}{K} \pm \frac{1}{2}\sigma_B^2 t_{\text{ex}}}{\sigma_B \sqrt{t_{\text{ex}}}}, \label{sabr3}
+    d_{1,2} = \frac{\log \frac{f}{K} \pm \frac{1}{2}\sigma_B^2 t_{\text{ex}}}{\sigma_B \sqrt{t_{\text{ex}}}}
+     \label{sabr3}
 \end{equation}
-where the implied volatility $\sigma_B(f, K)$ is given by
+here $t_{\text{set}}$ is the settlement date and $t_{\text{ex}}$ os the exercise date and 
+the implied volatility $\sigma_B(f, K)$ is given by
 \begin{equation}
     \sigma_B(K, f) = \frac{\alpha}{(fK)^{(1-\beta)/2}} \left\{ 1 + \frac{(1-\beta)^2}{24} \log^2 \frac{f}{K} + \frac{(1-\beta)^4}{1920} \log^4 \frac{f}{K} + \ldots \right\} \left( \frac{z}{x(z)} \right).
     \label{sigma_B}
