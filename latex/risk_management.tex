@@ -1,15 +1,15 @@
 \section{Risk Management} \label{risk_mang}
 In this Section risk related to the SARB model will be covered. 
 This will be a adding to the investigation of the parameters in the SABR model.
-We will start this section by  determine the value for
+We will start this section by  reminding yourself of the value for
 a European call swaption according to the SABR model. 
-Then the section will continuing covering the related risk, also called sensitives in 
+Then the section will continuing covering the related risk, also called referred to as sensitives in 
 the SABR model. 
 \\\\
 So du to the examination of the Black Scholes model we have that \cite{Smile}
 \begin{align}
-    V_{\text{call}} &= D(t_{\text{set}})fN(d_1) - KN(d_2),  \\
-    V_{\text{put}} &= V_{\text{call}} + D(t_{\text{set}})[K - f], 
+    V_{\text{call}} &= D(t_{\text{set}})fN(d_1) - KN(d_2) \label{V_call} \\
+    V_{\text{put}} &= V_{\text{call}} + D(t_{\text{set}})[K - f]
 \end{align}
 with
 \begin{equation}
@@ -37,7 +37,7 @@ and x(z) is defined by
 \begin{align}
     x(z) &= \log \left\{ \frac{\sqrt{1-2\rho z + z^2} + z - \rho}{1 - \rho} \right\}.
 \end{align}
-For the special case of at-the-money (ATM) options, options strike at $K = f$, this formula reduces to
+For the special case of ATM options, options strike at $K = f$, this formula reduces to
 \begin{equation}
     \sigma_{ATM} = \sigma_B(f, f) = \frac{\alpha}{f^{1-\beta}} \left\{ 1 + \left( \frac{(1-\beta)^2}{24} \frac{\alpha^2}{f^{2-2\beta}} + \frac{\rho \beta \nu}{4} \frac{\alpha}{f^{1-\beta}} + \frac{2-3\rho^2}{24} \nu^2 \right) t_{\text{ex}} + \ldots \right\}.
     \label{sigma_ff}
@@ -52,9 +52,36 @@ Lets then remind yourself of the interpretation of the parameters in the SABR mo
     \item $\rho$ \text{---} Correlation between the asset price and its volatility.
 \end{itemize}
 \noindent
-Sow we are ready to look at the risk related to the SABR model.
+So new we are ready to look at the risk related to the SABR model.
 We will cover some different types of risk, namely vega, vanna, volga and delta risk. 
 The various types of risk, are related to the parameters in the SABR. 
 From your analysis of SABR model we argued that it is common practice, 
 to fixed beta. Hence we will not look into any risk related to the beta parameter. 
 But all the other parameters risk will be study. 
+\\\\
+During the examination of the risk related to the SABR will will look at 
+the derivatives with respect to the different parameters. 
+First we will look at the vega risk, which is the risk related to the $\alpha$ parameter. 
+Hence it is also the risk related to the changes in the  volatility.
+\\\\
+From differentiating \autoref{V_call} with respect to $\alpha$ we have that
+\begin{align}
+    \frac{\partial V_{\text{call}}}{\partial \alpha} = 
+    \frac{\partial \text{BS}}{\partial \sigma_B} \cdot \frac{\partial 
+    \sigma_B(K, f; \alpha, \beta, \nu)}{\partial \alpha}
+\end{align}
+When taking about the risk related to the change in volatility, $\alpha$, 
+the risk changes by a unit amount. We also note the it is common used finance to 
+scale vega, so it represents the change in value when the AMT volatility change by a unit amount \cite{Smile}.
+Then we note that 
+\begin{align}
+    \delta \sigma_{\text{ATM}} =
+     \Big(\frac{\partial \sigma_{\text{ATM}}}{\partial \alpha} \Big) \cdot \delta \alpha \label{eg_1}
+\end{align}
+where $\delta$ represents the changes. Due to \autoref{eg_1} we can write the vega risk as below
+\begin{align}
+    \text{vega} \equiv  \frac{\partial V_{\text{call}}}{\partial \alpha} 
+   = \frac{\frac{\partial \sigma_B(K, f; \alpha, \beta, \nu)}{\partial \alpha}}
+    {\frac{\partial \sigma_{\text{ATM}}(f; \alpha, \beta, \nu)}{\partial \alpha}} 
+\end{align}
+    
