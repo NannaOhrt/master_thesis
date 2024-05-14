@@ -8,8 +8,7 @@ the SABR model.
 \\\\
 So du to the examination of the Black Scholes model we have that \cite{Smile}
 \begin{align}
-    V_{\text{call}} &= D(t_{\text{set}})fN(d_1) - KN(d_2) \label{V_call} \\
-    V_{\text{put}} &= V_{\text{call}} + D(t_{\text{set}})[K - f]
+    V_{\text{call}} &= D(t_{\text{set}})fN(d_1) - KN(d_2) \label{V_call} 
 \end{align}
 with
 \begin{equation}
@@ -75,7 +74,7 @@ the risk changes by a unit amount. We also note the it is common used finance to
 scale vega, so it represents the change in value when the AMT volatility change by a unit amount \cite{Smile}.
 Then we note that 
 \begin{align}
-    \delta \sigma_{\text{ATM}} =
+    \delta  \cdot \sigma_{\text{ATM}} =
      \Big(\frac{\partial \sigma_{\text{ATM}}}{\partial \alpha} \Big) \cdot \delta \alpha \label{eg_1}
 \end{align}
 where $\delta$ represents the changes. Due to \autoref{eg_1} we can write the vega risk as below
@@ -86,3 +85,11 @@ where $\delta$ represents the changes. Due to \autoref{eg_1} we can write the ve
 \end{align}
  where we have that $\sigma_{\text{ATM}}(f) = \sigma_{\text{B}} (f,f)$  is given as listed \autoref{sigma_ff_risk}
  above. 
+ Next we note that to leading order, $\frac{\partial \sigma_B}{\partial \alpha} \approx \frac{ \sigma_B}{ \alpha}$ 
+and $\frac{\partial \sigma_{\text{ATM}}}{\partial \alpha} \approx \frac{ \sigma_{\text{ATM}}}{\alpha}$,
+so the vega risk can be expressed as 
+\begin{align}
+\text{vega} \approx \frac{\partial \text{BS}}{\partial \sigma_B} \cdot
+ \frac{\sigma_B(K,f)}{\sigma_{\text{ATM}}(f)} \cdot \frac{\partial \text{BS}}{\partial \sigma_B} 
+ \cdot \frac{\sigma_B(K,f)}{\sigma_B(f,f)}
+\end{align}
