@@ -26,8 +26,8 @@ with
 \end{align}
 where the implied volatility $\sigma_{\text{B}}(K,f) $ is given as below
 \begin{equation}
-    \sigma_B(K, f) = \frac{\alpha}{(fK)^{(1-\beta)/2}} \left\{ 1 + \frac{(1-\beta)^2}{24} \log^2 \frac{f}{K} + \frac{(1-\beta)^4}{1920} \log^4 \frac{f}{K} + \ldots \right\} \left( \frac{z}{x(z)} \right).
-    \label{sigma_B}
+    \sigma_B(K, f) = \frac{\alpha}{(fK)^{(1-\beta)/2}} \left\{ 1 + \frac{(1-\beta)^2}{24} \log^2 \frac{f}{K} + \frac{(1-\beta)^4}{1920} \log^4 \frac{f}{K} + \ldots \right\} \left( \frac{z}{x(z)} \right)
+    \label{eg_2}
 \end{equation}
 where
 \begin{align}
@@ -35,12 +35,12 @@ where
 \end{align}
 and x(z) is defined by
 \begin{align}
-    x(z) &= \log \left\{ \frac{\sqrt{1-2\rho z + z^2} + z - \rho}{1 - \rho} \right\}.
+    x(z) &= \log \left\{ \frac{\sqrt{1-2\rho z + z^2} + z - \rho}{1 - \rho} \right\}
 \end{align}
 For the special case of ATM options, options strike at $K = f$, this formula reduces to
 \begin{equation}
-    \sigma_{ATM} = \sigma_B(f, f) = \frac{\alpha}{f^{1-\beta}} \left\{ 1 + \left( \frac{(1-\beta)^2}{24} \frac{\alpha^2}{f^{2-2\beta}} + \frac{\rho \beta \nu}{4} \frac{\alpha}{f^{1-\beta}} + \frac{2-3\rho^2}{24} \nu^2 \right) t_{\text{ex}} + \ldots \right\}.
-    \label{sigma_ff}
+    \sigma_{ATM} = \sigma_B(f, f) = \frac{\alpha}{f^{1-\beta}} \left\{ 1 + \left( \frac{(1-\beta)^2}{24} \frac{\alpha^2}{f^{2-2\beta}} + \frac{\rho \beta \nu}{4} \frac{\alpha}{f^{1-\beta}} + \frac{2-3\rho^2}{24} \nu^2 \right) t_{\text{ex}} + \ldots \right\}
+    \label{sigma_ff_risk}
 \end{equation}
 \\\\
 Lets then remind yourself of the interpretation of the parameters in the SABR model. 
@@ -84,4 +84,5 @@ where $\delta$ represents the changes. Due to \autoref{eg_1} we can write the ve
    = \frac{\frac{\partial \sigma_B(K, f; \alpha, \beta, \nu)}{\partial \alpha}}
     {\frac{\partial \sigma_{\text{ATM}}(f; \alpha, \beta, \nu)}{\partial \alpha}} 
 \end{align}
-    
+ where we have that $\sigma_{\text{ATM}}(f) = \sigma_{\text{B}} (f,f)$  is given as listed \autoref{sigma_ff_risk}
+ above. 
