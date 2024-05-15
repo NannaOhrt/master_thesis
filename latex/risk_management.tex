@@ -1,4 +1,4 @@
-\section{Risk Management} \label{risk_mang}
+\section{Risk Related to the SABR model} \label{risk_mang}
 In this Section risk related to the SARB model will be covered. 
 This will be a adding to the investigation of the parameters in the SABR model.
 We will start this section by  reminding yourself of the value for
@@ -81,15 +81,77 @@ where $\delta$ represents the changes. Due to \autoref{eg_1} we can write the ve
 \begin{align}
     \text{vega} \equiv  \frac{\partial V_{\text{call}}}{\partial \alpha} 
    = \frac{\frac{\partial \sigma_B(K, f; \alpha, \beta, \nu)}{\partial \alpha}}
-    {\frac{\partial \sigma_{\text{ATM}}(f; \alpha, \beta, \nu)}{\partial \alpha}} 
+    {\frac{\partial \sigma_{\text{ATM}}(f; \alpha, \beta, \nu)}{\partial \alpha}} \label{eg_3}
 \end{align}
  where we have that $\sigma_{\text{ATM}}(f) = \sigma_{\text{B}} (f,f)$  is given as listed \autoref{sigma_ff_risk}
  above. 
- Next we note that to leading order, $\frac{\partial \sigma_B}{\partial \alpha} \approx \frac{ \sigma_B}{ \alpha}$ 
+Then we note that  $\frac{\partial \sigma_B}{\partial \alpha} \approx \frac{ \sigma_B}{ \alpha}$ 
 and $\frac{\partial \sigma_{\text{ATM}}}{\partial \alpha} \approx \frac{ \sigma_{\text{ATM}}}{\alpha}$,
-so the vega risk can be expressed as 
+hence the vega risk can be expressed as 
 \begin{align}
 \text{vega} \approx \frac{\partial \text{BS}}{\partial \sigma_B} \cdot
  \frac{\sigma_B(K,f)}{\sigma_{\text{ATM}}(f)} \cdot \frac{\partial \text{BS}}{\partial \sigma_B} 
  \cdot \frac{\sigma_B(K,f)}{\sigma_B(f,f)}
 \end{align}
+So when we work wit the SABR model,
+the Vega risks for a swaption at various strike prices are calculated by adjusting the implied volatility at each strike 
+K. This adjustment is proportional to the existing implied volatility 
+$\sigma_B(K,f)$
+at that strike. In this way, using \autoref{eg_3}, we adjust the
+volatility curve in a proportional manner, rather than shifting 
+it uniformly, allowing us to more accurately calculate the total
+Vega risk for a portfolio of options.
+\\\\
+The remind yourself of how $\rho$ and $\nu$ er determine in the SABR model.
+We learned that $\rho$ and $\nu$ are determine by fitting the implied volatility
+surface observed in the market. But there are also risk related to these 
+to parameters. So now we will look into the vanna and volga risk. 
+First we note that the vanna risk in the SABR model, is related 
+to the  parameter $\rho$. Secondly the volga risk is related
+to the $\nu$ risk. The lingo of volga comes from v volatility of gamma
+\cite{Smile}.
+\\\\
+Then lets look at how the two risk is determined. 
+\begin{align*}
+    \text{vanna} &= \frac{\partial V_{\text{call}}}{\partial \rho} = \frac{\partial BS}{\partial \sigma_B} \frac{\partial \sigma_B(K, f; \alpha, \beta, \nu)}{\partial \rho} \\
+    \text{volga} &= \frac{\partial V_{\text{call}}}{\partial \nu} = \frac{\partial BS}{\partial \sigma_B} \frac{\partial \sigma_B(K, f; \alpha, \beta, \nu)}{\partial \nu}
+\end{align*}
+Then we remind yourself of the interpretation of $\rho$,
+which was the correlation between the asset price and the its 
+volatility. Which make since since the vanna risk express
+the risk ro the skew increase. In other word the vanna risk 
+measures the sensitives of an option  vega to change in 
+the underlying asset price. Next we will cover the volga risk.
+The volga risk is related to the $\nu$ parameter in the SABR model. 
+The volga risk expresses the risk to the smile shape and curvature,
+which we also saw during the investigating of the SABR model. 
+\\\\
+Finally we will look at the delta risk, we will denoted
+the delta risk $\Delta$. The delta risk is related to f, the 
+forward rate or the price of the underlying asset. 
+During the investigating of the SABR model, we made
+some choice regrading the determining of the alpha parameter.
+This choice also effect the delta risk. So we note that
+we chose the approach of determine the alpha, from solve the
+$\sigma_{\text{ATM}}$, where $\sigma_{\text{ATM}}$ is given as 
+listed in \autoref{sigma_ff_risk} above. 
+Then we differentiating with respect to f, to obtain the delta risk. 
+\begin{align}
+    \Delta = \frac{\partial \text{BS}}{\partial f} +
+     \frac{\partial \text{BS}}{\partial \sigma_\beta} 
+     \Big({\frac{\partial \sigma_\beta(K; f, \alpha, \beta, \rho, \nu)}
+     {\partial f}  + \frac{\partial \sigma_\beta(K; f, \alpha, \beta,
+     \rho, \nu)}{\partial \alpha} 
+     \frac{\partial \sigma(\text{ATM}, f)}{\partial f}}\Big)
+\end{align}
+The first term represents the ordinary Delta risk calculated from 
+the Black's model. The second term adds the SABR model's
+ specific adjustment for the change in implied volatility, 
+$\sigma_B$, caused by changes in the forward price f.
+the last term represents the adjustment needed to maintain a constant 
+$\sigma_{\text{ATM}}$ while f changes.
+We also note that the last term will be zero, if $\beta=1$ \cite{Smile}.
+\\\\
+Now we have covered all the risk or sensitives related to the SABR model. 
+The tends we saw during the investigating of the SABR model, reflects
+the same patterns regrading the various risk related to the model. 
