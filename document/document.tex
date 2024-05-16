@@ -1,5 +1,4 @@
 \documentclass{article}
-
 % -------------------------------------------- usepackage  -------------------------------------------- %
 \usepackage[utf8]{inputenc}
 \usepackage[english]{babel}
@@ -32,9 +31,7 @@
 \usepackage{color, colortbl}
 \definecolor{Gray}{gray}{0.9}
 \definecolor{LightCyan}{rgb}{0.88,1,1}
-
 \numberwithin{equation}{section}
-
 % -------------------------------------------- newcommand  -------------------------------------------- %
 \pagestyle{fancy}
 \setcounter{MaxMatrixCols}{20}
@@ -43,7 +40,6 @@
 \begin{center}
 \includegraphics[scale=#2,center]{#3}
 \end{center}}
-
 \newcommand{\QQ}{\mathbb{Q}}
 \newcommand{\RR}{\mathbb{R}}
 \newcommand{\BB}{\mathbb{B}}
@@ -84,23 +80,19 @@
 \newtheorem{proposition}{Proposition}
 \newtheorem{theorem}{Theorem}
 \renewcommand{\baselinestretch}{1.5}
-
 \usetikzlibrary{decorations.pathreplacing, calc, arrows.meta}
 \pgfplotsset{compat=newest}
 \usetikzlibrary{arrows.meta, positioning}
 
-
 % ----------------------------------------- fancy page style  ----------------------------------------- %
-% Set up the fancy page style
 \fancypagestyle{main}{
-    \fancyhf{} % Clear header and footer
-    \renewcommand{\headrulewidth}{0.4pt} % Remove header rule
-    \fancyhead[R]{\leftmark} % Place section name in the center of the header
-    \fancyfoot[C]{\thepage} % Page number in the center of the footer
+    \fancyhf{} 
+    \renewcommand{\headrulewidth}{0.4pt} 
+    \fancyhead[R]{\leftmark} 
+    \fancyfoot[C]{\thepage} 
 }
 
-\pagestyle{main} % Activate the page style
-
+\pagestyle{main} 
 % -------------------------------------------- document  -------------------------------------------- %
 \title{}
 \author{}
@@ -118,25 +110,17 @@
 \makeatother
 
 
-
 \begin{document}
 % -------------------------------------------- import files  -------------------------------------------- %
-% import the front page
 \includepdf[pages=-]{/Users/nannaingemannohrt/Desktop/master_thesis/frontpage/frontpage_setup.pdf} 
-
-% import the abstract
 \pagenumbering{gobble}
 \input{/Users/nannaingemannohrt/Desktop/master_thesis/latex/0_abstract.tex}
 \newpage
-
-% make table of contents
 \tableofcontents 
-
 \newpage
 \pagenumbering{arabic}
 \input{/Users/nannaingemannohrt/Desktop/master_thesis/latex/1_introduction.tex}
 \newpage  
-
 \input{/Users/nannaingemannohrt/Desktop/master_thesis/latex/2_swaptions_as_a_missing_link_in_asset_allocation.tex}
 \newpage
 \input{/Users/nannaingemannohrt/Desktop/master_thesis/latex/3_mathematics_of_pricing_swaptions.tex} 
@@ -157,6 +141,4 @@
 \input{/Users/nannaingemannohrt/Desktop/master_thesis/latex/10_conclusion.tex}
 \newpage
 \input{/Users/nannaingemannohrt/Desktop/master_thesis/latex/bibliography.tex} 
-
-
 \end{document}
