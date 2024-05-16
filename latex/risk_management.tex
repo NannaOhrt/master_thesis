@@ -102,14 +102,14 @@ volatility curve in a proportional manner, rather than shifting
 it uniformly, allowing us to more accurately calculate the total
 Vega risk for a portfolio of options.
 \\\\
-The remind yourself of how $\rho$ and $\nu$ er determine in the SABR model.
+The remind yourself of how $\rho$ and $\nu$ are determine in the SABR model.
 We learned that $\rho$ and $\nu$ are determine by fitting the implied volatility
 surface observed in the market. But there are also risk related to these 
 to parameters. So now we will look into the vanna and volga risk. 
 First we note that the vanna risk in the SABR model, is related 
 to the  parameter $\rho$. Secondly the volga risk is related
-to the $\nu$ risk. The lingo of volga comes from v volatility of gamma
-\cite{Smile}.
+to the $\nu$ risk. The lingo of volga comes from volatility of gamma
+\cite{Smile}. Gamma measure the convexity of a derivative's value in relation to the underlying asset. 
 \\\\
 Then lets look at how the two risk is determined. 
 \begin{align*}
@@ -125,6 +125,8 @@ the underlying asset price. Next we will cover the volga risk.
 The volga risk is related to the $\nu$ parameter in the SABR model. 
 The volga risk expresses the risk to the smile shape and curvature,
 which we also saw during the investigating of the SABR model. 
+This is also consistent with the interpretation of the $\nu$ parameter. 
+Exactly that $\nu$ is the volatility of the volatility parameter $\alpha$.
 \\\\
 Finally we will look at the delta risk, we will denoted
 the delta risk $\Delta$. The delta risk is related to f, the 
