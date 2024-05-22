@@ -1,5 +1,5 @@
 \subsection{Investigating The Parameters of The SABR Model} \label{invest_sabr}
-In this section, we will explore the parameters of the SABR model. This analysis will offer insights into 
+In this Chapter, we will explore the parameters of the SABR model. This analysis will offer insights into 
 how different parameters influence the behavior of implied volatility. We will conduct this investigation using 
 the closed-form solution established in the previous section. Our study will be build on  \autoref{sigma_B} and 
 \autoref{sigma_ff}, where we will test various parameter values. To see how changes in the different parameters
@@ -128,7 +128,7 @@ $\beta$ may be either set to a predetermined best guess or fitted together with 
 Similarly, $\alpha$ may be estimated using \autoref{sigma_atm} or fitted concurrently with the other parameters.
 \\\\
 We will apply the approach, where we chose some fixed $\beta$'s and the estimate $\alpha$ using \autoref{sigma_atm}  and the
-setup a minimization problem there minimize $\rho$ and $\nu$. We chose this approach since earlier in Section \ref{invest_sabr}
+setup a minimization problem there minimize $\rho$ and $\nu$. We chose this approach since earlier in Chapter \ref{invest_sabr}
 we noticed that changes in $\beta$ and $\rho$ gave some of the same effect on the volatility smile. Therefor we chose to fixe  $\beta$, for different
 values of $\beta$. Let's then remind yourself of what the change in $\beta$ did to the volatility smile.
 We saw that when moving the $\beta$ value op and down, the corresponding change in the volatility smile appeared. 
@@ -139,7 +139,7 @@ it becomes apparent that decreasing $\beta$ generally amplifies the volatility a
 Then we consider the minimization problem to estimate the SABR model, where the objective is to align
 the market implied volatilities with the SABR model's volatility, which is computed for a 
 set of strikes and the current forwards rate for combination of expiry and tenor \cite{Lindstrom}. 
-Below the minimization problem is present with the parameters condition we argued for in Section \ref{invest_sabr}.
+Below the minimization problem is present with the parameters condition we argued for in Chapter \ref{invest_sabr}.
  
 \begin{align}
    \min_{\rho, \nu} \sum_{i=0}^{N_k} \Big(\sigma_{\text{B}} - 
