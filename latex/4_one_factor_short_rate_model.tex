@@ -1,6 +1,6 @@
 \section{One-Factor Short-Rate Model}
 As we have established, interest rate is crucial 
-for pricing swaptions. Therefore, this chapter will 
+for pricing swaptions. Therefore, this Chapter will 
 begin by examining the general one-factor short rate 
 model. It will then continue with a closer look at the 
 Vasicek model, where we will determine its properties. 
@@ -8,17 +8,17 @@ To support and investigate these properties, a small
 simulation analysis of the Vasicek model will be 
 performed.
 \\\\
-The risk-free short rate, r, is sometimes referred to as the instantaneous short rate. 
+The risk free short rate, r, is sometimes referred to as the instantaneous short rate. 
 The concept is used in finance modeling to represent the continuously compounded interest rate for 
 short time intervals. The short rate, r, is often modeled using stochastic differential equations in 
 mathematical finance. The typical models for modeling the short rate is the Vasicek model and the Cox–Ingersoll–Ross model, 
 later the Vasicek model will be covered. When pricing derivatives as bonds and options, the price depends on 
 the process followed by r in the risk-neutral world \cite{Hull}.
 \\\\
-As discussed in the Section \ref{risk_neutral_section} - Risk Neutral Measure, $r_t$, can be looked at the locally risk-free 
+As discussed in the Section \ref{risk_neutral_section} - Risk Neutral Measure, $r_t$, can be looked at the locally risk free 
 rate from a continuously compounded bank account $B(t)= \exp \Big[\int_{0}^{t} r(s) ds \Big]$. 
 Where the bank account has the dynamic listed in \autoref{bank1} and \autoref{bank2}.
-Postulation: the considered market is arbitrage-free, wich due to the First Fundamental Theorem of Asset Pricing, 
+Postulation: the considered market is arbitrage free, which due to the First Fundamental Theorem of Asset Pricing, 
 if stating that there exist a probability measure $\QQ$, equivalent to $\PP$, all asset prices discounted by $B(t)$
 are $\QQ$-martingales. In other words under the considered market for any T we have that 
 \begin{align}
@@ -36,7 +36,7 @@ of just one state variable - the short rate \cite{Bermudan}.
 \subsection{The Vasicek Model}
 So all interest rate instruments are fundamentally dependent on bond prices. Understanding the movements of 
 these prices is essential for accurately describing the term structure or zero coupon curve. The behavior 
-of the short rate, a key variable, underlies this understanding due to its distributional properties.
+of the short rate, a key variable, underlines this understanding due to it's distributional properties.
 \\\\
 The Vasicek model, introduced by Oldrich Vasicek in 1977, serves as a robust framework to analyze these dynamics.
 The Vasicek model is renowned for its simplicity and the ease with which it facilitates bond price calculations, 
@@ -159,7 +159,7 @@ focus on bond prices using the Vasicek model. Earlier when we discussed bond pri
 Now we will examine another aspect of the Vasicek model, namely the ability to derive explicit formulas
 for bond pricing based on model expectations.
 But first some words on how these bond prices are determined in the Vasicek model. 
-When using the Vasicek model, it is possible to derive closed-form solutions for zero coupon bond prices. 
+When using the Vasicek model, it's possible to derive closed-form solutions for zero coupon bond prices. 
 These prices are determined by an equation that factors in the current short rate, the speed of mean reversion,
 the long-term mean level, the volatility of the short rate, and the bond’s time to maturity.
 The bond prices formula from the Vasicek model considers the expected path of future short 
@@ -184,7 +184,7 @@ Then we find the partial derivatives with respect to $r$ and $t$ of the zero cou
     \frac{\partial^2 P}{\partial r^2} &= \frac{\partial}{\partial r} (-PB) = -B \frac{\partial}{\partial r} (P) = PB^2
 \end{align*}
 Then by applying Ito's lemma \cite{Bjork} and inserting the derivatives with respect to $r$ and $t$ we found above as well as
- the formula for the short rate in the Vasicek model present in \autoref{vas_dyn} we obtain the following
+ the formula for the short rate in the Vasicek model present in \autoref{vas_dyn1} we obtain the following
 \begin{align*}
     dP(t,T) &= \frac{\partial P}{\partial t} dt + \frac{\partial P}{\partial r} dr 
     + \frac{1}{2} \frac{\partial^2 P}{\partial r^2} dr^2 \\
