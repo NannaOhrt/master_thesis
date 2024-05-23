@@ -14,11 +14,11 @@ $B(t,T)$ refer to a contract that pays one dollar at maturity, T, which can be i
     t & = T \rightarrow B(t,T) = 1
 \end{align*}
 The concept "Time Value of Money" asserts that the value of a dollar today is worth more than
-the same amount in the future due to its potential earning capacity and inflation.
+the same amount in the future due to it's potential earning capacity and inflation.
 The "Time Value Of Money" concept underpins various financial decisions, such as investing, borrowing,
 and pricing financial instruments. Essentially, it recognizes that a dollar received today can be invested 
-and earn interest over time, thereby increasing its value. Conversely, a dollar received in the future
-is subject to uncertainty and may not retain its purchasing power due to inflation or other factors.
+and earn interest over time, thereby increasing it's value. Conversely, a dollar received in the future
+is subject to uncertainty and may not retain it's purchasing power due to inflation or other factors.
 The discount factor represents the present value of future cash flows, taking into account the time value of money.
 It reflects the idea that receiving a certain amount of money in the future is less valuable than receiving 
 the same amount today.
@@ -111,13 +111,13 @@ between year 1 and year 2, starting at year 1.
 Lets consider three time points on the yield curve $t=0,1,2$, where it is assumed
 that $t_0 < t_1 < t_2$. At time $t_0$ we have the spot rates $p(t_0,t_1)$ and $p(t_1,t_2)$,
 which represent the yields for bonds maturing at time $t_1$ and $t_2$ respectively.
-Hence the forward rate, $R(t_1,t_2)$, can med determined using the equation below \cite{Bjork}
+Hence the forward rate, $R(t_1,t_2)$, can be determined using the equation below \cite{Bjork}
 \begin{align*}
     R(t_1,t_2)= \frac{(1+p(t_0,t_2))^2}{(1+p(t_0,t_1))}-1
 \end{align*}
-Imagine investing one dollar in a one-year zero-coupon bond, $B(t_0,t_1)$,
-and instantly reinvesting the money received at time $t_1$ in a new one-year zero-coupon bond,
-$B(t_1,t_2)$, at rate $R(t_1,t_2)$. This strategy should yield the same return as investing 
+Imagine investing one dollar in a one-year zero coupon bond, $B(t_0,t_1)$,
+and instantly reinvesting the money received at time $t_1$ in a new one-year zero coupon bond,
+$B(t_1,t_2)$, at a rate $R(t_1,t_2)$. This strategy should yield the same return as investing 
 one dollar in a two-year zero coupon bond $B(t_0,t_2)$ and holding it for two years. 
 This strategy illustrated the idea of forward rates. Let us then look a the general
 formula for forward rates. 
@@ -132,7 +132,7 @@ formula for forward rates.
 \\\\
 So now formulas for spot rate and forward rates has been determined. To illustrate the differences between 
 the two types of rates, a simple illustration below shows at which times the rates are determined. From the illustration
-we see that all the spot rates are determine a time $t=0$, to each time point to maturity. Where the forward rates starts
+we see that all the spot rates are determine at time $t=0$, to each time point to maturity. Where the forward rates starts
 a different time points. 
 \begin{center}
     \begin{tikzpicture}
@@ -268,7 +268,7 @@ to obtain
         &= \delta L(T_{i-1},T_i) \\
         &= \frac{1- p(T_{i-1},T_i)}{\delta p(T_{i-1},T_i)} = \frac{1}{p(T_{i-1},T_i)}-1
 \end{align*}
-Then we have found the price of the LIBOR spot rate, where $\frac{1}{p(T_{i-1},T_i)}$ is zero coupon bonds prices. 
+Then we have found the price of the LIBOR spot rate, where $\frac{1}{p(T_{i-1},T_i)}$ is zero coupon bonds price. 
 So the next step is to determine the price for the floating rate bond. If we look at the $T_i$-payment of the floating rate bond, 
 it has the value of
 \begin{align*}
@@ -280,7 +280,7 @@ If we then sum over all the i payments of the floating rate we obtain that the f
 \end{align*}
 where we note that if $t=T_0$ we get that $p(T_0)=1$ \cite{Bjork}. \\\\
 Like for the section for the fixed coupon bond, a illustration of the cashflow for a floating rate bond is illustrated below.
-To the to illustrations we clearly see the different in the periodic interest payments. 
+From the to illustrations we clearly see the different in the periodic interest payments. 
 \begin{center}
     \begin{tikzpicture}[font=\small] 
         \draw[-latex] (5,0) -- (13,0) node[anchor=north] {Time};
@@ -301,7 +301,7 @@ To the to illustrations we clearly see the different in the periodic interest pa
     Illustration 3.5: Cashflow for a floating rate bond
 \end{center}
 \subsection{Interest Rate Swaps}
-Now some simple cases of different types of bonds has be introduce. Then we will combine the knowledge we have gained to move on
+Now some simple cases of different types of bonds has be introduced. Then we will combine the knowledge we have gained to move on
 to take interest rate derivatives into consideration. Again we will consider the simplest type of a interest rate derivative, which is a
 interest rate swap. The construction of a interest rate swap is that there is an  exchange of a payment stream of a fixed rate of interest,
 which is know as the swap rate. This fixed rate is exchanged for some floating rate, such as the LIBOR rate. 
@@ -310,7 +310,7 @@ so it makes the present value of the swap equal to zero. This we will formulate 
 \\\\
 As stated in the interest rate swap, two cash flow are exchanged, where one of is a 
 fixed cash flow and the other is a floating cash flow. These components of
-the interest rate swap are known ad the "fixed leg" and the "floating leg". 
+the interest rate swap are known as the "fixed leg" and the "floating leg". 
 The role of each participant in the swap is determined in relation to the 
 fixed leg: the party making fixed payments is engaged in a "payer swap," 
 while the party making floating payments (and receiving fixed payments) is
@@ -458,10 +458,10 @@ When options are priced the value of the options is calculated by discounting
 the options expected payoff at time T under the risk neutral measure $\QQ$. 
 \\\\
 The value of the options is calculated under the risk neutral measure $\QQ$ also know as the pricing measure, and 
-not under the actual measure $\PP$. The $\PP$- measure reflects th real world probabilities. If prices was determined 
+not under the actual measure $\PP$. The $\PP$- measure reflects the real world probabilities. If prices was determined 
 under $\PP$ is could lead to arbitrage opportunities, because it would reflect the actual risk preferences of
 investors, who demand different rates of return for different risks. Under the risk neutral measure $\QQ$  
-probabilities are shifted or adjusted in such way that the expected rate of return on assets becomes the risk-free rate. 
+probabilities are shifted or adjusted in such way that the expected rate of return on assets becomes the risk free rate. 
 This adjustment removes the risk premiums that are present in the actual probability measure $\PP$.
 This lead to the First Fundamental Theorem of Asset Pricing, to develop this theorem we consider 
 the concept of martingales. 
@@ -471,7 +471,7 @@ $\EE_{t}^{\QQ}\Big[X_T\Big] = X_t$ for all $t<T$. Next we will consider a price 
     d X_t = r_t X_t dt + \sigma X_t d W_{t}^{\QQ}
     \label{price_process}
 \end{align}
-where $W_{t}^{\QQ}$ is $\QQ$-Wiener process and  $r_t$ is the process for the risk free interest rate. $r_t$ can be looked at the locally risk-free rate return 
+where $W_{t}^{\QQ}$ is $\QQ$-Wiener process and  $r_t$ is the process for the risk free interest rate. $r_t$ can be looked at the locally risk free rate return 
 from a continuously compounded bank account $B(t)= \text{exp} \Big[\int_{0}^{t}r(s)ds \Big]$.
 Where the bank account has the following dynamic
 \begin{align}
@@ -493,7 +493,7 @@ This lead os to the First Fundamental Theorem of Asset Pricing in \autoref{frist
 \begin{theorem}
     (\textbf{First Fundamental Theorem of Asset Pricing})
     Given a time horizon, a risky asset with price process $X_t$ and a
-    risk-free asset with price process $B_t$, the market is arbitrage free 
+    risk free asset with price process $B_t$, the market is arbitrage free 
     (under the probability measure $\PP$) if and only if there exists an 
     equivalent probability measure $\QQ$ such that the discounted price process
     $\Big[\frac{X_t}{B_t}\Big]$  is a $\QQ$- martingale \cite{Bjork}
@@ -501,7 +501,7 @@ This lead os to the First Fundamental Theorem of Asset Pricing in \autoref{frist
 \end{theorem}
 \noindent 
 Hence we have establish the First Fundamental Theorem of Asset Pricing. So to sum up in order to be able to calculate
-option prices, the "fair" or arbitrage-free price, there must exist a risk neutral measure $\QQ$, such the the discount prices
+option prices, the "fair" or arbitrage free price, there must exist a risk neutral measure $\QQ$, such the the discount prices
 is a $\QQ$-martingale. 
 \subsubsection{Options Pricing}
 The next question to be answered is what is the "fair" price of these options, we will denote the price of
@@ -510,7 +510,7 @@ the European call option moving forward. To determine the price of a European ca
 Black-Scholes formula. This requires a review of Risk Neutral Valuation and the Black-Scholes model.
 \\\\
 Risk Neutral Valuation determine the value of an asset by discounting the expected values of the assets future 
-pay-offs at the risk-free rate of return, this formalized in \autoref{rnt} below
+pay-offs at the risk free rate of return, this formalized in \autoref{rnt} below.
 \begin{theorem}
     \textbf{(Risk Neutral Valuation)} The arbitrage free price of the claim $\Phi(S_t)$ is given by \\
     $\Pi(t)[\Phi]$=$F(t,S_t)$, where F is given by the formula 
@@ -555,7 +555,7 @@ for being able to price a European option is satisfied, hence we have the Black-
 \subsection{Swaptions}
 Now that we have establish a foundational understanding of interest rates, bonds, swaps and options, we can
 now go deeper into swaptions. First we will explain what constitutes a swaption and the we will continuing 
-to develop the framework of pricing a swaption, buibuiltld on the knowledge we have established.  
+to develop the framework of pricing a swaption, built on the knowledge we have established.  
 \\\\
 A swaption is a financial derivative that can be describeed as an option to exchange a fixed rate bond for
 floating rate bonds for a predetermined principal. 
