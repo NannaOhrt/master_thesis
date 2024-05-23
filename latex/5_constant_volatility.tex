@@ -1,6 +1,6 @@
 \section{Constant Volatility} \label{cont_vol}
 This Chapter will look into the limitations 
-of the Black Scholes model, particularly its 
+of the Black-Scholes model, particularly it's 
 assumption of constant volatility, and introduce 
 the SABR model as a more dynamic alternative for estimating volatility. 
 The Chapter will illustrate the inconsistency of 
@@ -8,14 +8,14 @@ this assumption with real-world market data,
 using the S$\&$P 500 index and the 10Y10Y EUR swaption 
 as examples.
 \\\\
-The Black Scholes model, introduced earlier, outlines the pricing formula for an European call option in 
-Proposition \autoref{Black-Scholes Formula}. It is  essential to recall that in the Black Scholes formula, 
-volatility is considered constant. This implies that the volatility of the asset's returns does not vary over time,
+The Black-Scholes model, introduced earlier, outlines the pricing formula for an European call option in 
+Proposition \autoref{Black-Scholes Formula}. It's  essential to recall that in the Black-Scholes formula, 
+volatility is considered constant. This implies that the volatility of the assets returns does not vary over time,
 establishing a direct correlation between the option's price and its volatility. Consequently, 
-understanding implied volatility becomes crucial. Although the Black Scholes model does not provide 
+understanding implied volatility becomes crucial. Although the Black-Scholes model does not provide 
 a closed-form solution for implied volatility, it can be determined numerically, a topic not covered 
 in this analysis. Instead, we introduce the SABR model to estimate volatility, which can then be 
-applied to the Black Scholes model for option pricing. This will be covered in the Chapter \ref{SABR_model} about the 
+applied to the Black-Scholes model for option pricing. This will be covered in the Chapter \ref{SABR_model} about the 
 SABR model. 
 \\\\
 We will briefly demonstrate why the assumption of constant volatility is inconsistent with market data. 
@@ -58,11 +58,11 @@ SABR model that more accurately capture market dynamics and provide nuanced vola
 \end{figure}
 \noindent
 The market data reveals a tendency in 
-volatility, indicating that it is not constant. 
+volatility, indicating that it's not constant. 
 Given this fluctuation, how should we proceed when 
 considering to be able to price a swaption? We will continue our 
 analysis by exploring a two-factor model rather 
 than the previously described one-factor Vasicek model. 
 This approach allows us to model volatility 
 stochastically and use the resulting volatility 
-estimates to price a swaption in the Black Scholes model. 
+estimates to price a swaption in the Black-Scholes model. 
