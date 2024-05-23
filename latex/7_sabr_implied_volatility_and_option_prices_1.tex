@@ -1,15 +1,16 @@
 \section{ The SABR Model} \label{SABR_model}
-In this chapter, we will first introduce the SABR model
+In this Chapter, we will first introduce the SABR model
  and explain how to determine the forward rate and 
  volatility using this model. We will then focus on 
  calculating implied volatility and pricing European 
- options with the SABR model. Finally, the chapter 
+ options with the SABR model. Finally, the Chapter 
  will discuss methods for estimating the parameters 
  of the SABR model.
 \\\\
-The SABR (Stochastic Alpha, Beta, Rho) model marks a pivotal advancement 
-in financial modeling, effectively addressing the significant limitations 
-found in traditional methods like the Black Scholes model, which assumes 
+The SABR (Stochastic Alpha, Beta, Rho) 
+model represents a significant advancement in financial modeling, 
+effectively addressing the notable limitations of traditional methods
+like the Black-Scholes model, which assumes 
 constant volatility. Developed in 2002 by Patrick Hagan, Deep Kumar, 
 Andrew Lesniewski, and Diana Woodward, the SABR model is highly respected for 
 its ability to manage the dynamic and unpredictable nature of market 
@@ -25,14 +26,14 @@ derivatives, proving especially useful for options with long maturities where
 the assumption of constant volatility falls short \cite{Smile}.
 \subsection{Specification For The SABR Model}
 The main different between the SABR model and the 
-Black Scholes model is the assumptions regrading the 
-volatility, as mentioned earlier. In the Black Scholes 
+Black-Scholes model is the assumptions regrading the 
+volatility, as mentioned earlier. In the Black-Scholes 
 model the volatility is a assumed to be constant and 
 in the SABR model the volatility evolves as a function
 of time, t, the strike price, K, and the current
 forward price, $F_t$. Futhermore the volatility itself
 is random. So we chose the unknown coefficient $C(t,*)$
-to be $\hat{\alpha} \hat{F}^{\beta}$, where the 
+to be $\hat{\alpha} \hat{F}^{\beta}$ \cite{Smile}, where the 
 "volatility" $\hat{\alpha}$ is a stochastic process itself. 
 The extra randomness is scaled thought the inclusion 
 of a "volatility of volatility" parameter $\nu$.
@@ -64,7 +65,7 @@ the parameter $\beta$, and the correlation coefficient $\rho$,
 which is also reflected in its name - Stochastic Alpha Beta Rho.
 In a specific variant of the SABR model, 
 by setting $\beta = 1 $ and $\nu = 0$, the model reverts 
-to the classic Black Scholes framework. 
+to the classic Black-Scholes framework. 
 This configuration leads to a constant volatility, 
 denoted $\alpha_0 $, 
 and a forward process where returns follow a 
@@ -72,7 +73,7 @@ normal distribution with a mean of zero and a standard
 deviation of $\alpha_0 \sqrt{t}$. So now the SABR model
 has been introduced and the analysis will continuing forward 
 on how to price a swaption using the SABR model to determine the implied
-volatility.
+volatility \cite{Smile}.
 \subsection{Simulation The SABR Model}
 In this Section a short view on how the process for the forward price and the volatility develops over time will be covered. 
 To provide the intuition on how the dynamic listed in \autoref{f_dyn} and \autoref{sigma_dyn} behave, the dynamics is simulated ten times

@@ -1,10 +1,10 @@
 \subsection{Investigating The Parameters of The SABR Model} \label{invest_sabr}
-In this Chapter, we will explore the parameters of the SABR model. This analysis will offer insights into 
+In this Section, we will explore the parameters of the SABR model. This analysis will offer insights into 
 how different parameters influence the behavior of implied volatility. We will conduct this investigation using 
-the closed-form solution established in the previous section. Our study will be build on  \autoref{sigma_B} and 
+the closed-form solution established in the previous Section. Our study will be build on  \autoref{sigma_B} and 
 \autoref{sigma_ff}, where we will test various parameter values. To see how changes in the different parameters
 affects the implied volatility smile, we fix the values of the parameters during the study. 
-The purpose of fixing the values of the parameters, is to isolate the change in the investigate parameter. 
+The purpose of fixing the values of the parameters, is to isolate the change in the investigated parameter. 
 Below in \autoref{tab:parameters} the chosen values of the parameters are listed, together with a short
 explain of the parameters. Then the study is performed by changing the parameters one by one, to illustrate the 
 isolated effect of the parameters. 
@@ -50,7 +50,7 @@ $0.5$ (the fix beta) and $0.55$.
 Although not explicitly constrained in the paper Managing Smile Risk 
 of Hagen (2002) \cite{Smile} we restrict $\beta$ to the range $[0, 1]$. 
 Choosing a $\beta$ less than 0 would lead to an illogical scenario where higher forward prices F result in a smaller 
-relative change in the process $f_t$, thus we set the lower limit at $\beta \leq 0$. Similarly, a $\beta$ greater than 1 would 
+relative change in the process $F_t$, thus we set the lower limit at $\beta \leq 0$. Similarly, a $\beta$ greater than 1 would 
 suggest that the expected deviation from the current state of $F_t$ exceeds the product of volatility and the current 
 forward level (times $\alpha_0 \sqrt{t}$), which is also impractical. Therefore, we set the upper limit at $\beta \geq 1$.
 \\\\
@@ -114,13 +114,13 @@ for the forward prices are illustrated. We see that the slope, shape and curvatu
 is only change in the forward price. Which is as we expected given how the forward price, F, enters in the closed
 solution for the implied volatility in \autoref{sigma_B} and \autoref{sigma_ff}.
 \\\\
-To summarize this section provides knowledge of the impact of the various parameters in the closed-form solution
+To summarize this Section provides knowledge of the impact of the various parameters in the closed-form solution
 for the implied volatility in the SABR model. This knowledge gives a good idea of how the model works, and 
 positions us better to understand estimations of the model. So now we have looked at the closed-form solution and 
 are ready for the next step of our analysis which is to look at  estimating the parameters in the SABR model.
 \newpage
 \subsection{Estimating Parameters in The SABR Model} \label{est_parm_sabr}
-In this section we will look into how we can estimate the parameters in the SABR model.
+In this Section we will look into how we can estimate the parameters in the SABR model.
 So we want to estimate $\alpha$, $\beta$, $\rho$ and $\nu$.       
 There are different methods for estimating the parameters in the SABR model. 
 The various approaches distinguish themselves based on their methods for estimating or selecting $\beta$ and $\alpha$.
@@ -260,8 +260,8 @@ The estimated $\nu$ values remain high, reinforcing the presence of a significan
 \noindent
 The analysis of the SABR model parameters, specifically at fixed $\beta$ values of 0.5 and 1, 
 reveals distinctive volatility dynamics and correlation structures across various tenor-expiry combinations. 
-At both $\beta$ values, the presence of a positive rho indicates that rate increases are likely correlated with heightened volatility.
-The notable distinctions at $\beta$ = 1 are the higher alpha and nu values, suggesting a more erratic behavior and pronounced 
+At both $\beta$ values, the presence of a positive $\rho$ indicates that rate increases are likely correlated with heightened volatility.
+The notable distinctions at $\beta$ = 1 are the higher $\alpha$ and $\nu$ values, suggesting a more erratic behavior and pronounced 
 skewness in volatility. These characteristics are particularly significant for pricing and risk management in scenarios 
 anticipating substantial rate dynamics. The insights garnered from this analysis are crucial for financial institutions and 
 investors involved in hedging, pricing, or trading derivatives influenced by these model dynamics.
@@ -284,7 +284,7 @@ Then we should ask yourself how does the  steepness or level we see the in the
 volatility smile in the market data affects the price of a swaption. When we are determine swaption we should also consider 
 with sensitivities there are related to the price of the swaption. The above analysis pointing at there could 
 be a sensitive related to $\nu$. Therefor the next step in the analysis is to look closer at the models sensitivities. 
-But first a look at how swaption prices change over various tenors in Section \ref{swaption_price_sec}.
+But first a look at how swaption prices change over various tenors in Chapter \ref{swaption_price_sec}.
 
 \begin{figure}[H]
     \centering
