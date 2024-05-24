@@ -1,10 +1,10 @@
 \section{Data} \label{data_lab}
 In Chapter \ref{cont_vol} wee looked into the assumption of constant volatility in the Black-Scholes model. 
-Where during the study, a 10Y10Y EUR swaption was introduced. This chapter will provide a introduction to 
+Where during the study, a 10Y10Y EUR swaption was introduced. This Chapter will provide a introduction to 
 market data on swaptions. In this thesis the data source is Citi Velocity, which is a market data plantformed
 owned by Citi Bank.
 \\\\
-Before delving into the market data on swaptions, let's revisit the definition of a swaption. 
+Before delving into the market data on swaptions, lets revisit the definition of a swaption. 
 A swaption gives the holder the right, but not the obligation, to enter into an interest rate swap in the future. 
 There are two types of swaptions: payer swaptions and receiver swaptions, as previously described.
 \\\\
@@ -16,14 +16,14 @@ The four main parameters defining a swaption are:
 \item \textbf{Pay/Receive} \text{---}  whether the holder pays or receives the fixed rate.
 \end{itemize}
 \noindent
-As mentioned a 10Y10Y EUR swaption was analyzed, but let's clarify what a 10Y10Y EUR swaption entails. 
+As mentioned a 10Y10Y EUR swaption was analyzed, but lets clarify what a 10Y10Y EUR swaption entails. 
 Assuming the swaption is a receiver swaption, it represents a contract that, in ten years, 
 gives the holder the right to enter into a ten year interest rate swap in EUR, receiving a fixed rate. 
 Thus, the swaption has an expiry of 10 years, a tenor of 10 years, and a strike equivalent to the value of the fixed rate. 
 It is important to note that the underlying interest rate swap in the swaption is a forward swap, commencing 10 years from now: 
 the settlement date.
 \\\\
-Then before we will look at some displayed data, let's first cover some lingo of swaption. 
+Then before we will look at some displayed data, lets first cover some lingo of swaption. 
 A swaption with a strike set at the current market rate for the underlying forward swap is referred 
 to as at-the-money-forward (ATMF). If the strike differs from the ATMF rate, the swaption is categorized as out-of-the-money (OTM).
 \newpage
@@ -50,7 +50,7 @@ These volatility surface plots is illustrated in \autoref{fig:10Y1Y_} to \autore
 These plots clearly show changes in the volatility surface across different tenors. 
 The volatility surface becomes flatter and more symmetric around the ATM strike for longer tenors, 
 indicating a shift in the parameter nu, which measures the volatility of volatility. We will discuss 
-this further in \ref{invest_sabr}.
+this further in Section \ref{invest_sabr}.
 \\
 \begin{table}[H]
     \centering

@@ -36,7 +36,7 @@ of just one state variable - the short rate \cite{Bermudan}.
 \subsection{The Vasicek Model}
 So all interest rate instruments are fundamentally dependent on bond prices. Understanding the movements of 
 these prices is essential for accurately describing the term structure or zero coupon curve. The behavior 
-of the short rate, a key variable, underlines this understanding due to it's distributional properties.
+of the short rate, a key variable, underlines this understanding due to its distributional properties.
 \\\\
 The Vasicek model, introduced by Oldrich Vasicek in 1977, serves as a robust framework to analyze these dynamics.
 The Vasicek model is renowned for its simplicity and the ease with which it facilitates bond price calculations, 
@@ -145,7 +145,7 @@ with a mean of zero, we can simulate the short rate distribution by generating a
 for the Wiener process. Each path would then correspond to a realization of the short rate over time. In \autoref{fig:rates:hist}
 below the described method is used and the simulated paths for the short rate in the Vasicek model and the distribution of one  the
 simulated paths is plotted in a histogram. In \autoref{fig:rates:hist} the probability density function (PDF) of the 
-fitted normal distribution is also plotted. This verifies that the short rate process in the Vasicek model is Gaussian distributed.
+fitted normal distribution is also illustrated. This verifies that the short rate process in the Vasicek model is Gaussian distributed.
 \begin{figure}[H]
     \centering
     \includegraphics[scale = 0.5]{/Users/nannaingemannohrt/Desktop/master_thesis/main/plots/NormalDistributionPlot.png}
@@ -159,11 +159,12 @@ focus on bond prices using the Vasicek model. Earlier when we discussed bond pri
 Now we will examine another aspect of the Vasicek model, namely the ability to derive explicit formulas
 for bond pricing based on model expectations.
 But first some words on how these bond prices are determined in the Vasicek model. 
-When using the Vasicek model, it's possible to derive closed-form solutions for zero coupon bond prices. 
+When using the Vasicek model, it is possible to derive closed-form solutions for zero coupon bond prices. 
 These prices are determined by an equation that factors in the current short rate, the speed of mean reversion,
 the long-term mean level, the volatility of the short rate, and the bond’s time to maturity.
 The bond prices formula from the Vasicek model considers the expected path of future short 
 rates under the risk neutral measure, discounted back to the present value. 
+\\\\
 \\\\
 As mentioned we will now look a the formula for pricing bonds using the Vasicek model,
 which is present in \ref{prop 5} below and the determine in Appendices.
@@ -183,7 +184,7 @@ where
 \cite{Bjork}
 \end{proposition}
 \noindent
-To illustrate the behavior of bond price in the Vasicek model, a small simulation study is performed. For the study 
+To illustrate the behavior of bond prices in the Vasicek model, a small simulation study is performed. For the study 
 some parameters are chosen, these are listed in \autoref{tab:parameters_zcb}. In \autoref{fig:zcb_sim_1_plot} one simulate
 path for the development of the ZCB price is illustrated and in \autoref{fig:zcb_sim_10_plot} ten simulated paths are illustrated.
 We see that the price fluctuate over the price period, as expected.
@@ -221,14 +222,14 @@ We see that the price fluctuate over the price period, as expected.
 \noindent
 The Vasicek model has now been introduced and we have taken a closer look at the distribution in the short rate model. 
 This examination leads us to the Vasicek term structure model, which outlines the method for pricing bonds using the 
-Vasicek framework. Similarly, in Chapter 3, specific decisions are made regarding the calculation of bond prices with 
+Vasicek framework. Similarly, as in Chapter 3, specific decisions are made regarding the calculation of bond prices with 
 the Vasicek model. A critical decision is the assumption that the volatility, 
 $\sigma$, is a positive constant. However, we should consider whether volatility remains constant over a given period.
 \\\\
 Subsequently, we will introduce another model, the SABR (Stochastic Alpha, Beta, Rho) model. The SABR model is a stochastic volatility model 
 utilized to estimate the implied volatility smile. Although it does not provide a direct formula for option pricing, 
-the estimated implied volatility curve can be employed in the Black Scholes model, discussed earlier, to price swaptions. 
-Before we dig into the SABR model, we will examine the assumption of constant volatility inherent in the Black Scholes model.
+the estimated implied volatility curve can be employed in the Black-Scholes model, discussed earlier, to price swaptions. 
+Before we dig into the SABR model, we will examine the assumption of constant volatility inherent in the Black-Scholes model.
 The purpose of this small analysis, it to make an attachment to the
 market and see some examples of not constant volatility. This can 
 be seen as a motivation for looking into two-factor models, 

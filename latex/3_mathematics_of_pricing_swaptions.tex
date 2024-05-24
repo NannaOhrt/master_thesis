@@ -14,11 +14,11 @@ $B(t,T)$ refer to a contract that pays one dollar at maturity, T, which can be i
     t & = T \rightarrow B(t,T) = 1
 \end{align*}
 The concept "Time Value of Money" asserts that the value of a dollar today is worth more than
-the same amount in the future due to it's potential earning capacity and inflation.
+the same amount in the future due to its potential earning capacity and inflation.
 The "Time Value Of Money" concept underpins various financial decisions, such as investing, borrowing,
 and pricing financial instruments. Essentially, it recognizes that a dollar received today can be invested 
-and earn interest over time, thereby increasing it's value. Conversely, a dollar received in the future
-is subject to uncertainty and may not retain it's purchasing power due to inflation or other factors.
+and earn interest over time, thereby increasing its value. Conversely, a dollar received in the future
+is subject to uncertainty and may not retain its purchasing power due to inflation or other factors.
 The discount factor represents the present value of future cash flows, taking into account the time value of money.
 It reflects the idea that receiving a certain amount of money in the future is less valuable than receiving 
 the same amount today.
@@ -32,7 +32,7 @@ have the common property of providing the owner with a deterministic (future) ca
     a bond with maturity date T is denoted by p$(t,T)$. \cite{Bjork} 
 \end{definition} 
 \noindent
-Before moving forward we will look at the cashflow for a zero coupon bond. The illustration below shows that a time t,
+Before moving forward we will look at the cashflow for a zero coupon bond. Illustration  3.1 below shows that a time t,
 the principal payment is made at the price $P(t,T)$ and at maturity T the principal is repaid.
 \begin{center}
     \begin{tikzpicture}[font=\small] 
@@ -51,10 +51,9 @@ Where the concept "Time Value Of Money" and the discount factor are fundamental 
 cash flows, the yield curve provides insights into market expectations regarding future interest rates.
 Understanding the interplay between these concepts is crucial for making informed investment decisions and pricing
 financial instruments. The yield curve is a graphical representation illustrating the interest rates (bond yields) for various maturities.
-Yield curves provides information about future interest rates and gives insight in the bond market today. 
 The general intuition is that longer-term rates is higher than short-term rates, which in other words means that a
 larger premium is expected for lending money over a longer period of time. This case sketches a yield curve with a 
-positive slope, which is illustrated below.
+positive slope, which is displayed in illustration 3.2 below.
 
 \begin{center}
     \begin{tikzpicture} [scale=0.8]
@@ -85,8 +84,7 @@ positive slope, which is illustrated below.
 \subsubsection{Spot Rates}
 The spot rate represents the yield-to-maturity of a zero coupon bond,
 while the forward rate refers to the anticipated interest rate in the 
-future. The definition for determined spot rates as follows 
-below
+future. Definition \ref{def:spot} formulated how spot rates are determined.
 \begin{definition}\label{def:spot}
     The simple spot rate for $t<S<T$, henceforth referred to as the 
     LIBOR spot rate, is defined as \cite{Bjork} 
@@ -120,8 +118,8 @@ Imagine investing one dollar in a one-year zero coupon bond, $B(t_0,t_1)$,
 and instantly reinvesting the money received at time $t_1$ in a new one-year zero coupon bond,
 $B(t_1,t_2)$, at a rate $R(t_1,t_2)$. This strategy should yield the same return as investing 
 one dollar in a two-year zero coupon bond $B(t_0,t_2)$ and holding it for two years. 
-This strategy illustrated the idea of forward rates. Let us then look a the general
-formula for forward rates. 
+This strategy illustrated the idea of forward rates. 
+Definition \ref{def:forward} formulates how forward rates are determined. 
 \begin{definition}\label{def:forward}
     The continuously compounded forward rate for $[S,T]$ contracted at t is defined
     as \cite{Bjork} 
@@ -132,7 +130,7 @@ formula for forward rates.
 \noindent
 \\\\
 So now formulas for spot rate and forward rates has been determined. To illustrate the differences between 
-the two types of rates, a simple illustration below shows at which times the rates are determined. From the illustration
+the two types of rates, illustration 3.3  below shows at which times the rates are determined. From the illustration
 we see that all the spot rates are determine at time $t=0$, to each time point to maturity. Where the forward rates starts
 a different time points. 
 \\
@@ -164,7 +162,7 @@ some cases is a government or company. In return, from the construction of the
 bond, the issuer guarantees to pay a predetermined rate during the term of the bond
 and repay the principal at maturity. 
 \\\\
-Earlier a zero coupon bond was introduced, and when talking about bonds, a zero coupon 
+Earlier a zero coupon bond was introduced and when talking about bonds, a zero coupon 
 bond is the simplest representation of a bond. The zero coupon bond contract is 
 only given by two cash flows. One for the buyer, that pays the issuer at time 
 t = $t_0$, and another where the buyer receives the principal at time t = T.
@@ -181,7 +179,7 @@ T, is denoted as.
 \end{align*}
 \subsubsection{Fixed Coupon Bonds}
 As describe, a zero coupon bond does not involve coupons throughout the term of the bond. 
-But moving forward we will introduce various bond with coupons that are either fixed 
+Moving forward we will introduce various bond with coupons that are either fixed 
 or floating. First we will consider the simplest form of a coupon bond, which is a 
 fixed coupon bond. Fixed coupon bonds are a type of debt security that offers investors a predictable
 return in the form of regular interest payments, known as coupons, until the bond's maturies.
@@ -271,7 +269,7 @@ to obtain
         &= \delta L(T_{i-1},T_i) \\
         &= \frac{1- p(T_{i-1},T_i)}{\delta p(T_{i-1},T_i)} = \frac{1}{p(T_{i-1},T_i)}-1
 \end{align*}
-Then we have found the price of the LIBOR spot rate, where $\frac{1}{p(T_{i-1},T_i)}$ is zero coupon bonds price. 
+Then we have found the price of the LIBOR spot rate, where $\frac{1}{p(T_{i-1},T_i)}$ is the zero coupon bond price. 
 So the next step is to determine the price for the floating rate bond. If we look at the $T_i$-payment of the floating rate bond, 
 it has the value of
 \begin{align*}
@@ -282,23 +280,23 @@ If we then sum over all the i payments of the floating rate we obtain that the f
     p(t)= p(t,T_n) + \sum_{i=1}^{n}\Big[p(t,T_{i-1})-p(t,T_i)\Big] = p(t,T_0) 
 \end{align*}
 where we note that if $t=T_0$ we get that $p(T_0)=1$ \cite{Bjork}. \\\\
-Like for the section for the fixed coupon bond, a illustration of the cashflow for a floating rate bond is illustrated below.
+Like for the Section for the fixed coupon bond, a illustration of the cashflow for a floating rate bond is illustrated below.
 From the to illustrations we clearly see the different in the periodic interest payments. 
 \begin{center}
     \begin{tikzpicture}[font=\small] 
         \draw[-latex] (5,0) -- (13,0) node[anchor=north] {Time};
         \draw (6,0.2) -- (6,-0.5) node[above] at (6.,0.3)  {t};
-        \draw (11.5,-0.2) -- (11.5,0.5) node[below] at (11.5,-0.3) {T};
-        \draw (11.75,1.5) rectangle (11.25,0.5) ;
-        \draw (11.75,2) rectangle (11.25,1.5);
+        \draw (12,-0.2) -- (12,0.5) node[below] at (12,-0.3) {T};
+        \draw (12.25,1.5) rectangle (11.75,0.5) ;
+        \draw (12.25,2) rectangle (11.75,1.5);
         \draw (5.75,-1.5) rectangle (6.25,-0.5) node[below, pos=.01] {Principal Payment};
         \draw[fill=black!15] (10.5,0) rectangle (10.25,1);
         \draw[fill=black!15]  (8.5,0) rectangle (8.25,1.5);
         \draw[fill=black!15]  (9.5,0) rectangle (9.25,1.2);
         \draw[fill=black!15] (7.5,0) rectangle (7.25,0.9);
-        \node at (11.5, 2.6) {Principal Repayment};
-        \node at (13.,1) {Principal Part};
-        \node at (13.,1.75) {Interest Part};
+        \node at (12, 2.6) {Principal Repayment};
+        \node at (13.5,1) {Principal Part};
+        \node at (13.5,1.75) {Interest Part};
         \node at (8.5, 1.8) {Periodic Floating Interest Payments};
     \end{tikzpicture}\\[10pt] 
     Illustration 3.5: Cashflow for a floating rate bond
@@ -341,13 +339,13 @@ arises at the dates $T_1,...,T_n$, this means that at time $T_i$ the buyer of th
 \end{align}
 where we have that $L(T_{i-1},T_i)$ is the spot rate, which could be the LIBOR spot rate.
 It is also assumed
-that the days $T_0,...,T_n$ is equally spaced with $\delta = T_i - T_{i-1}$ as mentioned above in the section for floating rate bonds. 
+that the days $T_0,...,T_n$ is equally spaced with $\delta = T_i - T_{i-1}$ as mentioned above in the Section for floating rate bonds. 
 Then it is noticed that the expression in \autoref{irs} is the same as $Kc_i$, where again $c_i$ is the i'th coupon for the floating rate. 
 So at time $T_i$ the buyer will pay $K \delta R$, where the cash flow at time $T_i$ is given by below
 \begin{align*}
     K \delta \Big[L(T_{i-1},T_i)-R \Big]
 \end{align*}
-Then by applying the results from the section for floating rate bonds again, we are able to compute the value of the 
+Then by applying the results from the Section for floating rate bonds again, we are able to compute the value of the 
 cash flow at time $t<T_0$. The value of the cash flow is listed below
 \begin{align*}
     K p(t,T_{i-1})-K(1+\delta R)p(t,T_i)
@@ -357,7 +355,7 @@ Hence we have that the total value denote by $\Pi(t)$, so the total value at tim
     \pi (t) = K \sum_{i=1}^{n} \Big[p(t,T_{i-1})-(1+ \delta R)p(t,T_i)\Big]
     \label{valueirs}
 \end{align}
-Moving forward we simplify \autoref{valueirs} in the below Proposition \ref{simple} \cite{Bjork}.
+Moving forward we simplify \autoref{valueirs} in Proposition \ref{simple} \cite{Bjork}.
 \\
 \begin{proposition}
     The price, for $t<T_0$, of the swap in \autoref{valueirs} above
@@ -402,7 +400,8 @@ the fixed payment dates, and the horizontal dotted line indicates the continuati
 \end{center}
 Earlier we left behind a discussion of how the swap rate, R,  is determined. 
 It was noted that the swap is determined such that the present value of
-the swap is equal to zero. Now we will give a more accurate definition of how swap rates is determined in Proposition \ref{swaprate1}.
+the swap is equal to zero. 
+Proposition \ref{swaprate1} formulated how swap rates are determined.
 \begin{proposition}
     If, by convention, we assume that the the contract is written at $t=0$, 
     the swap rate is given by \cite{Bjork}
@@ -418,12 +417,12 @@ If we have that $T_0=0$ the formula for the swap rate, R, becomes
 \end{align*}
 \newpage
 \subsection{Options}
-In this section will introduce the framework of options in the over-the-counter-market. 
-The purpose of this section is to establish a pricing formula for European call options.
-The meaning of introducing pricing of options before introducing swaptions pricing, is that a swaption is  a 
-more complex derivative. So the idea is to get a fundamental understanding of pricing derivatives in a more simple case.
+In this Section will introduce the framework of options in the over-the-counter-market. 
+The purpose of this Section is to establish a pricing formula for European call options.
+The meaning of introducing pricing of options before introducing swaptions pricing, since a swaption is  a 
+more complex derivative. 
 \\\\
-Firstly, let's clarify what the over-the-counter market (OTC) is. It is  a marketplace where numerous trades occur.
+First, lets clarify what the over-the-counter market (OTC) is. It is  a marketplace where numerous trades occur.
 In the OTC market private companies exchange trades, these companies are firms as banks, other 
 large financial institutions and funds managers \cite{Hull}. Then we have established the market where 
 options is traded, so moving forward we will look in to options contracts. 
@@ -477,7 +476,9 @@ $\EE_{t}^{\QQ}\Big[X_T\Big] = X_t$ for all $t<T$. Next we will consider a price 
     \label{price_process}
 \end{align}
 where $W_{t}^{\QQ}$ is $\QQ$-Wiener process and  $r_t$ is the process for the risk free interest rate. $r_t$ can be looked at the locally risk free rate return 
-from a continuously compounded bank account $B(t)= \text{exp} \Big[\int_{0}^{t}r(s)ds \Big]$.
+from a continuously compounded bank account
+\\\\
+$B(t)= \text{exp} \Big[\int_{0}^{t}r(s)ds \Big]$.
 Where the bank account has the following dynamic
 \begin{align}
     dB(t) &= r(t)B(t) dt \label{bank1}\\
@@ -531,9 +532,9 @@ pay-offs at the risk free rate of return, this formalized in \autoref{rnt} below
     \label{rnt}
 \end{theorem}
 \noindent 
-The Risk Neutral Valuation has been introduced, hence the only thing left before we are able to price a 
+Then Risk Neutral Valuation has been introduced, hence the only thing left before we are able to price a 
 European call option, is to establish the model the price in found under. In this case it is the Black-Scholes model.
-It consists of two asses, a risk free asset with price process, B, and a stock price with price process, S.
+It consists of two assets, a risk free asset with price process, B, and a stock price with price process, S.
 The dynamics of the two assets is listed below
 \begin{align*}
     dBt & = rB_t dt \\
@@ -542,7 +543,8 @@ The dynamics of the two assets is listed below
 where the short rate, r, is  a deterministic constant,  $\mu$ and $\sigma$ is two constants. It is also assumed
 that the stock price process is lognormal distributed. From \autoref{rnt}
 (Risk Neutral Valuation) the formulas for determine the arbitrage free price is available. Finally the requirements
-for being able to price a European option is satisfied, hence we have the Black-Scholes Formula below.
+for being able to price a European option is satisfied, hence we have the Black-Scholes Formula below in
+Proposition \ref{Black-Scholes Formula}.
 \begin{proposition}
     \textbf{(Black-Scholes Formula)} The price of a European call option with strike K and time of maturity T 
     is given by the formula $\Pi$ = $F(t,S_t)$
@@ -575,7 +577,7 @@ should the option be exercised. The pricing model must take various factor into 
 volatility of interest rates, the term structure of interest rates, and the time value of money. 
 To price swaptions, the Black model will be used, which is an extension of the Black Scholes
 model for equity options. The choice of using the Black model for pricing swaption is commonly used, especially when
-is purpose is the price European swaption. Likewise for swaps, there is also different type of swaptions. 
+the purpose is the price European swaption. Likewise for swaps, there is also different type of swaptions. 
 Again European options can only be exercised at the maturity date, while American options can be exercised
 at any point in time up to the maturity date. Moving forward we will only consider European swaptions. 
 The Black model assumes that the underlying swap rate follows a lognormal distribution and uses a 
@@ -631,7 +633,7 @@ is a payoff function of a put option on $S_T$.
     \frac{L}{M} \max \Big( S_K - S_T, 0 \Big)
     \label{payoff_swaption}
 \end{align}
-Finally we can end this section with the value of a swaption in a standard market model \cite{Hull}.
+Finally we can end this Section with the value of a swaption in a standard market model \cite{Hull}.
 \begin{align*}
     \Pi(t)_{\text{swaption}}= L A \Big[S_K N(-d_2) - S_F N(-d_1)\Big]
 \end{align*}

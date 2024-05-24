@@ -52,7 +52,7 @@ of Hagen (2002) \cite{Smile} we restrict $\beta$ to the range $[0, 1]$.
 Choosing a $\beta$ less than 0 would lead to an illogical scenario where higher forward prices F result in a smaller 
 relative change in the process $F_t$, thus we set the lower limit at $\beta \leq 0$. Similarly, a $\beta$ greater than 1 would 
 suggest that the expected deviation from the current state of $F_t$ exceeds the product of volatility and the current 
-forward level (times $\alpha_0 \sqrt{t}$), which is also impractical. Therefore, we set the upper limit at $\beta \geq 1$.
+forward level (times $\alpha_0 \sqrt{t}$), which is also impractical. Therefore, we set the upper limit at $\beta \geq 1$ \cite{Smile}.
 \\\\
 Below in \autoref{fig:beta} the volatility smile in the SABR model for the different beta values are illustrated.
 From \autoref{fig:beta} we see a small effect of the curvature of the volatility smile. We also note that for higher 
@@ -176,6 +176,7 @@ shorter tenors than longer durations tenors.
 \\
 \begin{table}[H]
     \centering
+    \scalebox{0.85}{
     \begin{tabular}{ccccccccccc}
       \toprule
       \textbf{ Tenor} & 1Y & 2Y & 3Y & 5Y & 7Y & 10Y & 12Y & 15Y & 20Y & 30Y \\
@@ -184,6 +185,7 @@ shorter tenors than longer durations tenors.
       &0.2763 & 0.2654& 0.2517 & 0.2340\\
       \bottomrule
     \end{tabular}
+    }
     \caption{Forward rates for ten years to expiry and various tenors. Data source Citi Velocity 21.02.2024}
     \label{tab:farward_parm}
 \end{table}
@@ -200,7 +202,6 @@ This estimation was performed across various combinations of expiry and tenors,
 resulting in two separate tables that display the estimated parameters when $\beta$ is fixed at either 0.5 or 1. 
 The estimated values for $\alpha$, $\rho$, and $\nu$, with $\beta$ fixed at 0.5, are presented in \autoref{tab:beta_0.5}. 
 Similarly, the values for when $\beta$ is fixed at 1 are shown in \autoref{tab:beta_1}.
-\\\\
 \\\\
 Lets first comment on the estimated values in  \autoref{tab:beta_0.5}, where $\beta=0.5$.
 The estimated parameters show generally moderate values for $\alpha$ across different tenor-expiry combinations, 
@@ -257,6 +258,8 @@ The estimated $\nu$ values remain high, reinforcing the presence of a significan
     \label{tab:beta_1}
 \end{table}
 \noindent
+\newpage
+\noindent
 The analysis of the SABR model parameters, specifically at fixed $\beta$ values of 0.5 and 1, 
 reveals distinctive volatility dynamics and correlation structures across various tenor-expiry combinations. 
 At both $\beta$ values, the presence of a positive $\rho$ indicates that rate increases are likely correlated with heightened volatility.
@@ -267,16 +270,16 @@ investors involved in hedging, pricing, or trading derivatives influenced by the
 \\\\
 To end this section we will look at estimated parameters despited by the volatility smile. 
 We chose to look a the volatility smile, for estimated values where $\beta$ was fixed to be 0.5. 
-Since this is the most common choice for $\beta$. We despited the combination where the tenor is 10 years, i large format in 
+Since this is the most common choice for $\beta$. We despited the combination where the tenor is 10 years, in large format in 
 \autoref{fig:10y_plot_smile} below and all combined of the swaption volatility smile with expiry in 10 years, and the 
 various tenors are despited in \autoref{fig:10Y1Y_} to \autoref{fig:10Y10Y_} below. 
-From \autoref{fig:10y_plot_smile}  we se that estimated volatility smile fits the market data good, which make sense from 
+From \autoref{fig:10y_plot_smile}  we see that estimated volatility smile fits the market data good, which make sense from 
 how we estimated the parameters to find the volatility smile. We note that estimated values for $\nu$ in both 
 \autoref{tab:beta_0.5} and \autoref{tab:beta_1}, are relative high. But this align with the steepness or level we see the in the 
 volatility smile in the market data. The volatility smile tends to be more convex when $\nu$ is large and this is clearly 
 the case here. This tendency appearers in  most of the volatility smile despited in \autoref{fig:10Y1Y_} to \autoref{fig:10Y10Y_}.
 But again we also see for the tenor-expiry combination for longer tenor, has not the same steepness in the level in 
-the volatility smile. For the longer dated tenor combination we see a more symmetric volatility smile around the
+the volatility smile. For the longer durations tenor combination we see a more symmetric volatility smile around the
 ATM strike. We also note the the changes in the volatility smile i larger for the OTM strike, than for the ITM strikes. 
 \\\\
 Then we should ask yourself how does the  steepness or level we see the in the 
@@ -288,8 +291,8 @@ But first a look at how swaption prices change over various tenors in Chapter \r
 \begin{figure}[H]
     \centering
     \includegraphics[scale = 0.5]{/Users/nannaingemannohrt/Desktop/master_thesis/main/plots/10Y10Y_est.png}
-    \caption{Estimated implied volatility smile for a 10Y10Y EUR swaption using the SABR model. 
-    \\ Data source Citi Velocity 21.02.2024}
+    \caption{Estimated implied volatility smile for a 10Y10Y EUR swaption using the SABR model. \\Beta fixed at 0.5.
+    Data source Citi Velocity 21.02.2024}
     \label{fig:10y_plot_smile}
 \end{figure}
 \noindent

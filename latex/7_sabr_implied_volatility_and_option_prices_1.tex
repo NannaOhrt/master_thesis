@@ -24,6 +24,7 @@ nature of financial market data. By allowing for volatility fluctuations,
 the SABR model provides a flexible and realistic framework for pricing 
 derivatives, proving especially useful for options with long maturities where 
 the assumption of constant volatility falls short \cite{Smile}.
+
 \subsection{Specification For The SABR Model}
 The main different between the SABR model and the 
 Black-Scholes model is the assumptions regrading the 
@@ -41,7 +42,9 @@ of a "volatility of volatility" parameter $\nu$.
 Now we will formulate the SABR model mathematically. 
 The SABR model consists of a dynamic for the forward price
 and one for the volatility, since the SABR model is a 
-two-factor model. The SABR model also formulate the 
+two-factor model. 
+\\\\
+The SABR model also formulate the 
 how the two process is correlated. 
 \begin{align}
     d \hat{F_t} &= 
@@ -70,10 +73,10 @@ This configuration leads to a constant volatility,
 denoted $\alpha_0 $, 
 and a forward process where returns follow a 
 normal distribution with a mean of zero and a standard 
-deviation of $\alpha_0 \sqrt{t}$. So now the SABR model
+deviation of $\alpha_0 \sqrt{t}$ \cite{Smile}. So now the SABR model
 has been introduced and the analysis will continuing forward 
 on how to price a swaption using the SABR model to determine the implied
-volatility \cite{Smile}.
+volatility.
 \subsection{Simulation The SABR Model}
 In this Section a short view on how the process for the forward price and the volatility develops over time will be covered. 
 To provide the intuition on how the dynamic listed in \autoref{f_dyn} and \autoref{sigma_dyn} behave, the dynamics is simulated ten times

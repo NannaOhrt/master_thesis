@@ -1,7 +1,7 @@
 \section{Swaption Pricing} \label{swaption_price_sec}
 Now we hav seen that the implied volatility can change over various tenors. 
 Therefore it is important to be aware of how the volatility affect the market.
-And thereby which asset there maybe will perform in different situations i the market,
+And thereby which asset there maybe will perform in different situations in the market,
 due to high or low volatility, inflation and other factor the can influence the market.
 When it comes to swaption and other asset the volatility also has
 a remarkable determination of the price of the asset. 
@@ -16,7 +16,6 @@ Black-Scholes model.
 Therefor we have computed the prices for swaption with a fixed expiry at 10 years and for various tenors. 
 The price are ATM, which means that, F, the forward rate is equal to, K, 
 the strike (the rate of the underlying asset). 
-\\\\
 Below in \autoref{tab:swaption_price_atm} the calculated prices for the various swaption 
 using the describe method is listed. 
 The prices are ATM prices for a fixed tenor at 10 yeas and for various tenors. 
@@ -24,7 +23,7 @@ To illustrated the development of the price over the different tenors,
 the swaption price is despited below in  \autoref{fig:swaption_price_atm}.
 \begin{table}[H]
   \centering
-  \scalebox{0.9}{
+  \scalebox{0.85}{
   \begin{tabular}{ccccccccccc}
     \toprule
     \textbf{ Tenor} & 1Y & 2Y & 3Y & 5Y & 7Y & 10Y & 12Y & 15Y & 20Y & 30Y \\
@@ -35,7 +34,7 @@ the swaption price is despited below in  \autoref{fig:swaption_price_atm}.
   \end{tabular}
   }
   \caption{ATM swaption price in basis point for a 10 years fixed expiry and various tenors.
-  Data source  \\ Citi Velocity 21.02.2024}
+  \\ Data source Citi Velocity 21.02.2024}
   \label{tab:swaption_price_atm}
 \end{table}
 \noindent
@@ -54,18 +53,18 @@ tenors might suggest greater uncertainty or a reduced interest in securing rate 
     \centering
     \includegraphics[scale = 0.5]{/Users/nannaingemannohrt/Desktop/master_thesis/main/plots/swaption_price_atm.png}
     \caption{ATM swaption price in basis point for a 10 years fixed expiry and various tenors.
-    Data source  \\ Citi Velocity 21.02.2024}
+    \\ Data source  Citi Velocity 21.02.2024}
     \label{fig:swaption_price_atm}
 \end{figure}
 \noindent
 So in other words \autoref{fig:swaption_price_atm}  could indicate that swaptions with a lower is less
 volatile than longer duration tenor swaption. This could be exampled by that in finance we will 
 expected short terms interest rate to behave like the short rate in the Vasicek model for example. 
-We in the Vasicek model we learned that the short rate tend to a mean reverting level. 
+From the Vasicek model we learned that the short rate tend to a mean reverting level. 
 So there will not be expected larger fluctuations on short term, but we don't know how the market is in 
 30 years. But if we compare the shape of the calculated swaptions price in \autoref{fig:swaption_price_atm} 
 to shape of the forward \autoref{fig:forward_plot}. We see that the same tendency in the slope 
-is represented. Hence the market expectations the that the forward is lower for longer duration tenor, 
+is represented. Hence the market expectations is that the forward is lower for longer duration tenor, 
 than for short duration tenor. 
 \\\\
 But as mentioned there are other factor there affect the price of a swaption than the level of the forward. 
