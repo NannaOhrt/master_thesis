@@ -1,26 +1,26 @@
 \section{Swaption Pricing} \label{swaption_price_sec}
-Now we hav seen that the implied volatility can change over various tenors. 
-Therefore it is important to be aware of how the volatility affect the market.
-And thereby which asset there maybe will perform in different situations in the market,
-due to high or low volatility, inflation and other factor the can influence the market.
-When it comes to swaption and other asset the volatility also has
-a remarkable determination of the price of the asset. 
+Now we have seen that the implied volatility can change over various tenors. 
+Therefore it is important to be aware of how the volatility affects the market,
+and thereby which assets that may perform in different situations in the market,
+due to high or low volatility, inflation and other factor that can influence the market.
+When it comes to swaptions and other assets the volatility also has
+a big impact on the price of the asset. 
 \\\\
-In the Section \ref{invest_sabr} we learned how the different parameters in the 
-SABR model affects the implied volatility in swaption. 
+In Section \ref{invest_sabr} we learned how the different parameters in the 
+SABR model affects the implied volatility in swaptions. 
 Where in Section \ref{est_parm_sabr} we estimated the parameters in the SABR model. 
-From these Sections we saw some clear coincidence between the level of a given parameter
+From these Sections we saw some clear coincidences between the level of a given parameter
 and the effect on the implied volatility. 
-This implied volatility determine from the SABR model, is then used to price swaption using the 
+This implied volatility determined from the SABR model, is then used to price swaption using the 
 Black-Scholes model. 
-Therefor we have computed the prices for swaption with a fixed expiry at 10 years and for various tenors. 
-The price are ATM, which means that, F, the forward rate is equal to, K, 
+Therefor we have computed the prices for swaptions with a fixed expiry at 10 years and for various tenors. 
+The prices are ATM, which means that, F, the forward rate is equal to, K, 
 the strike (the rate of the underlying asset). 
 Below in \autoref{tab:swaption_price_atm} the calculated prices for the various swaption 
 using the describe method is listed. 
 The prices are ATM prices for a fixed tenor at 10 yeas and for various tenors. 
-To illustrated the development of the price over the different tenors, 
-the swaption price is despited below in  \autoref{fig:swaption_price_atm}.
+To illustrate the development of the prices over the different tenors, 
+the swaption price is depicted below in  \autoref{fig:swaption_price_atm}.
 \begin{table}[H]
   \centering
   \scalebox{0.85}{
@@ -38,11 +38,11 @@ the swaption price is despited below in  \autoref{fig:swaption_price_atm}.
   \label{tab:swaption_price_atm}
 \end{table}
 \noindent
-\autoref{fig:swaption_price_atm} shows a decreasing tends in swaptions prices as the tenor increases,
+\autoref{fig:swaption_price_atm} shows a decreasing tendency in swaptions prices as the tenor increases,
 starting off relatively flat in the shorter durations tenors (1 to 5 years) and then 
 descending more steeply from around the 5 year tenor. 
 The pattern in the graph indicates that the longer the duration of the swaptions tenor, 
-the lower the cost to enter into one. A swaption is essentially an option that grants the 
+the lower the cost is to enter into one. A swaption is essentially an option that grants the 
 holder the right, but not the obligation, to initiate a swap agreement with specific terms at a future date. 
 The graph shows that swaption prices are relatively stable for shorter tenors and begin to 
 decrease more noticeably for durations extending beyond 5 years. 
@@ -57,17 +57,17 @@ tenors might suggest greater uncertainty or a reduced interest in securing rate 
     \label{fig:swaption_price_atm}
 \end{figure}
 \noindent
-So in other words \autoref{fig:swaption_price_atm}  could indicate that swaptions with a lower is less
-volatile than longer duration tenor swaption. This could be exampled by that in finance we will 
+So in other words \autoref{fig:swaption_price_atm}  could indicate that swaptions with a lower duration is less
+volatile than longer duration tenor swaption. This could be explained by that in finance we will 
 expected short terms interest rate to behave like the short rate in the Vasicek model for example. 
 From the Vasicek model we learned that the short rate tend to a mean reverting level. 
 So there will not be expected larger fluctuations on short term, but we don't know how the market is in 
 30 years. But if we compare the shape of the calculated swaptions price in \autoref{fig:swaption_price_atm} 
 to shape of the forward \autoref{fig:forward_plot}. We see that the same tendency in the slope 
-is represented. Hence the market expectations is that the forward is lower for longer duration tenor, 
+is represented. Hence the market expectations is that the forward rate is lower for longer duration tenor, 
 than for short duration tenor. 
 \\\\
-But as mentioned there are other factor there affect the price of a swaption than the level of the forward. 
-Also the other parameters in the SABR model also affect the swaption price indirect, 
+But as mentioned there are other factor that affects the price of a swaption than the level of the forward rate. 
+The other parameters in the SABR model also affect the swaption price indirect, 
 since the parameter effect the implied volatility. 
-So as promise Chapter \ref{risk_mang} we will look into the sensitivities in the SABR model.
+So as promised, in Chapter \ref{risk_mang} we will look into the sensitivities in the SABR model.

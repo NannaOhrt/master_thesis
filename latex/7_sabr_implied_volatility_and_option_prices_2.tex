@@ -6,7 +6,7 @@ the closed-form solution established in the previous Section. Our study will be 
 affects the implied volatility smile, we fix the values of the parameters during the study. 
 The purpose of fixing the values of the parameters, is to isolate the change in the investigated parameter. 
 Below in \autoref{tab:parameters} the chosen values of the parameters are listed, together with a short
-explain of the parameters. Then the study is performed by changing the parameters one by one, to illustrate the 
+explanation of the parameters. Then the study is performed by changing the parameters one by one, to illustrate the 
 isolated effect of the parameters. 
 \\
 \begin{table}[H]
@@ -44,9 +44,9 @@ it only shifts the volatility smile respectively up and down given the movement 
     \label{fig:alpha}
 \end{figure}
 \noindent
-Then we will continue the study of the parameters affects by looking into shift in the $\beta$ value in the SABR model.
+Then we will continue the study of the parameters effects by looking into shifts in the $\beta$ value in the SABR model.
 Again we shift the value of $\beta$ up and down from the fixed $\beta$ in \autoref{tab:parameters}. So we will look at $\beta$ equal to $0.45$,
-$0.5$ (the fix beta) and $0.55$. 
+$0.5$ (the fixed beta) and $0.55$. 
 Although not explicitly constrained in the paper Managing Smile Risk 
 of Hagen (2002) \cite{Smile} we restrict $\beta$ to the range $[0, 1]$. 
 Choosing a $\beta$ less than 0 would lead to an illogical scenario where higher forward prices F result in a smaller 
@@ -73,7 +73,7 @@ The volatility smile calculated from the SABR for the different $\nu$ parameters
 A very clear pattern emerges, namely that the parameter $\nu$ controls the curvature of the volatility smile in
 the SABR model. When we looked at the shifts in the beta parameter we made a comment that it made small changes in 
 the curvature. But after this part of the analysis, we clearly see that the curvature is determine from the value
-of $\nu$. Which makes sense, when we think of the interpretation of the parameter describe before.
+of $\nu$. Which makes sense, when we think of the interpretation of the parameter described earlier.
 We also note that increasing $\nu$  increased the level of the implied volatility for the 
 out-of-the-money (OTM) strikes also increase and vise vera.
 \\\\
@@ -107,7 +107,7 @@ the volatility smile in the SABR model, and hence on the implied volatilities va
     \label{fig:f}
 \end{figure}
 \noindent
-Finally we will investigate how the forward price, F, affect the volatility smile in the SABR model. 
+Finally we will investigate how the forward price, F, affects the volatility smile in the SABR model. 
 The same procedure as for the other parameters will be used. So in \autoref{fig:f} the volatility smile
 for the forward prices are illustrated. We see that the slope, shape and curvature is retained, when there
 is only change in the forward price. Which is as we expected given how the forward price, F, enters in the closed
@@ -126,9 +126,9 @@ The various approaches distinguish themselves based on their methods for estimat
 $\beta$ may be either set to a predetermined best guess or fitted together with other parameters.
 Similarly, $\alpha$ may be estimated using \autoref{sigma_atm} or fitted concurrently with the other parameters.
 \\\\
-We will apply the approach, where we chose some fixed $\beta$'s and the estimate $\alpha$ using \autoref{sigma_atm}  and the
-setup a minimization problem there minimize $\rho$ and $\nu$. We chose this approach since earlier in Chapter \ref{invest_sabr}
-we noticed that changes in $\beta$ and $\rho$ gave some of the same effect on the volatility smile. Therefor we chose to fixe  $\beta$, for different
+We will apply the approach, where we chose some fixed $\beta$'s and then estimate $\alpha$ using \autoref{sigma_atm}  and then
+setup a minimization problem that minimizes $\rho$ and $\nu$. We chose this approach since earlier in Chapter \ref{invest_sabr}
+we noticed that changes in $\beta$ and $\rho$ gave some of the same effect on the volatility smile. Therefor we chose to fix  $\beta$, for different
 values of $\beta$. Let's then remind yourself of what the change in $\beta$ did to the volatility smile.
 We saw that when moving the $\beta$ value op and down, the corresponding change in the volatility smile appeared. 
 Then we remind yourself of the dynamic of the forward rate in the SABR model, listed in \autoref{f_dyn}. 
@@ -148,7 +148,7 @@ Below the minimization problem is present with the parameters condition we argue
 There are also different approaches to estimating the $\alpha$ parameter.
 To estimate $\alpha$ we will use the method proposed in the paper Managing Smile Risk 
 of Hagen (2002) \cite{Smile},
-where the ATM SABR-formula is inverted numerically. The ATM SABR-formula is listed in \autoref{sigma_atm} \cite{Smile}.
+where the ATM SABR-formula is estimated numerically. The ATM SABR-formula is listed in \autoref{sigma_atm} \cite{Smile}.
 This is performed in \autoref{sigma_atm} to \autoref{ABC} below.
 Another way to estimate $\alpha$ is to solve the 
 minimization problem, but this will not be covered in the thesis.
@@ -169,9 +169,9 @@ where
 Before we are ready to estimate the parameters numerically, let's first take a short look at the required 
 data to performed the estimation study. As mentioned we need the current forward rates for any combination 
 of expiry and tenor. In this analysis we will consider data where the expiry is ten years and has various tenors 
-namely [1Y,2Y,3Y,5Y,7Y,10Y,12Y,15Y,20Y,30Y]. Below in \autoref{tab:farward_parm} the describe forward rates is 
-present. To illustrated the development of the forward rates over the different tenors, these are illustrated
-in \autoref{fig:forward_plot} below. From the plot we see that the level of the forward rate is higher for
+namely [1Y,2Y,3Y,5Y,7Y,10Y,12Y,15Y,20Y,30Y]. Below in \autoref{tab:farward_parm} the described forward rates are 
+presented. The development of the forward rates over the different tenors are illustrated
+in \autoref{fig:forward_plot} below. From the plot we see that the level of the forward rates are higher for
 shorter tenors than longer durations tenors.
 \\
 \begin{table}[H]
@@ -268,24 +268,24 @@ skewness in volatility. These characteristics are particularly significant for p
 anticipating substantial rate dynamics. The insights garnered from this analysis are crucial for financial institutions and 
 investors involved in hedging, pricing, or trading derivatives influenced by these model dynamics.
 \\\\
-To end this section we will look at estimated parameters despited by the volatility smile. 
-We chose to look a the volatility smile, for estimated values where $\beta$ was fixed to be 0.5. 
-Since this is the most common choice for $\beta$. We despited the combination where the tenor is 10 years, in large format in 
-\autoref{fig:10y_plot_smile} below and all combined of the swaption volatility smile with expiry in 10 years, and the 
-various tenors are despited in \autoref{fig:10Y1Y_} to \autoref{fig:10Y10Y_} below. 
+To end this section we will look at estimated parameters depicted by the volatility smile. 
+We choose to look a the volatility smile, for estimated values where $\beta$ was fixed to be 0.5, 
+since this is the most common choice for $\beta$. We depicted the combination where the tenor is 10 years, in large format in 
+\autoref{fig:10y_plot_smile} below and all combinations of the swaption volatility smile with expiry in 10 years, and the 
+various tenors are depicted in \autoref{fig:10Y1Y_} to \autoref{fig:10Y10Y_} below. 
 From \autoref{fig:10y_plot_smile}  we see that estimated volatility smile fits the market data good, which make sense from 
 how we estimated the parameters to find the volatility smile. We note that estimated values for $\nu$ in both 
-\autoref{tab:beta_0.5} and \autoref{tab:beta_1}, are relative high. But this align with the steepness or level we see the in the 
+\autoref{tab:beta_0.5} and \autoref{tab:beta_1}, are relative high. This align with the steepness or level we see the in the 
 volatility smile in the market data. The volatility smile tends to be more convex when $\nu$ is large and this is clearly 
 the case here. This tendency appearers in  most of the volatility smile despited in \autoref{fig:10Y1Y_} to \autoref{fig:10Y10Y_}.
-But again we also see for the tenor-expiry combination for longer tenor, has not the same steepness in the level in 
-the volatility smile. For the longer durations tenor combination we see a more symmetric volatility smile around the
+But we also see for the tenor-expiry combinations for longer tenors does not have the same steepness in the level in 
+the volatility smile. For the longer durations tenor combinations we see a more symmetric volatility smile around the
 ATM strike. We also note the the changes in the volatility smile i larger for the OTM strike, than for the ITM strikes. 
 \\\\
-Then we should ask yourself how does the  steepness or level we see the in the 
-volatility smile in the market data affects the price of a swaption. When we are determine swaption we should also consider 
-with sensitivities there are related to the price of the swaption. The above analysis pointing at there could 
-be a sensitive related to $\nu$. Therefor the next step in the analysis is to look closer at the models sensitivities. 
+Then we should ask ourself how does the  steepness or level we see the in the 
+volatility smile in the market data affect the price of a swaption. When we determine swaption prices, we should also consider 
+which sensitivities that are related to the price of the swaption. The above analysis points at there could 
+be a price-sensitivity related to $\nu$. Therefor the next step in the analysis is to look closer at the models sensitivities. 
 But first a look at how swaption prices change over various tenors in Chapter \ref{swaption_price_sec}.
 
 \begin{figure}[H]

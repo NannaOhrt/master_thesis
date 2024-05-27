@@ -1,10 +1,10 @@
 \section{Data} \label{data_lab}
 In Chapter \ref{cont_vol} wee looked into the assumption of constant volatility in the Black-Scholes model. 
 Where during the study, a 10Y10Y EUR swaption was introduced. This Chapter will provide a introduction to 
-market data on swaptions. In this thesis the data source is Citi Velocity, which is a market data plantformed
+market data on swaptions. In this thesis the data source is Citi Velocity, which is a market data platform
 owned by Citi Bank.
 \\\\
-Before delving into the market data on swaptions, lets revisit the definition of a swaption. 
+Before diving into the market data on swaptions, lets revisit the definition of a swaption. 
 A swaption gives the holder the right, but not the obligation, to enter into an interest rate swap in the future. 
 There are two types of swaptions: payer swaptions and receiver swaptions, as previously described.
 \\\\
@@ -36,12 +36,12 @@ levels to be represented on a single chart. Conversely, the out-of-the-money-for
 as shown in \autoref{tab:swaption_skew_OTMF}, adopts a different layout. The horizontal axis of 
 \autoref{tab:swaption_skew_OTMF} spans a range of strikes, from -200 basis points below to +200 basis points above the ATM strike.
 \\\\
-Now a short introduction to swaption data has been covered, then the next step is to illustrated some 
+Now a short introduction to swaption data has been covered, then the next step is to illustrate some 
 volatility surface. The purpose of during this is first of all, to underline that the volatility surface for a 
 given swaption change over time. Secondly it is to see that the volatility smile for swaption with a fixed
 expiry and various tenor can also be slightly different.  From \autoref{fig:rates:smile_5} we see the volatility surface
 for a 10Y10Y EUR swaption at five days over the time period from 20.02.2020 to 20.02.2024. From the plot 
-we clearly see that the volatility surface is change over the period. We see a pattern of the volatility surface moving 
+we clearly see that the volatility surface is changing over the period. We see a pattern of the volatility surface moving 
 up and down, without large change in the curvature of the volatility surface. This implies changes in the alpha or beta parameter
 i the SABR, which will be covered later in Chapter \ref{invest_sabr}. Then we look at the OTM volatility surface
 where the swaption expiry is fixed at ten years, but for various tenors. We look at this case over to days, where the first 

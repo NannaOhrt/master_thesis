@@ -12,14 +12,14 @@ The risk free short rate, r, is sometimes referred to as the instantaneous short
 The concept is used in finance modeling to represent the continuously compounded interest rate for 
 short time intervals. The short rate, r, is often modeled using stochastic differential equations in 
 mathematical finance. The typical models for modeling the short rate is the Vasicek model and the Cox–Ingersoll–Ross model, 
-later the Vasicek model will be covered. When pricing derivatives as bonds and options, the price depends on 
-the process followed by r in the risk-neutral world \cite{Hull}.
+later the Vasicek model will be covered. When pricing derivatives such as bonds and options, the price depends on 
+the process describing r in the risk-neutral world \cite{Hull}.
 \\\\
-As discussed in the Section \ref{risk_neutral_section} - Risk Neutral Measure, $r_t$, can be looked at the locally risk free 
+As discussed in the Section \ref{risk_neutral_section} - the Risk Neutral Measure, $r_t$, can be looked at as the locally risk free 
 rate from a continuously compounded bank account $B(t)= \exp \Big[\int_{0}^{t} r(s) ds \Big]$. 
-Where the bank account has the dynamic listed in \autoref{bank1} and \autoref{bank2}.
+Where the bank account has the dynamics listed in \autoref{bank1} and \autoref{bank2}.
 Postulation: the considered market is arbitrage free, which due to the First Fundamental Theorem of Asset Pricing, 
-if stating that there exist a probability measure $\QQ$, equivalent to $\PP$, all asset prices discounted by $B(t)$
+is stating that there exist a probability measure $\QQ$, equivalent to $\PP$, such that all asset prices discounted by $B(t)$
 are $\QQ$-martingales. In other words under the considered market for any T we have that 
 \begin{align}
     \frac{P(0,T)}{B(0)} = P(0,T) = \EE^{\QQ} \Big( \frac{P(T,T)}{B(T)}\Big) = \EE^{\QQ} \Big( \frac{1}{B(T)}\Big) 
@@ -57,7 +57,7 @@ The dynamic for the short rate in the Vasicek model is presented below in \autor
 The dynamic for the short rate in \autoref{vas_dyn1} is a Ornstein-Uhlenbeck process, which is a type of stochastic 
 differential equation that describes the evolution of a mean-reverting behavior. So the process is consisting of a 
 tendency to revert towards the mean of the process. This tendency is illustrated in \autoref{fig:vasicek} below, where 
- rates is simulated using the Vasicek model for some chosen parameters listed in \autoref{tab:parameters_short_rate} below. 
+ rates are simulated using the Vasicek model for some chosen parameters listed in \autoref{tab:parameters_short_rate} below. 
  Note in \autoref{fig:vasicek}
 one simulated path of the short rate is illustrated. Where in \autoref{fig:vasicek-sim} ten simulated paths are illustrated,
 but the same tendency appears. The parameters in the short rate dynamic
@@ -115,7 +115,7 @@ Then both sides of the equation are multiplied by the
 integrating factor $e^{\kappa t}$ to facilitate the integration. Next, both sides is integrated from s to t. The result of the
 integration shows the change in the short  rate, r, over time, adjusted by the integrating factor. The final 
 expression in \autoref{line_22} for the short rate, $r(t)$, at time t, showing how it depends on the initial rate, $r(s)$,
-the mean-reverting term and the stochastic term \cite{Bermudan}. We note that  final expression in \autoref{line_22} for the short rate
+the mean-reverting term and the stochastic term \cite{Bermudan}. We note that the final expression in \autoref{line_22} for the short rate
 is Gaussian.
 \\\\
 Further we find that $r(t)$ is normally distributed with mean and variance determined as follows \cite{Bjork}. 
@@ -167,7 +167,7 @@ rates under the risk neutral measure, discounted back to the present value.
 \\\\
 \\\\
 As mentioned we will now look a the formula for pricing bonds using the Vasicek model,
-which is present in \ref{prop 5} below and the determine in Appendices.
+which is presented in proposition \ref{prop 5} below and the calculations can be seen in the Appendices.
 \\\\
 \begin{proposition}
     \label{prop 5}

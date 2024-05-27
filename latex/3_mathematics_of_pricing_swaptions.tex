@@ -1,7 +1,7 @@
 \section{Mathematics of Pricing Swaptions}
 To determine a swaption price it is important to understand what affects the price of the swaption. 
-This Chapter simplifies this concepts by explaining interest rates, bonds, swaps-and options, 
-and then shows how they come together to determine the price of a swaption.
+This Chapter simplifies this concept by explaining interest rates, bonds, swaps and options, 
+and then show how they come together to determine the price of a swaption.
 \subsection{Time Value of Money}
 Understanding the concept of interest rates begins with the fundamental idea that a dollar today holds 
 more value than the same dollar in the future. To understand this concept, a discount factor is introduced as 
@@ -51,7 +51,7 @@ Where the concept "Time Value Of Money" and the discount factor are fundamental 
 cash flows, the yield curve provides insights into market expectations regarding future interest rates.
 Understanding the interplay between these concepts is crucial for making informed investment decisions and pricing
 financial instruments. The yield curve is a graphical representation illustrating the interest rates (bond yields) for various maturities.
-The general intuition is that longer-term rates is higher than short-term rates, which in other words means that a
+The general intuition is that longer-term rates are higher than short-term rates, which in other words means that a
 larger premium is expected for lending money over a longer period of time. This case sketches a yield curve with a 
 positive slope, which is displayed in illustration 3.2 below.
 
@@ -84,7 +84,7 @@ positive slope, which is displayed in illustration 3.2 below.
 \subsubsection{Spot Rates}
 The spot rate represents the yield-to-maturity of a zero coupon bond,
 while the forward rate refers to the anticipated interest rate in the 
-future. Definition \ref{def:spot} formulated how spot rates are determined.
+future. Definition \ref{def:spot} formulates how spot rates are determined.
 \begin{definition}\label{def:spot}
     The simple spot rate for $t<S<T$, henceforth referred to as the 
     LIBOR spot rate, is defined as \cite{Bjork} 
@@ -96,12 +96,12 @@ future. Definition \ref{def:spot} formulated how spot rates are determined.
 \\\\
 where $p(t,T)$ and $p(t,S)$ represent the price at time t of zero coupon bonds, that pay
 1 dollar at time T and S, respectively. Intuitively, the spot rate $L(t;S,T)$ is the 
-average rate of interest for borrowing or lending money over the time period from S to T, 
+average interest rate for borrowing or lending money over the time period from S to T, 
 where such borrowing or lending is made at time t. 
 \subsubsection{Forward rates}
 Forward rates play a crucial role in financial markets, particularly in the realm of interest rate analysis and 
 derivative pricing. They represent the interest rate applicable to a future period, agreed upon today.
-Understanding forward rates requires grasping the concept of forward contracts and the expectations theory of interest rates.
+Understanding forward rates requires the understanding of forward contracts and the expectations theory of interest rates.
 Forward rates can be derived from the yield curve. The yield curve plots the yields of bonds with different maturities.
 By analyzing the yield curve, one can infer the implied forward rates for future periods. For example, 
 the forward rate between year 1 and year 2 is the rate at which an investor can borrow or lend money for the period
@@ -129,7 +129,7 @@ Definition \ref{def:forward} formulates how forward rates are determined.
 \end{definition} 
 \noindent
 \\\\
-So now formulas for spot rate and forward rates has been determined. To illustrate the differences between 
+So now formulas for spot rates and forward rates has been determined. To illustrate the differences between 
 the two types of rates, illustration 3.3  below shows at which times the rates are determined. From the illustration
 we see that all the spot rates are determine at time $t=0$, to each time point to maturity. Where the forward rates starts
 a different time points. 
@@ -182,7 +182,7 @@ As describe, a zero coupon bond does not involve coupons throughout the term of 
 Moving forward we will introduce various bond with coupons that are either fixed 
 or floating. First we will consider the simplest form of a coupon bond, which is a 
 fixed coupon bond. Fixed coupon bonds are a type of debt security that offers investors a predictable
-return in the form of regular interest payments, known as coupons, until the bond's maturies.
+return in the form of regular interest payments, known as coupons, until the bond's matures.
 These coupons are set at a fixed rate at the time of issuance, based on the bond's face value,
 and are typically paid annually or semi-annually. Upon reaching maturity, the issuer repays 
 the principal amount (face value) to the issuer, concluding the bond contract. The purpose
@@ -191,7 +191,7 @@ making them an attractive option for conservative investors seeking to minimize 
 secure predictable returns.
 \\\\
 Continuing, we will compute the price of a fixed coupon bond. First we note that the fixed coupon bond,
-can be replicated by holding a portfolio consisting of zero coupon bond with maturities $T_i$, for 
+can be replicated by holding a portfolio consisting of zero coupon bonds with maturities $T_i$, for 
 $i=1,...,n$. So we will hold $c_i$ zero coupon bonds of maturities $T_i$ for $i=1,...,n-1$, and 
 $K+c_n$ bonds with maturity $T_n$. Hence we have that the price, p(t), at time t, where $t<T$, of 
 the fixed coupon bonds becomes. \cite{Bjork}
@@ -255,14 +255,14 @@ of xIBOR rates, one is EURIBOR rate which is a rate the
 European Banking Federation sets every business day. 
 \\\\
 These different type of xIBOR rates are sets differently, but they all use the money market convention. 
-So when taking about business day, the money market convention is important. This is a day-count 
-convention is a standardized methodology for calculating the number of days between two dates.
+So when talking about business day, the money market convention is important. This is a day-count 
+convention that is a standardized methodology for calculating the number of days between two dates.
 This means that when $t <T_0$  the coupon dates are equally spaced with  
 \begin{align*}
     \delta = T_{i}-T_{i-1}
 \end{align*}
-To determined the value of a the simplest floating rate bond, the LIBOR spot rate we can without
-loss of generality assume that K=1 and insert Definition \ref{def:spot} of the LIBOR spot rate 
+To determined the value of a the simplest floating rate bond, the LIBOR spot rate we can, without
+loss of generality, assume that K=1 and insert Definition \ref{def:spot} of the LIBOR spot rate 
 to obtain
 \begin{align*}
     c_i &= (T_i-T_{i-1})L(T_{i-1},T_i)K \\
@@ -316,7 +316,7 @@ the interest rate swap are known as the "fixed leg" and the "floating leg".
 The role of each participant in the swap is determined in relation to the 
 fixed leg: the party making fixed payments is engaged in a "payer swap," 
 while the party making floating payments (and receiving fixed payments) is
-involved in a "receiver swap.". The two involved cashflow there are exchanged form the "receiver" to the "payer" is illustrated below.
+involved in a "receiver swap.". The two involved cashflows that are exchanged from the "receiver" to the "payer" is illustrated below.
 \\
 \begin{center}
     \begin{tikzpicture}
@@ -341,7 +341,7 @@ where we have that $L(T_{i-1},T_i)$ is the spot rate, which could be the LIBOR s
 It is also assumed
 that the days $T_0,...,T_n$ is equally spaced with $\delta = T_i - T_{i-1}$ as mentioned above in the Section for floating rate bonds. 
 Then it is noticed that the expression in \autoref{irs} is the same as $Kc_i$, where again $c_i$ is the i'th coupon for the floating rate. 
-So at time $T_i$ the buyer will pay $K \delta R$, where the cash flow at time $T_i$ is given by below
+So at time $T_i$ the buyer will pay $K \delta R$, where the cashflow at time $T_i$ is given by below
 \begin{align*}
     K \delta \Big[L(T_{i-1},T_i)-R \Big]
 \end{align*}
@@ -350,7 +350,7 @@ cash flow at time $t<T_0$. The value of the cash flow is listed below
 \begin{align*}
     K p(t,T_{i-1})-K(1+\delta R)p(t,T_i)
 \end{align*}
-Hence we have that the total value denote by $\Pi(t)$, so the total value at time t of the swap is given as below
+Hence we have that the total value denoted by $\Pi(t)$, so the total value at time t of the swap is given as below
 \begin{align}
     \pi (t) = K \sum_{i=1}^{n} \Big[p(t,T_{i-1})-(1+ \delta R)p(t,T_i)\Big]
     \label{valueirs}
@@ -372,11 +372,11 @@ Moving forward we simplify \autoref{valueirs} in Proposition \ref{simple} \cite{
 \end{proposition}
 \noindent 
 To sum up on interest rate swaps, let consider a timeline for a payer swap contract. Where the issuer is paying the fixed leg 
-and receiving the floating leg. The timeline of the contract is illustrated below, where a time t the contract is made. 
+and receiving the floating leg. The timeline of the contract is illustrated below, where at time t the contract is made. 
 Then the swap start a time $T_S$ and maturities at time $T_E$.
 The squiggly lines denote the floating interest payments that the payer will make based on the interest rate observed 
 at the beginning of the period and the end of the period. The vertical lines at the beginning of each period represent
-the fixed payment dates, and the horizontal dotted line indicates the continuation of the swap contract over time.
+the fixed payment dates starting at time $T_{S+1}$, and the horizontal dotted line indicates the continuation of the swap contract over time.
 \begin{center}
     \begin{tikzpicture}
         \draw[thick] (0,0) -- (3.7,0);
@@ -417,15 +417,15 @@ If we have that $T_0=0$ the formula for the swap rate, R, becomes
 \end{align*}
 \newpage
 \subsection{Options}
-In this Section will introduce the framework of options in the over-the-counter-market. 
+This Section will introduce the framework of options in the over-the-counter-market. 
 The purpose of this Section is to establish a pricing formula for European call options.
-The meaning of introducing pricing of options before introducing swaptions pricing, since a swaption is  a 
-more complex derivative. 
+The purpose of introducing pricing of options before introducing swaption pricing, is that a swaption is 
+more complex to price. 
 \\\\
 First, lets clarify what the over-the-counter market (OTC) is. It is  a marketplace where numerous trades occur.
-In the OTC market private companies exchange trades, these companies are firms as banks, other 
-large financial institutions and funds managers \cite{Hull}. Then we have established the market where 
-options is traded, so moving forward we will look in to options contracts. 
+In the OTC market private companies exchange funds and assets, these companies are companies such as banks, fund managers and
+other large financial institutions \cite{Hull}. Now we have established the market where 
+options are traded, so moving forward we will look in to options contracts. 
 \\\\
 A call options gives the holder the right to buy the underlying asset at a fixed strike price, K, at a 
 predetermined time, T. Where a put option gives the holder the right to sell the underlying asset at a fixed
@@ -441,7 +441,7 @@ The contract functions, $\Phi$, for European call and put options are as follows
 \end{align}
 where K is the strike price, S denotes the market price of the underlying asset \cite{Bjork}. From \autoref{call_function} and \autoref{put_function} we see
 that the value of the contract function can not be negative, since in both cases the contract function is a 
-function there takes the maximum of the payoff and zero. So the holder maximum lost is the paid premium. Below the described contract
+function that takes the maximum of the payoff and zero. So the holders maximum loss is the paid premium. Below the described contract
 function for a European call option is illustrated.
 \begin{center}
     \begin{tikzpicture}[scale=0.7]
@@ -462,12 +462,12 @@ When options are priced the value of the options is calculated by discounting
 the options expected payoff at time T under the risk neutral measure $\QQ$. 
 \\\\
 The value of the options is calculated under the risk neutral measure $\QQ$ also know as the pricing measure, and 
-not under the actual measure $\PP$. The $\PP$- measure reflects the real world probabilities. If prices was determined 
+not under the real world measure $\PP$. The $\PP$- measure reflects the real world probabilities. If prices was determined 
 under $\PP$ is could lead to arbitrage opportunities, because it would reflect the actual risk preferences of
 investors, who demand different rates of return for different risks. Under the risk neutral measure $\QQ$  
 probabilities are shifted or adjusted in such way that the expected rate of return on assets becomes the risk free rate. 
 This adjustment removes the risk premiums that are present in the actual probability measure $\PP$.
-This lead to the First Fundamental Theorem of Asset Pricing, to develop this theorem we consider 
+This leads to the First Fundamental Theorem of Asset Pricing, to develop this theorem we consider 
 the concept of martingales. 
 A stochastic process $X_t$ is a $\QQ$-martingale, if the process has no drift term (dt-term). Which is satisfied if it holds that
 $\EE_{t}^{\QQ}\Big[X_T\Big] = X_t$ for all $t<T$. Next we will consider a price process $X_t$ with the following dynamic.
@@ -475,7 +475,7 @@ $\EE_{t}^{\QQ}\Big[X_T\Big] = X_t$ for all $t<T$. Next we will consider a price 
     d X_t = r_t X_t dt + \sigma X_t d W_{t}^{\QQ}
     \label{price_process}
 \end{align}
-where $W_{t}^{\QQ}$ is $\QQ$-Wiener process and  $r_t$ is the process for the risk free interest rate. $r_t$ can be looked at the locally risk free rate return 
+where $W_{t}^{\QQ}$ is $\QQ$-Wiener process and  $r_t$ is the process for the risk free interest rate. $r_t$ can be looked at as the locally risk free rate return 
 from a continuously compounded bank account
 \\\\
 $B(t)= \text{exp} \Big[\int_{0}^{t}r(s)ds \Big]$.
@@ -484,8 +484,8 @@ Where the bank account has the following dynamic
     dB(t) &= r(t)B(t) dt \label{bank1}\\
     B(0) & = 1 \label{bank2}
 \end{align}
-If we look at \autoref{price_process} we see there is a dt-term present, so it is not a martingale.
-But if we discount the price process, this will be a martingale do to the martingale property below
+If we look at \autoref{price_process} we see that there is a dt-term present, so it is not a martingale.
+But if we discount the price process, this will be a martingale due to the martingale property below
 \begin{proposition}
     (\textbf{The Martingale Property}) In the Black-Scholes model, the price process $\Pi_t$
     for every traded asset, be it the underlying or derivative asset, has the property that the normalized price process
@@ -495,7 +495,7 @@ But if we discount the price process, this will be a martingale do to the martin
     is a martingale under the measure $\QQ$ \cite{Bjork}
 \end{proposition}
 \noindent 
-This lead os to the First Fundamental Theorem of Asset Pricing in \autoref{frist_theorem_of_asset_pricing}.
+This leads us to the First Fundamental Theorem of Asset Pricing in \autoref{frist_theorem_of_asset_pricing}.
 \begin{theorem}
     (\textbf{First Fundamental Theorem of Asset Pricing})
     Given a time horizon, a risky asset with price process $X_t$ and a
@@ -506,7 +506,7 @@ This lead os to the First Fundamental Theorem of Asset Pricing in \autoref{frist
     \label{frist_theorem_of_asset_pricing}
 \end{theorem}
 \noindent 
-Hence we have establish the First Fundamental Theorem of Asset Pricing. So to sum up in order to be able to calculate
+Hence we have established the First Fundamental Theorem of Asset Pricing. So to sum up in order to be able to calculate
 option prices, the "fair" or arbitrage free price, there must exist a risk neutral measure $\QQ$, such the the discount prices
 is a $\QQ$-martingale. 
 \subsubsection{Options Pricing}
@@ -532,15 +532,15 @@ pay-offs at the risk free rate of return, this formalized in \autoref{rnt} below
     \label{rnt}
 \end{theorem}
 \noindent 
-Then Risk Neutral Valuation has been introduced, hence the only thing left before we are able to price a 
-European call option, is to establish the model the price in found under. In this case it is the Black-Scholes model.
-It consists of two assets, a risk free asset with price process, B, and a stock price with price process, S.
+Now the Risk Neutral Valuation has been introduced, hence the only thing left before we are able to price a 
+European call option, is to establish the model the price is determined by. In this case it is the Black-Scholes model.
+It consists of two assets, a risk free asset with price process B, and a stock price with price process, S.
 The dynamics of the two assets is listed below
 \begin{align*}
     dBt & = rB_t dt \\
     dS_t &= \mu S_t dt + \sigma S_t dW_t
 \end{align*}
-where the short rate, r, is  a deterministic constant,  $\mu$ and $\sigma$ is two constants. It is also assumed
+where the short rate, r, is  a deterministic constant,  $\mu$ and $\sigma$ is also constants. It is also assumed
 that the stock price process is lognormal distributed. From \autoref{rnt}
 (Risk Neutral Valuation) the formulas for determine the arbitrage free price is available. Finally the requirements
 for being able to price a European option is satisfied, hence we have the Black-Scholes Formula below in
@@ -560,8 +560,8 @@ Proposition \ref{Black-Scholes Formula}.
     \cite{Bjork}
 \end{proposition}
 \subsection{Swaptions}
-Now that we have establish a foundational understanding of interest rates, bonds, swaps and options, we can
-now go deeper into swaptions. First we will explain what constitutes a swaption and the we will continuing 
+Now that we have established a fundamental understanding of interest rates, bonds, swaps and options, we can
+now go deeper into swaptions. First we will explain what constitutes as a swaption and then we will continue 
 to develop the framework of pricing a swaption, built on the knowledge we have established.  
 \\\\
 A swaption is a financial derivative that can be describeed as an option to exchange a fixed rate bond for
@@ -576,8 +576,8 @@ Swaptions pricing purpose is to calculating the present value of expected paymen
 should the option be exercised. The pricing model must take various factor into account, such as the
 volatility of interest rates, the term structure of interest rates, and the time value of money. 
 To price swaptions, the Black model will be used, which is an extension of the Black Scholes
-model for equity options. The choice of using the Black model for pricing swaption is commonly used, especially when
-the purpose is the price European swaption. Likewise for swaps, there is also different type of swaptions. 
+model for equity options. The choice of using the Black model for pricing swaptions is common, especially when
+the purpose is to price European swaptions. Likewise for swaps, there is also different type of swaptions. 
 Again European options can only be exercised at the maturity date, while American options can be exercised
 at any point in time up to the maturity date. Moving forward we will only consider European swaptions. 
 The Black model assumes that the underlying swap rate follows a lognormal distribution and uses a 
@@ -585,7 +585,7 @@ risk neutral valuation approach. These concept has been reviewed earlier, hence 
 formulating pricing swaptions.
 \\\\
 First we consider a swaption that is settled such that the holder has the right to pay a fixed rate, $S_K$, 
-and receive a floating rate on the swap that will expire in n year starting in T years.
+and receive a floating rate on the swap that will expire in n years starting in T years.
 Further we will assume that there are m payments 
 per year under the swaption and we will let the notional principal be denoted by L. These m payments has
 assumed that each fixed payment on the swap is the fixed rate times L/m. Next we suppose that 
@@ -623,7 +623,7 @@ pays $1/m$ at times $T_i ( 1\leq i \leq mn)$ a in \autoref{a_simple}
 \end{align}
 Hence we have that the value of the swaption can be expressed as 
 \begin{align*}
-    L N \Big[S_F N(d_1) - S_K N(d_2) \Big]
+    L A \Big[S_F N(d_1) - S_K N(d_2) \Big]
 \end{align*}
 Which leads to the case we looked at, where the contract of the swaption was made such that the 
 holder has the right to receive a fixed rate of $S_K$ instead of paying it. It also leads to
