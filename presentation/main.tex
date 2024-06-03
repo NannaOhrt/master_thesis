@@ -1,0 +1,88 @@
+\documentclass{beamer}
+\usepackage{beamerbasetoc}
+\usepackage{ beamerbaseoverlay}
+\usepackage{enumitem}
+\usepackage{bookmark}
+\usepackage{graphicx} % Required for including images
+\usepackage[absolute,overlay]{textpos} % Required for positioning elements absolutely
+\usepackage{xcolor} % Required for defining colors
+
+% Define custom beamer color box for white background
+
+\usecolortheme{default}
+\setbeamercolor{hvidbox}{bg=white}
+
+% Define custom color for KUrod
+\definecolor{KUrod}{RGB}{144,26,30} % Change the RGB values to match the desired color
+
+\title{Sample Presentation}
+\author{Your Name}
+\date{\today}
+
+\begin{document}
+
+\makeatother
+
+{
+\setbeamertemplate{background}{\includegraphics[width=\paperwidth,height=\paperheight]{/Users/nannaingemannohrt/Desktop/master_thesis/presentation/frontpage.jpg}}
+\begin{frame}[plain] 
+    \begin{textblock*}{\textwidth}(0.57\textwidth,0.1\textheight)
+        \begin{beamercolorbox}[wd=7.8cm,ht=7.3cm,sep=0.5cm]{hvidbox}
+            \fontsize{5}{10}\fontfamily{ptm}\selectfont \textls{UNIVERSITY OF COPENHAGEN}
+            \noindent\textcolor{KUrod}{\rule{6.8cm}{0.4pt}}
+        \end{beamercolorbox}
+    \end{textblock*}
+    \begin{textblock*}{\textwidth}(0.57\textwidth,0.2\textheight) 
+        \begin{beamercolorbox}[wd=7.8cm,sep=0.5cm]{hvidbox}
+                \Huge \textcolor{KUrod}{Master Thesis}
+                \vspace{0.5cm}
+                \par
+                \Large Swaption Pricing Using the SABR Model
+                \vspace{0.5cm}
+                \par
+                \normalsize Nanna Ingemann Ohrt
+        \end{beamercolorbox}
+    \end{textblock*}
+    \begin{textblock}{1}(14.5,11.38)
+        \includegraphics[width=1cm]{/Users/nannaingemannohrt/Desktop/master_thesis/presentation/KU-logo.png}
+    \end{textblock}
+\end{frame}
+}
+
+\begin{frame}
+    \frametitle{{\textcolor{KUrod}{Outline}}}
+    \begin{itemize}[label=\textcolor{KUrod}{\textbullet}]
+        \item Swaption As a Missing Link in Asset Allocation
+        \item Second item
+        \item Third item
+    \end{itemize}
+\end{frame}
+    
+
+\section{Swaption As a Missing Link in Asset Allocation}
+\begin{frame}
+    \frametitle{\textcolor{KUrod}{Swaption As a Missing Link in Asset Allocation}}
+    \begin{center}
+        \includegraphics[width=0.8\textwidth]{/Users/nannaingemannohrt/Desktop/master_thesis/main/plots/2004_to_2024_plot.png}
+    \end{center}
+\end{frame}
+
+
+\begin{frame}
+    \frametitle{\textcolor{KUrod}{Swaption As a Missing Link in Asset Allocation}}
+    \begin{columns}
+        \column{0.5\textwidth}
+        \begin{center}
+            \includegraphics[width=\textwidth]{/Users/nannaingemannohrt/Desktop/master_thesis/main/plots/2007_to_2011.png}
+            \captionof{Global Financial Crisis}
+        \end{center}
+
+        \column{0.5\textwidth}
+        \begin{center}
+            \includegraphics[width=\textwidth]{/Users/nannaingemannohrt/Desktop/master_thesis/main/plots/2022_to_2024.png}
+            \captionof{High inflation period }
+        \end{center}
+    \end{columns}
+
+\end{frame}
+\end{document}
