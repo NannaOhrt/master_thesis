@@ -70,6 +70,8 @@
         \item One-Factor Short-Rate Model
         \item Constant Volatility
         \item The SABR Model
+        \item Risk Related to The SABR Model
+        \item Conclusion
     \end{itemize}
 \end{frame}
     
@@ -235,28 +237,51 @@
 \end{frame}
 
 \begin{frame}
-    \frametitle{\textcolor{KUrod}{Mathematics of Pricing Swaptions}}
-    Swaption pricing
-\end{frame}
-\begin{frame}
     \frametitle{\textcolor{KUrod}{One-Factor Short-Rate Model}}
     The Vasicek model 
     \begin{align}
         d r_t &= \kappa \Big[\theta - r(t)\Big] dt + \sigma d W(t) \label{vas_dyn1}\\
         r(0) &= r_0 \label{vas_dyn_r0}
     \end{align}
-    \begin{center}
-        \begin{minipage}{0.5\textwidth}
-            \centering
+    The parameters in the short rate dynamic
+    $\kappa$, $\theta$ and $\sigma$ are positive constants. Where $\kappa$ represent the mean reversion speed, $\theta$ 
+    is the long-term average rate, $\sigma$ is the volatility  and $W(t)$ is a Wiener process.
+\end{frame}
+
+\begin{frame}
+    \frametitle{\textcolor{KUrod}{One-Factor Short-Rate Model}}
+
+    \begin{columns}
+        \column{0.5\textwidth}
+        \begin{center}
             \includegraphics[width=\textwidth]{/Users/nannaingemannohrt/Desktop/master_thesis/main/plots/VasicekModelPlot.png}
-            \captionof{}{}
-        \end{minipage}\hfill
-        \begin{minipage}{0.5\textwidth}
-            \centering
+            \caption{Plot of one simulated rate path  using the Vasicek model.}
+        \end{center}
+
+        \column{0.5\textwidth}
+        \begin{center}
             \includegraphics[width=\textwidth]{/Users/nannaingemannohrt/Desktop/master_thesis/main/plots/VasicekModelPlotSIM.png}
-            \captionof{}{}
-        \end{minipage}
-    \end{center}
+            \caption{Plot of 10 simulated  rates  paths using the Vasicek model.}
+        \end{center}
+    \end{columns}
+\end{frame}
+
+\begin{frame}
+    \frametitle{\textcolor{KUrod}{One-Factor Short-Rate Model}}
+
+    \begin{columns}
+        \column{0.5\textwidth}
+        \begin{center}
+            \includegraphics[width=\textwidth]{/Users/nannaingemannohrt/Desktop/master_thesis/main/plots/zcb_1_sim.png}
+            \caption{Plot of one simulated ZCB price path using the Vasicek model.}
+        \end{center}
+
+        \column{0.5\textwidth}
+        \begin{center}
+            \includegraphics[width=\textwidth]{/Users/nannaingemannohrt/Desktop/master_thesis/main/plots/zcb_10_sim.png}
+            \caption{Plot of 10 simulated  ZCB prices  paths using the Vasicek model.}
+        \end{center}
+    \end{columns}
 \end{frame}
 
 \begin{frame}
@@ -285,7 +310,177 @@
 
 \begin{frame}
     \frametitle{\textcolor{KUrod}{The SABR Model}}
+    The SABR model consists of a dynamic for the forward price
+    and one for the volatility, since the SABR model is a 
+    two-factor model. 
+    \\\\
+    The SABR model also formulates 
+    how the two processes are correlated. 
+    \begin{align}
+        d \hat{F_t} &= 
+        \hat{\alpha}_t \hat{F}_t^\beta dW_t^1, \quad \quad \hat{F}(0)=f   \label{f_dyn}\\
+        d\hat{\alpha}_t &= \nu \hat{\alpha}_t dW_t^2, \quad \quad \hat{\alpha}(0)=\alpha \label{sigma_dyn}
+    \end{align}
+    where $W_t^{1}$ and $W_t^{2}$ are correlated Wiener 
+    process and it is assumed that.
+    \begin{align}
+        dW_t^{1}dW_t^{2}=\rho dt
+    \end{align}
 \end{frame}
 
 
+\begin{frame}
+    \frametitle{\textcolor{KUrod}{The SABR Model}}
+    \begin{itemize}[label=\textcolor{KUrod}{\textbullet}]
+        \item $F_0$ \text{---} Initial forward rate or asset price.
+        \item $\alpha_0$ \text{---} Initial volatility.
+        \item $\beta$ \text{---} Elasticity parameter.
+        \item $\nu$ \text{---} Volatility of the volatility parameter.
+        \item $\rho$ \text{---} Correlation between the asset price and its volatility.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{\textcolor{KUrod}{The SABR Model}}
+    \centering
+    \includegraphics[width=\linewidth]{/Users/nannaingemannohrt/Desktop/master_thesis/main/plots/sim_f_and_sigma.png}
+    \caption{Ten simulated paths for the forward rate and the volatility in the SABR model.}
+\end{frame}
+
+\begin{frame}
+    \frametitle{\textcolor{KUrod}{The SABR Model}}
+    The paper Managing Smile Risk 
+of Hagen (2002) states that
+under the SABR model, the prices of European options 
+is given by Black formula 
+\begin{align}
+    V_{\text{call}} &= D(t_{\text{set}})fN(d_1) - KN(d_2)  \label{sabr1}\\
+    V_{\text{put}} &= V_{\text{call}} + D(t_{\text{set}})[K - f] \label{sabr2}
+\end{align}
+with
+\begin{equation}
+    d_{1,2} = \frac{\log \frac{f}{K} \pm \frac{1}{2}\sigma_B^2 t_{\text{ex}}}{\sigma_B \sqrt{t_{\text{ex}}}}
+\end{equation}
+here $t_{\text{set}}$ is the settlement date and $t_{\text{ex}}$ os the exercise date 
+
+\end{frame}
+
+\begin{frame}
+    \frametitle{\textcolor{KUrod}{The SABR Model}}
+    \scriptsize
+    The implied volatility $\sigma_B(f, K)$ is given by
+    \begin{equation}
+        \sigma_B(K, f) = \frac{\alpha}{(fK)^{(1-\beta)/2}} \left\{ 1 + \frac{(1-\beta)^2}{24} \log^2 \frac{f}{K} + \frac{(1-\beta)^4}{1920} \log^4 \frac{f}{K} + \ldots \right\} \left( \frac{z}{x(z)} \right).
+    \end{equation}
+    where
+    \begin{align}
+        z &= \frac{\nu}{\alpha}(fK)^{(1-\beta)/2} \log \frac{f}{K}, \\
+    \end{align}
+    and \(x(z)\) is defined by
+    \begin{align}
+        x(z) &= \log \left\{ \frac{\sqrt{1-2\rho z + z^2} + z - \rho}{1 - \rho} \right\}.
+    \end{align}
+    For the special case of at-the-money (ATM) options, options strike at $K = f$, this formula reduces to
+    \begin{equation}
+        \sigma_{ATM} = \sigma_B(f, f) = \frac{\alpha}{f^{1-\beta}} \left\{ 1 + \left( \frac{(1-\beta)^2}{24} \frac{\alpha^2}{f^{2-2\beta}} + \frac{\rho \beta \nu}{4} \frac{\alpha}{f^{1-\beta}} + \frac{2-3\rho^2}{24} \nu^2 \right) t_{\text{ex}} + \ldots \right\}.
+    \end{equation}
+\end{frame}
+
+\begin{frame}
+    \frametitle{\textcolor{KUrod}{The SABR Model}}
+    \centering
+    \includegraphics[width=\linewidth]{/Users/nannaingemannohrt/Desktop/master_thesis/main/plots/SABR1_alpha.png}
+    \caption{SABR model volatility smiles at various $\alpha_0$ levels}
+\end{frame}
+
+\begin{frame}
+    \frametitle{\textcolor{KUrod}{The SABR Model}}
+    \centering
+    \includegraphics[width=\linewidth]{/Users/nannaingemannohrt/Desktop/master_thesis/main/plots/SABR_beta.png}
+    \caption{SABR model volatility smiles at various $\beta$ levels}
+\end{frame}
+
+\begin{frame}
+    \frametitle{\textcolor{KUrod}{The SABR Model}}
+    \centering
+    \includegraphics[width=\linewidth]{/Users/nannaingemannohrt/Desktop/master_thesis/main/plots/SABR_nu.png}
+    \caption{SABR model volatility smiles at various $\nu$ levels}
+\end{frame}
+
+\begin{frame}
+    \frametitle{\textcolor{KUrod}{The SABR Model}}
+    \centering
+    \includegraphics[width=\linewidth]{/Users/nannaingemannohrt/Desktop/master_thesis/main/plots/SABR_rho.png}
+    \caption{SABR model volatility smiles at various $\rho$ levels}
+\end{frame}
+
+\begin{frame}
+    \frametitle{\textcolor{KUrod}{The SABR Model}}
+    \centering
+    \includegraphics[width=\linewidth]{/Users/nannaingemannohrt/Desktop/master_thesis/main/plots/SABR_f.png}
+    \caption{SABR model volatility smiles at various F levels}
+\end{frame}
+
+\begin{frame}
+    \frametitle{\textcolor{KUrod}{Risk Related to The SABR Model}}
+    \\\\
+    \begin{itemize}
+        \item \textbf{Changes in $\alpha$ parameter:}
+        \begin{itemize}[label=\textcolor{KUrod}{\textbullet}]
+            \item Affects the level of the implied volatility smile.
+            \item Higher $\alpha$ values increase the overall level of implied volatility.
+            \item Lower $\alpha$ values decrease the overall level of implied volatility.
+        \end{itemize}
+    \\\\
+        \item \textbf{Fixing $\beta$ parameter:}
+        \begin{itemize}[label=\textcolor{KUrod}{\textbullet}]
+            \item Common practice since similar movements occur when changing both $\beta$ and $\nu$ parameters.
+        \end{itemize}
+    \\\\
+        \item \textbf{Effect of $\beta$ on the implied volatility smile:}
+        \begin{itemize}[label=\textcolor{KUrod}{\textbullet}]
+            \item Lower $\beta$ values make the smile steeper (more skewed).
+            \item Higher $\beta$ values flatten the smile.
+        \end{itemize}
+    \end{itemize}
+    
+\end{frame}
+\begin{frame}
+    \frametitle{\textcolor{KUrod}{Risk Related to The SABR Model}}
+    \begin{itemize}
+    \\\\
+        \item \textbf{Effect of $\nu$ parameter:}
+        \begin{itemize}[label=\textcolor{KUrod}{\textbullet}]
+            \item Higher $\nu$ values increase the curvature of the smile, making it more pronounced.
+            \item Lower $\nu$ values decrease the curvature of the smile.
+        \end{itemize}
+    \\\\
+        \item \textbf{Effect of $\rho$ parameter:}
+        \begin{itemize}[label=\textcolor{KUrod}{\textbullet}]
+            \item Positive $\rho$ values skew the smile to the right (towards higher strikes).
+            \item Negative $\rho$ values skew the smile to the left (towards lower strikes).
+        \end{itemize}
+    \\\\
+        \item \textbf{Effect of the forward price, $f$:}
+        \begin{itemize}[label=\textcolor{KUrod}{\textbullet}]
+            \item Adjusts the center of the implied volatility smile.
+        \end{itemize}
+    \\\\
+        \item \textbf{Importance:}
+        \begin{itemize}[label=\textcolor{KUrod}{\textbullet}]
+            \item Awareness of these movements in implied volatility is crucial if swaptions are included in asset allocation.
+        \end{itemize}
+    \end{itemize} 
+\end{frame}
+
+\begin{frame}
+    \frametitle{\textcolor{KUrod}{Conclusion}}
+    \begin{itemize}[label=\textcolor{KUrod}{\textbullet}]
+        \item Volatility is not constant.
+        \item Model selection impacts swaption prices.
+        \item Chose a two-factor model to handle stochastic volatility.
+        \item Understanding risks of the SABR model is important.
+        \item Swaption is a missing link i asset allocation.
+    \end{itemize}
+\end{frame}
 \end{document}
